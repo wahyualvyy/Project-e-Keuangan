@@ -12,6 +12,13 @@ class AdminController extends BaseController
         $data = [
             "title" => "Dasboard Admin"
         ];
-        return view( 'layout/template', $data);
+        return view( 'admin/dashboard', $data);
+    }
+    public function DataGuru()
+    {
+        $data = [
+            "title" => "Data Guru"
+        ];
+        return view( 'admin/Data-guru', $data);
     }
 }

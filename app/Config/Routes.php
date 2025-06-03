@@ -5,6 +5,9 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Home::index');
-$routes->get('/admin', 'AdminController::index');
+$routes->group('admin', function($routes) {
+    $routes->get('dashboard', 'AdminController::index');
+    $routes->get('Data-guru', 'AdminController::DataGuru');
+});
+
 
