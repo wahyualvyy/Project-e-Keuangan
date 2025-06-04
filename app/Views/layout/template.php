@@ -6,9 +6,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title><?= $title; ?></title>
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"	
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
-	<link rel="stylesheet" href="<?= base_url('css/styles.min.css');?>">
+	<link rel="stylesheet" href="<?= base_url('css/styles.min.css'); ?>">
+	<!-- <link rel="stylesheet" href="<?= base_url('dist/css/adminlte.min.css'); ?>" /> -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
 </head>
 
@@ -17,6 +18,11 @@
 		data-sidebar-position="fixed" data-header-position="fixed">
 
 		<!--  App Topstrip -->
+		<div class="preloader flex-column justify-content-center align-items-center">
+			<img class="animation__shake"
+				src="https://www.adobe.com/id_id/creativecloud/design/discover/media_17770be5de64c9b159b23a7da870ae0bd5bc0f400.jpeg?width=1200&format=pjpg&optimize=medium"
+				alt="Logoaisyiah" height="60" width="60" />
+		</div>
 		<div class="app-topstrip bg-dark py-6 px-3 w-100 d-lg-flex align-items-center justify-content-between">
 			<div class="d-flex align-items-center justify-content-center gap-5 mb-2 mb-lg-0">
 				<a class="d-flex justify-content-center" href="#">
@@ -53,8 +59,8 @@
 							<iconify-icon icon="solar:menu-dots-linear" class="nav-small-cap-icon fs-4"></iconify-icon>
 							<span class="hide-menu">Main Menu</span>
 						</li>
-						<li class="sidebar-item <?=($title === 'Dashboard Admin') ? 'active' : ''; ?>">
-							<a class="sidebar-link" href="<?= base_url('admin/dashboard');?>" aria-expanded="false">
+						<li class="sidebar-item <?= ($title === 'Dashboard Admin') ? 'active' : ''; ?>">
+							<a class="sidebar-link" href="<?= base_url('admin/dashboard'); ?>" aria-expanded="false">
 								<i class="ti ti-home"></i>
 								<span class="hide-menu">Dashboard</span>
 							</a>
@@ -63,19 +69,15 @@
 						<!-- Dashboard -->
 						<!-- ---------------------------------- -->
 						<li class="sidebar-item">
-							<a class="sidebar-link justify-content-between has-arrow" href="javascript:void(0)"
-								aria-expanded="false">
+							<a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
 								<div class="d-flex align-items-center gap-3">
-									<span class="d-flex">
-										<i class="ti ti-layout-grid"></i>
-									</span>
+									<span class="d-flex"><i class="ti ti-layout-grid"></i></span>
 									<span class="hide-menu">Data Tabel</span>
 								</div>
-
 							</a>
-							<ul aria-expanded="false" class="collapse first-level">
+							<ul class="collapse first-level">
 								<li class="sidebar-item">
-									<a class="sidebar-link justify-content-between" href="<?= base_url('admin/Data-guru');?>">
+									<a class="sidebar-link" href="<?= base_url('admin/Data-guru'); ?>">
 										<div class="d-flex align-items-center gap-3">
 											<div class="round-16 d-flex align-items-center justify-content-center">
 												<i class="ti ti-circle"></i>
@@ -85,7 +87,7 @@
 									</a>
 								</li>
 								<li class="sidebar-item">
-									<a class="sidebar-link justify-content-between" href="#">
+									<a class="sidebar-link" href="#">
 										<div class="d-flex align-items-center gap-3">
 											<div class="round-16 d-flex align-items-center justify-content-center">
 												<i class="ti ti-circle"></i>
@@ -95,7 +97,7 @@
 									</a>
 								</li>
 								<li class="sidebar-item">
-									<a class="sidebar-link justify-content-between" href="#">
+									<a class="sidebar-link" href="#">
 										<div class="d-flex align-items-center gap-3">
 											<div class="round-16 d-flex align-items-center justify-content-center">
 												<i class="ti ti-circle"></i>
@@ -106,6 +108,8 @@
 								</li>
 							</ul>
 						</li>
+
+
 						<li class="sidebar-item">
 							<a class="sidebar-link justify-content-between has-arrow" href="javascript:void(0)"
 								aria-expanded="false">
@@ -259,8 +263,8 @@
 				<div class="container-fluid">
 					<!--  Row 1 -->
 					<div class="row">
-						<?= $this->renderSection('content');?>
-						
+						<?= $this->renderSection('content'); ?>
+
 					</div>
 					<div class="py-6 px-6 text-center">
 						<?= $this->include('layout/footer'); ?>
@@ -271,15 +275,16 @@
 	</div>
 
 
-	<script src="<?= base_url('libs/jquery/dist/jquery.min.js');?>"></script>
-	<script src="<?= base_url('libs/bootstrap/dist/js/bootstrap.bundle.min.js');?>"></script>
-	<script src="<?= base_url('js/sidebarmenu.js');?>"></script>
-	<script src="<?= base_url('js/app.min.js');?>"></script>
-	<script src="<?= base_url('libs/apexcharts/dist/apexcharts.min.js');?>"></script>
-	<script src="<?= base_url('libs/simplebar/dist/simplebar.js');?>"></script>
-	<script src="<?= base_url('js/dashboard.js');?>"></script>
+	<script src="<?= base_url('libs/jquery/dist/jquery.min.js'); ?>"></script>
+	<script src="<?= base_url('libs/bootstrap/dist/js/bootstrap.bundle.min.js'); ?>"></script>
+	<script src="<?= base_url('js/sidebarmenu.js'); ?>"></script>
+	<script src="<?= base_url('js/app.min.js'); ?>"></script>
+	<script src="<?= base_url('libs/apexcharts/dist/apexcharts.min.js'); ?>"></script>
+	<script src="<?= base_url('libs/simplebar/dist/simplebar.js'); ?>"></script>
+	<script src="<?= base_url('js/dashboard.js'); ?>"></script>
 	<!-- solar icons -->
 	<script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+	<!-- <script src="<?= base_url('dist/js/adminlte.js'); ?>"></script> -->
 </body>
 
 </html>
