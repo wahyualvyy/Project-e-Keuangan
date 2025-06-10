@@ -77,7 +77,7 @@
 							</a>
 							<ul class="collapse first-level">
 								<li class="sidebar-item">
-									<a class="sidebar-link" href="<?= base_url('admin/Data-guru'); ?>">
+									<a class="sidebar-link" href="<?= base_url('admin/data-guru'); ?>">
 										<div class="d-flex align-items-center gap-3">
 											<div class="round-16 d-flex align-items-center justify-content-center">
 												<i class="ti ti-circle"></i>
@@ -87,7 +87,7 @@
 									</a>
 								</li>
 								<li class="sidebar-item">
-									<a class="sidebar-link" href="#">
+									<a class="sidebar-link" href="<?= base_url('admin/data-siswa');?>">
 										<div class="d-flex align-items-center gap-3">
 											<div class="round-16 d-flex align-items-center justify-content-center">
 												<i class="ti ti-circle"></i>
@@ -97,7 +97,7 @@
 									</a>
 								</li>
 								<li class="sidebar-item">
-									<a class="sidebar-link" href="#">
+									<a class="sidebar-link" href="<?= base_url('admin/data-kelas');?>">
 										<div class="d-flex align-items-center gap-3">
 											<div class="round-16 d-flex align-items-center justify-content-center">
 												<i class="ti ti-circle"></i>
@@ -108,8 +108,54 @@
 								</li>
 							</ul>
 						</li>
-
-
+						<li class="sidebar-item">
+							<a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
+								<div class="d-flex align-items-center gap-3">
+									<span class="d-flex"><i class="ti ti-moneybag-edit"></i></span>
+									<span class="hide-menu">Data Kas</span>
+								</div>
+							</a>
+							<ul class="collapse first-level">
+								<li class="sidebar-item">
+									<a class="sidebar-link" href="<?= base_url('admin/data-kas-spp'); ?>">
+										<div class="d-flex align-items-center gap-3">
+											<div class="round-16 d-flex align-items-center justify-content-center">
+												<i class="ti ti-circle"></i>
+											</div>
+											<span class="hide-menu">Data Kas SPP</span>
+										</div>
+									</a>
+									<a class="sidebar-link" href="<?= base_url('admin/data-kas-gaji'); ?>">
+										<div class="d-flex align-items-center gap-3">
+											<div class="round-16 d-flex align-items-center justify-content-center">
+												<i class="ti ti-circle"></i>
+											</div>
+											<span class="hide-menu">Data Kas Gaji</span>
+										</div>
+									</a>
+								</li>
+								<!-- <li class="sidebar-item">
+									<a class="sidebar-link" href="<?= base_url('admin/data-siswa');?>">
+										<div class="d-flex align-items-center gap-3">
+											<div class="round-16 d-flex align-items-center justify-content-center">
+												<i class="ti ti-circle"></i>
+											</div>
+											<span class="hide-menu">Data Siswa</span>
+										</div>
+									</a>
+								</li>
+								<li class="sidebar-item">
+									<a class="sidebar-link" href="<?= base_url('admin/data-kelas');?>">
+										<div class="d-flex align-items-center gap-3">
+											<div class="round-16 d-flex align-items-center justify-content-center">
+												<i class="ti ti-circle"></i>
+											</div>
+											<span class="hide-menu">Data Kelas</span>
+										</div>
+									</a>
+								</li> -->
+							</ul>
+						</li>
 						<li class="sidebar-item">
 							<a class="sidebar-link justify-content-between has-arrow" href="javascript:void(0)"
 								aria-expanded="false">
@@ -233,8 +279,8 @@
 							<li class="nav-item dropdown">
 								<a class="nav-link " href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
 									aria-expanded="false">
-									<img src="https://www.adobe.com/id_id/creativecloud/design/discover/media_17770be5de64c9b159b23a7da870ae0bd5bc0f400.jpeg?width=1200&format=pjpg&optimize=medium"
-										alt="" width="35" height="35" class="rounded-circle">
+									<img src="<?= base_url('assets/img/photo-profile.jpg');?>"
+										alt="foto.jpg" width="40" class="rounded-circle">
 								</a>
 								<div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up"
 									aria-labelledby="drop2">
@@ -264,7 +310,6 @@
 					<!--  Row 1 -->
 					<div class="row">
 						<?= $this->renderSection('content'); ?>
-
 					</div>
 					<div class="py-6 px-6 text-center">
 						<?= $this->include('layout/footer'); ?>

@@ -5,8 +5,8 @@
         <div class="card-body">
             <div class="d-md-flex align-items-center">
                 <div>
-                    <h4 class="card-title">Tabel Data Guru</h4>
-                    <a href="<?= base_url('admin/input-guru'); ?>">
+                    <h4 class="card-title">Tabel Data Siswa</h4>
+                    <a href="<?= base_url('admin/input-siswa'); ?>">
                         <button type="button" class="btn btn-secondary card-subtitle m-1 text-white">Tambah
                             Data</button>
                     </a>
@@ -30,16 +30,16 @@
                                 Nama
                             </th>
                             <th scope="col" class="px-0 text-muted">
-                                NIP/NIK
+                                NIS
                             </th>
                             <th scope="col" class="px-0 text-muted">
                                 JK
                             </th>
                             <th scope="col" class="px-0 text-muted">
-                                Alamat
+                                Telepon
                             </th>
                             <th scope="col" class="px-0 text-muted">
-                                Telepon
+                                Wali
                             </th>
                             <th scope="col" class="px-0 text-muted">
                                 Status
