@@ -62,7 +62,7 @@
 						<li class="sidebar-item <?= ($title === 'Dashboard Admin') ? 'active' : ''; ?>">
 							<a class="sidebar-link" href="<?= base_url('admin/dashboard'); ?>" aria-expanded="false">
 								<i class="ti ti-home"></i>
-								<span class="hide-menu">Dashboard</span>
+								<span class="hide-menu">Laporan Keuangan</span>
 							</a>
 						</li>
 						<!-- ---------------------------------- -->
@@ -131,6 +131,14 @@
 												<i class="ti ti-circle"></i>
 											</div>
 											<span class="hide-menu">Data Kas Gaji</span>
+										</div>
+									</a>
+									<a class="sidebar-link" href="<?= base_url('admin/data-kas-pendaftaran'); ?>">
+										<div class="d-flex align-items-center gap-3">
+											<div class="round-16 d-flex align-items-center justify-content-center">
+												<i class="ti ti-circle"></i>
+											</div>
+											<span class="hide-menu">Data Kas Pendaftaran</span>
 										</div>
 									</a>
 								</li>

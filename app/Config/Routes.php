@@ -13,6 +13,12 @@ $routes->group('admin', function($routes) {
     $routes->get('input-siswa', 'AdminController::InputSiswa');
     $routes->get('data-kelas', 'AdminController::DataKelas');
     $routes->get('input-kelas', 'AdminController::InputKelas');
+    $routes->get('data-kas-spp', 'AdminController::DataKasSpp');
+    $routes->get('input-data-kas-spp', 'AdminController::InputKasSpp');
+    $routes->get('data-kas-pendaftaran', 'AdminController::DataKasPendaftaran');
+    $routes->get('input-data-kas-pendaftaran', 'AdminController::InputKasPendaftaran');
+    $routes->get('data-kas-gaji', 'AdminController::DataKasGaji');
+    $routes->get('input-data-kas-gaji', 'AdminController::InputKasGaji');
 });
 
 

@@ -56,4 +56,46 @@ class AdminController extends BaseController
         ];
         return view( 'admin/input-kelas', $data);
     }
+    public function DataKasSpp()
+    {
+        $data = [
+            "title" => "Data Kas SPP"
+        ];
+        return view( 'admin/data-kas-spp', $data);
+    }
+    public function InputKasSpp()
+    {
+        $data = [
+            "title" => "Input Data Kas SPP"
+        ];
+        return view( 'admin/input-data-kas-spp', $data);
+    }
+    public function DataKasPendaftaran()
+    {
+        $data = [
+            "title" => "Data Kas Pendaftaran"
+        ];
+        return view( 'admin/data-kas-pendaftaran', $data);
+    }
+    public function InputKasPendaftaran()
+    {
+        $data = [
+            "title" => "Input Data Kas Pendaftaran"
+        ];
+        return view( 'admin/input-data-kas-pendaftaran', $data);
+    }
+    public function DataKasGaji()
+    {
+        $data = [
+            "title" => "Data Kas Gaji"
+        ];
+        return view( 'admin/data-kas-gaji', $data);
+    }
+    public function InputKasGaji()
+    {
+        $data = [
+            "title" => "Input Data Kas Gaji"
+        ];
+        return view( 'admin/input-data-kas-gaji', $data);
+    }
 }
