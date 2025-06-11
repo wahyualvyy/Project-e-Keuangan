@@ -5,17 +5,14 @@
         <div class="card-body">
             <div class="d-md-flex align-items-center">
                 <div>
-                    <h4 class="card-title">Tabel Data Kas Pendaftaran</h4>
-                    <a href="<?= base_url('admin/input-data-kas-pendaftaran'); ?>">
-                        <button type="button" class="btn btn-secondary card-subtitle m-1 text-white">Tambah
-                            Data</button>
-                    </a>
+                    <h4 class="card-title">Data Pembayaran Uang Semester</h4>
                 </div>
                 <div class="ms-auto mt-3 mt-md-0">
                     <select class="form-select theme-select border-0" aria-label="Default select example">
-                        <option value="1">March 2025</option>
-                        <option value="2">March 2025</option>
-                        <option value="3">March 2025</option>
+                        <option selected>Pilih Kelas</option>
+                        <option value="1">Kelas 7</option>
+                        <option value="2">Kelas 8</option>
+                        <option value="3">Kelas 9</option>
                     </select>
                 </div>
             </div>
@@ -30,10 +27,10 @@
                                 Tahun Ajaran
                             </th>
                             <th scope="col" class="px-0 text-muted">
-                                Jurusan
+                                Jumlah Uang Semester
                             </th>
                             <th scope="col" class="px-0 text-muted">
-                                Jumlah Uang Ganjil/Genap
+                                Status
                             </th>
                             <th scope="col" class="px-0 text-muted text-center">
                                 Aksi
@@ -53,7 +50,9 @@
                                 </div>
                             </td>
                             <td class="px-0">Elite Admin</td>
-                            <td class="px-0">Elite Admin</td>
+                            </td>
+                            <td class="px-0">
+                                <span class="badge bg-danger">Belum Bayar</span>
                             </td>
                             <td class="px-0 text-dark fw-medium text-center">
                                 <div class="dropdown">
@@ -64,13 +63,13 @@
                                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="year1-dropdown">
                                         <li>
                                             <a class="dropdown-item" href="javascript:void(0)">
-                                                <i class="ti ti-edit fs-6 mb-0"></i>
-                                                <span class="mb-0 fs-3">Edit</span></a>
+                                                <i class="ti ti-eye fs-6 mb-0"></i>
+                                                <span class="mb-0 fs-3">Detail</span></a>
                                         </li>
                                         <li>
                                             <a class="dropdown-item" href="javascript:void(0)">
-                                                <i class="ti ti-eraser-off fs-6 mb-0"></i>
-                                                <span class="mb-0 fs-3">Delete</span></a></a>
+                                                <i class="ti ti-cash-banknote fs-6 mb-0"></i>
+                                                <span class="mb-0 fs-3">Bayar</span></a></a>
                                         </li>
                                     </ul>
                                 </div>

@@ -18,23 +18,23 @@
 		data-sidebar-position="fixed" data-header-position="fixed">
 
 		<!--  App Topstrip -->
-		<div class="preloader flex-column justify-content-center align-items-center">
+		<!-- <div class="preloader flex-column justify-content-center align-items-center">
 			<img class="animation__shake"
 				src="https://www.adobe.com/id_id/creativecloud/design/discover/media_17770be5de64c9b159b23a7da870ae0bd5bc0f400.jpeg?width=1200&format=pjpg&optimize=medium"
 				alt="Logoaisyiah" height="60" width="60" />
-		</div>
-		<div class="app-topstrip bg-dark py-6 px-3 w-100 d-lg-flex align-items-center justify-content-between">
+		</div> -->
+		<div class="app-topstrip bg-subtle py-6 px-3 w-100 d-lg-flex align-items-center justify-content-between">
 			<div class="d-flex align-items-center justify-content-center gap-5 mb-2 mb-lg-0">
 				<a class="d-flex justify-content-center" href="#">
 					<img class="rounded-circle"
-						src="https://www.adobe.com/id_id/creativecloud/design/discover/media_17770be5de64c9b159b23a7da870ae0bd5bc0f400.jpeg?width=1200&format=pjpg&optimize=medium"
-						alt="" width="60px">
+						src="<?= base_url('assets/img/Logo-SMK-Bisa.png');?>"
+						alt="" width="70px">
 				</a>
 
 
 			</div>
 			<div class="d-lg-flex align-items-center gap-2">
-				<h3 class="text-white mb-2 mb-lg-0 fs-5 text-center">Website Keuangan Sekolah</h3>
+				<h3 class="text-back mb-2 mb-lg-0 fs-5 text-center">Website Keuangan Sekolah SMK HASYIM ASY'ARI</h3>
 				<div class="d-flex align-items-center justify-content-center gap-2">
 				</div>
 			</div>
@@ -133,12 +133,12 @@
 											<span class="hide-menu">Data Kas Gaji</span>
 										</div>
 									</a>
-									<a class="sidebar-link" href="<?= base_url('admin/data-kas-pendaftaran'); ?>">
+									<a class="sidebar-link" href="<?= base_url('admin/data-kas-semester'); ?>">
 										<div class="d-flex align-items-center gap-3">
 											<div class="round-16 d-flex align-items-center justify-content-center">
 												<i class="ti ti-circle"></i>
 											</div>
-											<span class="hide-menu">Data Kas Pendaftaran</span>
+											<span class="hide-menu">Data Kas Semester</span>
 										</div>
 									</a>
 								</li>
@@ -177,42 +177,22 @@
 							</a>
 							<ul aria-expanded="false" class="collapse first-level">
 								<li class="sidebar-item">
-									<a class="sidebar-link justify-content-between" href="#">
+									<a class="sidebar-link justify-content-between" href="<?= base_url('admin/kas-semester');?>">
 										<div class="d-flex align-items-center gap-3">
 											<div class="round-16 d-flex align-items-center justify-content-center">
 												<i class="ti ti-circle"></i>
 											</div>
-											<span class="hide-menu">Pendaftaran</span>
+											<span class="hide-menu">Semester</span>
 										</div>
 									</a>
 								</li>
 								<li class="sidebar-item">
-									<a class="sidebar-link justify-content-between" href="#">
+									<a class="sidebar-link justify-content-between" href="<?= base_url('admin/kas-spp');?>">
 										<div class="d-flex align-items-center gap-3">
 											<div class="round-16 d-flex align-items-center justify-content-center">
 												<i class="ti ti-circle"></i>
 											</div>
 											<span class="hide-menu">Uang SPP</span>
-										</div>
-									</a>
-								</li>
-								<li class="sidebar-item">
-									<a class="sidebar-link justify-content-between" href="#">
-										<div class="d-flex align-items-center gap-3">
-											<div class="round-16 d-flex align-items-center justify-content-center">
-												<i class="ti ti-circle"></i>
-											</div>
-											<span class="hide-menu">Uang Ujian</span>
-										</div>
-									</a>
-								</li>
-								<li class="sidebar-item">
-									<a class="sidebar-link justify-content-between" href="#">
-										<div class="d-flex align-items-center gap-3">
-											<div class="round-16 d-flex align-items-center justify-content-center">
-												<i class="ti ti-circle"></i>
-											</div>
-											<span class="hide-menu">Jenis Transaksi</span>
 										</div>
 									</a>
 								</li>

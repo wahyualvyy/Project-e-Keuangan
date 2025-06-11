@@ -2,7 +2,7 @@
 <?= $this->section('content'); ?>
 <div class="card">
     <div class="card-body">
-        <h5 class="card-title fw-semibold mb-4">Tambah Data Kas Pendaftaran</h5>
+        <h5 class="card-title fw-semibold mb-4">Tambah Data Kas Semester</h5>
         <hr>
         <div class="row">
             <div class="col-lg-6">
@@ -50,9 +50,9 @@
             </div>
             <div class="col-lg-12">
                 <div class="mt-3 d-flex justify-content-center">
-                    <a href="<?= base_url('admin/data-kas-pendaftaran'); ?>">
+                    <a href="<?= base_url('admin/data-kas-semester'); ?>">
                         <button type="button" class="btn btn-secondary card-subtitle m-1 text-white">Tambah
-                            Data Kas Pendaftaran</button>
+                            Data Kas Semester</button>
                     </a>
                 </div>
             </div>

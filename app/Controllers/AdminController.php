@@ -19,83 +19,111 @@ class AdminController extends BaseController
         $data = [
             "title" => "Data Guru"
         ];
-        return view( 'admin/data-guru', $data);
+        return view( 'admin/data-tabel/data-guru', $data);
     }
     public function InputGuru()
     {
         $data = [
             "title" => "Input Data Guru"
         ];
-        return view( 'admin/input-guru', $data);
+        return view( 'admin/data-tabel/input-guru', $data);
     }
     public function DataSiswa()
     {
         $data = [
             "title" => "Data Siswa"
         ];
-        return view( 'admin/data-siswa', $data);
+        return view( 'admin/data-tabel/data-siswa', $data);
     }
     public function InputSiswa()
     {
         $data = [
             "title" => "Input Data Siswa"
         ];
-        return view( 'admin/input-siswa', $data);
+        return view( 'admin/data-tabel/input-siswa', $data);
     }
     public function DataKelas()
     {
         $data = [
             "title" => "Data Kelas"
         ];
-        return view( 'admin/data-kelas', $data);
+        return view( 'admin/data-tabel/data-kelas', $data);
     }
     public function InputKelas()
     {
         $data = [
             "title" => "Input Data Kelas"
         ];
-        return view( 'admin/input-kelas', $data);
+        return view( 'admin/data-tabel/input-kelas', $data);
     }
     public function DataKasSpp()
     {
         $data = [
             "title" => "Data Kas SPP"
         ];
-        return view( 'admin/data-kas-spp', $data);
+        return view( 'admin/data-kas/data-kas-spp', $data);
     }
     public function InputKasSpp()
     {
         $data = [
             "title" => "Input Data Kas SPP"
         ];
-        return view( 'admin/input-data-kas-spp', $data);
+        return view( 'admin/data-kas/input-data-kas-spp', $data);
     }
-    public function DataKasPendaftaran()
+    public function DataKasSemester()
     {
         $data = [
-            "title" => "Data Kas Pendaftaran"
+            "title" => "Data Kas Semester"
         ];
-        return view( 'admin/data-kas-pendaftaran', $data);
+        return view( 'admin/data-kas/data-kas-semester', $data);
     }
-    public function InputKasPendaftaran()
+    public function InputKasSemester()
     {
         $data = [
-            "title" => "Input Data Kas Pendaftaran"
+            "title" => "Input Data Kas Semester"
         ];
-        return view( 'admin/input-data-kas-pendaftaran', $data);
+        return view( 'admin/data-kas/input-data-kas-semester', $data);
     }
     public function DataKasGaji()
     {
         $data = [
             "title" => "Data Kas Gaji"
         ];
-        return view( 'admin/data-kas-gaji', $data);
+        return view( 'admin/data-kas/data-kas-gaji', $data);
     }
     public function InputKasGaji()
     {
         $data = [
             "title" => "Input Data Kas Gaji"
         ];
-        return view( 'admin/input-data-kas-gaji', $data);
+        return view( 'admin/data-kas/input-data-kas-gaji', $data);
+    }
+    public function KasSpp()
+    {
+        $data = [
+            "title" => "Kas SPP"
+        ];
+        return view( 'admin/kas-masuk/kas-spp', $data);
+    }
+    public function KasSppDetail()
+    {
+        $data = [
+            "title" => "Kas SPP Detail"
+        ];
+        return view( 'admin/kas-masuk/kas-spp-detail', $data);
+    }
+    public function KasSemester()
+    {
+        $data = [
+            "title" => "Kas Semester"
+        ];
+        return view( 'admin/kas-masuk/kas-semester', $data);
+    }
+    public function KasSemesterDetail()
+    {
+        $data = [
+            "title" => "Kas Semester Detail"
+        ];
+        return view( 'admin/kas-masuk/kas-semester-detail', $data);
     }
 }

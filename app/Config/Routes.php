@@ -15,10 +15,14 @@ $routes->group('admin', function($routes) {
     $routes->get('input-kelas', 'AdminController::InputKelas');
     $routes->get('data-kas-spp', 'AdminController::DataKasSpp');
     $routes->get('input-data-kas-spp', 'AdminController::InputKasSpp');
-    $routes->get('data-kas-pendaftaran', 'AdminController::DataKasPendaftaran');
-    $routes->get('input-data-kas-pendaftaran', 'AdminController::InputKasPendaftaran');
+    $routes->get('data-kas-semester', 'AdminController::DataKasSemester');
+    $routes->get('input-data-kas-semester', 'AdminController::InputKasSemester');
     $routes->get('data-kas-gaji', 'AdminController::DataKasGaji');
     $routes->get('input-data-kas-gaji', 'AdminController::InputKasGaji');
+    $routes->get('kas-spp', 'AdminController::KasSpp');
+    $routes->get('kas-spp/detail', 'AdminController::KasSppDetail');
+    $routes->get('kas-semester', 'AdminController::KasSemester');
+    $routes->get('kas-semester/detail', 'AdminController::KasSemesterDetail');
 });
 
 
