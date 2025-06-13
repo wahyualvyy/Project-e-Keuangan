@@ -126,4 +126,39 @@ class AdminController extends BaseController
         ];
         return view( 'admin/kas-masuk/kas-semester-detail', $data);
     }
+    public function KasPemasukan()
+    {
+        $data = [
+            "title" => "Data Kas Pemasukan"
+        ];
+        return view( 'admin/kas-masuk/kas-pemasukan', $data);
+    }
+    public function InputKasPemasukan()
+    {
+        $data = [
+            "title" => "Input Data Kas Pemasukan"
+        ];
+        return view( 'admin/kas-masuk/input-kas-pemasukan', $data);
+    }
+    public function KasGaji()
+    {
+        $data = [
+            "title" => "Kas Gaji"
+        ];
+        return view( 'admin/kas-keluar/kas-gaji', $data);
+    }
+    public function KasPengeluaran()
+    {
+        $data = [
+            "title" => "Data Kas Pengeluaran"
+        ];
+        return view( 'admin/kas-keluar/kas-pengeluaran', $data);
+    }
+    public function InputKasPengeluaran()
+    {
+        $data = [
+            "title" => "Input Data Kas Pengeluaran"
+        ];
+        return view( 'admin/kas-keluar/input-kas-pengeluaran', $data);
+    }
 }

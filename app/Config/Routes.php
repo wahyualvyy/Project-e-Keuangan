@@ -23,6 +23,12 @@ $routes->group('admin', function($routes) {
     $routes->get('kas-spp/detail', 'AdminController::KasSppDetail');
     $routes->get('kas-semester', 'AdminController::KasSemester');
     $routes->get('kas-semester/detail', 'AdminController::KasSemesterDetail');
+    $routes->get('kas-pemasukan', 'AdminController::KasPemasukan');
+    $routes->get('input-kas-pemasukan', 'AdminController::InputKasPemasukan');
+    $routes->get('kas-gaji', 'AdminController::KasGaji');
+    $routes->get('kas-gaji/detail', 'AdminController::KasGajiDetail');
+    $routes->get('kas-pengeluaran', 'AdminController::KasPengeluaran');
+    $routes->get('input-kas-pengeluaran', 'AdminController::InputKasPengeluaran');
 });
 
 

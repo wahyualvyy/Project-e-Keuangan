@@ -1,2 +1,1 @@
-<p class="mb-0 fs-4">Design and Developed by <a href="#" class="pe-1 text-primary text-decoration-underline">Aslab
-        Informatika</a> Distributed by <a href="https://themewagon.com" target="_blank">Boostrap 5</a></p>
+<p class="mb-0 fs-4">Design and Developed by <a href="#" class="pe-1 text-primary text-decoration-underline">Muhamamd Alex</a> Distributed by <a href="https://themewagon.com" target="_blank">Boostrap 5</a></p>
