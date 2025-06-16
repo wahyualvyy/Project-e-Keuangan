@@ -1,0 +1,13 @@
+CRITICAL - 2025-06-16 05:31:34 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/kas-masuk/kas-semester-detail.php"
+[Method: GET, Route: admin/kas-semester/detail]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/kas-masuk/kas-semester-detail.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/kas-masuk/kas-semester-detail', [], true)
+ 3 APPPATH\Controllers\AdminController.php(127): view('admin/kas-masuk/kas-semester-detail', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\AdminController->KasSemesterDetail()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\e-keuangan\\public\\index.php')

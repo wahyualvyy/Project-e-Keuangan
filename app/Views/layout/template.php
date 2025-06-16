@@ -34,7 +34,7 @@
 
 			</div>
 			<div class="d-lg-flex align-items-center gap-2">
-				<h3 class="text-back mb-2 mb-lg-0 fs-5 text-center">Website Keuangan Sekolah SMK HASYIM ASY'ARI</h3>
+				<h3 class="text-back mb-2 mb-lg-0 fs-5 text-center">Sekolah Menengah Kejuruan HASYIM ASY'ARI</h3>
 				<div class="d-flex align-items-center justify-content-center gap-2">
 				</div>
 			</div>
@@ -273,15 +273,10 @@
 								<div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up"
 									aria-labelledby="drop2">
 									<div class="message-body">
-										<a href="javascript:void(0)"
+										<a href="<?= base_url('admin/profile');?>"
 											class="d-flex align-items-center gap-2 dropdown-item">
 											<i class="ti ti-user fs-6"></i>
-											<p class="mb-0 fs-3">My Profile</p>
-										</a>
-										<a href="javascript:void(0)"
-											class="d-flex align-items-center gap-2 dropdown-item">
-											<i class="ti ti-user-share fs-6"></i>
-											<p class="mb-0 fs-3">Register</p>
+											<p class="mb-0 fs-3">Profile Sekolah</p>
 										</a>
 										<a href="./authentication-login.html"
 											class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>

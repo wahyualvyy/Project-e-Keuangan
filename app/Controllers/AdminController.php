@@ -14,6 +14,13 @@ class AdminController extends BaseController
         ];
         return view( 'admin/dashboard', $data);
     }
+    public function profile()
+    {
+        $data = [
+            "title" => "Profile Sekolah"
+        ];
+        return view( 'admin/profile', $data);
+    }
     public function DataGuru()
     {
         $data = [
@@ -146,6 +153,13 @@ class AdminController extends BaseController
             "title" => "Kas Gaji"
         ];
         return view( 'admin/kas-keluar/kas-gaji', $data);
+    }
+    public function KasGajiDetail()
+    {
+        $data = [
+            "title" => "Kas Gaji Detail"
+        ];
+        return view( 'admin/kas-keluar/kas-gaji-detail', $data);
     }
     public function KasPengeluaran()
     {
