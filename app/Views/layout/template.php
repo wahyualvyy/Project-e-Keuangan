@@ -60,7 +60,7 @@
 							<span class="hide-menu">Main Menu</span>
 						</li>
 						<li class="sidebar-item <?= ($title === 'Dashboard Admin') ? 'active' : ''; ?>">
-							<a class="sidebar-link" href="<?= base_url('admin/dashboard'); ?>" aria-expanded="false">
+							<a class="sidebar-link" href="<?= base_url('admin/'); ?>" aria-expanded="false">
 								<i class="ti ti-home"></i>
 								<span class="hide-menu">Laporan Keuangan</span>
 							</a>

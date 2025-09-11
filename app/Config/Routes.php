@@ -6,7 +6,7 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 $routes->group('admin', function($routes) {
-    $routes->get('dashboard', 'AdminController::index');
+    $routes->get('/', 'AdminController::index');
     $routes->get('profile', 'AdminController::profile');
     $routes->get('data-guru', 'AdminController::DataGuru');
     $routes->get('input-guru', 'AdminController::InputGuru');
