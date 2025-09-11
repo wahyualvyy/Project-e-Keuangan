@@ -4,30 +4,26 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Kelas extends Migration
+class Gaji extends Migration
 {
     public function up()
     {
         $this->forge->addField([
-            'id_kelas' => [
+            'id_gaji' => [
                 'type' => 'INT',
                 'constraint' => 11,
                 'unsigned' => true,
                 'auto_increment' => true,
             ],
-            'jurusan' => [
-                'type' => 'VARCHAR',
-                'constraint' => 100,
-            ],
-            'nama_wali' => [
+            'jam_mengajar'=> [
                 'type' => 'VARCHAR',
                 'constraint' => 50,
             ],
-            'keterangan'=> [
-                'type' => 'TEXT',
-                'null' => true,
+            'nominal' => [
+                'type' => 'INT',
+                'constraint' => 11,
             ],
-            'id_guru'=> [
+             'id_guru' => [
                 'type' => 'INT',
                 'constraint' => 11,
                 'unsigned' => true,
@@ -41,13 +37,13 @@ class Kelas extends Migration
                 'null' => true,
             ]
         ]);
-        $this->forge->addKey('id_kelas', true);
+        $this->forge->addKey('id_gaji', true);
         $this->forge->addForeignKey('id_guru', 'guru', 'id_guru', 'CASCADE', 'CASCADE');
-        $this->forge->createTable('kelas');
+        $this->forge->createTable('gaji');
     }
 
     public function down()
     {
-        $this->forge->dropTable("kelas", true);
+        $this->forge->dropTable("gaji", true);
     }
 }

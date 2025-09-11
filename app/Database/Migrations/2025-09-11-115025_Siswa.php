@@ -15,6 +15,16 @@ class Siswa extends Migration
                 'unsigned' => true,
                 'auto_increment' => true,
             ],
+            'id_guru' => [
+                'type' => 'INT',
+                'constraint' => 11,
+                'unsigned' => true,
+            ],
+            'id_kelas' => [
+                'type' => 'INT',
+                'constraint' => 11,
+                'unsigned' => true,
+            ],
             'nama_siswa' => [
                 'type' => 'VARCHAR',
                 'constraint' => 100,
@@ -31,14 +41,10 @@ class Siswa extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => 50,
             ],
-            'jenis_kelamin'=> [
+            'jenis_kelamin' => [
                 'type' => 'ENUM',
                 'constraint' => ['Laki-laki', 'Perempuan'],
                 'default' => 'Laki-laki',
-            ],
-            'nama_wali'=> [
-                'type'=> 'VARCHAR',
-                'constraint' =>50,
             ],
             'tempat_lahir' => [
                 'type' => 'VARCHAR',
@@ -60,13 +66,8 @@ class Siswa extends Migration
             ],
             'status' => [
                 'type' => 'ENUM',
-                'constraint' => ['Aktif', 'Tidak Aktif' , 'Cuti'],
+                'constraint' => ['Aktif', 'Tidak Aktif', 'Cuti'],
                 'default' => 'Aktif',
-            ],
-            'id_guru' => [
-                'type' => 'INT',
-                'constraint' => 11,
-                'unsigned' => true,
             ],
             'created_at' => [
                 'type' => 'DATETIME',
@@ -80,6 +81,7 @@ class Siswa extends Migration
 
         $this->forge->addKey('id_siswa', true);
         $this->forge->addForeignKey('id_guru', 'guru', 'id_guru', 'CASCADE', 'CASCADE');
+        $this->forge->addForeignKey('id_kelas', 'kelas', 'id_kelas', 'CASCADE', 'CASCADE');
         $this->forge->createTable('siswa');
     }
 
