@@ -9,35 +9,29 @@ class Semester extends Migration
     public function up()
     {
         $this->forge->addField([
-            'id' => [
+            'id_semester' => [
                 'type' => 'INT',
                 'constraint' => 11,
                 'unsigned' => true,
                 'auto_increment' => true,
             ],
-            'id_siswa' => [
+            'id_jurusan' => [
                 'type' => 'INT',
-                'constraint' => 11,
+                'constraint'=> 11,
                 'unsigned' => true,
             ],
-            'mulai_tahun_ajaran' => [
-                'type' => 'YEAR'
-            ],
-            'sampai_tahun_ajaran'=> [
-                'type' => 'YEAR'
-            ],
-            'jurusan' => [
+            'tahun_ajaran' => [
                 'type' => 'VARCHAR',
-                'constraint' => 50,
+                'constraint' => 9,
             ],
-            'nominal'=> [
+            'biaya_semester'=> [
                 'type' => 'INT',
                 'constraint' => 11,
             ],
             'status' => [
                 'type' => 'ENUM',
                 'constraint' => ['Aktif', 'Tidak Aktif'],
-                'default' => 'nonaktif',
+                'default' => 'Tidak Aktif',
             ],
             'created_at' => [
                 'type' => 'DATETIME',
@@ -49,8 +43,8 @@ class Semester extends Migration
             ]
         ]);
 
-        $this->forge->addKey('id', true);
-        $this->forge->addForeignKey('id_siswa', 'siswa', 'id_siswa', 'CASCADE', 'CASCADE');
+        $this->forge->addKey('id_semester', true);
+        $this->forge->addForeignKey('id_jurusan', 'jurusan', 'id_jurusan', 'CASCADE', 'CASCADE');
         $this->forge->createTable('semester');
     }
 

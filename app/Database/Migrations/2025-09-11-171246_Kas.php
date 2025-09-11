@@ -9,7 +9,7 @@ class Kas extends Migration
     public function up()
     {
         $this->forge->addField([
-            'id' => [
+            'id_kas' => [
                 'type' => 'INT',
                 'constraint' => 11,
                 'unsigned' => true,
@@ -23,20 +23,10 @@ class Kas extends Migration
             'tanggal' => [
                 'type' => 'DATE',
             ],
-            'nominal_total' => [
-                'type' => 'INT',
-                'constraint' => 11,
+            'nominal' => [
+                'type' => 'DECIMAL',
+                'constraint' => 12, 2
             ],
-            'nominal_masuk'=> [
-                'type' => 'INT',
-                'constraint' => 11,
-                'null' => true,
-            ],
-            'nominal_keluar' => [
-                'type' => 'INT',
-                'constraint' => 11,
-                'null' => true,
-                ],
             'keterangan' => [
                 'type' => 'TEXT',
                 'null' => true,
@@ -51,7 +41,7 @@ class Kas extends Migration
             ]
         ]);
 
-        $this->forge->addKey('id', true);
+        $this->forge->addKey('id_kas', true);
         $this->forge->createTable('kas');
     }
 

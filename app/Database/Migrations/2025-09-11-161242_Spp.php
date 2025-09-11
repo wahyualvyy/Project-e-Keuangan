@@ -20,22 +20,32 @@ class Spp extends Migration
                 'constraint' => 11,
                 'unsigned' => true,
             ],
-            'tahun_mulai' => [
-                'type' => 'VARCHAR',
-                'constraint' => 4,
+            'tanggal_bayar'=> [ 
+                'type' => 'DATE',
+                'null' => true
             ],
-            'tahun_akhir' => [
+            'bulan'=> [
+                'type'=> 'TINYINT',
+                'null' => true
+            ],
+            'tahun'=> [
+                'type' => 'YEAR',
+                'null' => true
+            ],
+            'tahun_ajaran'=> [
                 'type' => 'VARCHAR',
-                'constraint' => 4,
+                'constraint' => 9,
+                'null' => true
             ],
             'nominal' => [
-                'type' => 'INT',
-                'constraint' => 11,
+                'type' => 'DECIMAL',
+                'constraint' => 12, 2
             ],
             'status'=> [
                 'type' => 'ENUM',
                 'constraint' => ['Lunas', 'Belum Lunas'],
                 'default' => 'Belum Lunas',
+                'null' => true
             ],
             'created_at' => [
                 'type' => 'DATETIME',

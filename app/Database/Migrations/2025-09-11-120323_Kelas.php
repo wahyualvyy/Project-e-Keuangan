@@ -15,22 +15,19 @@ class Kelas extends Migration
                 'unsigned' => true,
                 'auto_increment' => true,
             ],
-            'jurusan' => [
-                'type' => 'VARCHAR',
-                'constraint' => 100,
-            ],
-            'nama_wali' => [
-                'type' => 'VARCHAR',
-                'constraint' => 50,
-            ],
-            'keterangan'=> [
-                'type' => 'TEXT',
-                'null' => true,
+            'id_jurusan' => [
+                'type'=> 'INT',
+                'constraint' => 11,
+                'unsigned' => true,
             ],
             'id_guru'=> [
                 'type' => 'INT',
                 'constraint' => 11,
                 'unsigned' => true,
+            ],
+            'keterangan'=> [
+                'type' => 'TEXT',
+                'null' => true,
             ],
             'created_at' => [
                 'type' => 'DATETIME',
@@ -42,6 +39,7 @@ class Kelas extends Migration
             ]
         ]);
         $this->forge->addKey('id_kelas', true);
+        $this->forge->addForeignKey('id_jurusan', 'jurusan', 'id_jurusan', 'CASCADE', 'CASCADE');
         $this->forge->addForeignKey('id_guru', 'guru', 'id_guru', 'CASCADE', 'CASCADE');
         $this->forge->createTable('kelas');
     }

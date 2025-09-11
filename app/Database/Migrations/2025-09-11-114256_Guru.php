@@ -29,7 +29,8 @@ class Guru extends Migration
             ],
             'nip' => [
                 'type' => 'VARCHAR',
-                'constraint' => 20,
+                'constraint' => 18,
+                'unique' => true,
             ],
             'no_telp' => [
                 'type' => 'VARCHAR',
@@ -52,6 +53,7 @@ class Guru extends Migration
 
         $this->forge->addKey('id_guru', true);
         $this->forge->createTable('guru');
+        $this->forge->addUniqueKey('nip'); 
     }
 
     public function down()

@@ -15,18 +15,18 @@ class Gaji extends Migration
                 'unsigned' => true,
                 'auto_increment' => true,
             ],
-            'jam_mengajar'=> [
-                'type' => 'VARCHAR',
-                'constraint' => 50,
-            ],
-            'nominal' => [
-                'type' => 'INT',
-                'constraint' => 11,
-            ],
-             'id_guru' => [
+            'id_guru' => [
                 'type' => 'INT',
                 'constraint' => 11,
                 'unsigned' => true,
+            ],
+            'jam_mengajar'=> [
+                'type' => 'INT',
+                'constraint' => 11,
+            ],
+            'nominal' => [
+                'type' => 'DECIMAL',
+                'constraint' => 12, 2
             ],
             'created_at' => [
                 'type' => 'DATETIME',
