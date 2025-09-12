@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Spp extends Migration
+class SppMigration extends Migration
 {
     public function up()
     {

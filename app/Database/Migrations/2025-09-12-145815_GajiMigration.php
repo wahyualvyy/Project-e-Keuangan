@@ -4,30 +4,29 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Kelas extends Migration
+class GajiMigration extends Migration
 {
     public function up()
     {
         $this->forge->addField([
-            'id_kelas' => [
+            'id_gaji' => [
                 'type' => 'INT',
                 'constraint' => 11,
                 'unsigned' => true,
                 'auto_increment' => true,
             ],
-            'id_jurusan' => [
-                'type'=> 'INT',
-                'constraint' => 11,
-                'unsigned' => true,
-            ],
-            'id_guru'=> [
+            'id_guru' => [
                 'type' => 'INT',
                 'constraint' => 11,
                 'unsigned' => true,
             ],
-            'keterangan'=> [
-                'type' => 'TEXT',
-                'null' => true,
+            'jam_mengajar'=> [
+                'type' => 'INT',
+                'constraint' => 11,
+            ],
+            'nominal' => [
+                'type' => 'DECIMAL',
+                'constraint' => 12, 2
             ],
             'created_at' => [
                 'type' => 'DATETIME',
@@ -38,14 +37,13 @@ class Kelas extends Migration
                 'null' => true,
             ]
         ]);
-        $this->forge->addKey('id_kelas', true);
-        $this->forge->addForeignKey('id_jurusan', 'jurusan', 'id_jurusan', 'CASCADE', 'CASCADE');
+        $this->forge->addKey('id_gaji', true);
         $this->forge->addForeignKey('id_guru', 'guru', 'id_guru', 'CASCADE', 'CASCADE');
-        $this->forge->createTable('kelas');
+        $this->forge->createTable('gaji');
     }
 
     public function down()
     {
-        $this->forge->dropTable("kelas", true);
+        $this->forge->dropTable("gaji", true);
     }
 }

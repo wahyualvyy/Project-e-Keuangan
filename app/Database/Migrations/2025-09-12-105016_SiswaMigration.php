@@ -4,11 +4,11 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Siswa extends Migration
+class SiswaMigration extends Migration
 {
     public function up()
     {
-        $this->forge->addField([
+         $this->forge->addField([
             'id_siswa' => [
                 'type' => 'INT',
                 'constraint' => 11,
@@ -17,11 +17,6 @@ class Siswa extends Migration
             ],
             'id_jurusan'=> [
                 'type'=> 'INT',
-                'constraint' => 11,
-                'unsigned' => true,
-            ],
-            'id_kelas' => [
-                'type' => 'INT',
                 'constraint' => 11,
                 'unsigned' => true,
             ],
@@ -78,10 +73,7 @@ class Siswa extends Migration
         ]);
 
         $this->forge->addKey('id_siswa', true);
-        $this->forge->addUniqueKey('nis');
-        $this->forge->addUniqueKey('nisn');
         $this->forge->addForeignKey('id_jurusan', 'jurusan', 'id_jurusan', 'CASCADE', 'CASCADE');
-        $this->forge->addForeignKey('id_kelas', 'kelas', 'id_kelas', 'CASCADE', 'CASCADE');
         $this->forge->createTable('siswa');
     }
 

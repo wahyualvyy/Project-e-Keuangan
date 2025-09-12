@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Semester extends Migration
+class SemesterMigration extends Migration
 {
     public function up()
     {

@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Guru extends Migration
+class GuruMigration extends Migration
 {
     public function up()
     {

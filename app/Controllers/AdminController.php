@@ -14,6 +14,13 @@ class AdminController extends BaseController
         ];
         return view( 'admin/dashboard', $data);
     }
+    public function login()
+    {
+        $data = [
+            "title" => "Login - Sistem Manajemen"
+        ];
+        return view( 'admin/login/index', $data);
+    }
     public function profile()
     {
         $data = [
