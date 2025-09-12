@@ -50,46 +50,49 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td class="px-0">1</td>
-                            <td class="px-0">
-                                <div class="d-flex align-items-center">
-                                    <img src="<?= base_url('assets/img/photo-profile.jpg');?>" class="rounded-circle" width="40"
-                                        alt="flexy" />
-                                    <div class="ms-3">
-                                        <h6 class="mb-0 fw-bolder">Sunil Joshi</h6>
-                                        <span class="text-muted">Web Designer</span>
+                        <?php $no = 1;
+                        foreach ($guru as $data): ?>
+                            <tr>
+                                <td class="px-0"><?= $no++; ?></td>
+                                <td class="px-0">
+                                    <div class="d-flex align-items-center">
+                                        <img src="<?= base_url('assets/img/photo-profile.jpg'); ?>" class="rounded-circle"
+                                            width="40" alt="flexy" />
+                                        <div class="ms-3">
+                                            <h6 class="mb-0 fw-bolder"><?= $data['nama_guru']; ?></h6>
+                                            <span class="text-muted"><?= $data['status']; ?></span>
+                                        </div>
                                     </div>
-                                </div>
-                            </td>
-                            <td class="px-0">Elite Admin</td>
-                            <td class="px-0">Elite Admin</td>
-                            <td class="px-0">Elite Admin</td>
-                            <td class="px-0">Elite Admin</td>
-                            <td class="px-0">
-                                <span class="badge bg-info">Low</span>
-                            </td>
-                            <td class="px-0 text-dark fw-medium text-center">
-                                <div class="dropdown">
-                                    <a href="javascript:void(0)" class="text-muted" id="year1-dropdown"
-                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i class="ti ti-dots fs-7"></i>
-                                    </a>
-                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="year1-dropdown">
-                                        <li>
-                                            <a class="dropdown-item" href="javascript:void(0)">
-                                                <i class="ti ti-edit fs-6 mb-0"></i>
-                                                <span class="mb-0 fs-3">Edit</span></a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="javascript:void(0)">
-                                                <i class="ti ti-eraser-off fs-6 mb-0"></i>
-                                                <span class="mb-0 fs-3">Delete</span></a></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </td>
-                        </tr>
+                                </td>
+                                <td class="px-0"><?= $data['nip']; ?></td>
+                                <td class="px-0"><?= $data['jenis_kelamin']; ?></td>
+                                <td class="px-0"><?= word_limiter($data['alamat'], 4); ?></td>
+                                <td class="px-0"><?= $data['no_telp']; ?></td>
+                                <td class="px-0">
+                                    <span class="badge bg-info"><?= $data['status']; ?></span>
+                                </td>
+                                <td class="px-0 text-dark fw-medium text-center">
+                                    <div class="dropdown">
+                                        <a href="javascript:void(0)" class="text-muted" id="year1-dropdown"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i class="ti ti-dots fs-7"></i>
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="year1-dropdown">
+                                            <li>
+                                                <a class="dropdown-item" href="javascript:void(0)">
+                                                    <i class="ti ti-edit fs-6 mb-0"></i>
+                                                    <span class="mb-0 fs-3">Edit</span></a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="javascript:void(0)">
+                                                    <i class="ti ti-eraser-off fs-6 mb-0"></i>
+                                                    <span class="mb-0 fs-3">Delete</span></a></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>

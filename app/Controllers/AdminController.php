@@ -28,13 +28,6 @@ class AdminController extends BaseController
         ];
         return view( 'admin/profile', $data);
     }
-    public function DataGuru()
-    {
-        $data = [
-            "title" => "Data Guru"
-        ];
-        return view( 'admin/data-tabel/data-guru', $data);
-    }
     public function InputGuru()
     {
         $data = [

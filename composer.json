@@ -18,7 +18,7 @@
     },
     "require-dev": {
         "codeigniter/phpstan-codeigniter": "1.x-dev",
-        "fakerphp/faker": "^1.24",
+        "fakerphp/faker": "*",
         "kint-php/kint": "^6.0",
         "mikey179/vfsstream": "^1.6.12",
         "nexusphp/tachycardia": "^2.0",

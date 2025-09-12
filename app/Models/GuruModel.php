@@ -6,13 +6,13 @@ use CodeIgniter\Model;
 
 class GuruModel extends Model
 {
-    protected $table            = 'gurus';
-    protected $primaryKey       = 'id';
+    protected $table            = 'guru';
+    protected $primaryKey       = 'id_guru';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = ['nama_guru', 'jenis_kelamin', 'alamat', 'nip', 'no_telp', 'status', 'created_at', 'updated_at'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
@@ -21,7 +21,7 @@ class GuruModel extends Model
     protected array $castHandlers = [];
 
     // Dates
-    protected $useTimestamps = false;
+    protected $useTimestamps = true;
     protected $dateFormat    = 'datetime';
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';
@@ -43,4 +43,14 @@ class GuruModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function getAllGuru()
+    {
+        return $this->findAll();
+    }
+
+    public function getAllGuruById($id)
+    {
+        return $this->where('id_guru', $id)->first();
+    }
 }

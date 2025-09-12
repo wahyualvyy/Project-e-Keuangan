@@ -15,7 +15,7 @@
 
 <body>
 	<div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
-		data-sidebar-position="fixed" data-header-position="fixed">
+		data-sidebar-position="fixed">
 
 		<!--  App Topstrip -->
 		<!-- <div class="preloader flex-column justify-content-center align-items-center">
@@ -23,7 +23,7 @@
 				src="https://www.adobe.com/id_id/creativecloud/design/discover/media_17770be5de64c9b159b23a7da870ae0bd5bc0f400.jpeg?width=1200&format=pjpg&optimize=medium"
 				alt="Logoaisyiah" height="60" width="60" />
 		</div> -->
-		<div class="app-topstrip bg-subtle py-6 px-3 w-100 d-lg-flex align-items-center justify-content-between">
+		<div class="app-topstrip bg-white py-6 px-3 w-100 d-lg-flex align-items-center justify-content-between">
 			<div class="d-flex align-items-center justify-content-center gap-5 mb-2 mb-lg-0">
 				<a class="d-flex justify-content-center" href="#">
 					<img class="rounded-circle"
