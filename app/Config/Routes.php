@@ -8,7 +8,6 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->group('admin', function($routes) {
     $routes->get('/', 'AdminController::index');
-    $routes->get('login', 'AdminController::login');
     $routes->get('profile', 'AdminController::profile');
     $routes->get('data-guru', 'GuruController::index');
     $routes->get('input-guru', 'AdminController::InputGuru');
@@ -33,5 +32,7 @@ $routes->group('admin', function($routes) {
     $routes->get('kas-pengeluaran', 'AdminController::KasPengeluaran');
     $routes->get('input-kas-pengeluaran', 'AdminController::InputKasPengeluaran');
 });
+
+$routes->get('/', 'AdminController::login');
 
 

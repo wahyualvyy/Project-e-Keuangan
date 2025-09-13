@@ -26,9 +26,8 @@
 		<div class="app-topstrip bg-white py-6 px-3 w-100 d-lg-flex align-items-center justify-content-between">
 			<div class="d-flex align-items-center justify-content-center gap-5 mb-2 mb-lg-0">
 				<a class="d-flex justify-content-center" href="#">
-					<img class="rounded-circle"
-						src="<?= base_url('assets/img/Logo-SMK-Bisa.png');?>"
-						alt="" width="70px">
+					<img class="rounded-circle" src="<?= base_url('assets/img/Logo-SMK-Bisa.png'); ?>" alt=""
+						width="70px">
 				</a>
 
 
@@ -87,7 +86,7 @@
 									</a>
 								</li>
 								<li class="sidebar-item">
-									<a class="sidebar-link" href="<?= base_url('admin/data-siswa');?>">
+									<a class="sidebar-link" href="<?= base_url('admin/data-siswa'); ?>">
 										<div class="d-flex align-items-center gap-3">
 											<div class="round-16 d-flex align-items-center justify-content-center">
 												<i class="ti ti-circle"></i>
@@ -97,7 +96,7 @@
 									</a>
 								</li>
 								<li class="sidebar-item">
-									<a class="sidebar-link" href="<?= base_url('admin/data-kelas');?>">
+									<a class="sidebar-link" href="<?= base_url('admin/data-kelas'); ?>">
 										<div class="d-flex align-items-center gap-3">
 											<div class="round-16 d-flex align-items-center justify-content-center">
 												<i class="ti ti-circle"></i>
@@ -143,7 +142,7 @@
 									</a>
 								</li>
 								<!-- <li class="sidebar-item">
-									<a class="sidebar-link" href="<?= base_url('admin/data-siswa');?>">
+									<a class="sidebar-link" href="<?= base_url('admin/data-siswa'); ?>">
 										<div class="d-flex align-items-center gap-3">
 											<div class="round-16 d-flex align-items-center justify-content-center">
 												<i class="ti ti-circle"></i>
@@ -153,7 +152,7 @@
 									</a>
 								</li>
 								<li class="sidebar-item">
-									<a class="sidebar-link" href="<?= base_url('admin/data-kelas');?>">
+									<a class="sidebar-link" href="<?= base_url('admin/data-kelas'); ?>">
 										<div class="d-flex align-items-center gap-3">
 											<div class="round-16 d-flex align-items-center justify-content-center">
 												<i class="ti ti-circle"></i>
@@ -177,7 +176,8 @@
 							</a>
 							<ul aria-expanded="false" class="collapse first-level">
 								<li class="sidebar-item">
-									<a class="sidebar-link justify-content-between" href="<?= base_url('admin/kas-semester');?>">
+									<a class="sidebar-link justify-content-between"
+										href="<?= base_url('admin/kas-semester'); ?>">
 										<div class="d-flex align-items-center gap-3">
 											<div class="round-16 d-flex align-items-center justify-content-center">
 												<i class="ti ti-circle"></i>
@@ -187,7 +187,8 @@
 									</a>
 								</li>
 								<li class="sidebar-item">
-									<a class="sidebar-link justify-content-between" href="<?= base_url('admin/kas-spp');?>">
+									<a class="sidebar-link justify-content-between"
+										href="<?= base_url('admin/kas-spp'); ?>">
 										<div class="d-flex align-items-center gap-3">
 											<div class="round-16 d-flex align-items-center justify-content-center">
 												<i class="ti ti-circle"></i>
@@ -197,7 +198,8 @@
 									</a>
 								</li>
 								<li class="sidebar-item">
-									<a class="sidebar-link justify-content-between" href="<?= base_url('admin/kas-pemasukan');?>">
+									<a class="sidebar-link justify-content-between"
+										href="<?= base_url('admin/kas-pemasukan'); ?>">
 										<div class="d-flex align-items-center gap-3">
 											<div class="round-16 d-flex align-items-center justify-content-center">
 												<i class="ti ti-circle"></i>
@@ -221,7 +223,8 @@
 							</a>
 							<ul aria-expanded="false" class="collapse first-level">
 								<li class="sidebar-item">
-									<a class="sidebar-link justify-content-between" href="<?= base_url('admin/kas-gaji');?>">
+									<a class="sidebar-link justify-content-between"
+										href="<?= base_url('admin/kas-gaji'); ?>">
 										<div class="d-flex align-items-center gap-3">
 											<div class="round-16 d-flex align-items-center justify-content-center">
 												<i class="ti ti-circle"></i>
@@ -231,7 +234,8 @@
 									</a>
 								</li>
 								<li class="sidebar-item">
-									<a class="sidebar-link justify-content-between" href="<?= base_url('admin/kas-pengeluaran');?>">
+									<a class="sidebar-link justify-content-between"
+										href="<?= base_url('admin/kas-pengeluaran'); ?>">
 										<div class="d-flex align-items-center gap-3">
 											<div class="round-16 d-flex align-items-center justify-content-center">
 												<i class="ti ti-circle"></i>
@@ -267,13 +271,13 @@
 							<li class="nav-item dropdown">
 								<a class="nav-link " href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
 									aria-expanded="false">
-									<img src="<?= base_url('assets/img/photo-profile.jpg');?>"
-										alt="foto.jpg" width="40" class="rounded-circle">
+									<img src="<?= base_url('assets/img/photo-profile.jpg'); ?>" alt="foto.jpg"
+										width="40" class="rounded-circle">
 								</a>
 								<div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up"
 									aria-labelledby="drop2">
 									<div class="message-body">
-										<a href="<?= base_url('admin/profile');?>"
+										<a href="<?= base_url('admin/profile'); ?>"
 											class="d-flex align-items-center gap-2 dropdown-item">
 											<i class="ti ti-user fs-6"></i>
 											<p class="mb-0 fs-3">Profile Sekolah</p>
