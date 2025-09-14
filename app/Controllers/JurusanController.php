@@ -18,4 +18,12 @@ class JurusanController extends BaseController
 
         return view('admin/data-tabel/data-jurusan', $data);
     }
+    public function create()
+    {
+        $data = [
+            "title" => "Input Jurusan"
+        ];
+
+        return view('admin/data-tabel/input-jurusan', $data);
+    }
 }

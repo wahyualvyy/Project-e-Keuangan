@@ -1,6 +1,7 @@
 <?php
 
 use App\Controllers\GuruController;
+use App\Controllers\JurusanController;
 use CodeIgniter\Router\RouteCollection;
 
 /**
@@ -14,6 +15,8 @@ $routes->group('admin', function($routes) {
     $routes->get('data-siswa', 'AdminController::DataSiswa');
     $routes->get('input-siswa', 'AdminController::InputSiswa');
     $routes->get('data-kelas', 'AdminController::DataKelas');
+    $routes->get('data-jurusan', 'JurusanController::index');
+    $routes->get('input-jurusan', 'JurusanController::create');
     $routes->get('input-kelas', 'AdminController::InputKelas');
     $routes->get('data-kas-spp', 'AdminController::DataKasSpp');
     $routes->get('input-data-kas-spp', 'AdminController::InputKasSpp');
