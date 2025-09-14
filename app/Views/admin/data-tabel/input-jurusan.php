@@ -4,13 +4,15 @@
     <div class="card-body">
         <h5 class="card-title fw-semibold mb-4">Tambah Data Jurusan</h5>
         <hr>
-        <div class="row">
-            <form action="">
-                @crsf_fie
+        <form action="<?= base_url('');?>" method="post">
+            <?= @csrf_field();?>
+            <div class="row">
                 <div class="col-lg-6">
-                    <label for="defaultFormControlInput" class="form-label">Nama Jurusan</label>
-                    <input type="text" class="form-control" id="defaultFormControlInput" placeholder="Multimedia"
-                        aria-describedby="defaultFormControlHelp" />
+                    <div>
+                        <label for="defaultFormControlInput" class="form-label">Nama Jurusan</label>
+                        <input type="text" class="form-control" id="defaultFormControlInput" placeholder="Multimedia"
+                            aria-describedby="defaultFormControlHelp" />
+                    </div>
                 </div>
                 <div class="col-lg-6">
                     <div>
@@ -37,8 +39,8 @@
                         </a>
                     </div>
                 </div>
-            </form>
-        </div>
+            </div>
+        </form>
     </div>
 </div>
 <?= $this->endsection(); ?>

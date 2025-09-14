@@ -16,7 +16,8 @@ $routes->group('admin', function($routes) {
     $routes->get('input-siswa', 'AdminController::InputSiswa');
     $routes->get('data-kelas', 'AdminController::DataKelas');
     $routes->get('data-jurusan', 'JurusanController::index');
-    $routes->get('input-jurusan', 'JurusanController::create');
+    $routes->get('input-jurusan', 'JurusanController::InputJurusan');
+    $routes->post('input-jurusan-create', 'JurusanController::create');
     $routes->get('input-kelas', 'AdminController::InputKelas');
     $routes->get('data-kas-spp', 'AdminController::DataKasSpp');
     $routes->get('input-data-kas-spp', 'AdminController::InputKasSpp');
