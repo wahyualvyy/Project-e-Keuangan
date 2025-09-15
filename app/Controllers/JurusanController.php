@@ -2,8 +2,9 @@
 
 namespace App\Controllers;
 
-use App\Controllers\BaseController;
 use App\Models\JurusanModel;
+use CodeIgniter\HTTP\Request;
+use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
 
 class JurusanController extends BaseController
@@ -34,20 +35,100 @@ class JurusanController extends BaseController
 
     public function create()
     {
+        // dd($this->request->getPost());
         $rules = [
-            'nama_jurusan' => ['required','max_length[100]'],
-            'keterangan' => ['required','max_length[255]']
+            'nama_jurusan' => [
+                'required',
+                'max_length[100]',
+                'is_unique[jurusan.nama_jurusan]',
+                'errors' => [
+                    'required' => 'Nama Jurusan wajib diisi.',
+                    'is_unique' => 'Nama Jurusan ini sudah terdaftar, silakan gunakan nama lain.'
+                ]
+            ],
+            'kode_jurusan' => [
+                'is_unique[jurusan.kode_jurusan]',
+                'errors' => [
+                    'required'=> 'Kode Jurusan wajib diisi.',
+                    'is_unique' => 'Kode Jurusan ini sudah terdaftar, silakan gunakan kode lain.'
+                ]
+                
+            ],
+            'keterangan' => ['required', 'max_length[255]']
         ];
 
-        if(! $this->validate($rules)){
+        if (!$this->validate($rules)) {
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
         $data = [
             'nama_jurusan' => $this->request->getPost('nama_jurusan'),
             'keterangan' => $this->request->getPost('keterangan'),
-            'kode_jurusan' =>'KD-' . random_int(100, 999)
+            'kode_jurusan' => strtoupper(substr($this->request->getPost('nama_jurusan'), 0, 3)) . rand(100, 999),
         ];
         $this->JurusanModel->insert($data);
         return redirect()->to('/admin/data-jurusan')->with('success', 'Data Jurusan Berhasil Ditambahkan');
+    }
+    public function edit($id)
+    {
+        $jurusan = $this->JurusanModel->find($id);
+        if (!$jurusan) {
+            return redirect()->to('/admin/data-jurusan')->with('error', 'Data Jurusan Tidak Ditemukan');
+        }
+
+        $data = [
+            "title" => "Edit Jurusan",
+            "jurusan" => $jurusan
+        ];
+
+        return view('admin/edit-tabel/edit-jurusan', $data);
+    }
+    public function update($id)
+    {
+        $rules = [
+            'nama_jurusan' => [
+                'required',
+                'max_length[100]',
+                "is_unique[jurusan.nama_jurusan,id_jurusan,{$id}]",
+                'errors' => [
+                    'required' => 'Nama Jurusan wajib diisi.',
+                    'is_unique' => 'Nama Jurusan ini sudah terdaftar, silakan gunakan nama lain.'
+                ]
+            ],
+            'kode_jurusan' => [
+                'is_unique[jurusan.kode_jurusan]',
+                'errors' => [
+                    'required'=> 'Kode Jurusan wajib diisi.',
+                    'is_unique' => 'Kode Jurusan ini sudah terdaftar, silakan gunakan kode lain.'
+                ]
+                
+            ],
+            'keterangan' => ['required', 'max_length[255]']
+        ];
+
+        if (!$this->validate($rules)) {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        }
+
+        $KodeJurusanLamaArray = $this->JurusanModel->find($id);
+        if (!$KodeJurusanLamaArray) {
+        return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        }
+        
+        $KodeJurusanLamaString = $KodeJurusanLamaArray['kode_jurusan'];
+
+        $KodeJurusanNumerik = substr($KodeJurusanLamaString,3);
+        
+        $StringKodeJurusan = strtoupper(substr($this->request->getPost('nama_jurusan'), 0, 3));
+
+        $NewKodeJurusan = $StringKodeJurusan . $KodeJurusanNumerik ;
+        
+        $data = [
+            'nama_jurusan' => $this->request->getPost('nama_jurusan'),
+            'keterangan' => $this->request->getPost('keterangan'),
+            'kode_jurusan' => $NewKodeJurusan
+        ];
+
+        $this->JurusanModel->update($id, $data);
+        return redirect()->to('/admin/data-jurusan')->with('success', 'Data Jurusan Berhasil Diperbarui');
     }
 }

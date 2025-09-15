@@ -59,7 +59,7 @@
                                         </a>
                                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="year1-dropdown">
                                             <li>
-                                                <a class="dropdown-item" href="javascript:void(0)">
+                                                <a class="dropdown-item" href="<?= base_url('admin/edit-jurusan/' . $data['id_jurusan']); ?>">
                                                     <i class="ti ti-edit fs-6 mb-0"></i>
                                                     <span class="mb-0 fs-3">Edit</span></a>
                                             </li>

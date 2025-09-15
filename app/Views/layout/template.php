@@ -356,6 +356,28 @@
 				html: '<?= $errorString ?>',
 			});
 		<?php endif; ?>
+
+		const form = document.getElementById('form-edit');
+		const submitButton = document.getElementById('btn-update');
+
+		submitButton.addEventListener('click', function (event) {
+			event.preventDefault();
+
+			Swal.fire({
+				title: "Apakah Anda ingin menyimpan perubahan?",
+				showDenyButton: true,
+				showCancelButton: true,
+				confirmButtonText: "Simpan",
+				denyButtonText: `Jangan Simpan`
+			}).then((result) => {
+				if (result.isConfirmed) {
+					// Jika dikonfirmasi, barulah kita submit formnya
+					form.submit();
+				} else if (result.isDenied) {
+					Swal.fire("Perubahan tidak disimpan", "", "info");
+				}
+			});
+		});
 	</script>
 </body>
 
