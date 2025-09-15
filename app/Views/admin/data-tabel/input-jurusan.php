@@ -4,13 +4,13 @@
     <div class="card-body">
         <h5 class="card-title fw-semibold mb-4">Tambah Data Jurusan</h5>
         <hr>
-        <form action="<?= base_url('');?>" method="post">
-            <?= @csrf_field();?>
+        <form action="<?= base_url('/admin/input-jurusan-create'); ?>" method="post">
+            <?= @csrf_field(); ?>
             <div class="row">
                 <div class="col-lg-6">
                     <div>
                         <label for="defaultFormControlInput" class="form-label">Nama Jurusan</label>
-                        <input type="text" class="form-control" id="defaultFormControlInput" placeholder="Multimedia"
+                        <input type="text" class="form-control" name="nama_jurusan" id="defaultFormControlInput" placeholder="Multimedia"
                             aria-describedby="defaultFormControlHelp" />
                     </div>
                 </div>
@@ -27,16 +27,14 @@
                     <div class="mt-3">
                         <label for="defaultFormControlInput" class="form-label">Keterangan</label>
                         <div class="form-floating ">
-                            <textarea class="form-control h-25" placeholder="Leave a comment here"
+                            <textarea class="form-control h-25" name ="keterangan" placeholder="Leave a comment here"
                                 id="floatingTextarea"></textarea>
                             <label for="floatingTextarea">Keterangan</label>
                         </div>
                     </div>
                     <div class="mt-3 d-flex justify-content-center">
-                        <a href="<?= base_url('admin/data-kelas'); ?>">
-                            <button type="button" class="btn btn-secondary card-subtitle m-1 text-white">Tambah
-                                Data Kelas</button>
-                        </a>
+                        <button type="submit" class="btn btn-secondary card-subtitle m-1 text-white" >Tambah
+                            Data Kelas</button>
                     </div>
                 </div>
             </div>

@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="<?= base_url('css/styles.min.css'); ?>">
 	<!-- <link rel="stylesheet" href="<?= base_url('dist/css/adminlte.min.css'); ?>" /> -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 </head>
 
 <body>
@@ -327,6 +328,35 @@
 	<!-- solar icons -->
 	<script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
 	<!-- <script src="<?= base_url('dist/js/adminlte.js'); ?>"></script> -->
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script>
+		// Cek apakah ada flash data 'success'
+		<?php if (session()->getFlashdata('success')): ?>
+			Swal.fire({
+				icon: 'success',
+				title: 'Berhasil!',
+				text: '<?= session()->getFlashdata('success') ?>',
+			});
+		<?php endif; ?>
+
+		// Cek apakah ada flash data 'errors'
+		<?php if (session()->getFlashdata('errors')): ?>
+			// Ubah array error menjadi string HTML untuk ditampilkan
+			<?php
+			$errors = session()->getFlashdata('errors');
+			$errorString = '<ul class="list-unstyled">';
+			foreach ($errors as $error) {
+				$errorString .= '<li>' . esc($error) . '</li>';
+			}
+			$errorString .= '</ul>';
+			?>
+			Swal.fire({
+				icon: 'error',
+				title: 'Gagal!',
+				html: '<?= $errorString ?>',
+			});
+		<?php endif; ?>
+	</script>
 </body>
 
 </html>

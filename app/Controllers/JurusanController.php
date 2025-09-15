@@ -39,6 +39,15 @@ class JurusanController extends BaseController
             'keterangan' => ['required','max_length[255]']
         ];
 
-        if(! $this->val)
+        if(! $this->validate($rules)){
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        }
+        $data = [
+            'nama_jurusan' => $this->request->getPost('nama_jurusan'),
+            'keterangan' => $this->request->getPost('keterangan'),
+            'kode_jurusan' =>'KD-' . random_int(100, 999)
+        ];
+        $this->JurusanModel->insert($data);
+        return redirect()->to('/admin/data-jurusan')->with('success', 'Data Jurusan Berhasil Ditambahkan');
     }
 }
