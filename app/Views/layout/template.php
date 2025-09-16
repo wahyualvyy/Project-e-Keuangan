@@ -330,53 +330,86 @@
 	<!-- <script src="<?= base_url('dist/js/adminlte.js'); ?>"></script> -->
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script>
-		// Cek apakah ada flash data 'success'
-		<?php if (session()->getFlashdata('success')): ?>
-			Swal.fire({
-				icon: 'success',
-				title: 'Berhasil!',
-				text: '<?= session()->getFlashdata('success') ?>',
-			});
-		<?php endif; ?>
+		// 1. Tunggu seluruh halaman HTML selesai dimuat sebelum menjalankan script
+		document.addEventListener('DOMContentLoaded', function () {
 
-		// Cek apakah ada flash data 'errors'
-		<?php if (session()->getFlashdata('errors')): ?>
-			// Ubah array error menjadi string HTML untuk ditampilkan
-			<?php
-			$errors = session()->getFlashdata('errors');
-			$errorString = '<ul class="list-unstyled">';
-			foreach ($errors as $error) {
-				$errorString .= '<li>' . esc($error) . '</li>';
-			}
-			$errorString .= '</ul>';
-			?>
-			Swal.fire({
-				icon: 'error',
-				title: 'Gagal!',
-				html: '<?= $errorString ?>',
-			});
-		<?php endif; ?>
+			// BAGIAN NOTIFIKASI (Aman karena tidak bergantung pada elemen spesifik)
+			<?php if (session()->getFlashdata('success')): ?>
+				Swal.fire({
+					icon: 'success',
+					title: 'Berhasil!',
+					text: '<?= session()->getFlashdata('success') ?>',
+					showConfirmButton: false,
+					timer: 2000
+				});
+			<?php endif; ?>
 
-		const form = document.getElementById('form-edit');
-		const submitButton = document.getElementById('btn-update');
-
-		submitButton.addEventListener('click', function (event) {
-			event.preventDefault();
-
-			Swal.fire({
-				title: "Apakah Anda ingin menyimpan perubahan?",
-				showDenyButton: true,
-				showCancelButton: true,
-				confirmButtonText: "Simpan",
-				denyButtonText: `Jangan Simpan`
-			}).then((result) => {
-				if (result.isConfirmed) {
-					// Jika dikonfirmasi, barulah kita submit formnya
-					form.submit();
-				} else if (result.isDenied) {
-					Swal.fire("Perubahan tidak disimpan", "", "info");
+			<?php if (session()->getFlashdata('errors')): ?>
+				<?php
+				$errors = session()->getFlashdata('errors');
+				$errorString = '<ul class="list-unstyled text-start">';
+				foreach ($errors as $error) {
+					$errorString .= '<li>' . esc($error) . '</li>';
 				}
-			});
+				$errorString .= '</ul>';
+				?>
+				Swal.fire({
+					icon: 'error',
+					title: 'Gagal!',
+					html: '<?= $errorString ?>',
+				});
+			<?php endif; ?>
+
+
+			// BAGIAN FORM EDIT (Hanya berjalan jika elemennya ada)
+			const formEdit = document.getElementById('form-edit');
+			const submitButton = document.getElementById('btn-update');
+
+			if (formEdit && submitButton) {
+				submitButton.addEventListener('click', function (event) {
+					event.preventDefault();
+					Swal.fire({
+						title: "Apakah Anda ingin menyimpan perubahan?",
+						showDenyButton: true,
+						showCancelButton: true,
+						confirmButtonText: "Simpan",
+						denyButtonText: `Jangan Simpan`
+					}).then((result) => {
+						if (result.isConfirmed) {
+							formEdit.submit();
+						} else if (result.isDenied) {
+							Swal.fire("Perubahan tidak disimpan", "", "info");
+						}
+					});
+				});
+			}
+
+
+			// BAGIAN TOMBOL DELETE (Hanya berjalan jika elemennya ada)
+			const deleteButtons = document.querySelectorAll('.btn-delete');
+			if (deleteButtons.length > 0) {
+				deleteButtons.forEach(button => {
+					button.addEventListener('click', function (event) {
+						event.preventDefault();
+						const deleteUrl = this.getAttribute('href');
+						Swal.fire({
+							title: "Apakah Anda yakin?",
+							text: "Data yang dihapus tidak dapat dikembalikan!",
+							icon: "warning",
+							showCancelButton: true,
+							confirmButtonColor: '#d33',
+							cancelButtonColor: '#3085d6',
+							confirmButtonText: "Ya, hapus!",
+							cancelButtonText: "Batal"
+						}).then((result) => {
+							if (result.isConfirmed) {
+								window.location.href = deleteUrl;
+							}
+						});
+					});
+				});
+			}
+
 		});
 	</script>
 </body>

@@ -19,6 +19,7 @@ $routes->group('admin', function($routes) {
     $routes->get('input-jurusan', 'JurusanController::InputJurusan');
     $routes->get('edit-jurusan/(:num)', 'JurusanController::edit/$1');
     $routes->post('update-jurusan/(:num)', 'JurusanController::update/$1');
+    $routes->get('delete-jurusan/(:num)', 'JurusanController::delete/$1');
     $routes->post('input-jurusan-create', 'JurusanController::create');
     $routes->get('input-kelas', 'AdminController::InputKelas');
     $routes->get('data-kas-spp', 'AdminController::DataKasSpp');

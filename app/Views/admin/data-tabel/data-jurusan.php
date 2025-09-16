@@ -38,18 +38,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php $no = 1; foreach ($jurusan as $data): ?>
+                        <?php $no = 1;
+                        foreach ($jurusan as $data): ?>
                             <tr>
-                                <td class="px-0"><?= $no++ ;?></td>
+                                <td class="px-0"><?= $no++; ?></td>
                                 <td class="px-0">
                                     <div class="d-flex align-items-center">
-                                            <div class="ms-3">
-                                            <h6 class="mb-0 fw-bolder"><?= $data['nama_jurusan'] ;?></h6>
-                                            <span class="text-muted"><?= $data['kode_jurusan'] ;?></span>
+                                        <div class="ms-3">
+                                            <h6 class="mb-0 fw-bolder"><?= $data['nama_jurusan']; ?></h6>
+                                            <span class="text-muted"><?= $data['kode_jurusan']; ?></span>
                                         </div>
                                     </div>
                                 </td>
-                                <td class="px-0"><?= $data['keterangan'] ;?></td>
+                                <td class="px-0"><?= $data['keterangan']; ?></td>
                                 </td>
                                 <td class="px-0 text-dark fw-medium text-center">
                                     <div class="dropdown">
@@ -59,14 +60,16 @@
                                         </a>
                                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="year1-dropdown">
                                             <li>
-                                                <a class="dropdown-item" href="<?= base_url('admin/edit-jurusan/' . $data['id_jurusan']); ?>">
+                                                <a class="dropdown-item"
+                                                    href="<?= base_url('admin/edit-jurusan/' . $data['id_jurusan']); ?>">
                                                     <i class="ti ti-edit fs-6 mb-0"></i>
                                                     <span class="mb-0 fs-3">Edit</span></a>
                                             </li>
                                             <li>
-                                                <a class="dropdown-item" href="javascript:void(0)">
+                                                <a class="dropdown-item btn-delete"
+                                                    href="<?= base_url('admin/delete-jurusan/' . $data['id_jurusan']); ?>">
                                                     <i class="ti ti-eraser-off fs-6 mb-0"></i>
-                                                    <span class="mb-0 fs-3">Delete</span></a></a>
+                                                    <span class="mb-0 fs-3">Delete</span></a>
                                             </li>
                                         </ul>
                                     </div>
@@ -79,4 +82,10 @@
         </div>
     </div>
 </div>
+<script>
+    // Script ini akan berjalan untuk SEMUA tombol dengan class="btn-delete"
+
+    // Pilih semua link dengan class 'btn-delete'
+    
+</script>
 <?= $this->endSection(); ?>

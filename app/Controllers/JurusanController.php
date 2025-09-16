@@ -131,4 +131,14 @@ class JurusanController extends BaseController
         $this->JurusanModel->update($id, $data);
         return redirect()->to('/admin/data-jurusan')->with('success', 'Data Jurusan Berhasil Diperbarui');
     }
+    public function delete($id)
+    {
+        $jurusan = $this->JurusanModel->find($id);
+        if (!$jurusan) {
+            return redirect()->to('/admin/data-jurusan')->with('error', 'Data Jurusan Tidak Ditemukan');
+        }
+
+        $this->JurusanModel->delete($id);
+        return redirect()->to('/admin/data-jurusan')->with('success', 'Data Jurusan Berhasil Dihapus');
+    }
 }
