@@ -53,4 +53,29 @@ class JurusanModel extends Model
     {
         return $this->where('id_jurusan', $id)->first();
     }
+
+    public function getData($sort)
+    {
+        $builder = $this->db->table('jurusan');
+
+        switch ($sort) {
+            case 'terbaru':
+                $builder->orderBy('created_at', 'DESC');
+                break;
+            case 'terlama':
+                $builder->orderBy('created_at', 'ASC');
+                break;
+            case 'nama_asc':
+                $builder->orderBy('nama_jurusan', 'ASC');
+                break;
+            case 'nama_desc':
+                $builder->orderBy('nama_jurusan', 'DESC');
+                break;
+            default:
+                $builder->orderBy('created_at', 'DESC');
+                break;
+        }
+
+        return $builder->get()->getResultArray();
+    }
 }

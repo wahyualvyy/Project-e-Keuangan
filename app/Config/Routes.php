@@ -21,6 +21,7 @@ $routes->group('admin', function($routes) {
     $routes->post('update-jurusan/(:num)', 'JurusanController::update/$1');
     $routes->get('delete-jurusan/(:num)', 'JurusanController::delete/$1');
     $routes->post('input-jurusan-create', 'JurusanController::create');
+    $routes->post('jurusan/bulk-action', 'JurusanController::bulkAction');
     $routes->get('input-kelas', 'AdminController::InputKelas');
     $routes->get('data-kas-spp', 'AdminController::DataKasSpp');
     $routes->get('input-data-kas-spp', 'AdminController::InputKasSpp');

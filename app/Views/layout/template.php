@@ -386,29 +386,79 @@
 
 
 			// BAGIAN TOMBOL DELETE (Hanya berjalan jika elemennya ada)
-			const deleteButtons = document.querySelectorAll('.btn-delete');
-			if (deleteButtons.length > 0) {
-				deleteButtons.forEach(button => {
-					button.addEventListener('click', function (event) {
-						event.preventDefault();
-						const deleteUrl = this.getAttribute('href');
+			document.getElementById('select-all').addEventListener('click', function (event) {
+				const checkboxes = document.querySelectorAll('.row-checkbox');
+				checkboxes.forEach(checkbox => {
+					checkbox.checked = event.target.checked;
+				});
+			});
+			const bulkDeleteBtn = document.querySelector('.btn-bulk-delete');
+			const bulkForm = document.querySelector('form[action*="jurusan/bulk-action"]');
+
+			if (bulkDeleteBtn && bulkForm) {
+				bulkDeleteBtn.addEventListener('click', function (event) {
+					event.preventDefault();
+
+					// ambil select aksi
+					const aksiSelect = bulkForm.querySelector('select[name="aksi_massal"]');
+					if (!aksiSelect.value) {
 						Swal.fire({
-							title: "Apakah Anda yakin?",
-							text: "Data yang dihapus tidak dapat dikembalikan!",
-							icon: "warning",
-							showCancelButton: true,
-							confirmButtonColor: '#d33',
-							cancelButtonColor: '#3085d6',
-							confirmButtonText: "Ya, hapus!",
-							cancelButtonText: "Batal"
-						}).then((result) => {
-							if (result.isConfirmed) {
-								window.location.href = deleteUrl;
-							}
+							icon: "error",
+							title: "Aksi belum dipilih!",
+							text: "Silakan pilih aksi massal terlebih dahulu.",
 						});
+						return;
+					}
+
+					// ambil checkbox
+					const checked = bulkForm.querySelectorAll('.row-checkbox:checked');
+					if (checked.length === 0) {
+						Swal.fire({
+							icon: "error",
+							title: "Tidak ada data!",
+							text: "Silakan pilih minimal satu data jurusan.",
+						});
+						return;
+					}
+
+					Swal.fire({
+						title: "Apakah Anda yakin?",
+						text: "Semua data jurusan terpilih akan dihapus!",
+						icon: "warning",
+						showCancelButton: true,
+						confirmButtonColor: '#d33',
+						cancelButtonColor: '#3085d6',
+						confirmButtonText: "Ya, hapus!",
+						cancelButtonText: "Batal"
+					}).then((result) => {
+						if (result.isConfirmed) {
+							bulkForm.submit(); // submit manual
+						}
 					});
 				});
 			}
+
+			const deleteLinks = document.querySelectorAll('.btn-delete-single');
+			deleteLinks.forEach(link => {
+				link.addEventListener('click', function (event) {
+					event.preventDefault();
+					const deleteUrl = this.getAttribute('href');
+					Swal.fire({
+						title: "Apakah Anda yakin?",
+						text: "Data yang dihapus tidak dapat dikembalikan!",
+						icon: "warning",
+						showCancelButton: true,
+						confirmButtonColor: '#d33',
+						cancelButtonColor: '#3085d6',
+						confirmButtonText: "Ya, hapus!",
+						cancelButtonText: "Batal"
+					}).then((result) => {
+						if (result.isConfirmed) {
+							window.location.href = deleteUrl;
+						}
+					});
+				});
+			});
 
 		});
 	</script>

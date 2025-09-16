@@ -17,9 +17,14 @@ class JurusanController extends BaseController
     }
     public function index()
     {
+        $sort = $this->request->getGet('sort') ?? 'terbaru';
+
+        $jurusanData = $this->JurusanModel->getData($sort);
+
         $data = [
             "title" => "Data Jurusan",
-            "jurusan" => $this->JurusanModel->findAll()
+            "jurusanData" => $jurusanData,
+            "sort" => $sort
         ];
 
         return view('admin/data-tabel/data-jurusan', $data);
@@ -140,5 +145,22 @@ class JurusanController extends BaseController
 
         $this->JurusanModel->delete($id);
         return redirect()->to('/admin/data-jurusan')->with('success', 'Data Jurusan Berhasil Dihapus');
+    }
+    public function bulkAction()
+    {
+        $action = $this->request->getPost('aksi_massal');
+        $jurusanIds = $this->request->getPost('jurusan_ids');
+
+        if (empty($action) || empty($jurusanIds)) {
+            return redirect()->to('/admin/data-jurusan')->with('error', 'Aksi atau data jurusan belum dipilih.');
+        }
+
+        switch ($action) {
+            case 'hapus':
+                $this->JurusanModel->delete($jurusanIds);
+                return redirect()->to('/admin/data-jurusan')->with('success', 'Data jurusan yang dipilih berhasil dihapus.');
+            default:
+                return redirect()->to('/admin/data-jurusan')->with('error', 'Aksi tidak dikenali.');
+        }
     }
 }
