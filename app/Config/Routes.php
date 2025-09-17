@@ -1,5 +1,6 @@
 <?php
 
+use App\Controllers\AuthController;
 use App\Controllers\GuruController;
 use App\Controllers\JurusanController;
 use CodeIgniter\Router\RouteCollection;
@@ -41,6 +42,8 @@ $routes->group('admin', function($routes) {
     $routes->get('input-kas-pengeluaran', 'AdminController::InputKasPengeluaran');
 });
 
-$routes->get('/', 'AdminController::login');
+$routes->get('/', 'AuthController::index');
+$routes->post('/login', 'AuthController::login');
+$routes->get('/logout', 'AuthController::logout');
 
 
