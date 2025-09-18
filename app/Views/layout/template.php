@@ -34,7 +34,7 @@
 
 			</div>
 			<div class="d-lg-flex align-items-center gap-2">
-				<h3 class="text-back mb-2 mb-lg-0 fs-5 text-center">Sekolah Menengah Kejuruan HASYIM ASY'ARI</h3>
+				<h3 class="text-back mb-2 mb-lg-0 fs-5 text-center">SMK HASYIM ASY'ARI</h3>
 				<div class="d-flex align-items-center justify-content-center gap-2">
 				</div>
 			</div>
@@ -288,7 +288,7 @@
 								<div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up"
 									aria-labelledby="drop2">
 									<div class="message-body">
-										<a href="<?= base_url('admin/profile'); ?>"
+										<a href="<?= base_url('/profile'); ?>"
 											class="d-flex align-items-center gap-2 dropdown-item">
 											<i class="ti ti-user fs-6"></i>
 											<p class="mb-0 fs-3">Profile Sekolah</p>

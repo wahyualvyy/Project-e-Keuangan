@@ -71,13 +71,13 @@ class JurusanController extends BaseController
             'kode_jurusan' => strtoupper(substr($this->request->getPost('nama_jurusan'), 0, 3)) . rand(100, 999),
         ];
         $this->JurusanModel->insert($data);
-        return redirect()->to('/admin/data-jurusan')->with('success', 'Data Jurusan Berhasil Ditambahkan');
+        return redirect()->to('jurusan/data')->with('success', 'Data Jurusan Berhasil Ditambahkan');
     }
     public function edit($id)
     {
         $jurusan = $this->JurusanModel->find($id);
         if (!$jurusan) {
-            return redirect()->to('/admin/data-jurusan')->with('error', 'Data Jurusan Tidak Ditemukan');
+            return redirect()->to('jurusan/data')->with('error', 'Data Jurusan Tidak Ditemukan');
         }
 
         $data = [
@@ -134,17 +134,17 @@ class JurusanController extends BaseController
         ];
 
         $this->JurusanModel->update($id, $data);
-        return redirect()->to('/admin/data-jurusan')->with('success', 'Data Jurusan Berhasil Diperbarui');
+        return redirect()->to('jurusan/data')->with('success', 'Data Jurusan Berhasil Diperbarui');
     }
     public function delete($id)
     {
         $jurusan = $this->JurusanModel->find($id);
         if (!$jurusan) {
-            return redirect()->to('/admin/data-jurusan')->with('error', 'Data Jurusan Tidak Ditemukan');
+            return redirect()->to('jurusan/data')->with('error', 'Data Jurusan Tidak Ditemukan');
         }
 
         $this->JurusanModel->delete($id);
-        return redirect()->to('/admin/data-jurusan')->with('success', 'Data Jurusan Berhasil Dihapus');
+        return redirect()->to('jurusan/data')->with('success', 'Data Jurusan Berhasil Dihapus');
     }
     public function bulkAction()
     {
@@ -152,15 +152,15 @@ class JurusanController extends BaseController
         $jurusanIds = $this->request->getPost('jurusan_ids');
 
         if (empty($action) || empty($jurusanIds)) {
-            return redirect()->to('/admin/data-jurusan')->with('error', 'Aksi atau data jurusan belum dipilih.');
+            return redirect()->to('jurusan/data')->with('error', 'Aksi atau data jurusan belum dipilih.');
         }
 
         switch ($action) {
             case 'hapus':
                 $this->JurusanModel->delete($jurusanIds);
-                return redirect()->to('/admin/data-jurusan')->with('success', 'Data jurusan yang dipilih berhasil dihapus.');
+                return redirect()->to('jurusan/data')->with('success', 'Data jurusan yang dipilih berhasil dihapus.');
             default:
-                return redirect()->to('/admin/data-jurusan')->with('error', 'Aksi tidak dikenali.');
+                return redirect()->to('jurusan/data')->with('error', 'Aksi tidak dikenali.');
         }
     }
 }

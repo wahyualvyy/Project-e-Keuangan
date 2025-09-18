@@ -4,7 +4,7 @@
         <div class="card-body">
             <h5 class="card-title fw-semibold mb-4">Tambah Data Jurusan</h5>
             <hr>
-            <form id="form-edit" action="<?= base_url('/admin/update-jurusan' . '/'. $jurusan['id_jurusan']); ?>" method="post">
+            <form id="form-edit" action="<?= base_url('jurusan/update' . '/'. $jurusan['id_jurusan']); ?>" method="post">
                 <?= @csrf_field(); ?>
                 <div class="row">
                     <div class="col-lg-6">

@@ -762,3 +762,201 @@ FROM `guru`', [], false)
 13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
 15 SYSTEMPATH\rewrite.php(44): require_once('E:\\Xampp\\htdocs\\Project-e-Keuangan\\public\\index.php')
+ERROR - 2025-09-19 00:42:33 --> mysqli_sql_exception: Table 'ci_keuangan.guru' doesn't exist in E:\Xampp\htdocs\Project-e-Keuangan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\Xampp\htdocs\Project-e-Keuangan\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\Xampp\htdocs\Project-e-Keuangan\system\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\Xampp\htdocs\Project-e-Keuangan\app\Models\GuruModel.php(49): CodeIgniter\BaseModel->findAll()
+#7 E:\Xampp\htdocs\Project-e-Keuangan\app\Controllers\GuruController.php(17): App\Models\GuruModel->getAllGuru()
+#8 E:\Xampp\htdocs\Project-e-Keuangan\system\CodeIgniter.php(933): App\Controllers\GuruController->index()
+#9 E:\Xampp\htdocs\Project-e-Keuangan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GuruController))
+#10 E:\Xampp\htdocs\Project-e-Keuangan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\Xampp\htdocs\Project-e-Keuangan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 E:\Xampp\htdocs\Project-e-Keuangan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 E:\Xampp\htdocs\Project-e-Keuangan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 E:\Xampp\htdocs\Project-e-Keuangan\system\rewrite.php(44): require_once('E:\\Xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2025-09-19 00:42:33 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'ci_keuangan.guru' doesn't exist
+[Method: GET, Route: guru]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `guru`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\GuruModel.php(49): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\GuruController.php(17): App\Models\GuruModel->getAllGuru()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GuruController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GuruController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Xampp\\htdocs\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-19 00:42:33 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'ci_keuangan.guru' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `guru`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `guru`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `guru`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\GuruModel.php(49): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\GuruController.php(17): App\Models\GuruModel->getAllGuru()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GuruController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GuruController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('E:\\Xampp\\htdocs\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-19 00:42:33 --> [Caused by] mysqli_sql_exception: Table 'ci_keuangan.guru' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `guru`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `guru`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `guru`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `guru`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\GuruModel.php(49): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\GuruController.php(17): App\Models\GuruModel->getAllGuru()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GuruController->index()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GuruController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('E:\\Xampp\\htdocs\\Project-e-Keuangan\\public\\index.php')
+ERROR - 2025-09-19 00:46:53 --> mysqli_sql_exception: Unknown column 'kode_jurusan' in 'where clause' in E:\Xampp\htdocs\Project-e-Keuangan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT 1\nFROM `...', 0)
+#1 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1\nFROM `...')
+#2 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1\nFROM `...')
+#3 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 E:\Xampp\htdocs\Project-e-Keuangan\system\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\Xampp\htdocs\Project-e-Keuangan\system\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique(NULL, 'jurusan.kode_ju...', Array)
+#6 E:\Xampp\htdocs\Project-e-Keuangan\system\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique(NULL, 'jurusan.kode_ju...', Array, NULL, 'kode_jurusan')
+#7 E:\Xampp\htdocs\Project-e-Keuangan\system\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('kode_jurusan', 'kode_jurusan', NULL, Array, Array, 'kode_jurusan')
+#8 E:\Xampp\htdocs\Project-e-Keuangan\system\Controller.php(138): CodeIgniter\Validation\Validation->run()
+#9 E:\Xampp\htdocs\Project-e-Keuangan\app\Controllers\JurusanController.php(65): CodeIgniter\Controller->validate(Array)
+#10 E:\Xampp\htdocs\Project-e-Keuangan\system\CodeIgniter.php(933): App\Controllers\JurusanController->create()
+#11 E:\Xampp\htdocs\Project-e-Keuangan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\JurusanController))
+#12 E:\Xampp\htdocs\Project-e-Keuangan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 E:\Xampp\htdocs\Project-e-Keuangan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#14 E:\Xampp\htdocs\Project-e-Keuangan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#15 E:\Xampp\htdocs\Project-e-Keuangan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#16 E:\Xampp\htdocs\Project-e-Keuangan\system\rewrite.php(44): require_once('E:\\Xampp\\htdocs...')
+#17 {main}
+CRITICAL - 2025-09-19 00:46:53 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'kode_jurusan' in 'where clause'
+[Method: POST, Route: jurusan/create]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `jurusan`
+WHERE `kode_jurusan` IS NULL
+ LIMIT 1', [], false)
+ 2 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique(null, 'jurusan.kode_jurusan', [...])
+ 4 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique(null, 'jurusan.kode_jurusan', [...], null, 'kode_jurusan')
+ 5 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('kode_jurusan', 'kode_jurusan', null, [...], [...], 'kode_jurusan')
+ 6 SYSTEMPATH\Controller.php(138): CodeIgniter\Validation\Validation->run()
+ 7 APPPATH\Controllers\JurusanController.php(65): CodeIgniter\Controller->validate([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\JurusanController->create()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\JurusanController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('E:\\Xampp\\htdocs\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-19 00:46:53 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'kode_jurusan' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `jurusan`
+WHERE `kode_jurusan` IS NULL
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `jurusan`
+WHERE `kode_jurusan` IS NULL
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `jurusan`
+WHERE `kode_jurusan` IS NULL
+ LIMIT 1', [], false)
+ 4 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique(null, 'jurusan.kode_jurusan', [...])
+ 6 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique(null, 'jurusan.kode_jurusan', [...], null, 'kode_jurusan')
+ 7 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('kode_jurusan', 'kode_jurusan', null, [...], [...], 'kode_jurusan')
+ 8 SYSTEMPATH\Controller.php(138): CodeIgniter\Validation\Validation->run()
+ 9 APPPATH\Controllers\JurusanController.php(65): CodeIgniter\Controller->validate([...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\JurusanController->create()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\JurusanController))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('E:\\Xampp\\htdocs\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-19 00:46:53 --> [Caused by] mysqli_sql_exception: Unknown column 'kode_jurusan' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT 1
+FROM `jurusan`
+WHERE `kode_jurusan` IS NULL
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT 1
+FROM `jurusan`
+WHERE `kode_jurusan` IS NULL
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT 1
+FROM `jurusan`
+WHERE `kode_jurusan` IS NULL
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `jurusan`
+WHERE `kode_jurusan` IS NULL
+ LIMIT 1', [], false)
+ 5 SYSTEMPATH\Validation\Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\Validation\StrictRules\Rules.php(187): CodeIgniter\Validation\Rules->is_unique(null, 'jurusan.kode_jurusan', [...])
+ 7 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique(null, 'jurusan.kode_jurusan', [...], null, 'kode_jurusan')
+ 8 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('kode_jurusan', 'kode_jurusan', null, [...], [...], 'kode_jurusan')
+ 9 SYSTEMPATH\Controller.php(138): CodeIgniter\Validation\Validation->run()
+10 APPPATH\Controllers\JurusanController.php(65): CodeIgniter\Controller->validate([...])
+11 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\JurusanController->create()
+12 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\JurusanController))
+13 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+16 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+17 SYSTEMPATH\rewrite.php(44): require_once('E:\\Xampp\\htdocs\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-19 00:49:41 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "jurusan/edit.php"
+[Method: GET, Route: jurusan/edit/1]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('jurusan/edit.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('jurusan/edit', [], true)
+ 3 APPPATH\Controllers\JurusanController.php(88): view('jurusan/edit', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\JurusanController->edit('1')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\JurusanController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('E:\\Xampp\\htdocs\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-19 00:51:03 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "jurusan/edit/.php"
+[Method: GET, Route: jurusan/edit/1]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('jurusan/edit/.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('jurusan/edit/', [], true)
+ 3 APPPATH\Controllers\JurusanController.php(88): view('jurusan/edit/', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\JurusanController->edit('1')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\JurusanController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('E:\\Xampp\\htdocs\\Project-e-Keuangan\\public\\index.php')

@@ -4,7 +4,7 @@
     <div class="card-body">
         <h5 class="card-title fw-semibold mb-4">Tambah Data Jurusan</h5>
         <hr>
-        <form action="<?= base_url('/admin/input-jurusan-create'); ?>" method="post">
+        <form action="<?= base_url('jurusan/create'); ?>" method="post">
             <?= csrf_field(); ?>
 
             <div class="row">

@@ -3,12 +3,12 @@
 <div class="col-12">
     <div class="card">
         <div class="card-body">
-            <form action="<?= base_url('admin/jurusan/bulk-action') ?>" method="post">
+            <form action="<?= base_url('jurusan/bulk-action') ?>" method="post">
                 <?= csrf_field(); ?>
                 <div class="d-md-flex align-items-center">
                     <div>
                         <h4 class="card-title">Tabel Data Jurusan</h4>
-                        <a href="<?= base_url('admin/input-jurusan'); ?>">
+                        <a href="<?= base_url('jurusan/input'); ?>">
                             <button type="button" class="btn btn-secondary card-subtitle m-1 text-white">Tambah
                                 Data</button>
                         </a>
@@ -24,7 +24,8 @@
                         </button>
                     </div>
                     <div class="ms-auto mt-3 mt-md-0">
-                        <select class="form-select theme-select border-0" name="sort" onchange="window.location.href='<?= base_url('admin/data-jurusan') ?>?sort=' + this.value"
+                        <select class="form-select theme-select border-0" name="sort"
+                            onchange="window.location.href='<?= base_url('jurusan') ?>?sort=' + this.value"
                             aria-label="Default select example">
                             <option value="terbaru" <?= ($sort === 'terbaru') ? 'selected' : ''; ?>>Terbaru Dibuat
                             </option>
@@ -88,13 +89,13 @@
                                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="year1-dropdown">
                                                 <li>
                                                     <a class="dropdown-item"
-                                                        href="<?= base_url('admin/edit-jurusan/' . $data['id_jurusan']); ?>">
+                                                        href="<?= base_url('jurusan/edit/' . $data['id_jurusan']); ?>">
                                                         <i class="ti ti-edit fs-6 mb-0"></i>
                                                         <span class="mb-0 fs-3">Edit</span></a>
                                                 </li>
                                                 <li>
                                                     <a class="dropdown-item btn-delete-single"
-                                                        href="<?= base_url('admin/delete-jurusan/' . $data['id_jurusan']); ?>">
+                                                        href="<?= base_url('jurusan/delete/' . $data['id_jurusan']); ?>">
                                                         <i class="ti ti-eraser-off fs-6 mb-0"></i>
                                                         <span class="mb-0 fs-3">Delete</span></a>
                                                 </li>
