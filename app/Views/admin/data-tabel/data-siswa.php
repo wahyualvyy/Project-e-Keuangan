@@ -6,7 +6,7 @@
             <div class="d-md-flex align-items-center">
                 <div>
                     <h4 class="card-title">Tabel Data Siswa</h4>
-                    <a href="<?= base_url('admin/input-siswa'); ?>">
+                    <a href="<?= base_url('siswa/input'); ?>">
                         <button type="button" class="btn btn-secondary card-subtitle m-1 text-white">Tambah
                             Data</button>
                     </a>

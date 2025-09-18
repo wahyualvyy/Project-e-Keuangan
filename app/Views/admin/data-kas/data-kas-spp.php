@@ -6,7 +6,7 @@
             <div class="d-md-flex align-items-center">
                 <div>
                     <h4 class="card-title">Tabel Data Kas SPP</h4>
-                    <a href="<?= base_url('admin/input-data-kas-spp'); ?>">
+                    <a href="<?= base_url('data-kas/input-spp'); ?>">
                         <button type="button" class="btn btn-secondary card-subtitle m-1 text-white">Tambah
                             Data</button>
                     </a>

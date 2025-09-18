@@ -1,0 +1,690 @@
+CRITICAL - 2025-09-19 00:00:02 --> ErrorException: Could not check compatibility between Myth\Auth\Authentication\Passwords\CompositionValidator::check(string $password, ?CodeIgniter\Entity\Entity $user = null): bool and Myth\Auth\Authentication\Passwords\ValidatorInterface::check(string $password, ?CodeIgniter\Entity $user = null): bool, because class CodeIgniter\Entity is not available
+[Method: POST, Route: register]
+in VENDORPATH\myth\auth\src\Authentication\Passwords\CompositionValidator.php on line 28.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-09-19 00:00:17 --> ErrorException: Could not check compatibility between Myth\Auth\Authentication\Passwords\CompositionValidator::check(string $password, ?CodeIgniter\Entity\Entity $user = null): bool and Myth\Auth\Authentication\Passwords\ValidatorInterface::check(string $password, ?CodeIgniter\Entity $user = null): bool, because class CodeIgniter\Entity is not available
+[Method: POST, Route: register]
+in VENDORPATH\myth\auth\src\Authentication\Passwords\CompositionValidator.php on line 28.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+ERROR - 2025-09-19 00:02:40 --> Email: sendWithMail throwed ErrorException: mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in E:\Xampp\htdocs\Project-e-Keuangan\system\Email\Email.php:1761
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mail(): Failed ...', 'E:\\Xampp\\htdocs...', 1761)
+#1 E:\Xampp\htdocs\Project-e-Keuangan\system\Email\Email.php(1761): mail('redi@gmail.com', '=?UTF-8?Q?Aktiv...', 'This is a multi...', 'Date: Fri, 19 S...')
+#2 E:\Xampp\htdocs\Project-e-Keuangan\system\Email\Email.php(1698): CodeIgniter\Email\Email->sendWithMail()
+#3 E:\Xampp\htdocs\Project-e-Keuangan\system\Email\Email.php(1592): CodeIgniter\Email\Email->spoolEmail()
+#4 E:\Xampp\htdocs\Project-e-Keuangan\vendor\myth\auth\src\Authentication\Activators\EmailActivator.php(32): CodeIgniter\Email\Email->send()
+#5 E:\Xampp\htdocs\Project-e-Keuangan\vendor\myth\auth\src\Controllers\AuthController.php(236): Myth\Auth\Authentication\Activators\EmailActivator->send(Object(Myth\Auth\Entities\User))
+#6 E:\Xampp\htdocs\Project-e-Keuangan\system\CodeIgniter.php(933): Myth\Auth\Controllers\AuthController->attemptRegister()
+#7 E:\Xampp\htdocs\Project-e-Keuangan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+#8 E:\Xampp\htdocs\Project-e-Keuangan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 E:\Xampp\htdocs\Project-e-Keuangan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 E:\Xampp\htdocs\Project-e-Keuangan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 E:\Xampp\htdocs\Project-e-Keuangan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 E:\Xampp\htdocs\Project-e-Keuangan\system\rewrite.php(44): require_once('E:\\Xampp\\htdocs...')
+#13 {main}
+ERROR - 2025-09-19 00:02:40 --> Email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.
+ERROR - 2025-09-19 00:02:40 --> 
+ERROR - 2025-09-19 00:03:16 --> Email: sendWithMail throwed ErrorException: mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in E:\Xampp\htdocs\Project-e-Keuangan\system\Email\Email.php:1761
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mail(): Failed ...', 'E:\\Xampp\\htdocs...', 1761)
+#1 E:\Xampp\htdocs\Project-e-Keuangan\system\Email\Email.php(1761): mail('redi@gmail.com', '=?UTF-8?Q?Aktiv...', 'This is a multi...', 'Date: Fri, 19 S...')
+#2 E:\Xampp\htdocs\Project-e-Keuangan\system\Email\Email.php(1698): CodeIgniter\Email\Email->sendWithMail()
+#3 E:\Xampp\htdocs\Project-e-Keuangan\system\Email\Email.php(1592): CodeIgniter\Email\Email->spoolEmail()
+#4 E:\Xampp\htdocs\Project-e-Keuangan\vendor\myth\auth\src\Authentication\Activators\EmailActivator.php(32): CodeIgniter\Email\Email->send()
+#5 E:\Xampp\htdocs\Project-e-Keuangan\vendor\myth\auth\src\Controllers\AuthController.php(502): Myth\Auth\Authentication\Activators\EmailActivator->send(Object(Myth\Auth\Entities\User))
+#6 E:\Xampp\htdocs\Project-e-Keuangan\system\CodeIgniter.php(933): Myth\Auth\Controllers\AuthController->resendActivateAccount()
+#7 E:\Xampp\htdocs\Project-e-Keuangan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+#8 E:\Xampp\htdocs\Project-e-Keuangan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 E:\Xampp\htdocs\Project-e-Keuangan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 E:\Xampp\htdocs\Project-e-Keuangan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 E:\Xampp\htdocs\Project-e-Keuangan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 E:\Xampp\htdocs\Project-e-Keuangan\system\rewrite.php(44): require_once('E:\\Xampp\\htdocs...')
+#13 {main}
+ERROR - 2025-09-19 00:03:16 --> Email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.
+ERROR - 2025-09-19 00:03:16 --> 
+ERROR - 2025-09-19 00:04:11 --> Email: sendWithMail throwed ErrorException: mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in E:\Xampp\htdocs\Project-e-Keuangan\system\Email\Email.php:1761
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mail(): Failed ...', 'E:\\Xampp\\htdocs...', 1761)
+#1 E:\Xampp\htdocs\Project-e-Keuangan\system\Email\Email.php(1761): mail('kusumaalvy@gmai...', '=?UTF-8?Q?Aktiv...', 'This is a multi...', 'Date: Fri, 19 S...')
+#2 E:\Xampp\htdocs\Project-e-Keuangan\system\Email\Email.php(1698): CodeIgniter\Email\Email->sendWithMail()
+#3 E:\Xampp\htdocs\Project-e-Keuangan\system\Email\Email.php(1592): CodeIgniter\Email\Email->spoolEmail()
+#4 E:\Xampp\htdocs\Project-e-Keuangan\vendor\myth\auth\src\Authentication\Activators\EmailActivator.php(32): CodeIgniter\Email\Email->send()
+#5 E:\Xampp\htdocs\Project-e-Keuangan\vendor\myth\auth\src\Controllers\AuthController.php(236): Myth\Auth\Authentication\Activators\EmailActivator->send(Object(Myth\Auth\Entities\User))
+#6 E:\Xampp\htdocs\Project-e-Keuangan\system\CodeIgniter.php(933): Myth\Auth\Controllers\AuthController->attemptRegister()
+#7 E:\Xampp\htdocs\Project-e-Keuangan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+#8 E:\Xampp\htdocs\Project-e-Keuangan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 E:\Xampp\htdocs\Project-e-Keuangan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 E:\Xampp\htdocs\Project-e-Keuangan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 E:\Xampp\htdocs\Project-e-Keuangan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 E:\Xampp\htdocs\Project-e-Keuangan\system\rewrite.php(44): require_once('E:\\Xampp\\htdocs...')
+#13 {main}
+ERROR - 2025-09-19 00:04:11 --> Email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.
+ERROR - 2025-09-19 00:04:11 --> 
+ERROR - 2025-09-19 00:04:57 --> Email: sendWithMail throwed ErrorException: mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in E:\Xampp\htdocs\Project-e-Keuangan\system\Email\Email.php:1761
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mail(): Failed ...', 'E:\\Xampp\\htdocs...', 1761)
+#1 E:\Xampp\htdocs\Project-e-Keuangan\system\Email\Email.php(1761): mail('kusumaalvy@gmai...', '=?UTF-8?Q?Aktiv...', 'This is a multi...', 'Date: Fri, 19 S...')
+#2 E:\Xampp\htdocs\Project-e-Keuangan\system\Email\Email.php(1698): CodeIgniter\Email\Email->sendWithMail()
+#3 E:\Xampp\htdocs\Project-e-Keuangan\system\Email\Email.php(1592): CodeIgniter\Email\Email->spoolEmail()
+#4 E:\Xampp\htdocs\Project-e-Keuangan\vendor\myth\auth\src\Authentication\Activators\EmailActivator.php(32): CodeIgniter\Email\Email->send()
+#5 E:\Xampp\htdocs\Project-e-Keuangan\vendor\myth\auth\src\Controllers\AuthController.php(502): Myth\Auth\Authentication\Activators\EmailActivator->send(Object(Myth\Auth\Entities\User))
+#6 E:\Xampp\htdocs\Project-e-Keuangan\system\CodeIgniter.php(933): Myth\Auth\Controllers\AuthController->resendActivateAccount()
+#7 E:\Xampp\htdocs\Project-e-Keuangan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+#8 E:\Xampp\htdocs\Project-e-Keuangan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 E:\Xampp\htdocs\Project-e-Keuangan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 E:\Xampp\htdocs\Project-e-Keuangan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 E:\Xampp\htdocs\Project-e-Keuangan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 E:\Xampp\htdocs\Project-e-Keuangan\system\rewrite.php(44): require_once('E:\\Xampp\\htdocs...')
+#13 {main}
+ERROR - 2025-09-19 00:04:57 --> Email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.
+ERROR - 2025-09-19 00:04:57 --> 
+ERROR - 2025-09-19 00:08:06 --> Email: sendWithMail throwed ErrorException: mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in E:\Xampp\htdocs\Project-e-Keuangan\system\Email\Email.php:1761
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mail(): Failed ...', 'E:\\Xampp\\htdocs...', 1761)
+#1 E:\Xampp\htdocs\Project-e-Keuangan\system\Email\Email.php(1761): mail('kusumaalvy@gmai...', '=?UTF-8?Q?Aktiv...', 'This is a multi...', 'Date: Fri, 19 S...')
+#2 E:\Xampp\htdocs\Project-e-Keuangan\system\Email\Email.php(1698): CodeIgniter\Email\Email->sendWithMail()
+#3 E:\Xampp\htdocs\Project-e-Keuangan\system\Email\Email.php(1592): CodeIgniter\Email\Email->spoolEmail()
+#4 E:\Xampp\htdocs\Project-e-Keuangan\vendor\myth\auth\src\Authentication\Activators\EmailActivator.php(32): CodeIgniter\Email\Email->send()
+#5 E:\Xampp\htdocs\Project-e-Keuangan\vendor\myth\auth\src\Controllers\AuthController.php(502): Myth\Auth\Authentication\Activators\EmailActivator->send(Object(Myth\Auth\Entities\User))
+#6 E:\Xampp\htdocs\Project-e-Keuangan\system\CodeIgniter.php(933): Myth\Auth\Controllers\AuthController->resendActivateAccount()
+#7 E:\Xampp\htdocs\Project-e-Keuangan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+#8 E:\Xampp\htdocs\Project-e-Keuangan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 E:\Xampp\htdocs\Project-e-Keuangan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 E:\Xampp\htdocs\Project-e-Keuangan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 E:\Xampp\htdocs\Project-e-Keuangan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 E:\Xampp\htdocs\Project-e-Keuangan\system\rewrite.php(44): require_once('E:\\Xampp\\htdocs...')
+#13 {main}
+ERROR - 2025-09-19 00:08:06 --> Email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.
+ERROR - 2025-09-19 00:08:06 --> 
+ERROR - 2025-09-19 00:09:38 --> mysqli_sql_exception: Table 'ci_keuangan.guru' doesn't exist in E:\Xampp\htdocs\Project-e-Keuangan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\Xampp\htdocs\Project-e-Keuangan\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\Xampp\htdocs\Project-e-Keuangan\system\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\Xampp\htdocs\Project-e-Keuangan\app\Models\GuruModel.php(49): CodeIgniter\BaseModel->findAll()
+#7 E:\Xampp\htdocs\Project-e-Keuangan\app\Controllers\GuruController.php(17): App\Models\GuruModel->getAllGuru()
+#8 E:\Xampp\htdocs\Project-e-Keuangan\system\CodeIgniter.php(933): App\Controllers\GuruController->index()
+#9 E:\Xampp\htdocs\Project-e-Keuangan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GuruController))
+#10 E:\Xampp\htdocs\Project-e-Keuangan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\Xampp\htdocs\Project-e-Keuangan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 E:\Xampp\htdocs\Project-e-Keuangan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 E:\Xampp\htdocs\Project-e-Keuangan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 E:\Xampp\htdocs\Project-e-Keuangan\system\rewrite.php(44): require_once('E:\\Xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2025-09-19 00:09:38 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'ci_keuangan.guru' doesn't exist
+[Method: GET, Route: admin/data-guru]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `guru`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\GuruModel.php(49): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\GuruController.php(17): App\Models\GuruModel->getAllGuru()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GuruController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GuruController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Xampp\\htdocs\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-19 00:09:38 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'ci_keuangan.guru' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `guru`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `guru`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `guru`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\GuruModel.php(49): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\GuruController.php(17): App\Models\GuruModel->getAllGuru()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GuruController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GuruController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('E:\\Xampp\\htdocs\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-19 00:09:38 --> [Caused by] mysqli_sql_exception: Table 'ci_keuangan.guru' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `guru`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `guru`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `guru`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `guru`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\GuruModel.php(49): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\GuruController.php(17): App\Models\GuruModel->getAllGuru()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GuruController->index()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GuruController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('E:\\Xampp\\htdocs\\Project-e-Keuangan\\public\\index.php')
+ERROR - 2025-09-19 00:09:41 --> mysqli_sql_exception: Table 'ci_keuangan.guru' doesn't exist in E:\Xampp\htdocs\Project-e-Keuangan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\Xampp\htdocs\Project-e-Keuangan\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\Xampp\htdocs\Project-e-Keuangan\system\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\Xampp\htdocs\Project-e-Keuangan\app\Models\GuruModel.php(49): CodeIgniter\BaseModel->findAll()
+#7 E:\Xampp\htdocs\Project-e-Keuangan\app\Controllers\GuruController.php(17): App\Models\GuruModel->getAllGuru()
+#8 E:\Xampp\htdocs\Project-e-Keuangan\system\CodeIgniter.php(933): App\Controllers\GuruController->index()
+#9 E:\Xampp\htdocs\Project-e-Keuangan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GuruController))
+#10 E:\Xampp\htdocs\Project-e-Keuangan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\Xampp\htdocs\Project-e-Keuangan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 E:\Xampp\htdocs\Project-e-Keuangan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 E:\Xampp\htdocs\Project-e-Keuangan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 E:\Xampp\htdocs\Project-e-Keuangan\system\rewrite.php(44): require_once('E:\\Xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2025-09-19 00:09:41 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'ci_keuangan.guru' doesn't exist
+[Method: GET, Route: admin/data-guru]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `guru`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\GuruModel.php(49): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\GuruController.php(17): App\Models\GuruModel->getAllGuru()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GuruController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GuruController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Xampp\\htdocs\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-19 00:09:41 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'ci_keuangan.guru' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `guru`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `guru`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `guru`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\GuruModel.php(49): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\GuruController.php(17): App\Models\GuruModel->getAllGuru()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GuruController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GuruController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('E:\\Xampp\\htdocs\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-19 00:09:41 --> [Caused by] mysqli_sql_exception: Table 'ci_keuangan.guru' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `guru`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `guru`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `guru`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `guru`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\GuruModel.php(49): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\GuruController.php(17): App\Models\GuruModel->getAllGuru()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GuruController->index()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GuruController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('E:\\Xampp\\htdocs\\Project-e-Keuangan\\public\\index.php')
+ERROR - 2025-09-19 00:12:22 --> mysqli_sql_exception: Table 'ci_keuangan.guru' doesn't exist in E:\Xampp\htdocs\Project-e-Keuangan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\Xampp\htdocs\Project-e-Keuangan\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\Xampp\htdocs\Project-e-Keuangan\system\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\Xampp\htdocs\Project-e-Keuangan\app\Models\GuruModel.php(49): CodeIgniter\BaseModel->findAll()
+#7 E:\Xampp\htdocs\Project-e-Keuangan\app\Controllers\GuruController.php(17): App\Models\GuruModel->getAllGuru()
+#8 E:\Xampp\htdocs\Project-e-Keuangan\system\CodeIgniter.php(933): App\Controllers\GuruController->index()
+#9 E:\Xampp\htdocs\Project-e-Keuangan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GuruController))
+#10 E:\Xampp\htdocs\Project-e-Keuangan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\Xampp\htdocs\Project-e-Keuangan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 E:\Xampp\htdocs\Project-e-Keuangan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 E:\Xampp\htdocs\Project-e-Keuangan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 E:\Xampp\htdocs\Project-e-Keuangan\system\rewrite.php(44): require_once('E:\\Xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2025-09-19 00:12:22 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'ci_keuangan.guru' doesn't exist
+[Method: GET, Route: admin/data-guru]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `guru`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\GuruModel.php(49): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\GuruController.php(17): App\Models\GuruModel->getAllGuru()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GuruController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GuruController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Xampp\\htdocs\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-19 00:12:22 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'ci_keuangan.guru' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `guru`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `guru`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `guru`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\GuruModel.php(49): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\GuruController.php(17): App\Models\GuruModel->getAllGuru()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GuruController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GuruController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('E:\\Xampp\\htdocs\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-19 00:12:22 --> [Caused by] mysqli_sql_exception: Table 'ci_keuangan.guru' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `guru`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `guru`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `guru`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `guru`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\GuruModel.php(49): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\GuruController.php(17): App\Models\GuruModel->getAllGuru()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GuruController->index()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GuruController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('E:\\Xampp\\htdocs\\Project-e-Keuangan\\public\\index.php')
+ERROR - 2025-09-19 00:15:54 --> mysqli_sql_exception: Table 'ci_keuangan.guru' doesn't exist in E:\Xampp\htdocs\Project-e-Keuangan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\Xampp\htdocs\Project-e-Keuangan\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\Xampp\htdocs\Project-e-Keuangan\system\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\Xampp\htdocs\Project-e-Keuangan\app\Models\GuruModel.php(49): CodeIgniter\BaseModel->findAll()
+#7 E:\Xampp\htdocs\Project-e-Keuangan\app\Controllers\GuruController.php(17): App\Models\GuruModel->getAllGuru()
+#8 E:\Xampp\htdocs\Project-e-Keuangan\system\CodeIgniter.php(933): App\Controllers\GuruController->index()
+#9 E:\Xampp\htdocs\Project-e-Keuangan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GuruController))
+#10 E:\Xampp\htdocs\Project-e-Keuangan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\Xampp\htdocs\Project-e-Keuangan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 E:\Xampp\htdocs\Project-e-Keuangan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 E:\Xampp\htdocs\Project-e-Keuangan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 E:\Xampp\htdocs\Project-e-Keuangan\system\rewrite.php(44): require_once('E:\\Xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2025-09-19 00:15:54 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'ci_keuangan.guru' doesn't exist
+[Method: GET, Route: data-guru]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `guru`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\GuruModel.php(49): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\GuruController.php(17): App\Models\GuruModel->getAllGuru()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GuruController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GuruController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Xampp\\htdocs\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-19 00:15:54 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'ci_keuangan.guru' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `guru`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `guru`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `guru`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\GuruModel.php(49): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\GuruController.php(17): App\Models\GuruModel->getAllGuru()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GuruController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GuruController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('E:\\Xampp\\htdocs\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-19 00:15:54 --> [Caused by] mysqli_sql_exception: Table 'ci_keuangan.guru' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `guru`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `guru`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `guru`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `guru`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\GuruModel.php(49): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\GuruController.php(17): App\Models\GuruModel->getAllGuru()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GuruController->index()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GuruController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('E:\\Xampp\\htdocs\\Project-e-Keuangan\\public\\index.php')
+ERROR - 2025-09-19 00:21:02 --> mysqli_sql_exception: Table 'ci_keuangan.guru' doesn't exist in E:\Xampp\htdocs\Project-e-Keuangan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\Xampp\htdocs\Project-e-Keuangan\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\Xampp\htdocs\Project-e-Keuangan\system\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\Xampp\htdocs\Project-e-Keuangan\app\Models\GuruModel.php(49): CodeIgniter\BaseModel->findAll()
+#7 E:\Xampp\htdocs\Project-e-Keuangan\app\Controllers\GuruController.php(17): App\Models\GuruModel->getAllGuru()
+#8 E:\Xampp\htdocs\Project-e-Keuangan\system\CodeIgniter.php(933): App\Controllers\GuruController->index()
+#9 E:\Xampp\htdocs\Project-e-Keuangan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GuruController))
+#10 E:\Xampp\htdocs\Project-e-Keuangan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\Xampp\htdocs\Project-e-Keuangan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 E:\Xampp\htdocs\Project-e-Keuangan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 E:\Xampp\htdocs\Project-e-Keuangan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 E:\Xampp\htdocs\Project-e-Keuangan\system\rewrite.php(44): require_once('E:\\Xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2025-09-19 00:21:02 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'ci_keuangan.guru' doesn't exist
+[Method: GET, Route: data-guru]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `guru`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\GuruModel.php(49): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\GuruController.php(17): App\Models\GuruModel->getAllGuru()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GuruController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GuruController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Xampp\\htdocs\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-19 00:21:02 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'ci_keuangan.guru' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `guru`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `guru`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `guru`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\GuruModel.php(49): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\GuruController.php(17): App\Models\GuruModel->getAllGuru()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GuruController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GuruController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('E:\\Xampp\\htdocs\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-19 00:21:02 --> [Caused by] mysqli_sql_exception: Table 'ci_keuangan.guru' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `guru`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `guru`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `guru`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `guru`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\GuruModel.php(49): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\GuruController.php(17): App\Models\GuruModel->getAllGuru()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GuruController->index()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GuruController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('E:\\Xampp\\htdocs\\Project-e-Keuangan\\public\\index.php')
+ERROR - 2025-09-19 00:21:24 --> mysqli_sql_exception: Table 'ci_keuangan.guru' doesn't exist in E:\Xampp\htdocs\Project-e-Keuangan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\Xampp\htdocs\Project-e-Keuangan\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\Xampp\htdocs\Project-e-Keuangan\system\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\Xampp\htdocs\Project-e-Keuangan\app\Models\GuruModel.php(49): CodeIgniter\BaseModel->findAll()
+#7 E:\Xampp\htdocs\Project-e-Keuangan\app\Controllers\GuruController.php(17): App\Models\GuruModel->getAllGuru()
+#8 E:\Xampp\htdocs\Project-e-Keuangan\system\CodeIgniter.php(933): App\Controllers\GuruController->index()
+#9 E:\Xampp\htdocs\Project-e-Keuangan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GuruController))
+#10 E:\Xampp\htdocs\Project-e-Keuangan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\Xampp\htdocs\Project-e-Keuangan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 E:\Xampp\htdocs\Project-e-Keuangan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 E:\Xampp\htdocs\Project-e-Keuangan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 E:\Xampp\htdocs\Project-e-Keuangan\system\rewrite.php(44): require_once('E:\\Xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2025-09-19 00:21:24 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'ci_keuangan.guru' doesn't exist
+[Method: GET, Route: data-guru]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `guru`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\GuruModel.php(49): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\GuruController.php(17): App\Models\GuruModel->getAllGuru()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GuruController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GuruController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Xampp\\htdocs\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-19 00:21:24 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'ci_keuangan.guru' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `guru`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `guru`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `guru`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\GuruModel.php(49): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\GuruController.php(17): App\Models\GuruModel->getAllGuru()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GuruController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GuruController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('E:\\Xampp\\htdocs\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-19 00:21:24 --> [Caused by] mysqli_sql_exception: Table 'ci_keuangan.guru' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `guru`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `guru`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `guru`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `guru`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\GuruModel.php(49): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\GuruController.php(17): App\Models\GuruModel->getAllGuru()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GuruController->index()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GuruController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('E:\\Xampp\\htdocs\\Project-e-Keuangan\\public\\index.php')
+ERROR - 2025-09-19 00:24:32 --> mysqli_sql_exception: Table 'ci_keuangan.guru' doesn't exist in E:\Xampp\htdocs\Project-e-Keuangan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\Xampp\htdocs\Project-e-Keuangan\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\Xampp\htdocs\Project-e-Keuangan\system\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\Xampp\htdocs\Project-e-Keuangan\app\Models\GuruModel.php(49): CodeIgniter\BaseModel->findAll()
+#7 E:\Xampp\htdocs\Project-e-Keuangan\app\Controllers\GuruController.php(17): App\Models\GuruModel->getAllGuru()
+#8 E:\Xampp\htdocs\Project-e-Keuangan\system\CodeIgniter.php(933): App\Controllers\GuruController->index()
+#9 E:\Xampp\htdocs\Project-e-Keuangan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GuruController))
+#10 E:\Xampp\htdocs\Project-e-Keuangan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\Xampp\htdocs\Project-e-Keuangan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 E:\Xampp\htdocs\Project-e-Keuangan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 E:\Xampp\htdocs\Project-e-Keuangan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 E:\Xampp\htdocs\Project-e-Keuangan\system\rewrite.php(44): require_once('E:\\Xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2025-09-19 00:24:32 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'ci_keuangan.guru' doesn't exist
+[Method: GET, Route: guru]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `guru`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\GuruModel.php(49): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\GuruController.php(17): App\Models\GuruModel->getAllGuru()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GuruController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GuruController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Xampp\\htdocs\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-19 00:24:32 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'ci_keuangan.guru' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `guru`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `guru`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `guru`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\GuruModel.php(49): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\GuruController.php(17): App\Models\GuruModel->getAllGuru()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GuruController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GuruController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('E:\\Xampp\\htdocs\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-19 00:24:32 --> [Caused by] mysqli_sql_exception: Table 'ci_keuangan.guru' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `guru`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `guru`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `guru`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `guru`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\GuruModel.php(49): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\GuruController.php(17): App\Models\GuruModel->getAllGuru()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GuruController->index()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GuruController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('E:\\Xampp\\htdocs\\Project-e-Keuangan\\public\\index.php')
+ERROR - 2025-09-19 00:27:11 --> mysqli_sql_exception: Table 'ci_keuangan.guru' doesn't exist in E:\Xampp\htdocs\Project-e-Keuangan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\Xampp\htdocs\Project-e-Keuangan\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\Xampp\htdocs\Project-e-Keuangan\system\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\Xampp\htdocs\Project-e-Keuangan\app\Models\GuruModel.php(49): CodeIgniter\BaseModel->findAll()
+#7 E:\Xampp\htdocs\Project-e-Keuangan\app\Controllers\GuruController.php(17): App\Models\GuruModel->getAllGuru()
+#8 E:\Xampp\htdocs\Project-e-Keuangan\system\CodeIgniter.php(933): App\Controllers\GuruController->index()
+#9 E:\Xampp\htdocs\Project-e-Keuangan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GuruController))
+#10 E:\Xampp\htdocs\Project-e-Keuangan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\Xampp\htdocs\Project-e-Keuangan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 E:\Xampp\htdocs\Project-e-Keuangan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 E:\Xampp\htdocs\Project-e-Keuangan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 E:\Xampp\htdocs\Project-e-Keuangan\system\rewrite.php(44): require_once('E:\\Xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2025-09-19 00:27:11 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'ci_keuangan.guru' doesn't exist
+[Method: GET, Route: guru]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `guru`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\GuruModel.php(49): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\GuruController.php(17): App\Models\GuruModel->getAllGuru()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GuruController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GuruController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Xampp\\htdocs\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-19 00:27:11 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'ci_keuangan.guru' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `guru`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `guru`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `guru`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\GuruModel.php(49): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\GuruController.php(17): App\Models\GuruModel->getAllGuru()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GuruController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GuruController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('E:\\Xampp\\htdocs\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-19 00:27:11 --> [Caused by] mysqli_sql_exception: Table 'ci_keuangan.guru' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `guru`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `guru`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `guru`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `guru`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\GuruModel.php(49): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\GuruController.php(17): App\Models\GuruModel->getAllGuru()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GuruController->index()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GuruController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('E:\\Xampp\\htdocs\\Project-e-Keuangan\\public\\index.php')

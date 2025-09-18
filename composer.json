@@ -14,7 +14,7 @@
         "ext-intl": "*",
         "ext-mbstring": "*",
         "laminas/laminas-escaper": "^2.14",
-        "myth/auth": "*",
+        "myth/auth": "dev-develop",
         "psr/log": "^3.0"
     },
     "require-dev": {

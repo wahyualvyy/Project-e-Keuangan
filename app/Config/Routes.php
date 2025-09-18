@@ -27,8 +27,7 @@ $routes->group('', ['namespace' => 'Myth\Auth\Controllers'], function ($routes) 
 // =============================================================================
 // ADMIN ROUTES (Protected by login filter)
 // =============================================================================
-// $routes->group('admin', ['filter' => 'login'], function ($routes) {
-$routes->group('admin', function ($routes) {
+$routes->group('', ['filter' => 'login'], function ($routes) {
     // Dashboard
     $routes->get('/', 'AdminController::index');
     $routes->get('dashboard', 'AdminController::index');
@@ -106,23 +105,6 @@ $routes->group('admin', function ($routes) {
         $routes->get('pengeluaran', 'AdminController::kasPengeluaran');
         $routes->get('input-pengeluaran', 'AdminController::inputKasPengeluaran');
     });
-
-    // =======================================================================
-    // LEGACY ROUTES (Optional - kalau mau dibuang bisa)
-    // =======================================================================
-    $routes->get('data-guru', 'GuruController::index');
-    $routes->get('input-guru', 'AdminController::inputGuru');
-    $routes->get('data-siswa', 'AdminController::dataSiswa');
-    $routes->get('input-siswa', 'AdminController::inputSiswa');
-    $routes->get('data-kelas', 'AdminController::dataKelas');
-    $routes->get('input-kelas', 'AdminController::inputKelas');
-    $routes->get('data-jurusan', 'JurusanController::index');
-    $routes->get('input-jurusan', 'JurusanController::InputJurusan');
-    $routes->post('input-jurusan-create', 'JurusanController::create');
-    $routes->get('edit-jurusan/(:num)', 'JurusanController::edit/$1');
-    $routes->post('update-jurusan/(:num)', 'JurusanController::update/$1');
-    $routes->get('delete-jurusan/(:num)', 'JurusanController::delete/$1');
-    $routes->post('jurusan/bulk-action', 'JurusanController::bulkAction');
 });
 
 // =============================================================================

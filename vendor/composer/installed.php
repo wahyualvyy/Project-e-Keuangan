@@ -3,7 +3,7 @@
         'name' => 'codeigniter4/codeigniter4',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '12e2e98061a1b1316cdf657f9f4b723f0e93151b',
+        'reference' => 'f5a2ef8ac94104f876a6d0147b9949260cb2fcff',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -28,7 +28,7 @@
         'codeigniter4/codeigniter4' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '12e2e98061a1b1316cdf657f9f4b723f0e93151b',
+            'reference' => 'f5a2ef8ac94104f876a6d0147b9949260cb2fcff',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -86,12 +86,14 @@
             'dev_requirement' => true,
         ),
         'myth/auth' => array(
-            'pretty_version' => 'v1.2.1',
-            'version' => '1.2.1.0',
-            'reference' => '7d0347faa47bd754d2dc49593a9852800be73986',
+            'pretty_version' => 'dev-develop',
+            'version' => 'dev-develop',
+            'reference' => '0318c8246ee4f6c922e3072c7e17fcd97c81ce65',
             'type' => 'library',
             'install_path' => __DIR__ . '/../myth/auth',
-            'aliases' => array(),
+            'aliases' => array(
+                0 => '9999999-dev',
+            ),
             'dev_requirement' => false,
         ),
         'nette/neon' => array(

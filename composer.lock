@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "43e4859398a662e178d339140fe0c0fe",
+    "content-hash": "ea9a26a0614f86875b287fb1906a305c",
     "packages": [
         {
             "name": "laminas/laminas-escaper",
@@ -69,16 +69,16 @@
         },
         {
             "name": "myth/auth",
-            "version": "v1.2.1",
+            "version": "dev-develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lonnieezell/myth-auth.git",
-                "reference": "7d0347faa47bd754d2dc49593a9852800be73986"
+                "reference": "0318c8246ee4f6c922e3072c7e17fcd97c81ce65"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lonnieezell/myth-auth/zipball/7d0347faa47bd754d2dc49593a9852800be73986",
-                "reference": "7d0347faa47bd754d2dc49593a9852800be73986",
+                "url": "https://api.github.com/repos/lonnieezell/myth-auth/zipball/0318c8246ee4f6c922e3072c7e17fcd97c81ce65",
+                "reference": "0318c8246ee4f6c922e3072c7e17fcd97c81ce65",
                 "shasum": ""
             },
             "require": {
@@ -93,6 +93,7 @@
                 "codeigniter4/framework": "^4.1",
                 "mockery/mockery": "^1.0"
             },
+            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -123,7 +124,7 @@
             ],
             "support": {
                 "issues": "https://github.com/lonnieezell/myth-auth/issues",
-                "source": "https://github.com/lonnieezell/myth-auth/tree/v1.2.1"
+                "source": "https://github.com/lonnieezell/myth-auth/tree/develop"
             },
             "funding": [
                 {
@@ -139,7 +140,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2022-07-13T18:35:46+00:00"
+            "time": "2024-03-09T19:25:34+00:00"
         },
         {
             "name": "psr/log",
@@ -2797,6 +2798,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "myth/auth": 20,
         "codeigniter/phpstan-codeigniter": 20
     },
     "prefer-stable": false,

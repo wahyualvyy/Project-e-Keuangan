@@ -6,7 +6,7 @@
             <div class="d-md-flex align-items-center">
                 <div>
                     <h4 class="card-title">Tabel Data Guru</h4>
-                    <a href="<?= base_url('admin/input-guru'); ?>">
+                    <a href="<?= base_url('guru/input'); ?>">
                         <button type="button" class="btn btn-secondary card-subtitle m-1 text-white">Tambah
                             Data</button>
                     </a>

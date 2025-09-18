@@ -668,3 +668,194 @@ in SYSTEMPATH/Filters/Filters.php on line 590.
  6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
  7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
  8 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-09-18 18:36:47 --> CodeIgniter\Cache\Exceptions\CacheException: Cache unable to write to "E:\Xampp\htdocs\Project-e-Keuangan\writable\cache/".
+[Method: GET, Route: /]
+in SYSTEMPATH\Cache\Handlers\FileHandler.php on line 61.
+ 1 SYSTEMPATH\Cache\Handlers\FileHandler.php(61): CodeIgniter\Cache\Exceptions\CacheException::forUnableToWrite('E:\\Xampp\\htdocs\\Project-e-Keuangan\\writable\\cache/')
+ 2 SYSTEMPATH\Cache\CacheFactory.php(67): CodeIgniter\Cache\Handlers\FileHandler->__construct(Object(Config\Cache))
+ 3 SYSTEMPATH\Config\Services.php(129): CodeIgniter\Cache\CacheFactory::getHandler(Object(Config\Cache))
+ 4 SYSTEMPATH\Config\BaseService.php(312): CodeIgniter\Config\Services::cache(Object(Config\Cache), false)
+ 5 SYSTEMPATH\Config\BaseService.php(251): CodeIgniter\Config\BaseService::__callStatic('cache', [...])
+ 6 SYSTEMPATH\Config\Services.php(124): CodeIgniter\Config\BaseService::getSharedInstance('cache', null)
+ 7 SYSTEMPATH\Config\BaseService.php(321): CodeIgniter\Config\Services::cache()
+ 8 SYSTEMPATH\Config\BaseService.php(202): CodeIgniter\Config\BaseService::__callStatic('cache', [])
+ 9 SYSTEMPATH\Config\Services.php(454): CodeIgniter\Config\BaseService::get('cache')
+10 SYSTEMPATH\Config\BaseService.php(312): CodeIgniter\Config\Services::responsecache(Object(Config\Cache), null, false)
+11 SYSTEMPATH\Config\BaseService.php(251): CodeIgniter\Config\BaseService::__callStatic('responsecache', [...])
+12 SYSTEMPATH\Config\Services.php(450): CodeIgniter\Config\BaseService::getSharedInstance('responsecache', null, null)
+13 SYSTEMPATH\Config\BaseService.php(321): CodeIgniter\Config\Services::responsecache()
+14 SYSTEMPATH\CodeIgniter.php(178): CodeIgniter\Config\BaseService::__callStatic('responsecache', [])
+15 SYSTEMPATH\Config\Services.php(164): CodeIgniter\CodeIgniter->__construct(Object(Config\App))
+16 SYSTEMPATH\Config\BaseService.php(312): CodeIgniter\Config\Services::codeigniter(Object(Config\App), false)
+17 SYSTEMPATH\Config\BaseService.php(251): CodeIgniter\Config\BaseService::__callStatic('codeigniter', [...])
+18 SYSTEMPATH\Config\Services.php(159): CodeIgniter\Config\BaseService::getSharedInstance('codeigniter', null)
+19 SYSTEMPATH\Config\BaseService.php(321): CodeIgniter\Config\Services::codeigniter()
+20 SYSTEMPATH\Config\BaseService.php(202): CodeIgniter\Config\BaseService::__callStatic('codeigniter', [])
+21 SYSTEMPATH\Common.php(1000): CodeIgniter\Config\BaseService::get('codeigniter')
+22 SYSTEMPATH\Boot.php(320): service('codeigniter')
+23 SYSTEMPATH\Boot.php(101): CodeIgniter\Boot::initializeCodeIgniter()
+24 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+CRITICAL - 2025-09-18 18:37:16 --> CodeIgniter\Cache\Exceptions\CacheException: Cache unable to write to "E:\Xampp\htdocs\Project-e-Keuangan\writable\cache/".
+[Method: GET, Route: /]
+in SYSTEMPATH\Cache\Handlers\FileHandler.php on line 61.
+ 1 SYSTEMPATH\Cache\Handlers\FileHandler.php(61): CodeIgniter\Cache\Exceptions\CacheException::forUnableToWrite('E:\\Xampp\\htdocs\\Project-e-Keuangan\\writable\\cache/')
+ 2 SYSTEMPATH\Cache\CacheFactory.php(67): CodeIgniter\Cache\Handlers\FileHandler->__construct(Object(Config\Cache))
+ 3 SYSTEMPATH\Config\Services.php(129): CodeIgniter\Cache\CacheFactory::getHandler(Object(Config\Cache))
+ 4 SYSTEMPATH\Config\BaseService.php(312): CodeIgniter\Config\Services::cache(Object(Config\Cache), false)
+ 5 SYSTEMPATH\Config\BaseService.php(251): CodeIgniter\Config\BaseService::__callStatic('cache', [...])
+ 6 SYSTEMPATH\Config\Services.php(124): CodeIgniter\Config\BaseService::getSharedInstance('cache', null)
+ 7 SYSTEMPATH\Config\BaseService.php(321): CodeIgniter\Config\Services::cache()
+ 8 SYSTEMPATH\Config\BaseService.php(202): CodeIgniter\Config\BaseService::__callStatic('cache', [])
+ 9 SYSTEMPATH\Config\Services.php(454): CodeIgniter\Config\BaseService::get('cache')
+10 SYSTEMPATH\Config\BaseService.php(312): CodeIgniter\Config\Services::responsecache(Object(Config\Cache), null, false)
+11 SYSTEMPATH\Config\BaseService.php(251): CodeIgniter\Config\BaseService::__callStatic('responsecache', [...])
+12 SYSTEMPATH\Config\Services.php(450): CodeIgniter\Config\BaseService::getSharedInstance('responsecache', null, null)
+13 SYSTEMPATH\Config\BaseService.php(321): CodeIgniter\Config\Services::responsecache()
+14 SYSTEMPATH\CodeIgniter.php(178): CodeIgniter\Config\BaseService::__callStatic('responsecache', [])
+15 SYSTEMPATH\Config\Services.php(164): CodeIgniter\CodeIgniter->__construct(Object(Config\App))
+16 SYSTEMPATH\Config\BaseService.php(312): CodeIgniter\Config\Services::codeigniter(Object(Config\App), false)
+17 SYSTEMPATH\Config\BaseService.php(251): CodeIgniter\Config\BaseService::__callStatic('codeigniter', [...])
+18 SYSTEMPATH\Config\Services.php(159): CodeIgniter\Config\BaseService::getSharedInstance('codeigniter', null)
+19 SYSTEMPATH\Config\BaseService.php(321): CodeIgniter\Config\Services::codeigniter()
+20 SYSTEMPATH\Config\BaseService.php(202): CodeIgniter\Config\BaseService::__callStatic('codeigniter', [])
+21 SYSTEMPATH\Common.php(1000): CodeIgniter\Config\BaseService::get('codeigniter')
+22 SYSTEMPATH\Boot.php(320): service('codeigniter')
+23 SYSTEMPATH\Boot.php(101): CodeIgniter\Boot::initializeCodeIgniter()
+24 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2025-09-18 23:45:12 --> mysqli_sql_exception: Table 'users' already exists in E:\Xampp\htdocs\Project-e-Keuangan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\MySQLi\Connection.php(327): mysqli->query('CREATE TABLE `u...', 0)
+#1 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `u...')
+#2 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `u...')
+#3 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `u...')
+#4 E:\Xampp\htdocs\Project-e-Keuangan\app\Database\Migrations\2025-09-12-091107_UserMigration.php(62): CodeIgniter\Database\Forge->createTable('users')
+#5 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\MigrationRunner.php(876): App\Database\Migrations\CreateUsersTable->up()
+#6 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\MigrationRunner.php(182): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 E:\Xampp\htdocs\Project-e-Keuangan\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 E:\Xampp\htdocs\Project-e-Keuangan\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 E:\Xampp\htdocs\Project-e-Keuangan\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 E:\Xampp\htdocs\Project-e-Keuangan\system\Boot.php(360): CodeIgniter\CLI\Console->run()
+#11 E:\Xampp\htdocs\Project-e-Keuangan\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 E:\Xampp\htdocs\Project-e-Keuangan\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+ERROR - 2025-09-18 23:50:22 --> mysqli_sql_exception: Unknown column 'password' in 'field list' in E:\Xampp\htdocs\Project-e-Keuangan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `us...', 0)
+#1 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 E:\Xampp\htdocs\Project-e-Keuangan\app\Database\Seeds\UserSeeder.php(20): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\Seeder.php(149): App\Database\Seeds\UserSeeder->run()
+#6 E:\Xampp\htdocs\Project-e-Keuangan\system\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Se...')
+#7 E:\Xampp\htdocs\Project-e-Keuangan\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Seed->run(Array)
+#8 E:\Xampp\htdocs\Project-e-Keuangan\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#9 E:\Xampp\htdocs\Project-e-Keuangan\system\Boot.php(360): CodeIgniter\CLI\Console->run()
+#10 E:\Xampp\htdocs\Project-e-Keuangan\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#11 E:\Xampp\htdocs\Project-e-Keuangan\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-09-18 23:51:40 --> mysqli_sql_exception: Unknown column 'is_active' in 'field list' in E:\Xampp\htdocs\Project-e-Keuangan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `us...', 0)
+#1 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 E:\Xampp\htdocs\Project-e-Keuangan\app\Database\Seeds\UserSeeder.php(20): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\Seeder.php(149): App\Database\Seeds\UserSeeder->run()
+#6 E:\Xampp\htdocs\Project-e-Keuangan\system\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Se...')
+#7 E:\Xampp\htdocs\Project-e-Keuangan\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Seed->run(Array)
+#8 E:\Xampp\htdocs\Project-e-Keuangan\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#9 E:\Xampp\htdocs\Project-e-Keuangan\system\Boot.php(360): CodeIgniter\CLI\Console->run()
+#10 E:\Xampp\htdocs\Project-e-Keuangan\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#11 E:\Xampp\htdocs\Project-e-Keuangan\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-09-18 23:52:17 --> mysqli_sql_exception: Unknown column 'password' in 'field list' in E:\Xampp\htdocs\Project-e-Keuangan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `us...', 0)
+#1 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 E:\Xampp\htdocs\Project-e-Keuangan\app\Database\Seeds\UserSeeder.php(36): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\Seeder.php(149): App\Database\Seeds\UserSeeder->run()
+#6 E:\Xampp\htdocs\Project-e-Keuangan\system\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Se...')
+#7 E:\Xampp\htdocs\Project-e-Keuangan\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Seed->run(Array)
+#8 E:\Xampp\htdocs\Project-e-Keuangan\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#9 E:\Xampp\htdocs\Project-e-Keuangan\system\Boot.php(360): CodeIgniter\CLI\Console->run()
+#10 E:\Xampp\htdocs\Project-e-Keuangan\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#11 E:\Xampp\htdocs\Project-e-Keuangan\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-09-18 23:52:48 --> mysqli_sql_exception: Duplicate entry 'admin@gmail.com' for key 'email' in E:\Xampp\htdocs\Project-e-Keuangan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `us...', 0)
+#1 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 E:\Xampp\htdocs\Project-e-Keuangan\app\Database\Seeds\UserSeeder.php(20): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\Seeder.php(149): App\Database\Seeds\UserSeeder->run()
+#6 E:\Xampp\htdocs\Project-e-Keuangan\system\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Se...')
+#7 E:\Xampp\htdocs\Project-e-Keuangan\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Seed->run(Array)
+#8 E:\Xampp\htdocs\Project-e-Keuangan\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#9 E:\Xampp\htdocs\Project-e-Keuangan\system\Boot.php(360): CodeIgniter\CLI\Console->run()
+#10 E:\Xampp\htdocs\Project-e-Keuangan\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#11 E:\Xampp\htdocs\Project-e-Keuangan\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-09-18 23:54:20 --> ErrorException: Undefined array key "register"
+[Method: GET, Route: register]
+in VENDORPATH\myth\auth\src\Controllers\AuthController.php on line 133.
+ 1 VENDORPATH\myth\auth\src\Controllers\AuthController.php(133): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "register"', 'E:\\Xampp\\htdocs\\Project-e-Keuangan\\vendor\\myth\\auth\\src\\Controllers\\AuthController.php', 133)
+ 2 SYSTEMPATH\CodeIgniter.php(933): Myth\Auth\Controllers\AuthController->register()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('E:\\Xampp\\htdocs\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-18 23:55:05 --> CodeIgniter\Validation\Exceptions\ValidationException: "strong_password" is not a valid rule.
+[Method: POST, Route: register]
+in SYSTEMPATH\Validation\Validation.php on line 345.
+ 1 SYSTEMPATH\Validation\Validation.php(345): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('strong_password')
+ 2 SYSTEMPATH\Validation\Validation.php(201): CodeIgniter\Validation\Validation->processRules('password', 'password', 'admin123', [...], [...], 'password')
+ 3 SYSTEMPATH\Controller.php(138): CodeIgniter\Validation\Validation->run()
+ 4 VENDORPATH\myth\auth\src\Controllers\AuthController.php(164): CodeIgniter\Controller->validate([...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): Myth\Auth\Controllers\AuthController->attemptRegister()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('E:\\Xampp\\htdocs\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-18 23:56:53 --> ErrorException: Could not check compatibility between Myth\Auth\Authentication\Passwords\CompositionValidator::check(string $password, ?CodeIgniter\Entity\Entity $user = null): bool and Myth\Auth\Authentication\Passwords\ValidatorInterface::check(string $password, ?CodeIgniter\Entity $user = null): bool, because class CodeIgniter\Entity is not available
+[Method: POST, Route: register]
+in VENDORPATH\myth\auth\src\Authentication\Passwords\CompositionValidator.php on line 28.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-09-18 23:57:56 --> ErrorException: Could not check compatibility between Myth\Auth\Authentication\Passwords\CompositionValidator::check(string $password, ?CodeIgniter\Entity\Entity $user = null): bool and Myth\Auth\Authentication\Passwords\ValidatorInterface::check(string $password, ?CodeIgniter\Entity $user = null): bool, because class CodeIgniter\Entity is not available
+[Method: POST, Route: register]
+in VENDORPATH\myth\auth\src\Authentication\Passwords\CompositionValidator.php on line 28.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-09-18 23:57:59 --> ErrorException: Could not check compatibility between Myth\Auth\Authentication\Passwords\CompositionValidator::check(string $password, ?CodeIgniter\Entity\Entity $user = null): bool and Myth\Auth\Authentication\Passwords\ValidatorInterface::check(string $password, ?CodeIgniter\Entity $user = null): bool, because class CodeIgniter\Entity is not available
+[Method: POST, Route: register]
+in VENDORPATH\myth\auth\src\Authentication\Passwords\CompositionValidator.php on line 28.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-09-18 23:58:28 --> ErrorException: Could not check compatibility between Myth\Auth\Authentication\Passwords\CompositionValidator::check(string $password, ?CodeIgniter\Entity\Entity $user = null): bool and Myth\Auth\Authentication\Passwords\ValidatorInterface::check(string $password, ?CodeIgniter\Entity $user = null): bool, because class CodeIgniter\Entity is not available
+[Method: POST, Route: register]
+in VENDORPATH\myth\auth\src\Authentication\Passwords\CompositionValidator.php on line 28.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-09-18 23:58:50 --> ErrorException: Could not check compatibility between Myth\Auth\Authentication\Passwords\CompositionValidator::check(string $password, ?CodeIgniter\Entity\Entity $user = null): bool and Myth\Auth\Authentication\Passwords\ValidatorInterface::check(string $password, ?CodeIgniter\Entity $user = null): bool, because class CodeIgniter\Entity is not available
+[Method: POST, Route: register]
+in VENDORPATH\myth\auth\src\Authentication\Passwords\CompositionValidator.php on line 28.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+ERROR - 2025-09-18 23:59:45 --> mysqli_sql_exception: Table 'users' already exists in E:\Xampp\htdocs\Project-e-Keuangan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\MySQLi\Connection.php(327): mysqli->query('CREATE TABLE `u...', 0)
+#1 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `u...')
+#2 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `u...')
+#3 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `u...')
+#4 E:\Xampp\htdocs\Project-e-Keuangan\app\Database\Migrations\2025-09-12-091107_UserMigration.php(62): CodeIgniter\Database\Forge->createTable('users')
+#5 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\MigrationRunner.php(876): App\Database\Migrations\CreateUsersTable->up()
+#6 E:\Xampp\htdocs\Project-e-Keuangan\system\Database\MigrationRunner.php(182): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 E:\Xampp\htdocs\Project-e-Keuangan\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 E:\Xampp\htdocs\Project-e-Keuangan\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 E:\Xampp\htdocs\Project-e-Keuangan\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 E:\Xampp\htdocs\Project-e-Keuangan\system\Boot.php(360): CodeIgniter\CLI\Console->run()
+#11 E:\Xampp\htdocs\Project-e-Keuangan\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 E:\Xampp\htdocs\Project-e-Keuangan\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
