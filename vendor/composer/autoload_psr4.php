@@ -15,6 +15,7 @@ return array(
     'PHPStan\\ExtensionInstaller\\' => array($vendorDir . '/phpstan/extension-installer/src'),
     'PHPStan\\' => array($vendorDir . '/phpstan/phpstan-strict-rules/src'),
     'Nexus\\PHPUnit\\Tachycardia\\' => array($vendorDir . '/nexusphp/tachycardia/src'),
+    'Myth\\Auth\\' => array($vendorDir . '/myth/auth/src'),
     'Laminas\\Escaper\\' => array($vendorDir . '/laminas/laminas-escaper/src'),
     'Kint\\' => array($vendorDir . '/kint-php/kint/src'),
     'Faker\\' => array($vendorDir . '/fakerphp/faker/src/Faker'),

@@ -293,7 +293,7 @@
 											<i class="ti ti-user fs-6"></i>
 											<p class="mb-0 fs-3">Profile Sekolah</p>
 										</a>
-										<a href="./authentication-login.html"
+										<a href="<?= base_url('logout'); ?>"
 											class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
 									</div>
 								</div>

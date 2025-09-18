@@ -267,7 +267,8 @@
                             </div>
                         <?php endif; ?>
 
-                        <form id="loginForm" action="<?= base_url('/login') ?>" method="POST">
+
+                        <form id="loginForm" action="<?= site_url('/login') ?>" method="POST">
                             <?= csrf_field(); ?>
                             <div class="input-group">
                                 <span class="input-group-text">
@@ -289,7 +290,8 @@
 
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="form-check">
-                                    <input class="form-check-input" name="remember" type="checkbox" id="rememberMe" value="1">
+                                    <input class="form-check-input" name="remember" type="checkbox" id="rememberMe"
+                                        value="1">
                                     <label class="form-check-label" for="rememberMe">
                                         Ingat saya
                                     </label>
@@ -349,10 +351,10 @@
         }, 3000);
 
         // Form submission with loading state
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
             const loadingOverlay = document.getElementById('loadingOverlay');
             const loginBtn = document.getElementById('loginBtn');
-            
+
             // Show loading state
             loadingOverlay.style.display = 'block';
             loginBtn.disabled = true;
@@ -360,7 +362,7 @@
         });
 
         // Auto-hide alerts after 5 seconds
-        setTimeout(function() {
+        setTimeout(function () {
             const alerts = document.querySelectorAll('.alert');
             alerts.forEach(alert => {
                 const bsAlert = new bootstrap.Alert(alert);
@@ -390,7 +392,7 @@
         <?php endif; ?>
 
         // Focus on username field when page loads
-        window.addEventListener('load', function() {
+        window.addEventListener('load', function () {
             document.getElementById('username').focus();
         });
     </script>

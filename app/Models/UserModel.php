@@ -3,94 +3,122 @@
 namespace App\Models;
 
 use CodeIgniter\Model;
+use Faker\Generator;
+use Myth\Auth\Authorization\GroupModel;
+use Myth\Auth\Entities\User;
 
+/**
+ * @method User|null first()
+ */
 class UserModel extends Model
 {
-    protected $table = 'users';
-    protected $primaryKey = 'id';
-    protected $useAutoIncrement = true;
-    protected $returnType = 'array';
-    protected $useSoftDeletes = false;
-    protected $protectFields = true;
-    // Fixed: Removed duplicate 'email' field
-    protected $allowedFields = ['username', 'email', 'password', 'created_at', 'updated_at', 'deleted_at'];
-
-    protected bool $allowEmptyInserts = false;
-    protected bool $updateOnlyChanged = true;
-
-    protected array $casts = [];
-    protected array $castHandlers = [];
-
-    // Dates
-    protected $useTimestamps = true;
-    protected $dateFormat = 'datetime';
-    protected $createdField = 'created_at';
-    protected $updatedField = 'updated_at';
-    protected $deletedField = 'deleted_at';
-
-    // Validation
+    protected $table          = 'users';
+    protected $primaryKey     = 'id';
+    protected $returnType     = 'App\Entities\User';
+    protected $useSoftDeletes = true;
+    protected $allowedFields  = [
+        'email', 'username', 'password_hash', 'reset_hash', 'reset_at', 'reset_expires', 'activate_hash',
+        'status', 'status_message', 'active', 'force_pass_reset', 'permissions', 'deleted_at',
+    ];
+    protected $useTimestamps   = true;
     protected $validationRules = [
-        'username' => 'required|min_length[3]|max_length[50]|is_unique[users.username]',
-        'email'    => 'required|valid_email|is_unique[users.email]',
-        'password' => 'required|min_length[6]',
+        'email'         => 'required|valid_email|is_unique[users.email,id,{id}]',
+        'username'      => 'required|alpha_numeric_punct|min_length[3]|max_length[30]|is_unique[users.username,id,{id}]',
+        'password_hash' => 'required',
     ];
-    protected $validationMessages = [
-        'username' => [
-            'required' => 'Username harus diisi',
-            'min_length' => 'Username minimal 3 karakter',
-            'max_length' => 'Username maksimal 50 karakter',
-            'is_unique' => 'Username sudah digunakan'
-        ],
-        'email' => [
-            'required' => 'Email harus diisi',
-            'valid_email' => 'Format email tidak valid',
-            'is_unique' => 'Email sudah terdaftar'
-        ],
-        'password' => [
-            'required' => 'Password harus diisi',
-            'min_length' => 'Password minimal 6 karakter'
-        ]
-    ];
-    protected $skipValidation = false;
-    protected $cleanValidationRules = true;
+    protected $validationMessages = [];
+    protected $skipValidation     = false;
+    protected $afterInsert        = ['addToGroup'];
 
-    // Callbacks
-    protected $allowCallbacks = true;
-    protected $beforeInsert = ['hashPassword'];
-    protected $afterInsert = [];
-    protected $beforeUpdate = ['hashPassword'];
-    protected $afterUpdate = [];
-    protected $beforeFind = [];
-    protected $afterFind = [];
-    protected $beforeDelete = [];
-    protected $afterDelete = [];
+    /**
+     * The id of a group to assign.
+     * Set internally by withGroup.
+     *
+     * @var int|null
+     */
+    protected $assignGroup;
 
-    // Hash password before insert/update
-    protected function hashPassword(array $data)
+    /**
+     * Logs a password reset attempt for posterity sake.
+     */
+    public function logResetAttempt(string $email, ?string $token = null, ?string $ipAddress = null, ?string $userAgent = null)
     {
-        if (!isset($data['data']['password'])) return $data;
-        
-        $data['data']['password'] = password_hash($data['data']['password'], PASSWORD_DEFAULT);
+        $this->db->table('auth_reset_attempts')->insert([
+            'email'      => $email,
+            'ip_address' => $ipAddress,
+            'user_agent' => $userAgent,
+            'token'      => $token,
+            'created_at' => date('Y-m-d H:i:s'),
+        ]);
+    }
+
+    /**
+     * Logs an activation attempt for posterity sake.
+     */
+    public function logActivationAttempt(?string $token = null, ?string $ipAddress = null, ?string $userAgent = null)
+    {
+        $this->db->table('auth_activation_attempts')->insert([
+            'ip_address' => $ipAddress,
+            'user_agent' => $userAgent,
+            'token'      => $token,
+            'created_at' => date('Y-m-d H:i:s'),
+        ]);
+    }
+
+    /**
+     * Sets the group to assign any users created.
+     *
+     * @return $this
+     */
+    public function withGroup(string $groupName)
+    {
+        $group = $this->db->table('auth_groups')->where('name', $groupName)->get()->getFirstRow();
+
+        $this->assignGroup = $group->id;
+
+        return $this;
+    }
+
+    /**
+     * Clears the group to assign to newly created users.
+     *
+     * @return $this
+     */
+    public function clearGroup()
+    {
+        $this->assignGroup = null;
+
+        return $this;
+    }
+
+    /**
+     * If a default role is assigned in Config\Auth, will
+     * add this user to that group. Will do nothing
+     * if the group cannot be found.
+     *
+     * @param mixed $data
+     *
+     * @return mixed
+     */
+    protected function addToGroup($data)
+    {
+        if (is_numeric($this->assignGroup)) {
+            $groupModel = model(GroupModel::class);
+            $groupModel->addUserToGroup($data['id'], $this->assignGroup);
+        }
+
         return $data;
     }
 
-    public function getUserByIdentity($identity)
+    /**
+     * Faked data for Fabricator.
+     */
+    public function fake(Generator &$faker): User
     {
-        return $this->groupStart()
-            ->where('username', $identity)
-            ->orWhere('email', $identity)
-            ->groupEnd()
-            ->first();
-    }
-
-    public function verifyPassword($identity, $password)
-    {
-        $user = $this->getUserByIdentity($identity);
-        if ($user && password_verify($password, $user['password'])) {
-            // Remove password from returned data for security
-            unset($user['password']);
-            return $user;
-        }
-        return false;
+        return new User([
+            'email'    => $faker->email,
+            'username' => $faker->userName,
+            'password' => bin2hex(random_bytes(16)),
+        ]);
     }
 }

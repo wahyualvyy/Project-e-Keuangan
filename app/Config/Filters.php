@@ -2,7 +2,6 @@
 
 namespace Config;
 
-use App\Filters\AuthFilter;
 use CodeIgniter\Filters\Cors;
 use CodeIgniter\Filters\CSRF;
 use CodeIgniter\Filters\Honeypot;
@@ -35,8 +34,7 @@ class Filters extends BaseFilters
         'forcehttps' => ForceHTTPS::class,
         'pagecache' => PageCache::class,
         'performance' => PerformanceMetrics::class,
-        'auth' => AuthFilter::class,
-        'guest' => \App\Filters\GuestFilter::class,
+        'login' => \Myth\Auth\Filters\LoginFilter::class,
     ];
 
     /**
@@ -73,7 +71,7 @@ class Filters extends BaseFilters
     public array $globals = [
         'before' => [
             // 'honeypot',
-            // 'csrf',
+            // 'csrf', // 
             // 'invalidchars',
         ],
         'after' => [

@@ -3,7 +3,7 @@
         'name' => 'codeigniter4/codeigniter4',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'a07c4e6f7cbb524897ca2ee0b8225ea3a0136d08',
+        'reference' => '12e2e98061a1b1316cdf657f9f4b723f0e93151b',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -19,10 +19,16 @@
             'aliases' => array(),
             'dev_requirement' => true,
         ),
+        'codeigniter4/authentication-implementation' => array(
+            'dev_requirement' => false,
+            'provided' => array(
+                0 => '1.0',
+            ),
+        ),
         'codeigniter4/codeigniter4' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'a07c4e6f7cbb524897ca2ee0b8225ea3a0136d08',
+            'reference' => '12e2e98061a1b1316cdf657f9f4b723f0e93151b',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -78,6 +84,15 @@
             'install_path' => __DIR__ . '/../myclabs/deep-copy',
             'aliases' => array(),
             'dev_requirement' => true,
+        ),
+        'myth/auth' => array(
+            'pretty_version' => 'v1.2.1',
+            'version' => '1.2.1.0',
+            'reference' => '7d0347faa47bd754d2dc49593a9852800be73986',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../myth/auth',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'nette/neon' => array(
             'pretty_version' => 'v3.4.4',
