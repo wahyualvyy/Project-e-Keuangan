@@ -188,6 +188,30 @@
             text-decoration: underline;
         }
 
+        .alert {
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+        }
+
+        .loading-overlay {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.8);
+            z-index: 1000;
+            border-radius: 20px;
+        }
+
+        .loading-spinner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
         @media (max-width: 576px) {
             .login-card {
                 margin: 1rem;
@@ -207,6 +231,14 @@
         <div class="row justify-content-center w-100">
             <div class="col-12 col-sm-8 col-md-6 col-lg-4">
                 <div class="card login-card">
+                    <div class="loading-overlay" id="loadingOverlay">
+                        <div class="loading-spinner">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="login-header">
                         <i class="ti ti-lock-access" style="font-size: 3rem; margin-bottom: 1rem;"></i>
                         <h2>Selamat Datang</h2>
@@ -214,14 +246,35 @@
                     </div>
 
                     <div class="login-body">
+                        <!-- Error Messages -->
+                        <?php if (session()->getFlashdata('errors')): ?>
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <strong>Error!</strong>
+                                <ul class="mb-0 mt-2">
+                                    <?php foreach (session()->getFlashdata('errors') as $error): ?>
+                                        <li><?= esc($error) ?></li>
+                                    <?php endforeach ?>
+                                </ul>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        <?php endif; ?>
+
+                        <!-- Success Messages -->
+                        <?php if (session()->getFlashdata('success')): ?>
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <strong>Berhasil!</strong> <?= session()->getFlashdata('success') ?>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        <?php endif; ?>
+
                         <form id="loginForm" action="<?= base_url('/login') ?>" method="POST">
                             <?= csrf_field(); ?>
                             <div class="input-group">
                                 <span class="input-group-text">
                                     <i class="ti ti-user"></i>
                                 </span>
-                                <input type="text" name="username" class="form-control" id="email"
-                                    placeholder="Username" required>
+                                <input type="text" name="username" class="form-control" id="username"
+                                    placeholder="Username atau Email" value="<?= old('username') ?>" required>
                             </div>
                             <div class="input-group">
                                 <span class="input-group-text">
@@ -236,7 +289,7 @@
 
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="form-check">
-                                    <input class="form-check-input" name="remember" type="checkbox" id="rememberMe">
+                                    <input class="form-check-input" name="remember" type="checkbox" id="rememberMe" value="1">
                                     <label class="form-check-label" for="rememberMe">
                                         Ingat saya
                                     </label>
@@ -244,7 +297,7 @@
                                 <a href="#" class="forgot-password">Lupa password?</a>
                             </div>
 
-                            <button type="submit" class="btn btn-primary btn-login">
+                            <button type="submit" class="btn btn-primary btn-login" id="loginBtn">
                                 <i class="ti ti-login me-2"></i>Masuk
                             </button>
                         </form>
@@ -295,15 +348,51 @@
             }
         }, 3000);
 
+        // Form submission with loading state
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            const loadingOverlay = document.getElementById('loadingOverlay');
+            const loginBtn = document.getElementById('loginBtn');
+            
+            // Show loading state
+            loadingOverlay.style.display = 'block';
+            loginBtn.disabled = true;
+            loginBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Memproses...';
+        });
+
+        // Auto-hide alerts after 5 seconds
+        setTimeout(function() {
+            const alerts = document.querySelectorAll('.alert');
+            alerts.forEach(alert => {
+                const bsAlert = new bootstrap.Alert(alert);
+                bsAlert.close();
+            });
+        }, 5000);
+
         // Script untuk menampilkan notifikasi error dari controller
         <?php if (session()->getFlashdata('error')): ?>
             Swal.fire({
                 icon: 'error',
                 title: 'Login Gagal!',
                 text: '<?= session()->getFlashdata('error') ?>',
-                confirmButtonColor: '#667eea'
+                confirmButtonColor: '#667eea',
+                confirmButtonText: 'OK'
             });
         <?php endif; ?>
+
+        <?php if (session()->getFlashdata('success')): ?>
+            Swal.fire({
+                icon: 'success',
+                title: 'Berhasil!',
+                text: '<?= session()->getFlashdata('success') ?>',
+                confirmButtonColor: '#667eea',
+                confirmButtonText: 'OK'
+            });
+        <?php endif; ?>
+
+        // Focus on username field when page loads
+        window.addEventListener('load', function() {
+            document.getElementById('username').focus();
+        });
     </script>
 </body>
 
