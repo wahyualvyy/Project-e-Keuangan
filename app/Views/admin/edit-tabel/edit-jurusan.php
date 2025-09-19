@@ -33,8 +33,8 @@
                             </div>
                         </div>
                         <div class="mt-3 d-flex justify-content-center">
-                            <button type="submit" id ="btn-update"class="btn btn-secondary card-subtitle m-1 text-white" >Tambah
-                                Data Kelas</button>
+                            <button type="submit" id ="btn-update"class="btn btn-secondary card-subtitle m-1 text-white" >Update
+                                Jurusan</button>
                         </div>
                     </div>
                 </div>

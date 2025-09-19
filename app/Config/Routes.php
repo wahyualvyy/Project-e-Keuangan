@@ -43,8 +43,7 @@ $routes->group('', ['filter' => 'login'], function ($routes) {
     // Data Guru Routes
     $routes->group('guru', function ($routes) {
         $routes->get('/', 'GuruController::index');
-        $routes->get('data', 'AdminController::dataGuru');
-        $routes->get('input', 'AdminController::inputGuru');
+        $routes->get('input', 'GuruController::Input');
         $routes->post('create', 'GuruController::create');
         $routes->get('edit/(:num)', 'GuruController::edit/$1');
         $routes->post('update/(:num)', 'GuruController::update/$1');
@@ -69,7 +68,6 @@ $routes->group('', ['filter' => 'login'], function ($routes) {
     // Data Jurusan Routes
     $routes->group('jurusan', function ($routes) {
         $routes->get('/', 'JurusanController::index');
-        $routes->get('data', 'JurusanController::index');
         $routes->get('input', 'JurusanController::InputJurusan');
         $routes->post('create', 'JurusanController::create');
         $routes->get('edit/(:num)', 'JurusanController::edit/$1');

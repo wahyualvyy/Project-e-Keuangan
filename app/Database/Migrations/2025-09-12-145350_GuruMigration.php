@@ -19,7 +19,7 @@ class GuruMigration extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => 100,
             ],
-            'jenis_kelamin'=> [
+            'jenis_kelamin' => [
                 'type' => 'ENUM',
                 'constraint' => ['Laki-laki', 'Perempuan'],
                 'default' => 'Laki-laki',
@@ -53,7 +53,7 @@ class GuruMigration extends Migration
 
         $this->forge->addKey('id_guru', true);
         $this->forge->createTable('guru');
-        $this->forge->addUniqueKey('nip'); 
+        $this->forge->addUniqueKey('nip');
     }
 
     public function down()

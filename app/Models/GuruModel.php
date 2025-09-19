@@ -12,7 +12,7 @@ class GuruModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['nama_guru', 'jenis_kelamin', 'alamat', 'nip', 'no_telp', 'status', 'created_at', 'updated_at'];
+    protected $allowedFields    = ['nama_guru', 'jenis_kelamin','bidang_studi', 'alamat', 'nip', 'no_telp', 'status', 'created_at', 'updated_at'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
@@ -52,5 +52,38 @@ class GuruModel extends Model
     public function getAllGuruById($id)
     {
         return $this->where('id_guru', $id)->first();
+    }
+
+    public function getData($sort)
+    {
+        $builder = $this->db->table('guru');
+
+        switch ($sort) {
+            case 'nama_asc':
+                $builder->orderBy('nama_guru', 'ASC');
+                break;
+            case 'nama_desc':
+                $builder->orderBy('nama_guru', 'DESC');
+                break;
+            case 'status_aktif':
+                $builder->where('status', 'Aktif')->orderBy('nama_guru', 'ASC');
+                break;
+            case 'status_tidak_aktif':
+                $builder->where('status', 'Tidak Aktif')->orderBy('nama_guru', 'ASC');
+                break;
+            case 'status_cuti':
+                $builder->where('status', 'Cuti')->orderBy('nama_guru', 'ASC');
+                break;
+            case 'terlama':
+                $builder->orderBy('created_at', 'ASC');
+                break;
+            case 'terbaru':
+            default:
+                $builder->orderBy('created_at', 'DESC');
+                break;
+        }
+
+        return $builder->get()->getResultArray();
+
     }
 }

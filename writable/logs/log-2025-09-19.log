@@ -960,3 +960,60 @@ in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
  8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
  9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
 10 SYSTEMPATH\rewrite.php(44): require_once('E:\\Xampp\\htdocs\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-19 15:16:52 --> Error: Call to undefined function word_limiter()
+[Method: GET, Route: guru]
+in APPPATH\Views\admin\data-tabel\data-guru.php on line 69.
+ 1 SYSTEMPATH\View\View.php(224): include()
+ 2 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/data-tabel/data-guru', [], true)
+ 4 APPPATH\Controllers\GuruController.php(25): view('admin/data-tabel/data-guru', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GuruController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GuruController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-19 15:36:04 --> ParseError: syntax error, unexpected token "if"
+[Method: GET, Route: guru]
+in APPPATH\Views\admin\data-tabel\data-guru.php on line 72.
+ 1 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/data-tabel/data-guru', [], true)
+ 3 APPPATH\Controllers\GuruController.php(27): view('admin/data-tabel/data-guru', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GuruController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GuruController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-19 16:51:12 --> ErrorException: Undefined array key "id_jurusan"
+[Method: GET, Route: guru]
+in APPPATH\Views\admin\data-tabel\data-guru.php on line 77.
+ 1 APPPATH\Views\admin\data-tabel\data-guru.php(77): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_jurusan"', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-tabel\\data-guru.php', 77)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-tabel\\data-guru.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/data-tabel/data-guru', [], true)
+ 5 APPPATH\Controllers\GuruController.php(30): view('admin/data-tabel/data-guru', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GuruController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GuruController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-19 16:51:17 --> ErrorException: Undefined array key "id_jurusan"
+[Method: GET, Route: guru]
+in APPPATH\Views\admin\data-tabel\data-guru.php on line 77.
+ 1 APPPATH\Views\admin\data-tabel\data-guru.php(77): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_jurusan"', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-tabel\\data-guru.php', 77)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-tabel\\data-guru.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/data-tabel/data-guru', [], true)
+ 5 APPPATH\Controllers\GuruController.php(30): view('admin/data-tabel/data-guru', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GuruController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GuruController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')

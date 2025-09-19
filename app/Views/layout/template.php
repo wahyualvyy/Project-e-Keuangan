@@ -439,7 +439,7 @@
 			}
 
 			const deleteLinks = document.querySelectorAll('.btn-delete-single');
-			deleteLinks.forEach(link => {
+			deleteLinks.forEach(link => {	
 				link.addEventListener('click', function (event) {
 					event.preventDefault();
 					const deleteUrl = this.getAttribute('href');

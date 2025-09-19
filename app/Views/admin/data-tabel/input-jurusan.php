@@ -4,7 +4,7 @@
     <div class="card-body">
         <h5 class="card-title fw-semibold mb-4">Tambah Data Jurusan</h5>
         <hr>
-        <form action="<?= base_url('jurusan/create'); ?>" method="post">
+        <form id="form-edit" action="<?= base_url('jurusan/create'); ?>" method="post">
             <?= csrf_field(); ?>
 
             <div class="row">
@@ -33,7 +33,7 @@
                         </div>
                     </div>
                     <div class="mt-3 d-flex justify-content-center">
-                        <button type="submit" class="btn btn-primary card-subtitle m-1 text-white">Simpan
+                        <button id="btn-update" type="submit" class="btn btn-primary card-subtitle m-1 text-white">Simpan
                             Jurusan</button>
                     </div>
                 </div>
