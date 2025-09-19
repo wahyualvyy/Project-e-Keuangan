@@ -10,10 +10,11 @@ class GuruSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create("id_ID");
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 50; $i++) {
             $data = [
                 'nama_guru' => $faker->name,
                 'jenis_kelamin' => $faker->randomElement(['Laki-laki', 'Perempuan']),
+                'bidang_studi' => $faker->randomElement(['Matematika', 'Bahasa Indonesia', 'Bahasa Inggris', 'Fisika', 'Kimia', 'Biologi', 'Sejarah', 'Geografi', 'Ekonomi', 'Seni Budaya', 'Pendidikan Jasmani']),
                 'alamat' => $faker->address,
                 'nip' => $faker->unique()->numerify('##########'),
                 'no_telp' => $faker->phoneNumber,
@@ -25,5 +26,5 @@ class GuruSeeder extends Seeder
             $this->db->table('guru')->insert($data);
         }
     }
-    
+
 }

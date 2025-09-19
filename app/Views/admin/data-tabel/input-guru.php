@@ -17,7 +17,7 @@
                         <label for="defaultFormControlInput" class="form-label">Jenis Kelamin</label>
                         <select class="form-select" name="jenis_kelamin" id="defaultFormControlInput"
                             aria-label="Default select example">
-                            <option selected>---Pilih Jenis Kelamin---</option>
+                            <option disabled selected>---Pilih Jenis Kelamin---</option>
                             <option value="Laki-laki">Laki-Laki</option>
                             <option value="Perempuan">Perempuan</option>
                         </select>
@@ -50,7 +50,7 @@
                         <label for="defaultFormControlInput" class="form-label">Status</label>
                         <select class="form-select" name="status" id="defaultFormControlInput"
                             aria-label="Default select example">
-                            <option selected>---Pilih Status---</option>
+                            <option disabled selected>---Pilih Status---</option>
                             <option value="Aktif">Aktif</option>
                             <option value="Cuti">Cuti</option>
                             <option value="Tidak Aktif">Tidak Aktif</option>

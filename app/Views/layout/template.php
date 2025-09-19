@@ -385,23 +385,50 @@
 			}
 
 
-			// BAGIAN TOMBOL DELETE (Hanya berjalan jika elemennya ada)
-			document.getElementById('select-all').addEventListener('click', function (event) {
-				const checkboxes = document.querySelectorAll('.row-checkbox');
-				checkboxes.forEach(checkbox => {
-					checkbox.checked = event.target.checked;
+			// BAGIAN SELECT ALL CHECKBOX (Universal untuk semua halaman)
+			const selectAllCheckbox = document.getElementById('select-all');
+			if (selectAllCheckbox) {
+				selectAllCheckbox.addEventListener('click', function (event) {
+					const checkboxes = document.querySelectorAll('.row-checkbox');
+					checkboxes.forEach(checkbox => {
+						checkbox.checked = event.target.checked;
+					});
 				});
-			});
+			}
+
+			// BAGIAN UBAH ICON BUTTON BERDASARKAN AKSI YANG DIPILIH
+			const aksiSelect = document.getElementById('aksi-massal-select') || document.querySelector('select[name="aksi_massal"]');
+			const bulkActionIcon = document.getElementById('bulk-action-icon') || document.querySelector('.btn-bulk-delete i');
+
+			if (aksiSelect && bulkActionIcon) {
+				aksiSelect.addEventListener('change', function () {
+					const selectedAction = this.value;
+					const iconConfigs = {
+						'': 'ti ti-menu-4', // default
+						'hapus': 'ti ti-trash',
+						'set_aktif': 'ti ti-check',
+						'set_tidak_aktif': 'ti ti-x',
+						'set_cuti': 'ti ti-calendar-pause',
+						'export_excel': 'ti ti-file-export'
+					};
+
+					// Reset classes
+					bulkActionIcon.className = 'fs-6 mb-0';
+					// Add new icon class
+					bulkActionIcon.className += ' ' + (iconConfigs[selectedAction] || iconConfigs['']);
+				});
+			}
+			// BAGIAN BULK DELETE (Universal untuk semua halaman)
 			const bulkDeleteBtn = document.querySelector('.btn-bulk-delete');
-			const bulkForm = document.querySelector('form[action*="jurusan/bulk-action"]');
+			const bulkForm = document.querySelector('form[action*="bulk-action"]');
 
 			if (bulkDeleteBtn && bulkForm) {
 				bulkDeleteBtn.addEventListener('click', function (event) {
 					event.preventDefault();
 
-					// ambil select aksi
+					// Ambil select aksi massal
 					const aksiSelect = bulkForm.querySelector('select[name="aksi_massal"]');
-					if (!aksiSelect.value) {
+					if (!aksiSelect || !aksiSelect.value) {
 						Swal.fire({
 							icon: "error",
 							title: "Aksi belum dipilih!",
@@ -409,43 +436,64 @@
 						});
 						return;
 					}
-
-					// ambil checkbox
-					const checked = bulkForm.querySelectorAll('.row-checkbox:checked');
-					if (checked.length === 0) {
+					// Ambil semua checkbox yang dicentang
+					const checkedBoxes = bulkForm.querySelectorAll('.row-checkbox:checked');
+					if (checkedBoxes.length === 0) {
 						Swal.fire({
 							icon: "error",
 							title: "Tidak ada data!",
-							text: "Silakan pilih minimal satu data jurusan.",
+							text: "Silakan pilih minimal satu data terlebih dahulu.",
 						});
 						return;
 					}
 
-					Swal.fire({
-						title: "Apakah Anda yakin?",
-						text: "Semua data jurusan terpilih akan dihapus!",
-						icon: "warning",
-						showCancelButton: true,
-						confirmButtonColor: '#d33',
-						cancelButtonColor: '#3085d6',
-						confirmButtonText: "Ya, hapus!",
-						cancelButtonText: "Batal"
-					}).then((result) => {
+					// Tentukan nama entitas berdasarkan URL atau form action
+					let entityName = "data";
+					const formAction = bulkForm.getAttribute('action');
+					if (formAction.includes('/jurusan/')) {
+						entityName = "jurusan";
+					} else if (formAction.includes('/guru/')) {
+						entityName = "guru";
+					} else if (formAction.includes('/siswa/')) {
+						entityName = "siswa";
+					} else if (formAction.includes('/kelas/')) {
+						entityName = "kelas";
+					}
+
+					// Tentukan pesan konfirmasi berdasarkan aksi
+					let confirmConfig = getConfirmationConfig(aksiSelect.value, entityName, checkedBoxes.length);
+
+					// Konfirmasi aksi
+					Swal.fire(confirmConfig).then((result) => {
 						if (result.isConfirmed) {
-							bulkForm.submit(); // submit manual
+							bulkForm.submit(); // Submit form secara manual
 						}
 					});
 				});
 			}
 
+			// BAGIAN DELETE SINGLE (Universal untuk semua halaman)
 			const deleteLinks = document.querySelectorAll('.btn-delete-single');
-			deleteLinks.forEach(link => {	
+			deleteLinks.forEach(link => {
 				link.addEventListener('click', function (event) {
 					event.preventDefault();
 					const deleteUrl = this.getAttribute('href');
+
+					// Tentukan nama entitas berdasarkan URL
+					let entityName = "data";
+					if (deleteUrl.includes('/jurusan/')) {
+						entityName = "jurusan";
+					} else if (deleteUrl.includes('/guru/')) {
+						entityName = "guru";
+					} else if (deleteUrl.includes('/siswa/')) {
+						entityName = "siswa";
+					} else if (deleteUrl.includes('/kelas/')) {
+						entityName = "kelas";
+					}
+
 					Swal.fire({
 						title: "Apakah Anda yakin?",
-						text: "Data yang dihapus tidak dapat dikembalikan!",
+						text: `Data ${entityName} yang dihapus tidak dapat dikembalikan!`,
 						icon: "warning",
 						showCancelButton: true,
 						confirmButtonColor: '#d33',
@@ -459,6 +507,74 @@
 					});
 				});
 			});
+
+			// FUNGSI UNTUK KONFIGURASI KONFIRMASI BERDASARKAN AKSI
+			function getConfirmationConfig(action, entityName, count) {
+				const configs = {
+					'hapus': {
+						title: "Apakah Anda yakin?",
+						text: `Semua ${entityName} yang dipilih (${count} item) akan dihapus!`,
+						icon: "warning",
+						showCancelButton: true,
+						confirmButtonColor: '#d33',
+						cancelButtonColor: '#3085d6',
+						confirmButtonText: "Ya, hapus!",
+						cancelButtonText: "Batal"
+					},
+					'aktifkan': {
+						title: "Konfirmasi Aktivasi",
+						text: `${count} ${entityName} akan diaktifkan`,
+						icon: "question",
+						showCancelButton: true,
+						confirmButtonColor: '#28a745',
+						cancelButtonColor: '#6c757d',
+						confirmButtonText: "Ya, aktifkan!",
+						cancelButtonText: "Batal"
+					},
+					'nonaktifkan': {
+						title: "Konfirmasi Non-aktif",
+						text: `${count} ${entityName} akan dinonaktifkan`,
+						icon: "warning",
+						showCancelButton: true,
+						confirmButtonColor: '#ffc107',
+						cancelButtonColor: '#6c757d',
+						confirmButtonText: "Ya, nonaktifkan!",
+						cancelButtonText: "Batal"
+					},
+					'export': {
+						title: "Export Data",
+						text: `Export ${count} ${entityName} yang dipilih?`,
+						icon: "info",
+						showCancelButton: true,
+						confirmButtonColor: '#17a2b8',
+						cancelButtonColor: '#6c757d',
+						confirmButtonText: "Ya, export!",
+						cancelButtonText: "Batal"
+					},
+					'ubah_status': {
+						title: "Ubah Status",
+						text: `Ubah status ${count} ${entityName}?`,
+						icon: "question",
+						showCancelButton: true,
+						confirmButtonColor: '#007bff',
+						cancelButtonColor: '#6c757d',
+						confirmButtonText: "Ya, ubah!",
+						cancelButtonText: "Batal"
+					}
+				};
+
+				// Return default config jika aksi tidak ditemukan
+				return configs[action] || {
+					title: "Konfirmasi",
+					text: `Proses ${count} ${entityName}?`,
+					icon: "question",
+					showCancelButton: true,
+					confirmButtonColor: '#007bff',
+					cancelButtonColor: '#6c757d',
+					confirmButtonText: "Ya, proses!",
+					cancelButtonText: "Batal"
+				};
+			}
 
 		});
 	</script>

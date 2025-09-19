@@ -5,6 +5,11 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\GuruModel;
 use CodeIgniter\HTTP\ResponseInterface;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+use PhpOffice\PhpSpreadsheet\Style\Alignment;
+use PhpOffice\PhpSpreadsheet\Style\Fill;
+use PhpOffice\PhpSpreadsheet\Style\Border;
 
 class GuruController extends BaseController
 {
@@ -225,8 +230,139 @@ class GuruController extends BaseController
             case 'hapus':
                 $this->GuruModel->delete($guruIds);
                 return redirect()->to('guru/')->with('success', 'Data guru yang dipilih berhasil dihapus.');
+            case 'set_aktif':
+                $this->GuruModel->update($guruIds, ['status' => 'Aktif']);
+                return redirect()->to('guru/')->with('success', 'Status guru yang dipilih berhasil diubah menjadi Aktif.');
+            case 'set_tidak_aktif':
+                $this->GuruModel->update($guruIds, ['status' => 'Tidak Aktif']);
+                return redirect()->to('guru/')->with('success', 'Status guru yang dipilih berhasil diubah menjadi Tidak Aktif.');
+            case 'set_cuti':
+                $this->GuruModel->update($guruIds, ['status' => 'Cuti']);
+                return redirect()->to('guru/')->with('success', 'Status guru yang dipilih berhasil diubah menjadi Cuti.');
+            case 'export_excel':
+                return $this->exportExcel($guruIds);
             default:
                 return redirect()->to('guru/')->with('error', 'Aksi tidak dikenali.');
+        }
+
+        
+    }
+     private function exportExcel($guruIds)
+    {
+        try {
+            // Ambil data guru berdasarkan ID yang dipilih
+            $guruData = $this->GuruModel->whereIn('id_guru', $guruIds)->findAll();
+            
+            if (empty($guruData)) {
+                return redirect()->to('guru/')->with('error', 'Data guru tidak ditemukan.');
+            }
+
+            // Buat spreadsheet baru
+            $spreadsheet = new Spreadsheet();
+            $sheet = $spreadsheet->getActiveSheet();
+
+            // Set judul dokumen
+            $sheet->setTitle('Data Guru');
+
+            // Header tabel
+            $headers = [
+                'A1' => 'No',
+                'B1' => 'Nama Guru',
+                'C1' => 'NIP',
+                'D1' => 'Jenis Kelamin',
+                'E1' => 'Bidang Studi',
+                'F1' => 'Alamat',
+                'G1' => 'No. Telepon',
+                'H1' => 'Status'
+            ];
+
+            // Input header
+            foreach ($headers as $cell => $value) {
+                $sheet->setCellValue($cell, $value);
+            }
+
+            // Styling header
+            $headerStyle = [
+                'font' => [
+                    'bold' => true,
+                    'color' => ['rgb' => 'FFFFFF']
+                ],
+                'fill' => [
+                    'fillType' => Fill::FILL_SOLID,
+                    'startColor' => ['rgb' => '4472C4']
+                ],
+                'alignment' => [
+                    'horizontal' => Alignment::HORIZONTAL_CENTER,
+                    'vertical' => Alignment::VERTICAL_CENTER
+                ],
+                'borders' => [
+                    'allBorders' => [
+                        'borderStyle' => Border::BORDER_THIN,
+                        'color' => ['rgb' => '000000']
+                    ]
+                ]
+            ];
+
+            $sheet->getStyle('A1:H1')->applyFromArray($headerStyle);
+
+            // Input data
+            $row = 2;
+            $no = 1;
+            foreach ($guruData as $guru) {
+                $sheet->setCellValue('A' . $row, $no++);
+                $sheet->setCellValue('B' . $row, $guru['nama_guru']);
+                $sheet->setCellValue('C' . $row, $guru['nip']);
+                $sheet->setCellValue('D' . $row, $guru['jenis_kelamin']);
+                $sheet->setCellValue('E' . $row, $guru['bidang_studi']);
+                $sheet->setCellValue('F' . $row, $guru['alamat']);
+                $sheet->setCellValue('G' . $row, $guru['no_telp']);
+                $sheet->setCellValue('H' . $row, $guru['status']);
+                $row++;
+            }
+
+            // Styling data
+            $dataStyle = [
+                'borders' => [
+                    'allBorders' => [
+                        'borderStyle' => Border::BORDER_THIN,
+                        'color' => ['rgb' => '000000']
+                    ]
+                ],
+                'alignment' => [
+                    'vertical' => Alignment::VERTICAL_CENTER
+                ]
+            ];
+
+            $sheet->getStyle('A2:H' . ($row - 1))->applyFromArray($dataStyle);
+
+            // Auto width kolom
+            foreach (range('A', 'H') as $column) {
+                $sheet->getColumnDimension($column)->setAutoSize(true);
+            }
+
+            // Set row height
+            $sheet->getRowDimension(1)->setRowHeight(25);
+
+            // Nama file dengan timestamp
+            $filename = 'Data_Guru_' . date('Y-m-d_H-i-s') . '.xlsx';
+
+            // Set header untuk download
+            header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+            header('Content-Disposition: attachment;filename="' . $filename . '"');
+            header('Cache-Control: max-age=0');
+
+            // Tulis file dan output
+            $writer = new Xlsx($spreadsheet);
+            $writer->save('php://output');
+            
+            // Cleanup
+            $spreadsheet->disconnectWorksheets();
+            unset($spreadsheet);
+            
+            exit(); // Stop execution setelah download
+
+        } catch (\Exception $e) {
+            return redirect()->to('guru/')->with('error', 'Gagal mengeksport data: ' . $e->getMessage());
         }
     }
 }

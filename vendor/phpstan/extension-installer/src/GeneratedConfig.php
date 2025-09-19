@@ -12,7 +12,7 @@ final class GeneratedConfig
 	public const EXTENSIONS = array (
   'codeigniter/phpstan-codeigniter' => 
   array (
-    'install_path' => 'E:\\Xampp\\htdocs\\Project-e-Keuangan\\vendor/codeigniter/phpstan-codeigniter',
+    'install_path' => 'E:\\laragon\\www\\Project-e-Keuangan\\vendor/codeigniter/phpstan-codeigniter',
     'relative_install_path' => '../../../codeigniter/phpstan-codeigniter',
     'extra' => 
     array (
@@ -24,9 +24,23 @@ final class GeneratedConfig
     'version' => '1.x-dev 6957bed',
     'phpstanVersionConstraint' => '>=2.0.0.0-dev, <3.0.0.0-dev',
   ),
+  'composer/pcre' => 
+  array (
+    'install_path' => 'E:\\laragon\\www\\Project-e-Keuangan\\vendor/composer/pcre',
+    'relative_install_path' => '../../../composer/pcre',
+    'extra' => 
+    array (
+      'includes' => 
+      array (
+        0 => 'extension.neon',
+      ),
+    ),
+    'version' => '3.3.2',
+    'phpstanVersionConstraint' => NULL,
+  ),
   'phpstan/phpstan-strict-rules' => 
   array (
-    'install_path' => 'E:\\Xampp\\htdocs\\Project-e-Keuangan\\vendor/phpstan/phpstan-strict-rules',
+    'install_path' => 'E:\\laragon\\www\\Project-e-Keuangan\\vendor/phpstan/phpstan-strict-rules',
     'relative_install_path' => '../../phpstan-strict-rules',
     'extra' => 
     array (
@@ -40,7 +54,7 @@ final class GeneratedConfig
   ),
   'shipmonk/phpstan-baseline-per-identifier' => 
   array (
-    'install_path' => 'E:\\Xampp\\htdocs\\Project-e-Keuangan\\vendor/shipmonk/phpstan-baseline-per-identifier',
+    'install_path' => 'E:\\laragon\\www\\Project-e-Keuangan\\vendor/shipmonk/phpstan-baseline-per-identifier',
     'relative_install_path' => '../../../shipmonk/phpstan-baseline-per-identifier',
     'extra' => 
     array (

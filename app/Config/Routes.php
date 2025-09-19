@@ -46,7 +46,7 @@ $routes->group('', ['filter' => 'login'], function ($routes) {
         $routes->get('input', 'GuruController::Input');
         $routes->post('create', 'GuruController::create');
         $routes->get('edit/(:num)', 'GuruController::edit/$1');
-        $routes->post('update/(:num)', 'GuruController::update/$1');
+        $routes->post('update/(:num)', 'GuruController::update/$1');    
         $routes->get('delete/(:num)', 'GuruController::delete/$1');
         $routes->post('bulk-action', 'GuruController::bulkAction');
     });

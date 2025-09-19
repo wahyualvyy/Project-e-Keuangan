@@ -17,7 +17,7 @@
                         <label for="defaultFormControlInput" class="form-label">Jenis Kelamin</label>
                         <select class="form-select" name="jenis_kelamin" id="defaultFormControlInput"
                             aria-label="Default select example">
-                            <option>---Pilih Jenis Kelamin---</option>
+                            <option disabled selected >---Pilih Jenis Kelamin---</option>
                             <option value="Laki-laki" <?= ($guru['jenis_kelamin'] === 'Laki-laki') ? 'Selected' : '' ;?> >Laki-Laki</option>
                             <option value="Perempuan" <?= ($guru['jenis_kelamin'] === 'Perempuan') ? 'Selected' : '' ;?> >Perempuan</option>
                         </select>
@@ -50,7 +50,7 @@
                         <label for="defaultFormControlInput" class="form-label">Status</label>
                         <select class="form-select" name="status" id="defaultFormControlInput"
                             aria-label="Default select example">
-                            <option>---Pilih Status---</option>
+                            <option disabled selected>---Pilih Status---</option>
                             <option value="Aktif" <?= ($guru['status'] === 'Aktif') ? 'Selected': '' ;?> >Aktif</option>
                             <option value="Cuti"  <?= ($guru['status'] === 'Cuti') ? 'Selected': '' ;?>>Cuti</option>
                             <option value="Tidak Aktif"<?= ($guru['status'] === 'Tidak Aktif') ? 'Selected': '' ;?>>Tidak Aktif</option>

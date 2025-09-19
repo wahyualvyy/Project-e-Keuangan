@@ -10,7 +10,7 @@ class JurusanSeeder extends Seeder
     {
         $faker = \Faker\Factory::create('id_ID');
 
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 50; $i++) {
             $data = [
                 'nama_jurusan' => $faker->randomElement(['Teknik Informatika', 'Sistem Informasi', 'Manajemen Informatika', 'Teknik Komputer', 'Rekayasa Perangkat Lunak']),
                 'kode_jurusan' => strtoupper($faker->lexify('??')) . $faker->numerify('###'),

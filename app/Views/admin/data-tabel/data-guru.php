@@ -15,12 +15,22 @@
                     </div>
                     <div class="ms-auto mt-3 mt-md-0 d-flex">
                         <select class="form-select theme-select border-0" name="aksi_massal" required
-                            aria-label="Default select example">
-                            <option value="">-- Pilih Aksi --</option>
-                            <option value="hapus">Hapus yang Dipilih</option>
+                            aria-label="Default select example" id="aksi-massal-select">
+                            <option value="" disabled selected>-- Pilih Aksi --</option>
+                            <optgroup label="Ubah Status">
+                                <option value="set_aktif">Jadikan Aktif</option>
+                                <option value="set_tidak_aktif">Jadikan Tidak Aktif</option>
+                                <option value="set_cuti">Jadikan Cuti</option>
+                            </optgroup>
+                            <optgroup label="Ekspor">
+                                <option value="export_excel">Ekspor ke Excel</option>
+                            </optgroup>
+                            <optgroup label="Tindakan Berbahaya">
+                                <option value="hapus">Hapus yang Dipilih</option>
+                            </optgroup>
                         </select>
-                        <button type="submit" class="btn btn-primary ms-2 btn-bulk-delete">
-                            <i class="ti ti-eraser-off fs-6 mb-0"></i>
+                        <button type="submit" class="btn btn-primary ms-2 btn-bulk-delete" id="btn-bulk-action">
+                            <i class="ti ti-menu-4 fs-6 mb-0" id="bulk-action-icon"></i>
                         </button>
                     </div>
                     <div class="ms-auto mt-3 mt-md-0">

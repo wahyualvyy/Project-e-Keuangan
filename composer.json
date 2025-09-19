@@ -15,6 +15,7 @@
         "ext-mbstring": "*",
         "laminas/laminas-escaper": "^2.14",
         "myth/auth": "dev-develop",
+        "phpoffice/phpspreadsheet": "^5.1",
         "psr/log": "^3.0"
     },
     "require-dev": {
