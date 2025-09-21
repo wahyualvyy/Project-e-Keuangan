@@ -18,6 +18,7 @@ class Jurusan extends Migration
             'nama_jurusan' => [
                 'type' => 'VARCHAR',
                 'constraint' => 100,
+                'unique' => true,
             ],
             'created_at' => [
                 'type' => 'DATETIME',

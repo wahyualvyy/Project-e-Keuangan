@@ -60,9 +60,13 @@ $routes->group('', ['filter' => 'login'], function ($routes) {
 
     // Data Kelas Routes
     $routes->group('kelas', function ($routes) {
-        $routes->get('/', 'AdminController::dataKelas');
-        $routes->get('data', 'AdminController::dataKelas');
-        $routes->get('input', 'AdminController::inputKelas');
+        $routes->get('/', 'KelasController::index');
+        $routes->get('input', 'KelasController::Input');
+        $routes->post('create', 'KelasController::create');
+        $routes->get('edit/(:num)', 'KelasController::edit/$1');
+        $routes->post('update/(:num)', 'KelasController::update/$1');    
+        $routes->get('delete/(:num)', 'KelasController::delete/$1');
+        $routes->post('bulk-action', 'KelasController::bulkAction');
     });
 
     // Data Jurusan Routes

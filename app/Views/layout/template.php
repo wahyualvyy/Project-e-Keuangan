@@ -12,6 +12,9 @@
 	<!-- <link rel="stylesheet" href="<?= base_url('dist/css/adminlte.min.css'); ?>" /> -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+	<link rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" />
 </head>
 
 <body>
@@ -329,10 +332,17 @@
 	<script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
 	<!-- <script src="<?= base_url('dist/js/adminlte.js'); ?>"></script> -->
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 	<script>
+		$(document).ready(function () {
+
+			// Inisialisasi Select2 secara universal (ini sudah benar)
+			$('.select2-searchable').select2({
+				theme: 'bootstrap-5',
+			});
+		});
 		// 1. Tunggu seluruh halaman HTML selesai dimuat sebelum menjalankan script
 		document.addEventListener('DOMContentLoaded', function () {
-
 			// BAGIAN NOTIFIKASI (Aman karena tidak bergantung pada elemen spesifik)
 			<?php if (session()->getFlashdata('success')): ?>
 				Swal.fire({

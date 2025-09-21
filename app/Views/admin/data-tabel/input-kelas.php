@@ -4,46 +4,57 @@
     <div class="card-body">
         <h5 class="card-title fw-semibold mb-4">Tambah Data Kelas</h5>
         <hr>
-        <div class="row">
-            <div class="col-lg-6">
-                <div>
-                    <label for="defaultFormControlInput" class="form-label">Kelas</label>
-                    <select class="form-select" id="defaultFormControlInput" aria-label="Default select example">
-                        <option selected>---Pilih Kelas---</option>
-                        <option value="10 MM">10 MM</option>
-                        <option value="11 TBSM">11 TBSM</option>
-                        <option value="12 TBSM">12 TBSM</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div>
-                    <label for="defaultFormControlInput" class="form-label">Nama Wali</label>
-                    <select class="form-select" id="defaultFormControlInput" aria-label="Default select example">
-                        <option selected>---Pilih Wali---</option>
-                        <option value="Pak Bambang">Pak Bambang</option>
-                        <option value="Pak Budi">Pak Budi</option>
-                        <option value="Bu Melly">Bu Melly</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-lg-12">
-                <div class="mt-3">
-                    <label for="defaultFormControlInput" class="form-label">Keterangan</label>
-                    <div class="form-floating ">
-                        <textarea class="form-control h-25" placeholder="Leave a comment here"
-                            id="floatingTextarea"></textarea>
-                        <label for="floatingTextarea">Keterangan</label>
+        <form id="form-edit" action="<?= base_url('kelas/create')?>" method="post">
+            <?php csrf_field();?>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div>
+                        <label for="defaultFormControlInput" name="nama_kelas" class="form-label">Tingkatan
+                            Kelas</label>
+                        <select class="form-select" id="defaultFormControlInput" aria-label="Default select example">
+                            <option disabled selected>---Pilih Kelas---</option>
+                            <option value="10 MM">10</option>
+                            <option value="11 TBSM">11</option>
+                            <option value="12 TBSM">12</option>
+                        </select>
                     </div>
                 </div>
-                <div class="mt-3 d-flex justify-content-center">
-                    <a href="<?= base_url('admin/data-kelas'); ?>">
-                        <button type="button" class="btn btn-secondary card-subtitle m-1 text-white">Tambah
-                            Data Kelas</button>
-                    </a>
+                <div class="col-lg-6">
+                    <div>
+                        <label for="id_jurusan" class="form-label">Nama Jurusan</label>
+                        <select id="id_jurusan" name="id_jurusan" class="form-select select2-searchable" id="defaultFormControlInput" aria-label="Default select example">
+                            <option disabled selected>---Pilih Jurusan---</option>
+                            <?php foreach ($jurusan as $data): ?>
+                                <option value="<?= $data['id_jurusan'] ?>"><?= $data['nama_jurusan'] ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="mt-3">
+                        <label for="id_guru" class="form-label">Nama Wali</label>
+                        <select id="id_guru" name="id_guru" class="form-select select2-searchable" id="defaultFormControlInput" aria-label="Default select example">
+                            <option disabled selected>---Pilih Wali---</option>
+                            <?php foreach ($guru as $data): ?>
+                                <option value="<?= $data['id_guru'] ?>"><?= $data['nama_guru'] ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <div class="mt-3">
+                        <label for="defaultFormControlInput" name="keterangan" class="form-label">Keterangan</label>
+                        <div class="form-floating ">
+                            <textarea class="form-control h-25" placeholder="Leave a comment here"
+                                id="floatingTextarea"></textarea>
+                            <label for="floatingTextarea">Keterangan</label>
+                        </div>
+                    </div>
+                    <div class="mt-3 d-flex justify-content-center">
+                        <button id="btn-update" type="button" class="btn btn-secondary card-subtitle m-1 text-white">Simpan
+                            Kelas</button>
+                    </div>
                 </div>
             </div>
-        </div>
+        </form>
     </div>
 </div>
 <?= $this->endsection(); ?>

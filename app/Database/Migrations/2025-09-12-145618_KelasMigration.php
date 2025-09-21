@@ -16,16 +16,16 @@ class KelasMigration extends Migration
                 'auto_increment' => true,
             ],
             'id_jurusan' => [
-                'type'=> 'INT',
-                'constraint' => 11,
-                'unsigned' => true,
-            ],
-            'id_guru'=> [
                 'type' => 'INT',
                 'constraint' => 11,
                 'unsigned' => true,
             ],
-            'keterangan'=> [
+            'id_guru' => [
+                'type' => 'INT',
+                'constraint' => 11,
+                'unsigned' => true,
+            ],
+            'keterangan' => [
                 'type' => 'TEXT',
                 'null' => true,
             ],

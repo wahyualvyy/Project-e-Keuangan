@@ -1,0 +1,30 @@
+CRITICAL - 2025-09-20 15:00:53 --> ErrorException: Undefined array key "nama_wali"
+[Method: GET, Route: kelas]
+in APPPATH\Views\admin\data-tabel\data-kelas.php on line 58.
+ 1 APPPATH\Views\admin\data-tabel\data-kelas.php(58): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_wali"', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-tabel\\data-kelas.php', 58)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-tabel\\data-kelas.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/data-tabel/data-kelas', [], true)
+ 5 APPPATH\Controllers\KelasController.php(27): view('admin/data-tabel/data-kelas', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\KelasController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KelasController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-20 16:04:50 --> ErrorException: Undefined array key "nama_guru"
+[Method: GET, Route: kelas/input]
+in APPPATH\Views\admin\data-tabel\input-kelas.php on line 25.
+ 1 APPPATH\Views\admin\data-tabel\input-kelas.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_guru"', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-tabel\\input-kelas.php', 25)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-tabel\\input-kelas.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/data-tabel/input-kelas', [], true)
+ 5 APPPATH\Controllers\KelasController.php(36): view('admin/data-tabel/input-kelas', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\KelasController->input()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KelasController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
