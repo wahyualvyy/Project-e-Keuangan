@@ -245,51 +245,35 @@ class GuruController extends BaseController
                 return redirect()->to('guru/')->with('error', 'Aksi tidak dikenali.');
         }
 
-        
+
     }
-     private function exportExcel($guruIds)
+    private function exportExcel($guruIds)
     {
         try {
-            // Ambil data guru berdasarkan ID yang dipilih
             $guruData = $this->GuruModel->whereIn('id_guru', $guruIds)->findAll();
-            
+
             if (empty($guruData)) {
                 return redirect()->to('guru/')->with('error', 'Data guru tidak ditemukan.');
             }
 
-            // Buat spreadsheet baru
             $spreadsheet = new Spreadsheet();
             $sheet = $spreadsheet->getActiveSheet();
-
-            // Set judul dokumen
             $sheet->setTitle('Data Guru');
 
-            // Header tabel
-            $headers = [
-                'A1' => 'No',
-                'B1' => 'Nama Guru',
-                'C1' => 'NIP',
-                'D1' => 'Jenis Kelamin',
-                'E1' => 'Bidang Studi',
-                'F1' => 'Alamat',
-                'G1' => 'No. Telepon',
-                'H1' => 'Status'
-            ];
-
-            // Input header
-            foreach ($headers as $cell => $value) {
-                $sheet->setCellValue($cell, $value);
+            // === Header tabel (baris ke-1) ===
+            $headers = ['No', 'Nama Guru', 'NIP', 'Jenis Kelamin', 'Bidang Studi', 'Alamat', 'No. Telepon', 'Status'];
+            $col = 'A';
+            foreach ($headers as $header) {
+                $sheet->setCellValue($col . '1', $header);
+                $col++;
             }
 
-            // Styling header
+            // Style header
             $headerStyle = [
-                'font' => [
-                    'bold' => true,
-                    'color' => ['rgb' => 'FFFFFF']
-                ],
+                'font' => ['bold' => true, 'color' => ['rgb' => 'FFFFFF']],
                 'fill' => [
                     'fillType' => Fill::FILL_SOLID,
-                    'startColor' => ['rgb' => '4472C4']
+                    'startColor' => ['rgb' => '4472C4'] // biru elegan
                 ],
                 'alignment' => [
                     'horizontal' => Alignment::HORIZONTAL_CENTER,
@@ -302,10 +286,10 @@ class GuruController extends BaseController
                     ]
                 ]
             ];
-
             $sheet->getStyle('A1:H1')->applyFromArray($headerStyle);
+            $sheet->getRowDimension(1)->setRowHeight(25);
 
-            // Input data
+            // === Isi data mulai baris ke-2 ===
             $row = 2;
             $no = 1;
             foreach ($guruData as $guru) {
@@ -317,52 +301,53 @@ class GuruController extends BaseController
                 $sheet->setCellValue('F' . $row, $guru['alamat']);
                 $sheet->setCellValue('G' . $row, $guru['no_telp']);
                 $sheet->setCellValue('H' . $row, $guru['status']);
+
+                // Zebra striping
+                if ($row % 2 == 0) {
+                    $sheet->getStyle("A{$row}:H{$row}")->getFill()->setFillType(Fill::FILL_SOLID)
+                        ->getStartColor()->setRGB('F2F2F2'); // abu muda
+                }
                 $row++;
             }
 
-            // Styling data
-            $dataStyle = [
+            // Style isi data
+            $sheet->getStyle('A2:H' . ($row - 1))->applyFromArray([
                 'borders' => [
                     'allBorders' => [
                         'borderStyle' => Border::BORDER_THIN,
                         'color' => ['rgb' => '000000']
                     ]
                 ],
-                'alignment' => [
-                    'vertical' => Alignment::VERTICAL_CENTER
-                ]
-            ];
+                'alignment' => ['vertical' => Alignment::VERTICAL_CENTER]
+            ]);
 
-            $sheet->getStyle('A2:H' . ($row - 1))->applyFromArray($dataStyle);
+            // Kolom No & Jenis Kelamin & Status di-center
+            $sheet->getStyle('A2:A' . ($row - 1))->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER);
+            $sheet->getStyle('D2:D' . ($row - 1))->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER);
+            $sheet->getStyle('H2:H' . ($row - 1))->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER);
 
-            // Auto width kolom
-            foreach (range('A', 'H') as $column) {
-                $sheet->getColumnDimension($column)->setAutoSize(true);
+            // Auto size kolom
+            foreach (range('A', 'H') as $col) {
+                $sheet->getColumnDimension($col)->setAutoSize(true);
             }
 
-            // Set row height
-            $sheet->getRowDimension(1)->setRowHeight(25);
-
-            // Nama file dengan timestamp
+            // === Output ===
             $filename = 'Data_Guru_' . date('Y-m-d_H-i-s') . '.xlsx';
-
-            // Set header untuk download
             header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
             header('Content-Disposition: attachment;filename="' . $filename . '"');
             header('Cache-Control: max-age=0');
 
-            // Tulis file dan output
             $writer = new Xlsx($spreadsheet);
             $writer->save('php://output');
-            
-            // Cleanup
+
             $spreadsheet->disconnectWorksheets();
             unset($spreadsheet);
-            
-            exit(); // Stop execution setelah download
+            exit();
 
         } catch (\Exception $e) {
-            return redirect()->to('guru/')->with('error', 'Gagal mengeksport data: ' . $e->getMessage());
+            return redirect()->to('guru/')->with('error', 'Gagal export data: ' . $e->getMessage());
         }
     }
+
+
 }

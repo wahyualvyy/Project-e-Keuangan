@@ -12,7 +12,7 @@ class KelasModel extends Model
     protected $returnType = 'array';
     protected $useSoftDeletes = false;
     protected $protectFields = true;
-    protected $allowedFields = ['id_jurusan', 'id_guru', 'keterangan','created_at','updated_at'];
+    protected $allowedFields = ['nama_kelas', 'id_jurusan', 'id_guru', 'keterangan', 'created_at', 'updated_at'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
@@ -51,14 +51,63 @@ class KelasModel extends Model
 
     public function getKelasById($id)
     {
-        return $this->where('id_kelas', $id)->first();
+        return $this->select('kelas.*, jurusan.nama_jurusan, guru.nama_guru')
+            ->join('jurusan', 'kelas.id_jurusan = jurusan.id_jurusan', 'left')
+            ->join('guru', 'kelas.id_guru = guru.id_guru', 'left')
+            ->where('kelas.id_kelas', $id)
+            ->first();
     }
 
-    public function getKelasWithRelations()
+    public function getKelasByIds(array $ids)
     {
         return $this->select('kelas.*, jurusan.nama_jurusan, guru.nama_guru')
             ->join('jurusan', 'kelas.id_jurusan = jurusan.id_jurusan', 'left')
-            ->join('guru', 'kelas.id_guru = guru.id_guru','left')
+            ->join('guru', 'kelas.id_guru = guru.id_guru', 'left')
+            ->whereIn('kelas.id_kelas', $ids)
             ->findAll();
+    }
+
+
+    public function getKelasWithRelations()
+    {
+        return $this->select('kelas.*, jurusan.nama_jurusan, jurusan.kode_jurusan, guru.nama_guru')
+            ->join('jurusan', 'kelas.id_jurusan = jurusan.id_jurusan', 'left')
+            ->join('guru', 'kelas.id_guru = guru.id_guru', 'left')
+            ->findAll();
+    }
+
+    public function getData($sort)
+    {
+        $builder = $this->db->table('kelas')
+            ->select('kelas.*, jurusan.nama_jurusan, jurusan.kode_jurusan, guru.nama_guru')
+            ->join('jurusan', 'kelas.id_jurusan = jurusan.id_jurusan', 'left')
+            ->join('guru', 'kelas.id_guru = guru.id_guru', 'left');
+
+        switch ($sort) {
+            case 'nama_asc':
+                $builder->orderBy('kelas.nama_kelas', 'ASC');
+                break;
+            case 'nama_desc':
+                $builder->orderBy('kelas.nama_kelas', 'DESC');
+                break;
+            case 'wali_asc':
+                $builder->orderBy('guru.nama_guru', 'ASC');
+                break;
+            case 'wali_desc':
+                $builder->orderBy('guru.nama_guru', 'DESC');
+                break;
+            case 'terbaru':
+                $builder->orderBy('kelas.created_at', 'DESC');
+                break;
+            case 'terlama':
+                $builder->orderBy('kelas.created_at', 'ASC');
+                break;
+            default:
+                // Default sorting (if needed)
+                $builder->orderBy('kelas.created_at', 'DESC');
+                break;
+        }
+
+        return $builder->get()->getResultArray();
     }
 }

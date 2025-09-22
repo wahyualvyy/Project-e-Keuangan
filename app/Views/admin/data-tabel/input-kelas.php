@@ -9,13 +9,13 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div>
-                        <label for="defaultFormControlInput" name="nama_kelas" class="form-label">Tingkatan
+                        <label for="nama_kelas" class="form-label">Tingkatan
                             Kelas</label>
-                        <select class="form-select" id="defaultFormControlInput" aria-label="Default select example">
+                        <select class="form-select" name="nama_kelas" id="nama_kelas" aria-label="Default select example">
                             <option disabled selected>---Pilih Kelas---</option>
-                            <option value="10 MM">10</option>
-                            <option value="11 TBSM">11</option>
-                            <option value="12 TBSM">12</option>
+                            <option value="10">X</option>
+                            <option value="11">XI</option>
+                            <option value="12">XII</option>
                         </select>
                     </div>
                 </div>
@@ -41,15 +41,14 @@
                         </select>
                     </div>
                     <div class="mt-3">
-                        <label for="defaultFormControlInput" name="keterangan" class="form-label">Keterangan</label>
+                        <label for="keterangan" class="form-label">Keterangan</label>
                         <div class="form-floating ">
-                            <textarea class="form-control h-25" placeholder="Leave a comment here"
-                                id="floatingTextarea"></textarea>
+                            <textarea class="form-control h-25" name="keterangan" id="keterangan" placeholder="Leave a comment here"></textarea>
                             <label for="floatingTextarea">Keterangan</label>
                         </div>
                     </div>
                     <div class="mt-3 d-flex justify-content-center">
-                        <button id="btn-update" type="button" class="btn btn-secondary card-subtitle m-1 text-white">Simpan
+                        <button id="btn-update" type="submit" class="btn btn-secondary card-subtitle m-1 text-white">Simpan
                             Kelas</button>
                     </div>
                 </div>
