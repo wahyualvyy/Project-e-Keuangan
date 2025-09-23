@@ -60,6 +60,7 @@ $routes->group('', ['filter' => 'login'], function ($routes) {
         $routes->post('update/(:num)', 'SiswaController::update/$1');
         $routes->get('delete/(:num)', 'SiswaController::delete/$1');
         $routes->post('bulk-action', 'SiswaController::bulkAction');
+        
     });
 
     // Data Kelas Routes

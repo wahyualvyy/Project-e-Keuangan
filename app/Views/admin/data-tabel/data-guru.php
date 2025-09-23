@@ -51,10 +51,8 @@
                             </option>
                             <option value="status_tidak_aktif" <?= ($sort === 'status_tidak_aktif') ? 'selected' : ''; ?>>
                                 Tidak Aktif
-                                (A-Z)
                             </option>
                             <option value="status_cuti" <?= ($sort === 'status_cuti') ? 'selected' : ''; ?>>Cuti
-                                (Z-A)
                             </option>
                         </select>
                     </div>

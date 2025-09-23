@@ -530,3 +530,194 @@ LEFT JOIN `guru` ON `kelas`.`id_guru` = `guru`.`id_guru`', [], false)
 11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
 13 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-23 16:20:48 --> ErrorException: Undefined array key "id_jurusan"
+[Method: GET, Route: siswa/edit/1]
+in APPPATH\Views\admin\edit-tabel\edit-siswa.php on line 53.
+ 1 APPPATH\Views\admin\edit-tabel\edit-siswa.php(53): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_jurusan"', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\edit-tabel\\edit-siswa.php', 53)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\edit-tabel\\edit-siswa.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/edit-tabel/edit-siswa', [], true)
+ 5 APPPATH\Controllers\SiswaController.php(166): view('admin/edit-tabel/edit-siswa', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SiswaController->edit('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SiswaController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-23 16:44:41 --> ErrorException: Undefined variable $sort
+[Method: GET, Route: siswa]
+in APPPATH\Views\admin\data-tabel\data-siswa.php on line 40.
+ 1 APPPATH\Views\admin\data-tabel\data-siswa.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $sort', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-tabel\\data-siswa.php', 40)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-tabel\\data-siswa.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/data-tabel/data-siswa', [], true)
+ 5 APPPATH\Controllers\SiswaController.php(30): view('admin/data-tabel/data-siswa', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SiswaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SiswaController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-23 16:45:58 --> ErrorException: Undefined variable $sort
+[Method: GET, Route: siswa]
+in APPPATH\Views\admin\data-tabel\data-siswa.php on line 40.
+ 1 APPPATH\Views\admin\data-tabel\data-siswa.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $sort', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-tabel\\data-siswa.php', 40)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-tabel\\data-siswa.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/data-tabel/data-siswa', [], true)
+ 5 APPPATH\Controllers\SiswaController.php(32): view('admin/data-tabel/data-siswa', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SiswaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SiswaController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-23 16:46:00 --> ErrorException: Undefined variable $sort
+[Method: GET, Route: siswa]
+in APPPATH\Views\admin\data-tabel\data-siswa.php on line 40.
+ 1 APPPATH\Views\admin\data-tabel\data-siswa.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $sort', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-tabel\\data-siswa.php', 40)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-tabel\\data-siswa.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/data-tabel/data-siswa', [], true)
+ 5 APPPATH\Controllers\SiswaController.php(32): view('admin/data-tabel/data-siswa', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SiswaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SiswaController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-23 16:46:01 --> ErrorException: Undefined variable $sort
+[Method: GET, Route: siswa]
+in APPPATH\Views\admin\data-tabel\data-siswa.php on line 40.
+ 1 APPPATH\Views\admin\data-tabel\data-siswa.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $sort', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-tabel\\data-siswa.php', 40)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-tabel\\data-siswa.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/data-tabel/data-siswa', [], true)
+ 5 APPPATH\Controllers\SiswaController.php(32): view('admin/data-tabel/data-siswa', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SiswaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SiswaController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-23 16:46:01 --> ErrorException: Undefined variable $sort
+[Method: GET, Route: siswa]
+in APPPATH\Views\admin\data-tabel\data-siswa.php on line 40.
+ 1 APPPATH\Views\admin\data-tabel\data-siswa.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $sort', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-tabel\\data-siswa.php', 40)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-tabel\\data-siswa.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/data-tabel/data-siswa', [], true)
+ 5 APPPATH\Controllers\SiswaController.php(32): view('admin/data-tabel/data-siswa', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SiswaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SiswaController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-23 16:46:02 --> ErrorException: Undefined variable $sort
+[Method: GET, Route: siswa]
+in APPPATH\Views\admin\data-tabel\data-siswa.php on line 40.
+ 1 APPPATH\Views\admin\data-tabel\data-siswa.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $sort', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-tabel\\data-siswa.php', 40)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-tabel\\data-siswa.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/data-tabel/data-siswa', [], true)
+ 5 APPPATH\Controllers\SiswaController.php(32): view('admin/data-tabel/data-siswa', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SiswaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SiswaController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-23 16:46:02 --> ErrorException: Undefined variable $sort
+[Method: GET, Route: siswa]
+in APPPATH\Views\admin\data-tabel\data-siswa.php on line 40.
+ 1 APPPATH\Views\admin\data-tabel\data-siswa.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $sort', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-tabel\\data-siswa.php', 40)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-tabel\\data-siswa.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/data-tabel/data-siswa', [], true)
+ 5 APPPATH\Controllers\SiswaController.php(32): view('admin/data-tabel/data-siswa', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SiswaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SiswaController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-23 16:46:02 --> ErrorException: Undefined variable $sort
+[Method: GET, Route: siswa]
+in APPPATH\Views\admin\data-tabel\data-siswa.php on line 40.
+ 1 APPPATH\Views\admin\data-tabel\data-siswa.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $sort', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-tabel\\data-siswa.php', 40)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-tabel\\data-siswa.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/data-tabel/data-siswa', [], true)
+ 5 APPPATH\Controllers\SiswaController.php(32): view('admin/data-tabel/data-siswa', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SiswaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SiswaController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-23 16:46:02 --> ErrorException: Undefined variable $sort
+[Method: GET, Route: siswa]
+in APPPATH\Views\admin\data-tabel\data-siswa.php on line 40.
+ 1 APPPATH\Views\admin\data-tabel\data-siswa.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $sort', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-tabel\\data-siswa.php', 40)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-tabel\\data-siswa.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/data-tabel/data-siswa', [], true)
+ 5 APPPATH\Controllers\SiswaController.php(32): view('admin/data-tabel/data-siswa', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SiswaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SiswaController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-23 16:55:31 --> ErrorException: Undefined variable $kelas
+[Method: GET, Route: siswa]
+in APPPATH\Views\admin\data-tabel\data-siswa.php on line 57.
+ 1 APPPATH\Views\admin\data-tabel\data-siswa.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $kelas', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-tabel\\data-siswa.php', 57)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-tabel\\data-siswa.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/data-tabel/data-siswa', [], true)
+ 5 APPPATH\Controllers\SiswaController.php(34): view('admin/data-tabel/data-siswa', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SiswaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SiswaController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-23 17:06:39 --> ErrorException: Undefined array key "id_guru"
+[Method: GET, Route: siswa]
+in APPPATH\Views\admin\data-tabel\data-siswa.php on line 104.
+ 1 APPPATH\Views\admin\data-tabel\data-siswa.php(104): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_guru"', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-tabel\\data-siswa.php', 104)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-tabel\\data-siswa.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/data-tabel/data-siswa', [], true)
+ 5 APPPATH\Controllers\SiswaController.php(35): view('admin/data-tabel/data-siswa', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SiswaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SiswaController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-23 17:20:50 --> Error: Class "App\Controllers\Spreadsheet" not found
+[Method: POST, Route: siswa/bulk-action]
+in APPPATH\Controllers\SiswaController.php on line 346.
+ 1 APPPATH\Controllers\SiswaController.php(331): App\Controllers\SiswaController->exportToExcel([...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SiswaController->bulkAction()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SiswaController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
