@@ -341,6 +341,7 @@
 				theme: 'bootstrap-5',
 			});
 		});
+		
 		// 1. Tunggu seluruh halaman HTML selesai dimuat sebelum menjalankan script
 		document.addEventListener('DOMContentLoaded', function () {
 			// BAGIAN NOTIFIKASI (Aman karena tidak bergantung pada elemen spesifik)

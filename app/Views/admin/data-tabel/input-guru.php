@@ -57,7 +57,8 @@
                         </select>
                     </div>
                     <div class="mt-3 d-flex justify-content-center">
-                        <button id="btn-update" type="submit" class="btn btn-secondary card-subtitle m-1 text-white">Simpan Guru</button>
+                        <button id="btn-update" type="submit"
+                            class="btn btn-secondary card-subtitle m-1 text-white">Simpan Guru</button>
                     </div>
                 </div>
             </div>

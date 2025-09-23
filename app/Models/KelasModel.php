@@ -76,6 +76,15 @@ class KelasModel extends Model
             ->findAll();
     }
 
+    public function getJurusanFromKelas()
+    {
+        return $this->select('jurusan.id_jurusan, jurusan.nama_jurusan')
+            ->join('jurusan', 'kelas.id_jurusan = jurusan.id_jurusan', 'left')
+            ->groupBy('jurusan.id_jurusan, jurusan.nama_jurusan')
+            ->findAll();
+    }
+
+
     public function getData($sort)
     {
         $builder = $this->db->table('kelas')

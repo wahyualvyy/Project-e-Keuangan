@@ -13,7 +13,7 @@ class AddKelasIdToSiswa extends Migration
                 'type' => 'INT',
                 'constraint' => 11,
                 'unsigned' => true,
-                'after' => 'id_jurusan',
+                'after' => 'id_siswa',
             ],
         ]);
         $this->forge->addForeignKey('id_kelas', 'kelas', 'id_kelas', 'CASCADE', 'CASCADE');

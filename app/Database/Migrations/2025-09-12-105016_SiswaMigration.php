@@ -8,17 +8,12 @@ class SiswaMigration extends Migration
 {
     public function up()
     {
-         $this->forge->addField([
+        $this->forge->addField([
             'id_siswa' => [
                 'type' => 'INT',
                 'constraint' => 11,
                 'unsigned' => true,
                 'auto_increment' => true,
-            ],
-            'id_jurusan'=> [
-                'type'=> 'INT',
-                'constraint' => 11,
-                'unsigned' => true,
             ],
             'nama_siswa' => [
                 'type' => 'VARCHAR',
@@ -32,11 +27,7 @@ class SiswaMigration extends Migration
             'nisn' => [
                 'type' => 'VARCHAR',
                 'constraint' => 20,
-                'unique'=> true,
-            ],
-            'jurusan' => [
-                'type' => 'VARCHAR',
-                'constraint' => 50,
+                'unique' => true,
             ],
             'jenis_kelamin' => [
                 'type' => 'ENUM',

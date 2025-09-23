@@ -46,16 +46,20 @@ $routes->group('', ['filter' => 'login'], function ($routes) {
         $routes->get('input', 'GuruController::Input');
         $routes->post('create', 'GuruController::create');
         $routes->get('edit/(:num)', 'GuruController::edit/$1');
-        $routes->post('update/(:num)', 'GuruController::update/$1');    
+        $routes->post('update/(:num)', 'GuruController::update/$1');
         $routes->get('delete/(:num)', 'GuruController::delete/$1');
         $routes->post('bulk-action', 'GuruController::bulkAction');
     });
 
     // Data Siswa Routes
     $routes->group('siswa', function ($routes) {
-        $routes->get('/', 'AdminController::dataSiswa');
-        $routes->get('data', 'AdminController::dataSiswa');
-        $routes->get('input', 'AdminController::inputSiswa');
+        $routes->get('/', 'SiswaController::index');
+        $routes->get('input', 'SiswaController::Input');
+        $routes->post('create', 'SiswaController::create');
+        $routes->get('edit/(:num)', 'SiswaController::edit/$1');
+        $routes->post('update/(:num)', 'SiswaController::update/$1');
+        $routes->get('delete/(:num)', 'SiswaController::delete/$1');
+        $routes->post('bulk-action', 'SiswaController::bulkAction');
     });
 
     // Data Kelas Routes
@@ -64,7 +68,7 @@ $routes->group('', ['filter' => 'login'], function ($routes) {
         $routes->get('input', 'KelasController::Input');
         $routes->post('create', 'KelasController::create');
         $routes->get('edit/(:num)', 'KelasController::edit/$1');
-        $routes->post('update/(:num)', 'KelasController::update/$1');    
+        $routes->post('update/(:num)', 'KelasController::update/$1');
         $routes->get('delete/(:num)', 'KelasController::delete/$1');
         $routes->post('bulk-action', 'KelasController::bulkAction');
     });

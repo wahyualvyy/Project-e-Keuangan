@@ -1,0 +1,532 @@
+ERROR - 2025-09-23 13:44:13 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'ci_keuangan', 3306, '', 0)
+#1 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 E:\laragon\www\Project-e-Keuangan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\laragon\www\Project-e-Keuangan\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\laragon\www\Project-e-Keuangan\system\BaseModel.php(717): CodeIgniter\Model->doFirst()
+#6 E:\laragon\www\Project-e-Keuangan\vendor\myth\auth\src\Authentication\LocalAuthenticator.php(140): CodeIgniter\BaseModel->first()
+#7 E:\laragon\www\Project-e-Keuangan\vendor\myth\auth\src\Authentication\LocalAuthenticator.php(19): Myth\Auth\Authentication\LocalAuthenticator->validate(Array, true)
+#8 E:\laragon\www\Project-e-Keuangan\vendor\myth\auth\src\Controllers\AuthController.php(108): Myth\Auth\Authentication\LocalAuthenticator->attempt(Array, false)
+#9 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(933): Myth\Auth\Controllers\AuthController->attemptLogin()
+#10 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+#11 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 E:\laragon\www\Project-e-Keuangan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#13 E:\laragon\www\Project-e-Keuangan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 E:\laragon\www\Project-e-Keuangan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 E:\laragon\www\Project-e-Keuangan\system\rewrite.php(44): require_once('E:\\laragon\\www\\...')
+#16 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 E:\laragon\www\Project-e-Keuangan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 E:\laragon\www\Project-e-Keuangan\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#4 E:\laragon\www\Project-e-Keuangan\system\BaseModel.php(717): CodeIgniter\Model->doFirst()
+#5 E:\laragon\www\Project-e-Keuangan\vendor\myth\auth\src\Authentication\LocalAuthenticator.php(140): CodeIgniter\BaseModel->first()
+#6 E:\laragon\www\Project-e-Keuangan\vendor\myth\auth\src\Authentication\LocalAuthenticator.php(19): Myth\Auth\Authentication\LocalAuthenticator->validate(Array, true)
+#7 E:\laragon\www\Project-e-Keuangan\vendor\myth\auth\src\Controllers\AuthController.php(108): Myth\Auth\Authentication\LocalAuthenticator->attempt(Array, false)
+#8 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(933): Myth\Auth\Controllers\AuthController->attemptLogin()
+#9 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+#10 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\laragon\www\Project-e-Keuangan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 E:\laragon\www\Project-e-Keuangan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 E:\laragon\www\Project-e-Keuangan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 E:\laragon\www\Project-e-Keuangan\system\rewrite.php(44): require_once('E:\\laragon\\www\\...')
+#15 {main}
+CRITICAL - 2025-09-23 13:44:13 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: POST, Route: login]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `username` = :username:
+AND `users`.`deleted_at` IS NULL
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(717): CodeIgniter\Model->doFirst()
+ 5 VENDORPATH\myth\auth\src\Authentication\LocalAuthenticator.php(140): CodeIgniter\BaseModel->first()
+ 6 VENDORPATH\myth\auth\src\Authentication\LocalAuthenticator.php(19): Myth\Auth\Authentication\LocalAuthenticator->validate([...], true)
+ 7 VENDORPATH\myth\auth\src\Controllers\AuthController.php(108): Myth\Auth\Authentication\LocalAuthenticator->attempt([...], false)
+ 8 SYSTEMPATH\CodeIgniter.php(933): Myth\Auth\Controllers\AuthController->attemptLogin()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+ERROR - 2025-09-23 13:44:30 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'ci_keuangan', 3306, '', 0)
+#1 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 E:\laragon\www\Project-e-Keuangan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\laragon\www\Project-e-Keuangan\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\laragon\www\Project-e-Keuangan\system\BaseModel.php(717): CodeIgniter\Model->doFirst()
+#6 E:\laragon\www\Project-e-Keuangan\vendor\myth\auth\src\Authentication\LocalAuthenticator.php(140): CodeIgniter\BaseModel->first()
+#7 E:\laragon\www\Project-e-Keuangan\vendor\myth\auth\src\Authentication\LocalAuthenticator.php(19): Myth\Auth\Authentication\LocalAuthenticator->validate(Array, true)
+#8 E:\laragon\www\Project-e-Keuangan\vendor\myth\auth\src\Controllers\AuthController.php(108): Myth\Auth\Authentication\LocalAuthenticator->attempt(Array, false)
+#9 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(933): Myth\Auth\Controllers\AuthController->attemptLogin()
+#10 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+#11 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 E:\laragon\www\Project-e-Keuangan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#13 E:\laragon\www\Project-e-Keuangan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 E:\laragon\www\Project-e-Keuangan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 E:\laragon\www\Project-e-Keuangan\system\rewrite.php(44): require_once('E:\\laragon\\www\\...')
+#16 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 E:\laragon\www\Project-e-Keuangan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 E:\laragon\www\Project-e-Keuangan\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#4 E:\laragon\www\Project-e-Keuangan\system\BaseModel.php(717): CodeIgniter\Model->doFirst()
+#5 E:\laragon\www\Project-e-Keuangan\vendor\myth\auth\src\Authentication\LocalAuthenticator.php(140): CodeIgniter\BaseModel->first()
+#6 E:\laragon\www\Project-e-Keuangan\vendor\myth\auth\src\Authentication\LocalAuthenticator.php(19): Myth\Auth\Authentication\LocalAuthenticator->validate(Array, true)
+#7 E:\laragon\www\Project-e-Keuangan\vendor\myth\auth\src\Controllers\AuthController.php(108): Myth\Auth\Authentication\LocalAuthenticator->attempt(Array, false)
+#8 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(933): Myth\Auth\Controllers\AuthController->attemptLogin()
+#9 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+#10 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\laragon\www\Project-e-Keuangan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 E:\laragon\www\Project-e-Keuangan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 E:\laragon\www\Project-e-Keuangan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 E:\laragon\www\Project-e-Keuangan\system\rewrite.php(44): require_once('E:\\laragon\\www\\...')
+#15 {main}
+CRITICAL - 2025-09-23 13:44:30 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: POST, Route: login]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `username` = :username:
+AND `users`.`deleted_at` IS NULL
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(717): CodeIgniter\Model->doFirst()
+ 5 VENDORPATH\myth\auth\src\Authentication\LocalAuthenticator.php(140): CodeIgniter\BaseModel->first()
+ 6 VENDORPATH\myth\auth\src\Authentication\LocalAuthenticator.php(19): Myth\Auth\Authentication\LocalAuthenticator->validate([...], true)
+ 7 VENDORPATH\myth\auth\src\Controllers\AuthController.php(108): Myth\Auth\Authentication\LocalAuthenticator->attempt([...], false)
+ 8 SYSTEMPATH\CodeIgniter.php(933): Myth\Auth\Controllers\AuthController->attemptLogin()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-23 14:21:19 --> ErrorException: Undefined variable $kelas
+[Method: GET, Route: siswa/input]
+in APPPATH\Views\admin\data-tabel\input-siswa.php on line 61.
+ 1 APPPATH\Views\admin\data-tabel\input-siswa.php(61): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $kelas', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-tabel\\input-siswa.php', 61)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-tabel\\input-siswa.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/data-tabel/input-siswa', [], true)
+ 5 APPPATH\Controllers\SiswaController.php(38): view('admin/data-tabel/input-siswa', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SiswaController->input()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SiswaController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-23 14:22:00 --> Error: Class "App\Controllers\KelasModel" not found
+[Method: GET, Route: siswa/input]
+in APPPATH\Controllers\SiswaController.php on line 19.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\SiswaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-23 14:22:01 --> Error: Class "App\Controllers\KelasModel" not found
+[Method: GET, Route: siswa/input]
+in APPPATH\Controllers\SiswaController.php on line 19.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\SiswaController->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-23 14:22:07 --> ErrorException: Undefined array key "kode_jurusan"
+[Method: GET, Route: siswa/input]
+in APPPATH\Views\admin\data-tabel\input-siswa.php on line 62.
+ 1 APPPATH\Views\admin\data-tabel\input-siswa.php(62): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "kode_jurusan"', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-tabel\\input-siswa.php', 62)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-tabel\\input-siswa.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/data-tabel/input-siswa', [], true)
+ 5 APPPATH\Controllers\SiswaController.php(38): view('admin/data-tabel/input-siswa', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SiswaController->input()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SiswaController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-23 14:22:10 --> ErrorException: Undefined array key "kode_jurusan"
+[Method: GET, Route: siswa/input]
+in APPPATH\Views\admin\data-tabel\input-siswa.php on line 62.
+ 1 APPPATH\Views\admin\data-tabel\input-siswa.php(62): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "kode_jurusan"', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-tabel\\input-siswa.php', 62)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-tabel\\input-siswa.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/data-tabel/input-siswa', [], true)
+ 5 APPPATH\Controllers\SiswaController.php(38): view('admin/data-tabel/input-siswa', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SiswaController->input()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SiswaController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-23 14:33:46 --> ErrorException: Undefined array key "kode_jurusan"
+[Method: GET, Route: siswa/input]
+in APPPATH\Views\admin\data-tabel\input-siswa.php on line 62.
+ 1 APPPATH\Views\admin\data-tabel\input-siswa.php(62): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "kode_jurusan"', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-tabel\\input-siswa.php', 62)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-tabel\\input-siswa.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/data-tabel/input-siswa', [], true)
+ 5 APPPATH\Controllers\SiswaController.php(38): view('admin/data-tabel/input-siswa', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SiswaController->input()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SiswaController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-23 14:53:09 --> ErrorException: Undefined variable $jurusan
+[Method: GET, Route: siswa/input]
+in APPPATH\Views\admin\data-tabel\input-siswa.php on line 51.
+ 1 APPPATH\Views\admin\data-tabel\input-siswa.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $jurusan', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-tabel\\input-siswa.php', 51)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-tabel\\input-siswa.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/data-tabel/input-siswa', [], true)
+ 5 APPPATH\Controllers\SiswaController.php(39): view('admin/data-tabel/input-siswa', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SiswaController->input()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SiswaController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-23 14:53:10 --> ErrorException: Undefined variable $jurusan
+[Method: GET, Route: siswa/input]
+in APPPATH\Views\admin\data-tabel\input-siswa.php on line 51.
+ 1 APPPATH\Views\admin\data-tabel\input-siswa.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $jurusan', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-tabel\\input-siswa.php', 51)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-tabel\\input-siswa.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/data-tabel/input-siswa', [], true)
+ 5 APPPATH\Controllers\SiswaController.php(39): view('admin/data-tabel/input-siswa', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SiswaController->input()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SiswaController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-23 15:15:12 --> ErrorException: Undefined variable $kelas
+[Method: GET, Route: guru]
+in APPPATH\Views\layout\template.php on line 345.
+ 1 APPPATH\Views\layout\template.php(345): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $kelas', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\layout\\template.php', 345)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\layout\\template.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('layout/template', [], true)
+ 5 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/data-tabel/data-guru', [], true)
+ 6 APPPATH\Controllers\GuruController.php(35): view('admin/data-tabel/data-guru', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GuruController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GuruController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-23 15:16:33 --> ErrorException: Undefined variable $kelas
+[Method: GET, Route: guru]
+in APPPATH\Views\layout\template.php on line 346.
+ 1 APPPATH\Views\layout\template.php(346): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $kelas', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\layout\\template.php', 346)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\layout\\template.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('layout/template', [], true)
+ 5 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/data-tabel/data-guru', [], true)
+ 6 APPPATH\Controllers\GuruController.php(35): view('admin/data-tabel/data-guru', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GuruController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GuruController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+ERROR - 2025-09-23 15:17:12 --> mysqli_sql_exception: Unknown column 'jurusan.singkatan' in 'field list' in E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `siswa`....', 0)
+#1 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `siswa`....')
+#2 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `siswa`....')
+#3 E:\laragon\www\Project-e-Keuangan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `siswa`....', Array, false)
+#4 E:\laragon\www\Project-e-Keuangan\app\Models\SiswaModel.php(74): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\laragon\www\Project-e-Keuangan\app\Controllers\SiswaController.php(28): App\Models\SiswaModel->getSiswaWithAllData()
+#6 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(933): App\Controllers\SiswaController->index()
+#7 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SiswaController))
+#8 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 E:\laragon\www\Project-e-Keuangan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 E:\laragon\www\Project-e-Keuangan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 E:\laragon\www\Project-e-Keuangan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 E:\laragon\www\Project-e-Keuangan\system\rewrite.php(44): require_once('E:\\laragon\\www\\...')
+#13 {main}
+CRITICAL - 2025-09-23 15:17:12 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'jurusan.singkatan' in 'field list'
+[Method: GET, Route: siswa]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `siswa`.*, `kelas`.`keterangan` as `nama_kelas`, `jurusan`.`nama_jurusan`, `jurusan`.`singkatan` as `kode_jurusan`, `guru`.`nama_guru` as `nama_wali_kelas`
+FROM `siswa`
+LEFT JOIN `kelas` ON `siswa`.`id_kelas` = `kelas`.`id_kelas`
+LEFT JOIN `jurusan` ON `kelas`.`id_jurusan` = `jurusan`.`id_jurusan`
+LEFT JOIN `guru` ON `kelas`.`id_guru` = `guru`.`id_guru`', [], false)
+ 2 APPPATH\Models\SiswaModel.php(74): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\SiswaController.php(28): App\Models\SiswaModel->getSiswaWithAllData()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SiswaController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SiswaController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-23 15:17:12 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'jurusan.singkatan' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `siswa`.*, `kelas`.`keterangan` as `nama_kelas`, `jurusan`.`nama_jurusan`, `jurusan`.`singkatan` as `kode_jurusan`, `guru`.`nama_guru` as `nama_wali_kelas`
+FROM `siswa`
+LEFT JOIN `kelas` ON `siswa`.`id_kelas` = `kelas`.`id_kelas`
+LEFT JOIN `jurusan` ON `kelas`.`id_jurusan` = `jurusan`.`id_jurusan`
+LEFT JOIN `guru` ON `kelas`.`id_guru` = `guru`.`id_guru`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `siswa`.*, `kelas`.`keterangan` as `nama_kelas`, `jurusan`.`nama_jurusan`, `jurusan`.`singkatan` as `kode_jurusan`, `guru`.`nama_guru` as `nama_wali_kelas`
+FROM `siswa`
+LEFT JOIN `kelas` ON `siswa`.`id_kelas` = `kelas`.`id_kelas`
+LEFT JOIN `jurusan` ON `kelas`.`id_jurusan` = `jurusan`.`id_jurusan`
+LEFT JOIN `guru` ON `kelas`.`id_guru` = `guru`.`id_guru`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `siswa`.*, `kelas`.`keterangan` as `nama_kelas`, `jurusan`.`nama_jurusan`, `jurusan`.`singkatan` as `kode_jurusan`, `guru`.`nama_guru` as `nama_wali_kelas`
+FROM `siswa`
+LEFT JOIN `kelas` ON `siswa`.`id_kelas` = `kelas`.`id_kelas`
+LEFT JOIN `jurusan` ON `kelas`.`id_jurusan` = `jurusan`.`id_jurusan`
+LEFT JOIN `guru` ON `kelas`.`id_guru` = `guru`.`id_guru`', [], false)
+ 4 APPPATH\Models\SiswaModel.php(74): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\SiswaController.php(28): App\Models\SiswaModel->getSiswaWithAllData()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SiswaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SiswaController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-23 15:17:12 --> [Caused by] mysqli_sql_exception: Unknown column 'jurusan.singkatan' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `siswa`.*, `kelas`.`keterangan` as `nama_kelas`, `jurusan`.`nama_jurusan`, `jurusan`.`singkatan` as `kode_jurusan`, `guru`.`nama_guru` as `nama_wali_kelas`
+FROM `siswa`
+LEFT JOIN `kelas` ON `siswa`.`id_kelas` = `kelas`.`id_kelas`
+LEFT JOIN `jurusan` ON `kelas`.`id_jurusan` = `jurusan`.`id_jurusan`
+LEFT JOIN `guru` ON `kelas`.`id_guru` = `guru`.`id_guru`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `siswa`.*, `kelas`.`keterangan` as `nama_kelas`, `jurusan`.`nama_jurusan`, `jurusan`.`singkatan` as `kode_jurusan`, `guru`.`nama_guru` as `nama_wali_kelas`
+FROM `siswa`
+LEFT JOIN `kelas` ON `siswa`.`id_kelas` = `kelas`.`id_kelas`
+LEFT JOIN `jurusan` ON `kelas`.`id_jurusan` = `jurusan`.`id_jurusan`
+LEFT JOIN `guru` ON `kelas`.`id_guru` = `guru`.`id_guru`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `siswa`.*, `kelas`.`keterangan` as `nama_kelas`, `jurusan`.`nama_jurusan`, `jurusan`.`singkatan` as `kode_jurusan`, `guru`.`nama_guru` as `nama_wali_kelas`
+FROM `siswa`
+LEFT JOIN `kelas` ON `siswa`.`id_kelas` = `kelas`.`id_kelas`
+LEFT JOIN `jurusan` ON `kelas`.`id_jurusan` = `jurusan`.`id_jurusan`
+LEFT JOIN `guru` ON `kelas`.`id_guru` = `guru`.`id_guru`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `siswa`.*, `kelas`.`keterangan` as `nama_kelas`, `jurusan`.`nama_jurusan`, `jurusan`.`singkatan` as `kode_jurusan`, `guru`.`nama_guru` as `nama_wali_kelas`
+FROM `siswa`
+LEFT JOIN `kelas` ON `siswa`.`id_kelas` = `kelas`.`id_kelas`
+LEFT JOIN `jurusan` ON `kelas`.`id_jurusan` = `jurusan`.`id_jurusan`
+LEFT JOIN `guru` ON `kelas`.`id_guru` = `guru`.`id_guru`', [], false)
+ 5 APPPATH\Models\SiswaModel.php(74): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\SiswaController.php(28): App\Models\SiswaModel->getSiswaWithAllData()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SiswaController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SiswaController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+ERROR - 2025-09-23 15:17:18 --> mysqli_sql_exception: Unknown column 'jurusan.singkatan' in 'field list' in E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `siswa`....', 0)
+#1 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `siswa`....')
+#2 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `siswa`....')
+#3 E:\laragon\www\Project-e-Keuangan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `siswa`....', Array, false)
+#4 E:\laragon\www\Project-e-Keuangan\app\Models\SiswaModel.php(74): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\laragon\www\Project-e-Keuangan\app\Controllers\SiswaController.php(28): App\Models\SiswaModel->getSiswaWithAllData()
+#6 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(933): App\Controllers\SiswaController->index()
+#7 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SiswaController))
+#8 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 E:\laragon\www\Project-e-Keuangan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 E:\laragon\www\Project-e-Keuangan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 E:\laragon\www\Project-e-Keuangan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 E:\laragon\www\Project-e-Keuangan\system\rewrite.php(44): require_once('E:\\laragon\\www\\...')
+#13 {main}
+CRITICAL - 2025-09-23 15:17:18 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'jurusan.singkatan' in 'field list'
+[Method: GET, Route: siswa]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `siswa`.*, `kelas`.`keterangan` as `nama_kelas`, `jurusan`.`nama_jurusan`, `jurusan`.`singkatan` as `kode_jurusan`, `guru`.`nama_guru` as `nama_wali_kelas`
+FROM `siswa`
+LEFT JOIN `kelas` ON `siswa`.`id_kelas` = `kelas`.`id_kelas`
+LEFT JOIN `jurusan` ON `kelas`.`id_jurusan` = `jurusan`.`id_jurusan`
+LEFT JOIN `guru` ON `kelas`.`id_guru` = `guru`.`id_guru`', [], false)
+ 2 APPPATH\Models\SiswaModel.php(74): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\SiswaController.php(28): App\Models\SiswaModel->getSiswaWithAllData()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SiswaController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SiswaController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-23 15:17:18 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'jurusan.singkatan' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `siswa`.*, `kelas`.`keterangan` as `nama_kelas`, `jurusan`.`nama_jurusan`, `jurusan`.`singkatan` as `kode_jurusan`, `guru`.`nama_guru` as `nama_wali_kelas`
+FROM `siswa`
+LEFT JOIN `kelas` ON `siswa`.`id_kelas` = `kelas`.`id_kelas`
+LEFT JOIN `jurusan` ON `kelas`.`id_jurusan` = `jurusan`.`id_jurusan`
+LEFT JOIN `guru` ON `kelas`.`id_guru` = `guru`.`id_guru`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `siswa`.*, `kelas`.`keterangan` as `nama_kelas`, `jurusan`.`nama_jurusan`, `jurusan`.`singkatan` as `kode_jurusan`, `guru`.`nama_guru` as `nama_wali_kelas`
+FROM `siswa`
+LEFT JOIN `kelas` ON `siswa`.`id_kelas` = `kelas`.`id_kelas`
+LEFT JOIN `jurusan` ON `kelas`.`id_jurusan` = `jurusan`.`id_jurusan`
+LEFT JOIN `guru` ON `kelas`.`id_guru` = `guru`.`id_guru`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `siswa`.*, `kelas`.`keterangan` as `nama_kelas`, `jurusan`.`nama_jurusan`, `jurusan`.`singkatan` as `kode_jurusan`, `guru`.`nama_guru` as `nama_wali_kelas`
+FROM `siswa`
+LEFT JOIN `kelas` ON `siswa`.`id_kelas` = `kelas`.`id_kelas`
+LEFT JOIN `jurusan` ON `kelas`.`id_jurusan` = `jurusan`.`id_jurusan`
+LEFT JOIN `guru` ON `kelas`.`id_guru` = `guru`.`id_guru`', [], false)
+ 4 APPPATH\Models\SiswaModel.php(74): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\SiswaController.php(28): App\Models\SiswaModel->getSiswaWithAllData()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SiswaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SiswaController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-23 15:17:18 --> [Caused by] mysqli_sql_exception: Unknown column 'jurusan.singkatan' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `siswa`.*, `kelas`.`keterangan` as `nama_kelas`, `jurusan`.`nama_jurusan`, `jurusan`.`singkatan` as `kode_jurusan`, `guru`.`nama_guru` as `nama_wali_kelas`
+FROM `siswa`
+LEFT JOIN `kelas` ON `siswa`.`id_kelas` = `kelas`.`id_kelas`
+LEFT JOIN `jurusan` ON `kelas`.`id_jurusan` = `jurusan`.`id_jurusan`
+LEFT JOIN `guru` ON `kelas`.`id_guru` = `guru`.`id_guru`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `siswa`.*, `kelas`.`keterangan` as `nama_kelas`, `jurusan`.`nama_jurusan`, `jurusan`.`singkatan` as `kode_jurusan`, `guru`.`nama_guru` as `nama_wali_kelas`
+FROM `siswa`
+LEFT JOIN `kelas` ON `siswa`.`id_kelas` = `kelas`.`id_kelas`
+LEFT JOIN `jurusan` ON `kelas`.`id_jurusan` = `jurusan`.`id_jurusan`
+LEFT JOIN `guru` ON `kelas`.`id_guru` = `guru`.`id_guru`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `siswa`.*, `kelas`.`keterangan` as `nama_kelas`, `jurusan`.`nama_jurusan`, `jurusan`.`singkatan` as `kode_jurusan`, `guru`.`nama_guru` as `nama_wali_kelas`
+FROM `siswa`
+LEFT JOIN `kelas` ON `siswa`.`id_kelas` = `kelas`.`id_kelas`
+LEFT JOIN `jurusan` ON `kelas`.`id_jurusan` = `jurusan`.`id_jurusan`
+LEFT JOIN `guru` ON `kelas`.`id_guru` = `guru`.`id_guru`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `siswa`.*, `kelas`.`keterangan` as `nama_kelas`, `jurusan`.`nama_jurusan`, `jurusan`.`singkatan` as `kode_jurusan`, `guru`.`nama_guru` as `nama_wali_kelas`
+FROM `siswa`
+LEFT JOIN `kelas` ON `siswa`.`id_kelas` = `kelas`.`id_kelas`
+LEFT JOIN `jurusan` ON `kelas`.`id_jurusan` = `jurusan`.`id_jurusan`
+LEFT JOIN `guru` ON `kelas`.`id_guru` = `guru`.`id_guru`', [], false)
+ 5 APPPATH\Models\SiswaModel.php(74): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\SiswaController.php(28): App\Models\SiswaModel->getSiswaWithAllData()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SiswaController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SiswaController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+ERROR - 2025-09-23 15:17:25 --> mysqli_sql_exception: Unknown column 'jurusan.singkatan' in 'field list' in E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `siswa`....', 0)
+#1 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `siswa`....')
+#2 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `siswa`....')
+#3 E:\laragon\www\Project-e-Keuangan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `siswa`....', Array, false)
+#4 E:\laragon\www\Project-e-Keuangan\app\Models\SiswaModel.php(74): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\laragon\www\Project-e-Keuangan\app\Controllers\SiswaController.php(28): App\Models\SiswaModel->getSiswaWithAllData()
+#6 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(933): App\Controllers\SiswaController->index()
+#7 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SiswaController))
+#8 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 E:\laragon\www\Project-e-Keuangan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 E:\laragon\www\Project-e-Keuangan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 E:\laragon\www\Project-e-Keuangan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 E:\laragon\www\Project-e-Keuangan\system\rewrite.php(44): require_once('E:\\laragon\\www\\...')
+#13 {main}
+CRITICAL - 2025-09-23 15:17:25 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'jurusan.singkatan' in 'field list'
+[Method: GET, Route: siswa]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `siswa`.*, `kelas`.`keterangan` as `nama_kelas`, `jurusan`.`nama_jurusan`, `jurusan`.`singkatan` as `kode_jurusan`, `guru`.`nama_guru` as `nama_wali_kelas`
+FROM `siswa`
+LEFT JOIN `kelas` ON `siswa`.`id_kelas` = `kelas`.`id_kelas`
+LEFT JOIN `jurusan` ON `kelas`.`id_jurusan` = `jurusan`.`id_jurusan`
+LEFT JOIN `guru` ON `kelas`.`id_guru` = `guru`.`id_guru`', [], false)
+ 2 APPPATH\Models\SiswaModel.php(74): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\SiswaController.php(28): App\Models\SiswaModel->getSiswaWithAllData()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SiswaController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SiswaController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-23 15:17:25 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'jurusan.singkatan' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `siswa`.*, `kelas`.`keterangan` as `nama_kelas`, `jurusan`.`nama_jurusan`, `jurusan`.`singkatan` as `kode_jurusan`, `guru`.`nama_guru` as `nama_wali_kelas`
+FROM `siswa`
+LEFT JOIN `kelas` ON `siswa`.`id_kelas` = `kelas`.`id_kelas`
+LEFT JOIN `jurusan` ON `kelas`.`id_jurusan` = `jurusan`.`id_jurusan`
+LEFT JOIN `guru` ON `kelas`.`id_guru` = `guru`.`id_guru`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `siswa`.*, `kelas`.`keterangan` as `nama_kelas`, `jurusan`.`nama_jurusan`, `jurusan`.`singkatan` as `kode_jurusan`, `guru`.`nama_guru` as `nama_wali_kelas`
+FROM `siswa`
+LEFT JOIN `kelas` ON `siswa`.`id_kelas` = `kelas`.`id_kelas`
+LEFT JOIN `jurusan` ON `kelas`.`id_jurusan` = `jurusan`.`id_jurusan`
+LEFT JOIN `guru` ON `kelas`.`id_guru` = `guru`.`id_guru`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `siswa`.*, `kelas`.`keterangan` as `nama_kelas`, `jurusan`.`nama_jurusan`, `jurusan`.`singkatan` as `kode_jurusan`, `guru`.`nama_guru` as `nama_wali_kelas`
+FROM `siswa`
+LEFT JOIN `kelas` ON `siswa`.`id_kelas` = `kelas`.`id_kelas`
+LEFT JOIN `jurusan` ON `kelas`.`id_jurusan` = `jurusan`.`id_jurusan`
+LEFT JOIN `guru` ON `kelas`.`id_guru` = `guru`.`id_guru`', [], false)
+ 4 APPPATH\Models\SiswaModel.php(74): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\SiswaController.php(28): App\Models\SiswaModel->getSiswaWithAllData()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SiswaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SiswaController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-09-23 15:17:25 --> [Caused by] mysqli_sql_exception: Unknown column 'jurusan.singkatan' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `siswa`.*, `kelas`.`keterangan` as `nama_kelas`, `jurusan`.`nama_jurusan`, `jurusan`.`singkatan` as `kode_jurusan`, `guru`.`nama_guru` as `nama_wali_kelas`
+FROM `siswa`
+LEFT JOIN `kelas` ON `siswa`.`id_kelas` = `kelas`.`id_kelas`
+LEFT JOIN `jurusan` ON `kelas`.`id_jurusan` = `jurusan`.`id_jurusan`
+LEFT JOIN `guru` ON `kelas`.`id_guru` = `guru`.`id_guru`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `siswa`.*, `kelas`.`keterangan` as `nama_kelas`, `jurusan`.`nama_jurusan`, `jurusan`.`singkatan` as `kode_jurusan`, `guru`.`nama_guru` as `nama_wali_kelas`
+FROM `siswa`
+LEFT JOIN `kelas` ON `siswa`.`id_kelas` = `kelas`.`id_kelas`
+LEFT JOIN `jurusan` ON `kelas`.`id_jurusan` = `jurusan`.`id_jurusan`
+LEFT JOIN `guru` ON `kelas`.`id_guru` = `guru`.`id_guru`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `siswa`.*, `kelas`.`keterangan` as `nama_kelas`, `jurusan`.`nama_jurusan`, `jurusan`.`singkatan` as `kode_jurusan`, `guru`.`nama_guru` as `nama_wali_kelas`
+FROM `siswa`
+LEFT JOIN `kelas` ON `siswa`.`id_kelas` = `kelas`.`id_kelas`
+LEFT JOIN `jurusan` ON `kelas`.`id_jurusan` = `jurusan`.`id_jurusan`
+LEFT JOIN `guru` ON `kelas`.`id_guru` = `guru`.`id_guru`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `siswa`.*, `kelas`.`keterangan` as `nama_kelas`, `jurusan`.`nama_jurusan`, `jurusan`.`singkatan` as `kode_jurusan`, `guru`.`nama_guru` as `nama_wali_kelas`
+FROM `siswa`
+LEFT JOIN `kelas` ON `siswa`.`id_kelas` = `kelas`.`id_kelas`
+LEFT JOIN `jurusan` ON `kelas`.`id_jurusan` = `jurusan`.`id_jurusan`
+LEFT JOIN `guru` ON `kelas`.`id_guru` = `guru`.`id_guru`', [], false)
+ 5 APPPATH\Models\SiswaModel.php(74): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\SiswaController.php(28): App\Models\SiswaModel->getSiswaWithAllData()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SiswaController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SiswaController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')

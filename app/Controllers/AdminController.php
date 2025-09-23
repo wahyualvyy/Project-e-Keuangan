@@ -35,20 +35,6 @@ class AdminController extends BaseController
         ];
         return view('admin/data-tabel/input-siswa', $data);
     }
-    public function DataKelas()
-    {
-        $data = [
-            "title" => "Data Kelas"
-        ];
-        return view('admin/data-tabel/data-kelas', $data);
-    }
-    public function InputKelas()
-    {
-        $data = [
-            "title" => "Input Data Kelas"
-        ];
-        return view('admin/data-tabel/input-kelas', $data);
-    }
     public function DataKasSpp()
     {
         $data = [

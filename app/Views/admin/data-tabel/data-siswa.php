@@ -39,7 +39,7 @@
                                 Telepon
                             </th>
                             <th scope="col" class="px-0 text-muted">
-                                Wali
+                                Kelas
                             </th>
                             <th scope="col" class="px-0 text-muted">
                                 Status
@@ -54,8 +54,8 @@
                             <td class="px-0">1</td>
                             <td class="px-0">
                                 <div class="d-flex align-items-center">
-                                    <img src="<?= base_url('assets/img/photo-profile.jpg');?>" class="rounded-circle" width="40"
-                                        alt="flexy" />
+                                    <img src="<?= base_url('assets/img/photo-profile.jpg'); ?>" class="rounded-circle"
+                                        width="40" alt="flexy" />
                                     <div class="ms-3">
                                         <h6 class="mb-0 fw-bolder">Sunil Joshi</h6>
                                         <span class="text-muted">Web Designer</span>
