@@ -1,0 +1,120 @@
+ERROR - 2025-09-24 15:39:01 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'ci_keuangan', 3306, '', 0)
+#1 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 E:\laragon\www\Project-e-Keuangan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\laragon\www\Project-e-Keuangan\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\laragon\www\Project-e-Keuangan\system\BaseModel.php(717): CodeIgniter\Model->doFirst()
+#6 E:\laragon\www\Project-e-Keuangan\vendor\myth\auth\src\Authentication\LocalAuthenticator.php(140): CodeIgniter\BaseModel->first()
+#7 E:\laragon\www\Project-e-Keuangan\vendor\myth\auth\src\Authentication\LocalAuthenticator.php(19): Myth\Auth\Authentication\LocalAuthenticator->validate(Array, true)
+#8 E:\laragon\www\Project-e-Keuangan\vendor\myth\auth\src\Controllers\AuthController.php(108): Myth\Auth\Authentication\LocalAuthenticator->attempt(Array, false)
+#9 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(933): Myth\Auth\Controllers\AuthController->attemptLogin()
+#10 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+#11 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 E:\laragon\www\Project-e-Keuangan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#13 E:\laragon\www\Project-e-Keuangan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 E:\laragon\www\Project-e-Keuangan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 E:\laragon\www\Project-e-Keuangan\system\rewrite.php(44): require_once('E:\\laragon\\www\\...')
+#16 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 E:\laragon\www\Project-e-Keuangan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 E:\laragon\www\Project-e-Keuangan\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#4 E:\laragon\www\Project-e-Keuangan\system\BaseModel.php(717): CodeIgniter\Model->doFirst()
+#5 E:\laragon\www\Project-e-Keuangan\vendor\myth\auth\src\Authentication\LocalAuthenticator.php(140): CodeIgniter\BaseModel->first()
+#6 E:\laragon\www\Project-e-Keuangan\vendor\myth\auth\src\Authentication\LocalAuthenticator.php(19): Myth\Auth\Authentication\LocalAuthenticator->validate(Array, true)
+#7 E:\laragon\www\Project-e-Keuangan\vendor\myth\auth\src\Controllers\AuthController.php(108): Myth\Auth\Authentication\LocalAuthenticator->attempt(Array, false)
+#8 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(933): Myth\Auth\Controllers\AuthController->attemptLogin()
+#9 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+#10 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\laragon\www\Project-e-Keuangan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 E:\laragon\www\Project-e-Keuangan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 E:\laragon\www\Project-e-Keuangan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 E:\laragon\www\Project-e-Keuangan\system\rewrite.php(44): require_once('E:\\laragon\\www\\...')
+#15 {main}
+CRITICAL - 2025-09-24 15:39:01 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: POST, Route: login]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `username` = :username:
+AND `users`.`deleted_at` IS NULL
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(717): CodeIgniter\Model->doFirst()
+ 5 VENDORPATH\myth\auth\src\Authentication\LocalAuthenticator.php(140): CodeIgniter\BaseModel->first()
+ 6 VENDORPATH\myth\auth\src\Authentication\LocalAuthenticator.php(19): Myth\Auth\Authentication\LocalAuthenticator->validate([...], true)
+ 7 VENDORPATH\myth\auth\src\Controllers\AuthController.php(108): Myth\Auth\Authentication\LocalAuthenticator->attempt([...], false)
+ 8 SYSTEMPATH\CodeIgniter.php(933): Myth\Auth\Controllers\AuthController->attemptLogin()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+ERROR - 2025-09-24 15:39:26 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'ci_keuangan', 3306, '', 0)
+#1 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 E:\laragon\www\Project-e-Keuangan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\laragon\www\Project-e-Keuangan\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\laragon\www\Project-e-Keuangan\system\BaseModel.php(717): CodeIgniter\Model->doFirst()
+#6 E:\laragon\www\Project-e-Keuangan\vendor\myth\auth\src\Authentication\LocalAuthenticator.php(140): CodeIgniter\BaseModel->first()
+#7 E:\laragon\www\Project-e-Keuangan\vendor\myth\auth\src\Authentication\LocalAuthenticator.php(19): Myth\Auth\Authentication\LocalAuthenticator->validate(Array, true)
+#8 E:\laragon\www\Project-e-Keuangan\vendor\myth\auth\src\Controllers\AuthController.php(108): Myth\Auth\Authentication\LocalAuthenticator->attempt(Array, false)
+#9 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(933): Myth\Auth\Controllers\AuthController->attemptLogin()
+#10 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+#11 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 E:\laragon\www\Project-e-Keuangan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#13 E:\laragon\www\Project-e-Keuangan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 E:\laragon\www\Project-e-Keuangan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 E:\laragon\www\Project-e-Keuangan\system\rewrite.php(44): require_once('E:\\laragon\\www\\...')
+#16 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 E:\laragon\www\Project-e-Keuangan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 E:\laragon\www\Project-e-Keuangan\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#4 E:\laragon\www\Project-e-Keuangan\system\BaseModel.php(717): CodeIgniter\Model->doFirst()
+#5 E:\laragon\www\Project-e-Keuangan\vendor\myth\auth\src\Authentication\LocalAuthenticator.php(140): CodeIgniter\BaseModel->first()
+#6 E:\laragon\www\Project-e-Keuangan\vendor\myth\auth\src\Authentication\LocalAuthenticator.php(19): Myth\Auth\Authentication\LocalAuthenticator->validate(Array, true)
+#7 E:\laragon\www\Project-e-Keuangan\vendor\myth\auth\src\Controllers\AuthController.php(108): Myth\Auth\Authentication\LocalAuthenticator->attempt(Array, false)
+#8 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(933): Myth\Auth\Controllers\AuthController->attemptLogin()
+#9 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+#10 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\laragon\www\Project-e-Keuangan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 E:\laragon\www\Project-e-Keuangan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 E:\laragon\www\Project-e-Keuangan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 E:\laragon\www\Project-e-Keuangan\system\rewrite.php(44): require_once('E:\\laragon\\www\\...')
+#15 {main}
+CRITICAL - 2025-09-24 15:39:26 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: POST, Route: login]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `username` = :username:
+AND `users`.`deleted_at` IS NULL
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(717): CodeIgniter\Model->doFirst()
+ 5 VENDORPATH\myth\auth\src\Authentication\LocalAuthenticator.php(140): CodeIgniter\BaseModel->first()
+ 6 VENDORPATH\myth\auth\src\Authentication\LocalAuthenticator.php(19): Myth\Auth\Authentication\LocalAuthenticator->validate([...], true)
+ 7 VENDORPATH\myth\auth\src\Controllers\AuthController.php(108): Myth\Auth\Authentication\LocalAuthenticator->attempt([...], false)
+ 8 SYSTEMPATH\CodeIgniter.php(933): Myth\Auth\Controllers\AuthController->attemptLogin()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')

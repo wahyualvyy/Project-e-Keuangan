@@ -721,3 +721,48 @@ in APPPATH\Controllers\SiswaController.php on line 346.
  6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
  7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
  8 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+ERROR - 2025-09-23 17:24:28 --> mysqli_sql_exception: Cannot truncate a table referenced in a foreign key constraint (`ci_keuangan`.`siswa`, CONSTRAINT `id_kelas`) in E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php(327): mysqli->query('TRUNCATE `kelas...', 0)
+#1 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('TRUNCATE `kelas...')
+#2 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('TRUNCATE `kelas...')
+#3 E:\laragon\www\Project-e-Keuangan\system\Database\BaseBuilder.php(2773): CodeIgniter\Database\BaseConnection->query('TRUNCATE `kelas...', NULL, false)
+#4 E:\laragon\www\Project-e-Keuangan\app\Database\Seeds\KelasSeeder.php(55): CodeIgniter\Database\BaseBuilder->truncate()
+#5 E:\laragon\www\Project-e-Keuangan\system\Database\Seeder.php(149): App\Database\Seeds\KelasSeeder->run()
+#6 E:\laragon\www\Project-e-Keuangan\system\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Se...')
+#7 E:\laragon\www\Project-e-Keuangan\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Seed->run(Array)
+#8 E:\laragon\www\Project-e-Keuangan\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#9 E:\laragon\www\Project-e-Keuangan\system\Boot.php(360): CodeIgniter\CLI\Console->run()
+#10 E:\laragon\www\Project-e-Keuangan\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#11 E:\laragon\www\Project-e-Keuangan\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-09-23 17:26:36 --> mysqli_sql_exception: Cannot truncate a table referenced in a foreign key constraint (`ci_keuangan`.`siswa`, CONSTRAINT `id_kelas`) in E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php(327): mysqli->query('TRUNCATE `kelas...', 0)
+#1 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('TRUNCATE `kelas...')
+#2 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('TRUNCATE `kelas...')
+#3 E:\laragon\www\Project-e-Keuangan\system\Database\BaseBuilder.php(2773): CodeIgniter\Database\BaseConnection->query('TRUNCATE `kelas...', NULL, false)
+#4 E:\laragon\www\Project-e-Keuangan\app\Database\Seeds\KelasSeeder.php(50): CodeIgniter\Database\BaseBuilder->truncate()
+#5 E:\laragon\www\Project-e-Keuangan\system\Database\Seeder.php(149): App\Database\Seeds\KelasSeeder->run()
+#6 E:\laragon\www\Project-e-Keuangan\system\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Se...')
+#7 E:\laragon\www\Project-e-Keuangan\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Seed->run(Array)
+#8 E:\laragon\www\Project-e-Keuangan\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#9 E:\laragon\www\Project-e-Keuangan\system\Boot.php(360): CodeIgniter\CLI\Console->run()
+#10 E:\laragon\www\Project-e-Keuangan\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#11 E:\laragon\www\Project-e-Keuangan\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-09-23 17:26:37 --> mysqli_sql_exception: Cannot truncate a table referenced in a foreign key constraint (`ci_keuangan`.`spp`, CONSTRAINT `spp_id_siswa_foreign`) in E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php(327): mysqli->query('TRUNCATE `siswa...', 0)
+#1 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('TRUNCATE `siswa...')
+#2 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('TRUNCATE `siswa...')
+#3 E:\laragon\www\Project-e-Keuangan\system\Database\BaseBuilder.php(2773): CodeIgniter\Database\BaseConnection->query('TRUNCATE `siswa...', NULL, false)
+#4 E:\laragon\www\Project-e-Keuangan\app\Database\Seeds\SiswaSeeder.php(44): CodeIgniter\Database\BaseBuilder->truncate()
+#5 E:\laragon\www\Project-e-Keuangan\system\Database\Seeder.php(149): App\Database\Seeds\SiswaSeeder->run()
+#6 E:\laragon\www\Project-e-Keuangan\system\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Se...')
+#7 E:\laragon\www\Project-e-Keuangan\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Seed->run(Array)
+#8 E:\laragon\www\Project-e-Keuangan\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#9 E:\laragon\www\Project-e-Keuangan\system\Boot.php(360): CodeIgniter\CLI\Console->run()
+#10 E:\laragon\www\Project-e-Keuangan\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#11 E:\laragon\www\Project-e-Keuangan\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#12 {main}

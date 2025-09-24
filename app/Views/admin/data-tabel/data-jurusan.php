@@ -20,7 +20,7 @@
                             <option value="hapus">Hapus yang Dipilih</option>
                         </select>
                         <button type="submit" class="btn btn-primary ms-2 btn-bulk-delete">
-                            <i class="ti ti-login-2 fs-6 mb-0"></i>
+                            <i class="ti ti-menu-4 fs-6 mb-0"></i>
                         </button>
                     </div>
                     <div class="ms-auto mt-3 mt-md-0">

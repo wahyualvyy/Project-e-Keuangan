@@ -47,7 +47,7 @@ class SiswaController extends BaseController
             'kelas' => $this->kelasModel->getKelasWithRelations(),
             'jurusan' => $this->kelasModel->getJurusanFromKelas()
         ];
-        return view('admin/data-tabel/input-siswa', $data);
+        return view('admin/input-tabel/input-siswa', $data);
     }
 
     public function create()

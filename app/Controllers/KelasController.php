@@ -73,7 +73,7 @@ class KelasController extends BaseController
             'jurusan' => $this->jurusanModel->findAll(),
             'guru' => $this->guruModel->findAll(),
         ];
-        return view('admin/data-tabel/input-kelas', $data);
+        return view('admin/input-tabel/input-kelas', $data);
     }
 
     public function create()
@@ -222,96 +222,96 @@ class KelasController extends BaseController
         }
     }
     private function exportToExcel($kelasIds)
-{
-    $kelasData = $this->kelasModel->getKelasByIds($kelasIds);
+    {
+        $kelasData = $this->kelasModel->getKelasByIds($kelasIds);
 
-    if (empty($kelasData)) {
-        return redirect()->to('kelas/')->with('error', 'Data kelas tidak ditemukan.');
-    }
-
-    $spreadsheet = new Spreadsheet();
-    $sheet = $spreadsheet->getActiveSheet();
-    $sheet->setTitle('Data Kelas');
-
-    // === Header tabel (baris ke-1) ===
-    $headers = ['No', 'Kelas', 'Wali Kelas', 'Jurusan', 'Keterangan'];
-    $col = 'A';
-    foreach ($headers as $header) {
-        $sheet->setCellValue($col . '1', $header);
-        $col++;
-    }
-
-    // Style header
-    $headerStyle = [
-        'font' => ['bold' => true, 'color' => ['rgb' => 'FFFFFF']],
-        'fill' => [
-            'fillType' => Fill::FILL_SOLID,
-            'startColor' => ['rgb' => '4472C4'] // biru elegan
-        ],
-        'alignment' => [
-            'horizontal' => Alignment::HORIZONTAL_CENTER,
-            'vertical' => Alignment::VERTICAL_CENTER
-        ],
-        'borders' => [
-            'allBorders' => [
-                'borderStyle' => Border::BORDER_THIN,
-                'color' => ['rgb' => '000000']
-            ]
-        ]
-    ];
-    $sheet->getStyle('A1:E1')->applyFromArray($headerStyle);
-    $sheet->getRowDimension(1)->setRowHeight(25);
-
-    // === Isi data mulai baris ke-2 ===
-    $row = 2;
-    $no = 1;
-    foreach ($kelasData as $data) {
-        $sheet->setCellValue('A' . $row, $no++);
-        $sheet->setCellValue('B' . $row, $data['nama_kelas']);
-        $sheet->setCellValue('C' . $row, $data['nama_guru']);
-        $sheet->setCellValue('D' . $row, $data['nama_jurusan']);
-        $sheet->setCellValue('E' . $row, $data['keterangan']);
-
-        // Zebra striping
-        if ($row % 2 == 0) {
-            $sheet->getStyle("A{$row}:E{$row}")->getFill()->setFillType(Fill::FILL_SOLID)
-                ->getStartColor()->setRGB('F2F2F2'); // abu muda
+        if (empty($kelasData)) {
+            return redirect()->to('kelas/')->with('error', 'Data kelas tidak ditemukan.');
         }
-        $row++;
-    }
 
-    // Style isi data
-    $sheet->getStyle('A2:E' . ($row - 1))->applyFromArray([
-        'borders' => [
-            'allBorders' => [
-                'borderStyle' => Border::BORDER_THIN,
-                'color' => ['rgb' => '000000']
+        $spreadsheet = new Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
+        $sheet->setTitle('Data Kelas');
+
+        // === Header tabel (baris ke-1) ===
+        $headers = ['No', 'Kelas', 'Wali Kelas', 'Jurusan', 'Keterangan'];
+        $col = 'A';
+        foreach ($headers as $header) {
+            $sheet->setCellValue($col . '1', $header);
+            $col++;
+        }
+
+        // Style header
+        $headerStyle = [
+            'font' => ['bold' => true, 'color' => ['rgb' => 'FFFFFF']],
+            'fill' => [
+                'fillType' => Fill::FILL_SOLID,
+                'startColor' => ['rgb' => '4472C4'] // biru elegan
+            ],
+            'alignment' => [
+                'horizontal' => Alignment::HORIZONTAL_CENTER,
+                'vertical' => Alignment::VERTICAL_CENTER
+            ],
+            'borders' => [
+                'allBorders' => [
+                    'borderStyle' => Border::BORDER_THIN,
+                    'color' => ['rgb' => '000000']
+                ]
             ]
-        ],
-        'alignment' => ['vertical' => Alignment::VERTICAL_CENTER]
-    ]);
+        ];
+        $sheet->getStyle('A1:E1')->applyFromArray($headerStyle);
+        $sheet->getRowDimension(1)->setRowHeight(25);
 
-    // Kolom No rata tengah
-    $sheet->getStyle('A2:A' . ($row - 1))->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER);
+        // === Isi data mulai baris ke-2 ===
+        $row = 2;
+        $no = 1;
+        foreach ($kelasData as $data) {
+            $sheet->setCellValue('A' . $row, $no++);
+            $sheet->setCellValue('B' . $row, $data['nama_kelas']);
+            $sheet->setCellValue('C' . $row, $data['nama_guru']);
+            $sheet->setCellValue('D' . $row, $data['nama_jurusan']);
+            $sheet->setCellValue('E' . $row, $data['keterangan']);
 
-    // Auto size kolom
-    foreach (range('A', 'E') as $col) {
-        $sheet->getColumnDimension($col)->setAutoSize(true);
+            // Zebra striping
+            if ($row % 2 == 0) {
+                $sheet->getStyle("A{$row}:E{$row}")->getFill()->setFillType(Fill::FILL_SOLID)
+                    ->getStartColor()->setRGB('F2F2F2'); // abu muda
+            }
+            $row++;
+        }
+
+        // Style isi data
+        $sheet->getStyle('A2:E' . ($row - 1))->applyFromArray([
+            'borders' => [
+                'allBorders' => [
+                    'borderStyle' => Border::BORDER_THIN,
+                    'color' => ['rgb' => '000000']
+                ]
+            ],
+            'alignment' => ['vertical' => Alignment::VERTICAL_CENTER]
+        ]);
+
+        // Kolom No rata tengah
+        $sheet->getStyle('A2:A' . ($row - 1))->getAlignment()->setHorizontal(Alignment::HORIZONTAL_CENTER);
+
+        // Auto size kolom
+        foreach (range('A', 'E') as $col) {
+            $sheet->getColumnDimension($col)->setAutoSize(true);
+        }
+
+        // === Output ===
+        $filename = 'Data_Kelas_' . date('Y-m-d_H-i-s') . '.xlsx';
+        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        header('Content-Disposition: attachment;filename="' . $filename . '"');
+        header('Cache-Control: max-age=0');
+
+        $writer = new Xlsx($spreadsheet);
+        $writer->save('php://output');
+
+        $spreadsheet->disconnectWorksheets();
+        unset($spreadsheet);
+        exit();
     }
-
-    // === Output ===
-    $filename = 'Data_Kelas_' . date('Y-m-d_H-i-s') . '.xlsx';
-    header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-    header('Content-Disposition: attachment;filename="' . $filename . '"');
-    header('Cache-Control: max-age=0');
-
-    $writer = new Xlsx($spreadsheet);
-    $writer->save('php://output');
-
-    $spreadsheet->disconnectWorksheets();
-    unset($spreadsheet);
-    exit();
-}
 
 
 }
