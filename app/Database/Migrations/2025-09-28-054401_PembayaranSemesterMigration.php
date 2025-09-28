@@ -4,48 +4,35 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class SppMigration extends Migration
+class PembayaranSemesterMigration extends Migration
 {
     public function up()
     {
         $this->forge->addField([
-            'id_spp' => [
+            'id_pembayaran_semester' => [
                 'type' => 'INT',
                 'constraint' => 11,
                 'unsigned' => true,
                 'auto_increment' => true,
             ],
-            'id_siswa' => [
+            'id_semester' => [
                 'type' => 'INT',
-                'constraint' => 11,
+                'constraint'=> 11,
                 'unsigned' => true,
             ],
-            'tanggal_bayar'=> [ 
-                'type' => 'DATE',
-                'null' => true
+            'id_siswa' => [
+                'type' => 'INT',
+                'constraint'=> 11,
+                'unsigned' => true,
             ],
-            'bulan'=> [
-                'type'=> 'TINYINT',
-                'null' => true
+            'tanggal_bayar' => [
+                'type' => 'DATETIME',
+                'null' => true,
             ],
-            'tahun'=> [
-                'type' => 'YEAR',
-                'null' => true
-            ],
-            'tahun_ajaran'=> [
-                'type' => 'VARCHAR',
-                'constraint' => 9,
-                'null' => true
-            ],
-            'nominal' => [
-                'type' => 'DECIMAL',
-                'constraint' => 12, 2
-            ],
-            'status'=> [
+            'status_pembayaran' => [
                 'type' => 'ENUM',
                 'constraint' => ['Lunas', 'Belum Lunas'],
                 'default' => 'Belum Lunas',
-                'null' => true
             ],
             'created_at' => [
                 'type' => 'DATETIME',
@@ -56,13 +43,13 @@ class SppMigration extends Migration
                 'null' => true,
             ]
         ]);
-        $this->forge->addKey('id_spp', true);
+        $this->forge->addKey('id_pembayaran_semester', true);
+        $this->forge->addForeignKey('id_semester', 'semester', 'id_semester', 'CASCADE', 'CASCADE');
         $this->forge->addForeignKey('id_siswa', 'siswa', 'id_siswa', 'CASCADE', 'CASCADE');
-        $this->forge->createTable('spp');
+        $this->forge->createTable('pembayaran_semester'); 
     }
 
     public function down()
     {
-        $this->forge->dropTable("spp", true);
-    }
+        $this->forge->dropTable('pembayaran_semester', true);   }
 }

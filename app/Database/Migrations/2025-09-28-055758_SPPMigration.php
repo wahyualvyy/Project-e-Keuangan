@@ -4,29 +4,29 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class GajiMigration extends Migration
+class SPPMigration extends Migration
 {
     public function up()
     {
         $this->forge->addField([
-            'id_gaji' => [
+            'id_spp' => [
                 'type' => 'INT',
                 'constraint' => 11,
                 'unsigned' => true,
                 'auto_increment' => true,
             ],
-            'id_guru' => [
-                'type' => 'INT',
-                'constraint' => 11,
-                'unsigned' => true,
+            'tahun_ajaran' => [
+                'type' => 'VARCHAR',
+                'constraint' => 9,
             ],
-            'jam_mengajar'=> [
-                'type' => 'INT',
-                'constraint' => 11,
+            'biaya_spp' => [
+                'type' => 'decimal',
+                'constraint' => '12,2',
             ],
-            'nominal' => [
-                'type' => 'DECIMAL',
-                'constraint' => 12, 2
+            'status' => [
+                'type' => 'ENUM',
+                'constraint' => ['Aktif', 'Tidak Aktif'],
+                'default' => 'Tidak Aktif',
             ],
             'created_at' => [
                 'type' => 'DATETIME',
@@ -37,13 +37,13 @@ class GajiMigration extends Migration
                 'null' => true,
             ]
         ]);
-        $this->forge->addKey('id_gaji', true);
-        $this->forge->addForeignKey('id_guru', 'guru', 'id_guru', 'CASCADE', 'CASCADE');
-        $this->forge->createTable('gaji');
+
+        $this->forge->addKey('id_spp', true);
+        $this->forge->createTable('spp');
     }
 
     public function down()
     {
-        $this->forge->dropTable("gaji", true);
+        $this->forge->dropTable('spp', true);
     }
 }

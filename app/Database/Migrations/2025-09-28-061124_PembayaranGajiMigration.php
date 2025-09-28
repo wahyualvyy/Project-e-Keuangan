@@ -4,34 +4,29 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class SemesterMigration extends Migration
+class PembayaranGajiMigration extends Migration
 {
     public function up()
     {
         $this->forge->addField([
-            'id_semester' => [
+            'id_pembayaran_gaji' => [
                 'type' => 'INT',
                 'constraint' => 11,
                 'unsigned' => true,
                 'auto_increment' => true,
             ],
-            'id_jurusan' => [
+            'id_gaji' => [
                 'type' => 'INT',
                 'constraint' => 11,
                 'unsigned' => true,
             ],
-            'tahun_ajaran' => [
-                'type' => 'VARCHAR',
-                'constraint' => 9,
+            'tanggal_bayar' => [
+                'type' => 'DATE',
             ],
-            'nominal' => [
-                'type' => 'decimal',
-                'constraint' => '12,2',
-            ],
-            'status' => [
+            'status_pembayaran' => [
                 'type' => 'ENUM',
-                'constraint' => ['Aktif', 'Tidak Aktif'],
-                'default' => 'Tidak Aktif',
+                'constraint' => ['Lunas', 'Belum Lunas'],
+                'default' => 'Belum Lunas',
             ],
             'created_at' => [
                 'type' => 'DATETIME',
@@ -40,16 +35,19 @@ class SemesterMigration extends Migration
             'updated_at' => [
                 'type' => 'DATETIME',
                 'null' => true,
-            ]
+            ],
+            'deleted_at' => [
+                'type' => 'DATETIME',
+                'null' => true,
+            ],
         ]);
-
-        $this->forge->addKey('id_semester', true);
-        $this->forge->addForeignKey('id_jurusan', 'jurusan', 'id_jurusan', 'CASCADE', 'CASCADE');
-        $this->forge->createTable('semester');
+        $this->forge->addForeignKey('id_gaji', 'gaji', 'id_gaji', 'CASCADE', 'CASCADE');
+        $this->forge->addKey('id_pembayaran_gaji', true);
+        $this->forge->createTable('pembayaran_gaji');
     }
 
     public function down()
     {
-        $this->forge->dropTable('semester', true);
+        $this->forge->dropTable('pembayaran_gaji', true);
     }
 }

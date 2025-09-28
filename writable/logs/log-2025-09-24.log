@@ -118,3 +118,65 @@ AND `users`.`deleted_at` IS NULL
 12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
 14 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+ERROR - 2025-09-24 15:46:30 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'ci_keuangan', 3306, '', 0)
+#1 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 E:\laragon\www\Project-e-Keuangan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\laragon\www\Project-e-Keuangan\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\laragon\www\Project-e-Keuangan\system\BaseModel.php(613): CodeIgniter\Model->doFind(true, '1')
+#6 E:\laragon\www\Project-e-Keuangan\vendor\myth\auth\src\Authentication\AuthenticationBase.php(131): CodeIgniter\BaseModel->find('1')
+#7 E:\laragon\www\Project-e-Keuangan\vendor\myth\auth\src\Authentication\LocalAuthenticator.php(67): Myth\Auth\Authentication\AuthenticationBase->isLoggedIn()
+#8 E:\laragon\www\Project-e-Keuangan\vendor\myth\auth\src\Filters\LoginFilter.php(29): Myth\Auth\Authentication\LocalAuthenticator->check()
+#9 E:\laragon\www\Project-e-Keuangan\system\Filters\Filters.php(241): Myth\Auth\Filters\LoginFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#10 E:\laragon\www\Project-e-Keuangan\system\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore(Array)
+#11 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(479): CodeIgniter\Filters\Filters->run('jurusan', 'before')
+#12 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 E:\laragon\www\Project-e-Keuangan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#14 E:\laragon\www\Project-e-Keuangan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#15 E:\laragon\www\Project-e-Keuangan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#16 E:\laragon\www\Project-e-Keuangan\system\rewrite.php(44): require_once('E:\\laragon\\www\\...')
+#17 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 E:\laragon\www\Project-e-Keuangan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 E:\laragon\www\Project-e-Keuangan\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#4 E:\laragon\www\Project-e-Keuangan\system\BaseModel.php(613): CodeIgniter\Model->doFind(true, '1')
+#5 E:\laragon\www\Project-e-Keuangan\vendor\myth\auth\src\Authentication\AuthenticationBase.php(131): CodeIgniter\BaseModel->find('1')
+#6 E:\laragon\www\Project-e-Keuangan\vendor\myth\auth\src\Authentication\LocalAuthenticator.php(67): Myth\Auth\Authentication\AuthenticationBase->isLoggedIn()
+#7 E:\laragon\www\Project-e-Keuangan\vendor\myth\auth\src\Filters\LoginFilter.php(29): Myth\Auth\Authentication\LocalAuthenticator->check()
+#8 E:\laragon\www\Project-e-Keuangan\system\Filters\Filters.php(241): Myth\Auth\Filters\LoginFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), NULL)
+#9 E:\laragon\www\Project-e-Keuangan\system\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore(Array)
+#10 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(479): CodeIgniter\Filters\Filters->run('jurusan', 'before')
+#11 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 E:\laragon\www\Project-e-Keuangan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#13 E:\laragon\www\Project-e-Keuangan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 E:\laragon\www\Project-e-Keuangan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 E:\laragon\www\Project-e-Keuangan\system\rewrite.php(44): require_once('E:\\laragon\\www\\...')
+#16 {main}
+CRITICAL - 2025-09-24 15:46:30 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: GET, Route: jurusan]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `users`.`deleted_at` IS NULL
+AND `users`.`id` = :users.id:', [...], false)
+ 3 SYSTEMPATH\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(613): CodeIgniter\Model->doFind(true, '1')
+ 5 VENDORPATH\myth\auth\src\Authentication\AuthenticationBase.php(131): CodeIgniter\BaseModel->find('1')
+ 6 VENDORPATH\myth\auth\src\Authentication\LocalAuthenticator.php(67): Myth\Auth\Authentication\AuthenticationBase->isLoggedIn()
+ 7 VENDORPATH\myth\auth\src\Filters\LoginFilter.php(29): Myth\Auth\Authentication\LocalAuthenticator->check()
+ 8 SYSTEMPATH\Filters\Filters.php(241): Myth\Auth\Filters\LoginFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 9 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+10 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\Filters\Filters->run('jurusan', 'before')
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
