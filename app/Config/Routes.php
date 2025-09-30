@@ -60,7 +60,7 @@ $routes->group('', ['filter' => 'login'], function ($routes) {
         $routes->post('update/(:num)', 'SiswaController::update/$1');
         $routes->get('delete/(:num)', 'SiswaController::delete/$1');
         $routes->post('bulk-action', 'SiswaController::bulkAction');
-        
+
     });
 
     // Data Kelas Routes
@@ -89,8 +89,8 @@ $routes->group('', ['filter' => 'login'], function ($routes) {
     // KAS MANAGEMENT ROUTES
     // =======================================================================
     $routes->group('data-kas', function ($routes) {
-        $routes->get('spp', 'AdminController::dataKasSpp');
-        $routes->get('input-spp', 'AdminController::inputKasSpp');
+        $routes->get('spp', 'SppController::index');
+        $routes->get('input-spp', 'Sppcontroller::Input');
         $routes->get('semester', 'AdminController::dataKasSemester');
         $routes->get('input-semester', 'AdminController::inputKasSemester');
         $routes->get('gaji', 'AdminController::dataKasGaji');

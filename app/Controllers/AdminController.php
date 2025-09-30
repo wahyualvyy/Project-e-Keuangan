@@ -21,34 +21,6 @@ class AdminController extends BaseController
         ];
         return view('admin/profile', $data);
     }
-    public function DataSiswa()
-    {
-        $data = [
-            "title" => "Data Siswa"
-        ];
-        return view('admin/data-tabel/data-siswa', $data);
-    }
-    public function InputSiswa()
-    {
-        $data = [
-            "title" => "Input Data Siswa"
-        ];
-        return view('admin/data-tabel/input-siswa', $data);
-    }
-    public function DataKasSpp()
-    {
-        $data = [
-            "title" => "Data Kas SPP"
-        ];
-        return view('admin/data-kas/data-kas-spp', $data);
-    }
-    public function InputKasSpp()
-    {
-        $data = [
-            "title" => "Input Data Kas SPP"
-        ];
-        return view('admin/data-kas/input-data-kas-spp', $data);
-    }
     public function DataKasSemester()
     {
         $data = [

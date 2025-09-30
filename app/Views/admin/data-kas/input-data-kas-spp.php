@@ -9,7 +9,7 @@
                 <div>
                     <label for="tahunLahir" class="form-label">Tahun Ajaran</label>
                     <select class="form-select" id="tahunLahir" name="tahun_lahir" required>
-                        <option selected>Pilih tahun Ajaran</option> 
+                        <option selected>Pilih tahun Ajaran</option>
                         <?php
                         $tahunSekarang = date('Y');
                         $tahunDepan = $tahunSekarang + 5;
@@ -24,7 +24,7 @@
                 <div>
                     <label for="tahunLahir" class="form-label">Sampai Tahun Ajaran</label>
                     <select class="form-select" id="tahunLahir" name="tahun_lahir" required>
-                        <option selected>Pilih tahun Ajaran</option> 
+                        <option selected>Pilih tahun Ajaran</option>
                         <?php
                         $tahunSekarang = date('Y');
                         $tahunDepan = $tahunSekarang + 5;
