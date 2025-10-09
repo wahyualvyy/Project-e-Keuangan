@@ -52,7 +52,7 @@ class KelasSeeder extends Seeder
 
         // 5. Menggunakan Query Builder untuk insert semua data sekaligus
         // Hapus data lama (opsional, tapi disarankan untuk seeding)
-        $this->db->table('kelas')->truncate(); 
+        $this->db->table('kelas')->emptyTable(); 
         
         // Masukkan data baru
         $this->db->table('kelas')->insertBatch($data);

@@ -4,15 +4,15 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class SppModel extends Model
+class PembayaranSPPModel extends Model
 {
-    protected $table = 'spp';
-    protected $primaryKey = 'id_spp';
+    protected $table = 'pembayaran_spp';
+    protected $primaryKey = 'id_pembayaran_spp';
     protected $useAutoIncrement = true;
     protected $returnType = 'array';
     protected $useSoftDeletes = false;
     protected $protectFields = true;
-    protected $allowedFields = ['tahun_ajaran', 'biaya_spp', 'status','created_at','updated_at'];
+    protected $allowedFields = ['id_spp', 'id_siswa', 'tanggal_bayar', 'status_pembayaran', 'created_at', 'updated_at'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
@@ -48,9 +48,8 @@ class SppModel extends Model
     {
         return $this->findAll();
     }
-
     public function getDataById($id)
     {
-        return $this->where('id_spp', $id)->first();
+        return $this->where('id_pembayaran_spp', $id)->first();
     }
 }

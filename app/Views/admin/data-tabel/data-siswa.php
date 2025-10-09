@@ -103,7 +103,7 @@
                                         <input class="form-check-input row-checkbox" type="checkbox" name="siswa_ids[]"
                                             value="<?= $data['id_siswa']; ?>">
                                     </td>
-                                    <td class="px-0">1</td>
+                                    <td class="px-0"><?= $no++ ;?></td>
                                     <td class="px-0">
                                         <div class="d-flex align-items-center">
                                             <img src="<?= base_url('assets/img/photo-profile.jpg'); ?>"

@@ -92,6 +92,9 @@ $routes->group('', ['filter' => 'login'], function ($routes) {
         $routes->get('spp', 'SppController::index');
         $routes->get('input-spp', 'SppController::input');
         $routes->post('create-spp', 'SppController::createSPP');
+        $routes->get('edit-spp/(:num)', 'SppController::edit/$1');
+        $routes->post('update-spp/(:num)', 'SppController::update/$1');
+        $routes->get('delete-spp/(:num)', 'SppController::delete/$1');
         
         
         

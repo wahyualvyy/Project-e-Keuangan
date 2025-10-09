@@ -47,8 +47,6 @@
                                 <td class="px-0">1</td>
                                 <td class="px-0">
                                     <div class="d-flex align-items-center">
-                                        <img src="<?= base_url('assets/img/photo-profile.jpg'); ?>" class="rounded-circle"
-                                            width="40" alt="flexy" />
                                         <div class="ms-3">
                                             <h6 class="mb-0 fw-bolder"><?= $data['tahun_ajaran']; ?></h6>
                                         </div>
@@ -75,12 +73,12 @@
                                         </a>
                                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="year1-dropdown">
                                             <li>
-                                                <a class="dropdown-item" href="javascript:void(0)">
+                                                <a class="dropdown-item" href="<?= base_url('data-kas/edit-spp/' . $data['id_spp']); ?>">
                                                     <i class="ti ti-edit fs-6 mb-0"></i>
                                                     <span class="mb-0 fs-3">Edit</span></a>
                                             </li>
                                             <li>
-                                                <a class="dropdown-item" href="javascript:void(0)">
+                                                <a class="dropdown-item" href="<?= base_url('data-kas/delete/' . $data['id_spp']);?>">
                                                     <i class="ti ti-eraser-off fs-6 mb-0"></i>
                                                     <span class="mb-0 fs-3">Delete</span></a></a>
                                             </li>

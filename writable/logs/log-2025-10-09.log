@@ -145,3 +145,93 @@ in APPPATH/Views/admin/data-kas/data-kas-spp.php on line 53.
 10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
 11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
 12 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+ERROR - 2025-10-09 19:07:43 --> mysqli_sql_exception: Duplicate entry 'Sistem Informasi' for key 'jurusan.nama_jurusan' in /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/MySQLi/Connection.php(327): mysqli->query()
+#1 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query()
+#4 /home/zreis/Downloads/Project/Project-e-Keuangan/app/Database/Seeds/JurusanSeeder.php(21): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/Seeder.php(149): App\Database\Seeds\JurusanSeeder->run()
+#6 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Commands/Database/Seed.php(79): CodeIgniter\Database\Seeder->call()
+#7 /home/zreis/Downloads/Project/Project-e-Keuangan/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Seed->run()
+#8 /home/zreis/Downloads/Project/Project-e-Keuangan/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#9 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Boot.php(360): CodeIgniter\CLI\Console->run()
+#10 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Boot.php(104): CodeIgniter\Boot::runCommand()
+#11 /home/zreis/Downloads/Project/Project-e-Keuangan/spark(87): CodeIgniter\Boot::bootSpark()
+#12 {main}
+ERROR - 2025-10-09 19:08:17 --> mysqli_sql_exception: Duplicate entry 'Teknik Komputer' for key 'jurusan.nama_jurusan' in /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/MySQLi/Connection.php(327): mysqli->query()
+#1 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query()
+#4 /home/zreis/Downloads/Project/Project-e-Keuangan/app/Database/Seeds/JurusanSeeder.php(21): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/Seeder.php(149): App\Database\Seeds\JurusanSeeder->run()
+#6 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Commands/Database/Seed.php(79): CodeIgniter\Database\Seeder->call()
+#7 /home/zreis/Downloads/Project/Project-e-Keuangan/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Seed->run()
+#8 /home/zreis/Downloads/Project/Project-e-Keuangan/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#9 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Boot.php(360): CodeIgniter\CLI\Console->run()
+#10 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Boot.php(104): CodeIgniter\Boot::runCommand()
+#11 /home/zreis/Downloads/Project/Project-e-Keuangan/spark(87): CodeIgniter\Boot::bootSpark()
+#12 {main}
+ERROR - 2025-10-09 19:08:30 --> mysqli_sql_exception: Duplicate entry 'Teknik Komputer' for key 'jurusan.nama_jurusan' in /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/MySQLi/Connection.php(327): mysqli->query()
+#1 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query()
+#4 /home/zreis/Downloads/Project/Project-e-Keuangan/app/Database/Seeds/JurusanSeeder.php(21): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/Seeder.php(149): App\Database\Seeds\JurusanSeeder->run()
+#6 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Commands/Database/Seed.php(79): CodeIgniter\Database\Seeder->call()
+#7 /home/zreis/Downloads/Project/Project-e-Keuangan/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Seed->run()
+#8 /home/zreis/Downloads/Project/Project-e-Keuangan/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#9 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Boot.php(360): CodeIgniter\CLI\Console->run()
+#10 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Boot.php(104): CodeIgniter\Boot::runCommand()
+#11 /home/zreis/Downloads/Project/Project-e-Keuangan/spark(87): CodeIgniter\Boot::bootSpark()
+#12 {main}
+ERROR - 2025-10-09 19:08:31 --> mysqli_sql_exception: Duplicate entry 'Rekayasa Perangkat Lunak' for key 'jurusan.nama_jurusan' in /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/MySQLi/Connection.php(327): mysqli->query()
+#1 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query()
+#4 /home/zreis/Downloads/Project/Project-e-Keuangan/app/Database/Seeds/JurusanSeeder.php(21): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/Seeder.php(149): App\Database\Seeds\JurusanSeeder->run()
+#6 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Commands/Database/Seed.php(79): CodeIgniter\Database\Seeder->call()
+#7 /home/zreis/Downloads/Project/Project-e-Keuangan/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Seed->run()
+#8 /home/zreis/Downloads/Project/Project-e-Keuangan/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#9 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Boot.php(360): CodeIgniter\CLI\Console->run()
+#10 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Boot.php(104): CodeIgniter\Boot::runCommand()
+#11 /home/zreis/Downloads/Project/Project-e-Keuangan/spark(87): CodeIgniter\Boot::bootSpark()
+#12 {main}
+ERROR - 2025-10-09 19:09:14 --> mysqli_sql_exception: Cannot truncate a table referenced in a foreign key constraint (`ci_keuangan`.`siswa`, CONSTRAINT `siswa_ibfk_1`) in /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/MySQLi/Connection.php(327): mysqli->query()
+#1 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/BaseBuilder.php(2773): CodeIgniter\Database\BaseConnection->query()
+#4 /home/zreis/Downloads/Project/Project-e-Keuangan/app/Database/Seeds/KelasSeeder.php(55): CodeIgniter\Database\BaseBuilder->truncate()
+#5 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/Seeder.php(149): App\Database\Seeds\KelasSeeder->run()
+#6 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Commands/Database/Seed.php(79): CodeIgniter\Database\Seeder->call()
+#7 /home/zreis/Downloads/Project/Project-e-Keuangan/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Seed->run()
+#8 /home/zreis/Downloads/Project/Project-e-Keuangan/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#9 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Boot.php(360): CodeIgniter\CLI\Console->run()
+#10 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Boot.php(104): CodeIgniter\Boot::runCommand()
+#11 /home/zreis/Downloads/Project/Project-e-Keuangan/spark(87): CodeIgniter\Boot::bootSpark()
+#12 {main}
+ERROR - 2025-10-09 19:12:31 --> mysqli_sql_exception: Cannot truncate a table referenced in a foreign key constraint (`ci_keuangan`.`pembayaran_semester`, CONSTRAINT `pembayaran_semester_id_siswa_foreign`) in /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/MySQLi/Connection.php(327): mysqli->query()
+#1 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/BaseBuilder.php(2773): CodeIgniter\Database\BaseConnection->query()
+#4 /home/zreis/Downloads/Project/Project-e-Keuangan/app/Database/Seeds/SiswaSeeder.php(44): CodeIgniter\Database\BaseBuilder->truncate()
+#5 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/Seeder.php(149): App\Database\Seeds\SiswaSeeder->run()
+#6 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Commands/Database/Seed.php(79): CodeIgniter\Database\Seeder->call()
+#7 /home/zreis/Downloads/Project/Project-e-Keuangan/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Seed->run()
+#8 /home/zreis/Downloads/Project/Project-e-Keuangan/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#9 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Boot.php(360): CodeIgniter\CLI\Console->run()
+#10 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Boot.php(104): CodeIgniter\Boot::runCommand()
+#11 /home/zreis/Downloads/Project/Project-e-Keuangan/spark(87): CodeIgniter\Boot::bootSpark()
+#12 {main}

@@ -41,7 +41,7 @@ class SiswaSeeder extends Seeder
             ];
         }
 
-        $this->db->table('siswa')->truncate();
+        $this->db->table('siswa')->emptyTable();
         $this->db->table('siswa')->insertBatch($data);
 
         echo "Seeder siswa sukses: 100 data ditambahkan.\n";
