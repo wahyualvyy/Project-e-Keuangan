@@ -44,10 +44,10 @@ class PembayaranSPPMigration extends Migration
             ]
         ]);
         
-        $this->forge->createTable('pembayaran_spp');
         $this->forge->addForeignKey('id_spp', 'spp', 'id_spp', 'CASCADE', 'CASCADE');
         $this->forge->addForeignKey('id_siswa', 'siswa', 'id_siswa', 'CASCADE', 'CASCADE');
         $this->forge->addKey('id_pembayaran_spp', true);
+        $this->forge->createTable('pembayaran_spp');
     }
 
     public function down()

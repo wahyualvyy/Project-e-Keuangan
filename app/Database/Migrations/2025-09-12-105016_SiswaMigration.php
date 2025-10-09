@@ -64,7 +64,6 @@ class SiswaMigration extends Migration
         ]);
 
         $this->forge->addKey('id_siswa', true);
-        $this->forge->addForeignKey('id_jurusan', 'jurusan', 'id_jurusan', 'CASCADE', 'CASCADE');
         $this->forge->createTable('siswa');
     }
 

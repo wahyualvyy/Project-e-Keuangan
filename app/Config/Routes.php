@@ -90,7 +90,11 @@ $routes->group('', ['filter' => 'login'], function ($routes) {
     // =======================================================================
     $routes->group('data-kas', function ($routes) {
         $routes->get('spp', 'SppController::index');
-        $routes->get('input-spp', 'Sppcontroller::Input');
+        $routes->get('input-spp', 'SppController::input');
+        $routes->post('create-spp', 'SppController::createSPP');
+        
+        
+        
         $routes->get('semester', 'AdminController::dataKasSemester');
         $routes->get('input-semester', 'AdminController::inputKasSemester');
         $routes->get('gaji', 'AdminController::dataKasGaji');

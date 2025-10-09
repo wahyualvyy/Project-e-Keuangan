@@ -6,13 +6,13 @@ use CodeIgniter\Model;
 
 class SppModel extends Model
 {
-    protected $table = 'spps';
-    protected $primaryKey = 'id';
+    protected $table = 'spp';
+    protected $primaryKey = 'id_spp';
     protected $useAutoIncrement = true;
     protected $returnType = 'array';
     protected $useSoftDeletes = false;
     protected $protectFields = true;
-    protected $allowedFields = [];
+    protected $allowedFields = ['tahun_ajaran', 'biaya_spp', 'status','created_at','updated_at'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
@@ -21,7 +21,7 @@ class SppModel extends Model
     protected array $castHandlers = [];
 
     // Dates
-    protected $useTimestamps = false;
+    protected $useTimestamps = true;
     protected $dateFormat = 'datetime';
     protected $createdField = 'created_at';
     protected $updatedField = 'updated_at';
@@ -43,4 +43,9 @@ class SppModel extends Model
     protected $afterFind = [];
     protected $beforeDelete = [];
     protected $afterDelete = [];
+
+    public function getData()
+    {
+        return $this->findAll();
+    }
 }

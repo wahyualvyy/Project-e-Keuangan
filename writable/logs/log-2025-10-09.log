@@ -1,0 +1,147 @@
+ERROR - 2025-10-09 13:22:10 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'myuser'@'%' to database 'ci_keuangan' in /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/MySQLi/Connection.php(201): mysqli->real_connect()
+#1 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/BaseConnection.php(1525): CodeIgniter\Database\BaseConnection->query()
+#4 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/BaseConnection.php(1545): CodeIgniter\Database\BaseConnection->listTables()
+#5 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/MigrationRunner.php(768): CodeIgniter\Database\BaseConnection->tableExists()
+#6 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/MigrationRunner.php(162): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Commands/Database/Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest()
+#8 /home/zreis/Downloads/Project/Project-e-Keuangan/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#9 /home/zreis/Downloads/Project/Project-e-Keuangan/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#10 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Boot.php(360): CodeIgniter\CLI\Console->run()
+#11 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Boot.php(104): CodeIgniter\Boot::runCommand()
+#12 /home/zreis/Downloads/Project/Project-e-Keuangan/spark(87): CodeIgniter\Boot::bootSpark()
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'%' to database 'ci_keuangan' in /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/MySQLi/Connection.php:246
+Stack trace:
+#0 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/BaseConnection.php(1525): CodeIgniter\Database\BaseConnection->query()
+#3 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/BaseConnection.php(1545): CodeIgniter\Database\BaseConnection->listTables()
+#4 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/MigrationRunner.php(768): CodeIgniter\Database\BaseConnection->tableExists()
+#5 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/MigrationRunner.php(162): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Commands/Database/Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest()
+#7 /home/zreis/Downloads/Project/Project-e-Keuangan/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#8 /home/zreis/Downloads/Project/Project-e-Keuangan/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#9 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Boot.php(360): CodeIgniter\CLI\Console->run()
+#10 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Boot.php(104): CodeIgniter\Boot::runCommand()
+#11 /home/zreis/Downloads/Project/Project-e-Keuangan/spark(87): CodeIgniter\Boot::bootSpark()
+#12 {main}
+ERROR - 2025-10-09 13:29:10 --> mysqli_sql_exception: Incorrect table definition; there can be only one auto column and it must be defined as a key in /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/MySQLi/Connection.php(327): mysqli->query()
+#1 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/Forge.php(570): CodeIgniter\Database\BaseConnection->query()
+#4 /home/zreis/Downloads/Project/Project-e-Keuangan/app/Database/Migrations/2025-09-28-060013_PembayaranSPPMigration.php(47): CodeIgniter\Database\Forge->createTable()
+#5 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/MigrationRunner.php(876): App\Database\Migrations\PembayaranSPPMigration->up()
+#6 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/MigrationRunner.php(182): CodeIgniter\Database\MigrationRunner->migrate()
+#7 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Commands/Database/Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest()
+#8 /home/zreis/Downloads/Project/Project-e-Keuangan/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#9 /home/zreis/Downloads/Project/Project-e-Keuangan/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#10 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Boot.php(360): CodeIgniter\CLI\Console->run()
+#11 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Boot.php(104): CodeIgniter\Boot::runCommand()
+#12 /home/zreis/Downloads/Project/Project-e-Keuangan/spark(87): CodeIgniter\Boot::bootSpark()
+#13 {main}
+ERROR - 2025-10-09 13:31:45 --> mysqli_sql_exception: Incorrect table definition; there can be only one auto column and it must be defined as a key in /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/MySQLi/Connection.php(327): mysqli->query()
+#1 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/Forge.php(570): CodeIgniter\Database\BaseConnection->query()
+#4 /home/zreis/Downloads/Project/Project-e-Keuangan/app/Database/Migrations/2025-09-28-060013_PembayaranSPPMigration.php(47): CodeIgniter\Database\Forge->createTable()
+#5 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/MigrationRunner.php(876): App\Database\Migrations\PembayaranSPPMigration->up()
+#6 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/MigrationRunner.php(182): CodeIgniter\Database\MigrationRunner->migrate()
+#7 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Commands/Database/Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest()
+#8 /home/zreis/Downloads/Project/Project-e-Keuangan/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#9 /home/zreis/Downloads/Project/Project-e-Keuangan/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#10 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Boot.php(360): CodeIgniter\CLI\Console->run()
+#11 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Boot.php(104): CodeIgniter\Boot::runCommand()
+#12 /home/zreis/Downloads/Project/Project-e-Keuangan/spark(87): CodeIgniter\Boot::bootSpark()
+#13 {main}
+ERROR - 2025-10-09 14:04:07 --> Email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.
+ERROR - 2025-10-09 14:04:07 --> 
+ERROR - 2025-10-09 14:55:21 --> mysqli_sql_exception: Column 'status' cannot be null in /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/MySQLi/Connection.php(327): mysqli->query()
+#1 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Database/BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query()
+#4 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/zreis/Downloads/Project/Project-e-Keuangan/system/BaseModel.php(843): CodeIgniter\Model->doInsert()
+#6 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Model.php(800): CodeIgniter\BaseModel->insert()
+#7 /home/zreis/Downloads/Project/Project-e-Keuangan/app/Controllers/SppController.php(83): CodeIgniter\Model->insert()
+#8 /home/zreis/Downloads/Project/Project-e-Keuangan/system/CodeIgniter.php(933): App\Controllers\SppController->createSPP()
+#9 /home/zreis/Downloads/Project/Project-e-Keuangan/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+#10 /home/zreis/Downloads/Project/Project-e-Keuangan/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+#11 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+#13 /home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#14 /home/zreis/Downloads/Project/Project-e-Keuangan/system/rewrite.php(44): require_once('...')
+#15 {main}
+CRITICAL - 2025-10-09 14:55:21 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'status' cannot be null
+[Method: POST, Route: data-kas/create-spp]
+in SYSTEMPATH/Database/BaseConnection.php on line 692.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query()
+ 2 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH/BaseModel.php(843): CodeIgniter\Model->doInsert()
+ 4 SYSTEMPATH/Model.php(800): CodeIgniter\BaseModel->insert()
+ 5 APPPATH/Controllers/SppController.php(83): CodeIgniter\Model->insert()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SppController->createSPP()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-09 14:55:21 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'status' cannot be null
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 332.
+ 1 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 2 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH/BaseModel.php(843): CodeIgniter\Model->doInsert()
+ 6 SYSTEMPATH/Model.php(800): CodeIgniter\BaseModel->insert()
+ 7 APPPATH/Controllers/SppController.php(83): CodeIgniter\Model->insert()
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SppController->createSPP()
+ 9 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+11 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+13 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+14 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-09 14:55:21 --> [Caused by] mysqli_sql_exception: Column 'status' cannot be null
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 327.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(327): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH/BaseModel.php(843): CodeIgniter\Model->doInsert()
+ 7 SYSTEMPATH/Model.php(800): CodeIgniter\BaseModel->insert()
+ 8 APPPATH/Controllers/SppController.php(83): CodeIgniter\Model->insert()
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SppController->createSPP()
+10 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+11 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+12 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+14 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+15 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-09 14:58:03 --> ErrorException: Undefined array key "tahun_jurusan"
+[Method: GET, Route: data-kas/spp]
+in APPPATH/Views/admin/data-kas/data-kas-spp.php on line 53.
+ 1 APPPATH/Views/admin/data-kas/data-kas-spp.php(53): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/zreis/Downloads/Project/Project-e-Keuangan/app/Views/admin/data-kas/data-kas-spp.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():221}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/SppController.php(22): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SppController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
