@@ -52,4 +52,20 @@ class PembayaranSPPModel extends Model
     {
         return $this->where('id_pembayaran_spp', $id)->first();
     }
+
+    public function getDataWithRelations()
+    {
+        return $this->select('pembayaran_spp.*, siswa.nama_siswa, spp.tahun_ajaran, spp.biaya_spp')
+            ->join('siswa', 'pembayaran_spp.id_siswa = siswa.id_siswa')
+            ->join('spp', 'pembayaran_spp.id_spp = spp.id_spp')
+            ->findAll();
+    }
+    public function getDataWithRelationsById($id)
+    {
+        return $this->select('pembayaran_spp.*, siswa.nama_siswa, siswa.jenis_kelamin, siswa.nis , spp.tahun_ajaran, spp.biaya_spp')
+            ->join('siswa', 'pembayaran_spp.id_siswa = siswa.id_siswa')
+            ->join('spp', 'pembayaran_spp.id_spp = spp.id_spp')
+            ->where('pembayaran_spp.id_pembayaran_spp', $id)
+            ->first();
+    }
 }

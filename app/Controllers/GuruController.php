@@ -40,7 +40,7 @@ class GuruController extends BaseController
         $data = [
             "title" => "Input Data Guru"
         ];
-        return view('admin/input-tabel/input-guru', $data);
+        return view('admin/Inputs/input-guru', $data);
     }
 
     public function create()
@@ -128,7 +128,7 @@ class GuruController extends BaseController
             "title" => "Edit Guru",
             "guru" => $guru
         ];
-        return view('admin/edit-tabel/edit-guru', $data);
+        return view('admin/Edits/edit-guru', $data);
     }
 
     public function update($id)

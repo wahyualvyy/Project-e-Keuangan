@@ -24,7 +24,7 @@
                                 No
                             </th>
                             <th scope="col" class="px-0 text-muted">
-                                Tahun Ajaran
+                                Nama Siswa
                             </th>
                             <th scope="col" class="px-0 text-muted">
                                 Jumlah SPP
@@ -38,43 +38,46 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td class="px-0">1</td>
-                            <td class="px-0">
-                                <div class="d-flex align-items-center">
-                                    <img src="<?= base_url('assets/img/photo-profile.jpg'); ?>" class="rounded-circle"
-                                        width="40" alt="flexy" />
-                                    <div class="ms-3">
-                                        <h6 class="mb-0 fw-bolder">Sunil Joshi</h6>
+                        <?php $no = 1;
+                        foreach ($spp as $data): ?>
+                            <tr>
+                                <td class="px-0"><?= $no++;?></td>
+                                <td class="px-0">
+                                    <div class="d-flex align-items-center">
+                                        <img src="<?= base_url('assets/img/photo-profile.jpg'); ?>" class="rounded-circle"
+                                            width="40" alt="flexy" />
+                                        <div class="ms-3">
+                                            <h6 class="mb-0 fw-bolder"><?= $data['nama_siswa'] ;?></h6>
+                                        </div>
                                     </div>
-                                </div>
-                            </td>
-                            <td class="px-0">Elite Admin</td>
-                            </td>
-                            <td class="px-0">
-                                <span class="badge bg-danger">Belum Bayar</span>
-                            </td>
-                            <td class="px-0 text-dark fw-medium text-center">
-                                <div class="dropdown">
-                                    <a href="javascript:void(0)" class="text-muted" id="year1-dropdown"
-                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i class="ti ti-dots fs-7"></i>
-                                    </a>
-                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="year1-dropdown">
-                                        <li>
-                                            <a class="dropdown-item" href="<?= base_url('admin/kas-spp/detail');?>">
-                                                <i class="ti ti-eye fs-6 mb-0"></i>
-                                                <span class="mb-0 fs-3">Detail</span></a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="javascript:void(0)">
-                                                <i class="ti ti-cash-banknote fs-6 mb-0"></i>
-                                                <span class="mb-0 fs-3">Bayar</span></a></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </td>
-                        </tr>
+                                </td>
+                                <td class="px-0">Rp. <?= number_format($data['biaya_spp'],'0',',','.');?></td>
+                                </td>
+                                <td class="px-0">
+                                    <span class="badge bg-danger">Belum Bayar</span>
+                                </td>
+                                <td class="px-0 text-dark fw-medium text-center">
+                                    <div class="dropdown">
+                                        <a href="javascript:void(0)" class="text-muted" id="year1-dropdown"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i class="ti ti-dots fs-7"></i>
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="year1-dropdown">
+                                            <li>
+                                                <a class="dropdown-item" href="<?= base_url('kas-masuk/spp/detail/' . $data['id_pembayaran_spp']); ?>">
+                                                    <i class="ti ti-eye fs-6 mb-0"></i>
+                                                    <span class="mb-0 fs-3">Detail</span></a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="javascript:void(0)">
+                                                    <i class="ti ti-cash-banknote fs-6 mb-0"></i>
+                                                    <span class="mb-0 fs-3">Bayar</span></a></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>

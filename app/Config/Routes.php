@@ -90,11 +90,11 @@ $routes->group('', ['filter' => 'login'], function ($routes) {
     // =======================================================================
     $routes->group('data-kas', function ($routes) {
         $routes->get('spp', 'SppController::index');
-        $routes->get('input-spp', 'SppController::input');
+        $routes->get('input-spp', 'SppController::inputSPP');
         $routes->post('create-spp', 'SppController::createSPP');
-        $routes->get('edit-spp/(:num)', 'SppController::edit/$1');
-        $routes->post('update-spp/(:num)', 'SppController::update/$1');
-        $routes->get('delete-spp/(:num)', 'SppController::delete/$1');
+        $routes->get('edit-spp/(:num)', 'SppController::editSPP/$1');
+        $routes->post('update-spp/(:num)', 'SppController::updateSPP/$1');
+        $routes->get('delete-spp/(:num)', 'SppController::deleteSPP/$1');
         
         
         
@@ -105,8 +105,8 @@ $routes->group('', ['filter' => 'login'], function ($routes) {
     });
 
     $routes->group('kas-masuk', function ($routes) {
-        $routes->get('spp', 'AdminController::kasSpp');
-        $routes->get('spp/detail', 'AdminController::kasSppDetail');
+        $routes->get('spp', 'SppController::SppMasuk');
+        $routes->get('spp/detail/(:num)', 'SppController::SppDetail/$1');
         $routes->get('semester', 'AdminController::kasSemester');
         $routes->get('semester/detail', 'AdminController::kasSemesterDetail');
         $routes->get('pemasukan', 'AdminController::kasPemasukan');

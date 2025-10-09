@@ -2,16 +2,19 @@
 
 namespace App\Controllers;
 
+use App\Models\SppModel;
+use App\Models\PembayaranSPPModel;
 use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
-use App\Models\SppModel;
 
 class SppController extends BaseController
 {
     protected $sppModel;
+    protected $PembayaranSPPModel;
     public function __construct()
     {
         $this->sppModel = new SppModel();
+        $this->PembayaranSPPModel = new PembayaranSPPModel();
     }
     public function index()
     {
@@ -21,12 +24,12 @@ class SppController extends BaseController
         ];
         return view('admin/data-kas/data-kas-spp', $data);
     }
-    public function input()
+    public function inputSPP()
     {
         $data = [
             "title" => "Input Data Kas SPP"
         ];
-        return view('admin/input-tabel/input-data-kas-spp', $data);
+        return view('admin/Inputs/input-data-kas-spp', $data);
     }
 
     public function createSPP()
@@ -84,7 +87,7 @@ class SppController extends BaseController
         return redirect()->to(base_url('data-kas/spp'))->with('success', 'Data SPP berhasil ditambahkan.');
     }
 
-    public function edit($id)
+    public function editSPP($id)
     {
         $spp = $this->sppModel->find($id);
         if (!$spp) {
@@ -100,10 +103,10 @@ class SppController extends BaseController
             "tahunAjaran1" => $tahunAjaran1,
             "tahunAjaran2" => $tahunAjaran2
         ];
-        return view('admin/edit-tabel/edit-data-kas-spp', $data);
+        return view('admin/Edits/edit-data-kas-spp', $data);
     }
 
-    public function update($id)
+    public function updateSPP($id)
     {
         $rules = [
             'tahun-ajaran1' => [
@@ -159,7 +162,7 @@ class SppController extends BaseController
         return redirect()->to(base_url('data-kas/spp'))->with('success', 'Data SPP berhasil diperbarui.');
     }
 
-    public function delete($id)
+    public function deleteSPP($id)
     {
         $spp = $this->sppModel->find($id);
         if (!$spp) {
@@ -168,5 +171,23 @@ class SppController extends BaseController
 
         $this->sppModel->delete($id);
         return redirect()->to(base_url('data-kas/spp'))->with('success', 'Data SPP berhasil dihapus.');
+    }
+
+    public function SppMasuk()
+    {
+        $data = [
+            "title" => "Kas Masuk SPP",
+            "spp" => $this->PembayaranSPPModel->getDataWithRelations()
+        ];
+        return view('admin/kas-masuk/kas-spp', $data);
+    }
+
+    public function SppDetail($id)
+    {
+        $data = [
+            "title" => "Detail Kas Masuk SPP",
+            "spp" => $this->PembayaranSPPModel->getDataWithRelationsById($id)
+        ];
+        return view('admin/Details/kas-spp-detail', $data);
     }
 }

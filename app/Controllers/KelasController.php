@@ -73,7 +73,7 @@ class KelasController extends BaseController
             'jurusan' => $this->jurusanModel->findAll(),
             'guru' => $this->guruModel->findAll(),
         ];
-        return view('admin/input-tabel/input-kelas', $data);
+        return view('admin/input-Inputs/input-kelas', $data);
     }
 
     public function create()
@@ -133,7 +133,7 @@ class KelasController extends BaseController
             'jurusan' => $this->jurusanModel->findAll(),
             'guru' => $this->guruModel->findAll(),
         ];
-        return view('admin/edit-tabel/edit-kelas', $data);
+        return view('admin/Edits/edit-kelas', $data);
     }
 
     public function update($id)

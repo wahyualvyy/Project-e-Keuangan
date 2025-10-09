@@ -35,7 +35,7 @@ class JurusanController extends BaseController
             "title" => "Input Jurusan"
         ];
 
-        return view('admin/input-tabel/input-jurusan', $data);
+        return view('admin/Inputs/input-jurusan', $data);
     }
 
     public function create()
@@ -85,7 +85,7 @@ class JurusanController extends BaseController
             "jurusan" => $jurusan
         ];
 
-        return view('admin/edit-tabel/edit-jurusan', $data);
+        return view('admin/Edits/edit-jurusan', $data);
     }
     public function update($id)
     {

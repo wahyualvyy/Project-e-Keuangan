@@ -235,3 +235,605 @@ Stack trace:
 #10 /home/zreis/Downloads/Project/Project-e-Keuangan/system/Boot.php(104): CodeIgniter\Boot::runCommand()
 #11 /home/zreis/Downloads/Project/Project-e-Keuangan/spark(87): CodeIgniter\Boot::bootSpark()
 #12 {main}
+CRITICAL - 2025-10-09 19:44:40 --> ParseError: Unclosed '{' on line 8
+[Method: GET, Route: kas-masuk/spp]
+in APPPATH/Models/PembayaranSPPModel.php on line 63.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+ 3 APPPATH/Controllers/SppController.php(17): CodeIgniter\Autoloader\Autoloader->loadClass()
+ 4 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\SppController->__construct()
+ 5 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+10 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-09 19:44:48 --> ParseError: Unclosed '{' on line 8
+[Method: GET, Route: kas-masuk/spp]
+in APPPATH/Models/PembayaranSPPModel.php on line 63.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile()
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+ 3 APPPATH/Controllers/SppController.php(17): CodeIgniter\Autoloader\Autoloader->loadClass()
+ 4 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\SppController->__construct()
+ 5 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+10 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-09 19:45:01 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/kas-masuk/kas-masuk-spp.php"
+[Method: GET, Route: kas-masuk/spp]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/SppController.php(182): view()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SppController->SppMasuk()
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+10 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-09 19:45:02 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/kas-masuk/kas-masuk-spp.php"
+[Method: GET, Route: kas-masuk/spp]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/SppController.php(182): view()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SppController->SppMasuk()
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+10 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-09 19:45:03 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/kas-masuk/kas-masuk-spp.php"
+[Method: GET, Route: kas-masuk/spp]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/SppController.php(182): view()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SppController->SppMasuk()
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+10 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-09 19:45:04 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/kas-masuk/kas-masuk-spp.php"
+[Method: GET, Route: kas-masuk/spp]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/SppController.php(182): view()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SppController->SppMasuk()
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+10 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-09 19:45:04 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/kas-masuk/kas-masuk-spp.php"
+[Method: GET, Route: kas-masuk/spp]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/SppController.php(182): view()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SppController->SppMasuk()
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+10 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-09 19:45:04 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/kas-masuk/kas-masuk-spp.php"
+[Method: GET, Route: kas-masuk/spp]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/SppController.php(182): view()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SppController->SppMasuk()
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+10 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-09 19:45:04 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/kas-masuk/kas-masuk-spp.php"
+[Method: GET, Route: kas-masuk/spp]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/SppController.php(182): view()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SppController->SppMasuk()
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+10 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-09 19:45:10 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/kas-masuk/kas-masuk-spp.php"
+[Method: GET, Route: kas-masuk/spp]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/SppController.php(182): view()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SppController->SppMasuk()
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+10 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-09 19:45:16 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/kas-masuk/kas-masuk-spp.php"
+[Method: GET, Route: kas-masuk/spp]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/SppController.php(182): view()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SppController->SppMasuk()
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+10 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-09 20:05:14 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/kas-masuk/detail-kas-spp.php"
+[Method: GET, Route: kas-masuk/spp/detail/1]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/SppController.php(191): view()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SppController->SppDetail()
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+10 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-09 20:05:29 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/Details/detail-kas-spp.php"
+[Method: GET, Route: kas-masuk/spp/detail/1]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/SppController.php(191): view()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SppController->SppDetail()
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+10 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-09 20:05:29 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/Details/detail-kas-spp.php"
+[Method: GET, Route: kas-masuk/spp/detail/1]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/SppController.php(191): view()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SppController->SppDetail()
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+10 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-09 20:08:26 --> ErrorException: Undefined array key "nama_siswa"
+[Method: GET, Route: kas-masuk/spp/detail/1]
+in APPPATH/Views/admin/Details/kas-spp-detail.php on line 46.
+ 1 APPPATH/Views/admin/Details/kas-spp-detail.php(46): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/zreis/Downloads/Project/Project-e-Keuangan/app/Views/admin/Details/kas-spp-detail.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():221}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/SppController.php(191): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SppController->SppDetail()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-09 20:08:42 --> ErrorException: Undefined array key "nama_siswa"
+[Method: GET, Route: kas-masuk/spp/detail/1]
+in APPPATH/Views/admin/Details/kas-spp-detail.php on line 46.
+ 1 APPPATH/Views/admin/Details/kas-spp-detail.php(46): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/zreis/Downloads/Project/Project-e-Keuangan/app/Views/admin/Details/kas-spp-detail.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():221}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/SppController.php(191): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SppController->SppDetail()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-09 20:08:43 --> ErrorException: Undefined array key "nama_siswa"
+[Method: GET, Route: kas-masuk/spp/detail/1]
+in APPPATH/Views/admin/Details/kas-spp-detail.php on line 46.
+ 1 APPPATH/Views/admin/Details/kas-spp-detail.php(46): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/zreis/Downloads/Project/Project-e-Keuangan/app/Views/admin/Details/kas-spp-detail.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():221}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/SppController.php(191): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SppController->SppDetail()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-09 20:08:43 --> ErrorException: Undefined array key "nama_siswa"
+[Method: GET, Route: kas-masuk/spp/detail/1]
+in APPPATH/Views/admin/Details/kas-spp-detail.php on line 46.
+ 1 APPPATH/Views/admin/Details/kas-spp-detail.php(46): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/zreis/Downloads/Project/Project-e-Keuangan/app/Views/admin/Details/kas-spp-detail.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():221}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/SppController.php(191): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SppController->SppDetail()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-09 20:08:44 --> ErrorException: Undefined array key "nama_siswa"
+[Method: GET, Route: kas-masuk/spp/detail/1]
+in APPPATH/Views/admin/Details/kas-spp-detail.php on line 46.
+ 1 APPPATH/Views/admin/Details/kas-spp-detail.php(46): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/zreis/Downloads/Project/Project-e-Keuangan/app/Views/admin/Details/kas-spp-detail.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():221}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/SppController.php(191): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SppController->SppDetail()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-09 20:08:44 --> ErrorException: Undefined array key "nama_siswa"
+[Method: GET, Route: kas-masuk/spp/detail/1]
+in APPPATH/Views/admin/Details/kas-spp-detail.php on line 46.
+ 1 APPPATH/Views/admin/Details/kas-spp-detail.php(46): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/zreis/Downloads/Project/Project-e-Keuangan/app/Views/admin/Details/kas-spp-detail.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():221}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/SppController.php(191): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SppController->SppDetail()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-09 20:09:09 --> ErrorException: Undefined variable $siswa
+[Method: GET, Route: kas-masuk/spp/detail/1]
+in APPPATH/Views/admin/Details/kas-spp-detail.php on line 46.
+ 1 APPPATH/Views/admin/Details/kas-spp-detail.php(46): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/zreis/Downloads/Project/Project-e-Keuangan/app/Views/admin/Details/kas-spp-detail.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():221}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/SppController.php(191): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SppController->SppDetail()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-09 20:09:15 --> ErrorException: Undefined variable $data
+[Method: GET, Route: kas-masuk/spp/detail/1]
+in APPPATH/Views/admin/Details/kas-spp-detail.php on line 46.
+ 1 APPPATH/Views/admin/Details/kas-spp-detail.php(46): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/zreis/Downloads/Project/Project-e-Keuangan/app/Views/admin/Details/kas-spp-detail.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():221}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/SppController.php(191): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SppController->SppDetail()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-09 20:10:08 --> ErrorException: Undefined array key "nama_siswa"
+[Method: GET, Route: kas-masuk/spp/detail/1]
+in APPPATH/Views/admin/Details/kas-spp-detail.php on line 46.
+ 1 APPPATH/Views/admin/Details/kas-spp-detail.php(46): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/zreis/Downloads/Project/Project-e-Keuangan/app/Views/admin/Details/kas-spp-detail.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():221}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/SppController.php(191): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SppController->SppDetail()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-09 20:10:09 --> ErrorException: Undefined array key "nama_siswa"
+[Method: GET, Route: kas-masuk/spp/detail/1]
+in APPPATH/Views/admin/Details/kas-spp-detail.php on line 46.
+ 1 APPPATH/Views/admin/Details/kas-spp-detail.php(46): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/zreis/Downloads/Project/Project-e-Keuangan/app/Views/admin/Details/kas-spp-detail.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():221}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/SppController.php(191): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SppController->SppDetail()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-09 20:12:21 --> ErrorException: Undefined array key "nama_siswa"
+[Method: GET, Route: kas-masuk/spp/detail/1]
+in APPPATH/Views/admin/Details/kas-spp-detail.php on line 46.
+ 1 APPPATH/Views/admin/Details/kas-spp-detail.php(46): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/zreis/Downloads/Project/Project-e-Keuangan/app/Views/admin/Details/kas-spp-detail.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():221}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/SppController.php(191): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SppController->SppDetail()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-09 20:12:22 --> ErrorException: Undefined array key "nama_siswa"
+[Method: GET, Route: kas-masuk/spp/detail/1]
+in APPPATH/Views/admin/Details/kas-spp-detail.php on line 46.
+ 1 APPPATH/Views/admin/Details/kas-spp-detail.php(46): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/zreis/Downloads/Project/Project-e-Keuangan/app/Views/admin/Details/kas-spp-detail.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():221}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/SppController.php(191): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SppController->SppDetail()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-09 20:12:23 --> ErrorException: Undefined array key "nama_siswa"
+[Method: GET, Route: kas-masuk/spp/detail/1]
+in APPPATH/Views/admin/Details/kas-spp-detail.php on line 46.
+ 1 APPPATH/Views/admin/Details/kas-spp-detail.php(46): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/zreis/Downloads/Project/Project-e-Keuangan/app/Views/admin/Details/kas-spp-detail.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():221}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/SppController.php(191): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SppController->SppDetail()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-09 20:12:23 --> ErrorException: Undefined array key "nama_siswa"
+[Method: GET, Route: kas-masuk/spp/detail/1]
+in APPPATH/Views/admin/Details/kas-spp-detail.php on line 46.
+ 1 APPPATH/Views/admin/Details/kas-spp-detail.php(46): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/zreis/Downloads/Project/Project-e-Keuangan/app/Views/admin/Details/kas-spp-detail.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():221}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/SppController.php(191): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SppController->SppDetail()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-09 20:12:23 --> ErrorException: Undefined array key "nama_siswa"
+[Method: GET, Route: kas-masuk/spp/detail/1]
+in APPPATH/Views/admin/Details/kas-spp-detail.php on line 46.
+ 1 APPPATH/Views/admin/Details/kas-spp-detail.php(46): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/zreis/Downloads/Project/Project-e-Keuangan/app/Views/admin/Details/kas-spp-detail.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():221}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/SppController.php(191): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SppController->SppDetail()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-09 20:12:24 --> ErrorException: Undefined array key "nama_siswa"
+[Method: GET, Route: kas-masuk/spp/detail/1]
+in APPPATH/Views/admin/Details/kas-spp-detail.php on line 46.
+ 1 APPPATH/Views/admin/Details/kas-spp-detail.php(46): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/zreis/Downloads/Project/Project-e-Keuangan/app/Views/admin/Details/kas-spp-detail.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():221}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/SppController.php(191): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SppController->SppDetail()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-09 20:12:24 --> ErrorException: Undefined array key "nama_siswa"
+[Method: GET, Route: kas-masuk/spp/detail/1]
+in APPPATH/Views/admin/Details/kas-spp-detail.php on line 46.
+ 1 APPPATH/Views/admin/Details/kas-spp-detail.php(46): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/zreis/Downloads/Project/Project-e-Keuangan/app/Views/admin/Details/kas-spp-detail.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():221}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/SppController.php(191): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SppController->SppDetail()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-09 20:12:25 --> ErrorException: Undefined array key "nama_siswa"
+[Method: GET, Route: kas-masuk/spp/detail/1]
+in APPPATH/Views/admin/Details/kas-spp-detail.php on line 46.
+ 1 APPPATH/Views/admin/Details/kas-spp-detail.php(46): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/zreis/Downloads/Project/Project-e-Keuangan/app/Views/admin/Details/kas-spp-detail.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():221}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/SppController.php(191): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SppController->SppDetail()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-09 20:12:26 --> ErrorException: Undefined array key "nama_siswa"
+[Method: GET, Route: kas-masuk/spp/detail/1]
+in APPPATH/Views/admin/Details/kas-spp-detail.php on line 46.
+ 1 APPPATH/Views/admin/Details/kas-spp-detail.php(46): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/zreis/Downloads/Project/Project-e-Keuangan/app/Views/admin/Details/kas-spp-detail.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():221}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/SppController.php(191): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SppController->SppDetail()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-09 20:12:26 --> ErrorException: Undefined array key "nama_siswa"
+[Method: GET, Route: kas-masuk/spp/detail/1]
+in APPPATH/Views/admin/Details/kas-spp-detail.php on line 46.
+ 1 APPPATH/Views/admin/Details/kas-spp-detail.php(46): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/zreis/Downloads/Project/Project-e-Keuangan/app/Views/admin/Details/kas-spp-detail.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():221}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/SppController.php(191): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SppController->SppDetail()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-09 20:12:27 --> ErrorException: Undefined array key "nama_siswa"
+[Method: GET, Route: kas-masuk/spp/detail/1]
+in APPPATH/Views/admin/Details/kas-spp-detail.php on line 46.
+ 1 APPPATH/Views/admin/Details/kas-spp-detail.php(46): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/zreis/Downloads/Project/Project-e-Keuangan/app/Views/admin/Details/kas-spp-detail.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():221}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/SppController.php(191): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SppController->SppDetail()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-09 20:12:28 --> ErrorException: Undefined array key "nama_siswa"
+[Method: GET, Route: kas-masuk/spp/detail/1]
+in APPPATH/Views/admin/Details/kas-spp-detail.php on line 46.
+ 1 APPPATH/Views/admin/Details/kas-spp-detail.php(46): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/zreis/Downloads/Project/Project-e-Keuangan/app/Views/admin/Details/kas-spp-detail.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():221}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/SppController.php(191): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SppController->SppDetail()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-09 20:12:28 --> ErrorException: Undefined array key "nama_siswa"
+[Method: GET, Route: kas-masuk/spp/detail/1]
+in APPPATH/Views/admin/Details/kas-spp-detail.php on line 46.
+ 1 APPPATH/Views/admin/Details/kas-spp-detail.php(46): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/zreis/Downloads/Project/Project-e-Keuangan/app/Views/admin/Details/kas-spp-detail.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():221}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/SppController.php(191): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SppController->SppDetail()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-09 20:12:29 --> ErrorException: Undefined array key "nama_siswa"
+[Method: GET, Route: kas-masuk/spp/detail/1]
+in APPPATH/Views/admin/Details/kas-spp-detail.php on line 46.
+ 1 APPPATH/Views/admin/Details/kas-spp-detail.php(46): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/zreis/Downloads/Project/Project-e-Keuangan/app/Views/admin/Details/kas-spp-detail.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():221}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/SppController.php(191): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SppController->SppDetail()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-09 20:16:56 --> TypeError: number_format(): Argument #1 ($num) must be of type int|float, string given
+[Method: GET, Route: kas-masuk/spp/detail/1]
+in APPPATH/Views/admin/Details/kas-spp-detail.php on line 53.
+ 1 APPPATH/Views/admin/Details/kas-spp-detail.php(53): number_format()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/zreis/Downloads/Project/Project-e-Keuangan/app/Views/admin/Details/kas-spp-detail.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():221}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/SppController.php(191): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SppController->SppDetail()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-09 20:16:57 --> TypeError: number_format(): Argument #1 ($num) must be of type int|float, string given
+[Method: GET, Route: kas-masuk/spp/detail/1]
+in APPPATH/Views/admin/Details/kas-spp-detail.php on line 53.
+ 1 APPPATH/Views/admin/Details/kas-spp-detail.php(53): number_format()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/zreis/Downloads/Project/Project-e-Keuangan/app/Views/admin/Details/kas-spp-detail.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():221}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/SppController.php(191): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SppController->SppDetail()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-09 20:16:57 --> TypeError: number_format(): Argument #1 ($num) must be of type int|float, string given
+[Method: GET, Route: kas-masuk/spp/detail/1]
+in APPPATH/Views/admin/Details/kas-spp-detail.php on line 53.
+ 1 APPPATH/Views/admin/Details/kas-spp-detail.php(53): number_format()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/zreis/Downloads/Project/Project-e-Keuangan/app/Views/admin/Details/kas-spp-detail.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():221}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/SppController.php(191): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SppController->SppDetail()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-09 20:16:57 --> TypeError: number_format(): Argument #1 ($num) must be of type int|float, string given
+[Method: GET, Route: kas-masuk/spp/detail/1]
+in APPPATH/Views/admin/Details/kas-spp-detail.php on line 53.
+ 1 APPPATH/Views/admin/Details/kas-spp-detail.php(53): number_format()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/zreis/Downloads/Project/Project-e-Keuangan/app/Views/admin/Details/kas-spp-detail.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():221}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/SppController.php(191): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SppController->SppDetail()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')

@@ -16,16 +16,15 @@
                     <thead>
                         <tr>
                             <th scope="col" class="px-0 text-muted">
-                                No
                             </th>
                             <th scope="col" class="px-0 text-muted">
-                                Nama Guru
+                                Nama Siswa
                             </th>
                             <th scope="col" class="px-0 text-muted">
-                                Jumlah Gaji
+                                Jumlah SPP
                             </th>
                             <th scope="col" class="px-0 text-muted">
-                                Jumlah Jam Mengajar
+                                Jenis Kelamin
                             </th>
                             <th scope="col" class="px-0 text-muted">
                                 Status
@@ -43,14 +42,14 @@
                                     <img src="<?= base_url('assets/img/photo-profile.jpg'); ?>" class="rounded-circle"
                                         width="40" alt="flexy" />
                                     <div class="ms-3">
-                                        <h6 class="mb-0 fw-bolder">Sunil Joshi</h6>
-                                        <span class="text-muted">Web Designer</span>
+                                        <h6 class="mb-0 fw-bolder"><?= $spp['nama_siswa'];?></h6>
+                                        <span class="text-muted"><?= $spp['nis'];?></span>
                                     </div>
                                 </div>
                             </td>
-                            <td class="px-0">Elite Admin</td>
+                            <td class="px-0">Rp. <?= number_format($spp['biaya_spp'],'0',',','.');?></td>
                             </td>
-                            <td class="px-0">Elite Admin</td>
+                            <td class="px-0"><?= $spp['jenis_kelamin'];?></td>
                             </td>
                             <td class="px-0">
                                 <span class="badge bg-danger">Belum DiBayar</span>
@@ -63,7 +62,7 @@
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="year1-dropdown">
                                         <li>
-                                            <a class="dropdown-item" href="<?= base_url('admin/kas-spp');?>">
+                                            <a class="dropdown-item" href="<?= base_url('kas-masuk/spp'); ?>">
                                                 <i class="ti ti-arrow-back-up fs-6 mb-0"></i>
                                                 <span class="mb-0 fs-3">Kembali</span></a>
                                         </li>
