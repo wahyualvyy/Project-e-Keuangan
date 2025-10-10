@@ -1,0 +1,97 @@
+CRITICAL - 2025-10-10 12:37:50 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/data-kas/input-kas-semester.php"
+[Method: GET, Route: data-kas/input-semester]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/SemesterController.php(32): view()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SemesterController->inputSemester()
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+10 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-10 12:37:59 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/Inputs/input-kas-semester.php"
+[Method: GET, Route: data-kas/input-semester]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/SemesterController.php(32): view()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SemesterController->inputSemester()
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+10 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-10 12:38:00 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/Inputs/input-kas-semester.php"
+[Method: GET, Route: data-kas/input-semester]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/SemesterController.php(32): view()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SemesterController->inputSemester()
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+10 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-10 12:40:17 --> ErrorException: Undefined variable $jurusan
+[Method: GET, Route: data-kas/input-semester]
+in APPPATH/Views/admin/Inputs/input-data-kas-semester.php on line 26.
+ 1 APPPATH/Views/admin/Inputs/input-data-kas-semester.php(26): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/zreis/Downloads/Project/Project-e-Keuangan/app/Views/admin/Inputs/input-data-kas-semester.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():221}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/SemesterController.php(33): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SemesterController->inputSemester()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-10 12:49:23 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/input-Inputs/input-kelas.php"
+[Method: GET, Route: kelas/input]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/KelasController.php(76): view()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\KelasController->input()
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+10 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-10 12:50:38 --> ErrorException: Undefined variable $jurusan
+[Method: GET, Route: data-kas/input-semester]
+in APPPATH/Views/admin/Inputs/input-data-kas-semester.php on line 27.
+ 1 APPPATH/Views/admin/Inputs/input-data-kas-semester.php(27): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/zreis/Downloads/Project/Project-e-Keuangan/app/Views/admin/Inputs/input-data-kas-semester.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():221}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/SemesterController.php(33): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SemesterController->inputSemester()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-10 12:54:52 --> ErrorException: Undefined variable $semester
+[Method: GET, Route: data-kas/input-semester]
+in APPPATH/Views/admin/Inputs/input-data-kas-semester.php on line 27.
+ 1 APPPATH/Views/admin/Inputs/input-data-kas-semester.php(27): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(224): include('/home/zreis/Downloads/Project/Project-e-Keuangan/app/Views/admin/Inputs/input-data-kas-semester.php')
+ 3 SYSTEMPATH/View/View.php(227): CodeIgniter\View\View->{closure:CodeIgniter\View\View::render():221}()
+ 4 SYSTEMPATH/Common.php(1173): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/SemesterController.php(37): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SemesterController->inputSemester()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')

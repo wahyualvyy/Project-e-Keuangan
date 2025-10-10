@@ -190,4 +190,15 @@ class SppController extends BaseController
         ];
         return view('admin/Details/kas-spp-detail', $data);
     }
+
+    public function deleteSPPMasuk($id)
+    {
+        $pembayaranSpp = $this->PembayaranSPPModel->find($id);
+        if (!$pembayaranSpp) {
+            return redirect()->to(base_url('kas-masuk/spp'))->with('error', 'Data Pembayaran SPP tidak ditemukan.');
+        }
+
+        $this->PembayaranSPPModel->delete($id);
+        return redirect()->to(base_url('kas-masuk/spp'))->with('success', 'Data Pembayaran SPP berhasil dihapus.');
+    }
 }

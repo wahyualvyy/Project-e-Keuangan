@@ -73,7 +73,7 @@ class KelasController extends BaseController
             'jurusan' => $this->jurusanModel->findAll(),
             'guru' => $this->guruModel->findAll(),
         ];
-        return view('admin/input-Inputs/input-kelas', $data);
+        return view('admin/Inputs/input-kelas', $data);
     }
 
     public function create()

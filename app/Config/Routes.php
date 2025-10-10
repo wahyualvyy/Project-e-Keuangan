@@ -96,9 +96,9 @@ $routes->group('', ['filter' => 'login'], function ($routes) {
         $routes->post('update-spp/(:num)', 'SppController::updateSPP/$1');
         $routes->get('delete-spp/(:num)', 'SppController::deleteSPP/$1');
         
-        
-        
-        $routes->get('semester', 'AdminController::dataKasSemester');
+        $routes->get('semester', 'SemesterController::index');
+        $routes->get('input-semester', 'SemesterController::inputSemester');
+
         $routes->get('input-semester', 'AdminController::inputKasSemester');
         $routes->get('gaji', 'AdminController::dataKasGaji');
         $routes->get('input-gaji', 'AdminController::inputKasGaji');
@@ -107,6 +107,7 @@ $routes->group('', ['filter' => 'login'], function ($routes) {
     $routes->group('kas-masuk', function ($routes) {
         $routes->get('spp', 'SppController::SppMasuk');
         $routes->get('spp/detail/(:num)', 'SppController::SppDetail/$1');
+        $routes->get('spp-delete/(:num)', 'SppController::deleteSPPMasuk/$1');
         $routes->get('semester', 'AdminController::kasSemester');
         $routes->get('semester/detail', 'AdminController::kasSemesterDetail');
         $routes->get('pemasukan', 'AdminController::kasPemasukan');
