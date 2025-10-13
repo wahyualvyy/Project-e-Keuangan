@@ -31,7 +31,7 @@
                     <div>
                         <label for="tahun-ajaran2" class="form-label">Sampai Tahun Ajaran</label>
                         <select class="form-select" id="tahun-ajaran2" name="tahun-ajaran2" required>
-                            <option selected>Pilih tahun Ajaran</option>
+                            <option disabled selected>Pilih tahun Ajaran</option>
                             <?php
                             $tahunSekarang = date('Y');
                             $tahunDepan = $tahunSekarang + 5;
