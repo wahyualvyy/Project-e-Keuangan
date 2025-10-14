@@ -91,4 +91,24 @@ class SemesterController extends BaseController
         $this->semesterModel->insert($data);
         return redirect()->to('/data-kas/semester')->with('success', 'Data semester berhasil ditambahkan.');
     }
+
+    public function editSemester($id)
+    {
+        $semester = $this->semesterModel->find($id);
+        if (!$semester) {
+            return redirect()->to('/data-kas/semester')->with('error', 'Data semester tidak ditemukan.');
+        }
+
+        list($tahunAjaran1, $tahunAjaran2) = explode('/', $semester['tahun_ajaran']);
+
+        $data = [
+            'title' => 'Edit Data Semester',
+            'semester' => $semester,
+            'jurusan' => $this->jurusanModel->findAll(),
+            'tahunAjaran1' => $tahunAjaran1,
+            'tahunAjaran2' => $tahunAjaran2,
+        ];
+
+        return view('admin/Edits/edit-data-kas-semester', $data);
+    }
 }

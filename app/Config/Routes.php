@@ -99,6 +99,7 @@ $routes->group('', ['filter' => 'login'], function ($routes) {
         $routes->get('semester', 'SemesterController::index');
         $routes->get('input-semester', 'SemesterController::inputSemester');
         $routes->post('create-semester', 'SemesterController::createSemester');
+        $routes->get('edit-semester/(:num)', 'SemesterController::editSemester/$1');
 
         $routes->get('input-semester', 'AdminController::inputKasSemester');
         $routes->get('gaji', 'AdminController::dataKasGaji');
