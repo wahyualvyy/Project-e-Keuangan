@@ -1,0 +1,26 @@
+CRITICAL - 2025-10-21 08:55:02 --> CodeIgniter\Database\Exceptions\DatabaseException: Updates are not allowed unless they contain a "where" or "like" clause.
+[Method: POST, Route: data-kas/update-semester/2]
+in SYSTEMPATH/Model.php on line 456.
+ 1 SYSTEMPATH/BaseModel.php(1031): CodeIgniter\Model->doUpdate()
+ 2 SYSTEMPATH/Model.php(863): CodeIgniter\BaseModel->update()
+ 3 APPPATH/Controllers/SemesterController.php(169): CodeIgniter\Model->update()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SemesterController->updateSemester()
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+10 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')
+CRITICAL - 2025-10-21 09:09:15 --> CodeIgniter\Database\Exceptions\DatabaseException: Updates are not allowed unless they contain a "where" or "like" clause.
+[Method: POST, Route: data-kas/update-semester/2]
+in SYSTEMPATH/Model.php on line 456.
+ 1 SYSTEMPATH/BaseModel.php(1031): CodeIgniter\Model->doUpdate()
+ 2 SYSTEMPATH/Model.php(863): CodeIgniter\BaseModel->update()
+ 3 APPPATH/Controllers/SemesterController.php(169): CodeIgniter\Model->update()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\SemesterController->updateSemester()
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+10 SYSTEMPATH/rewrite.php(44): require_once('/home/zreis/Downloads/Project/Project-e-Keuangan/public/index.php')

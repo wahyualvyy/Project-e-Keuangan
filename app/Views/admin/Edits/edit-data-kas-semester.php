@@ -4,7 +4,7 @@
     <div class="card-body">
         <h5 class="card-title fw-semibold mb-4">Edit Data Kas Semester</h5>
         <hr>
-        <form id="form-edit" action="<?= base_url('data-kas/create-semester'); ?>" method="POST">
+        <form id="form-edit" action="<?= base_url('data-kas/update-semester/' . $semester['id_semester']); ?>" method="POST">
             <?php csrf_field(); ?>
             <div class="row">
                 <div class="col-lg-6">
