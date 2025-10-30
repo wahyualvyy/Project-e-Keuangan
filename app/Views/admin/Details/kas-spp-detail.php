@@ -42,17 +42,21 @@
                                     <img src="<?= base_url('assets/img/photo-profile.jpg'); ?>" class="rounded-circle"
                                         width="40" alt="flexy" />
                                     <div class="ms-3">
-                                        <h6 class="mb-0 fw-bolder"><?= $spp['nama_siswa'];?></h6>
-                                        <span class="text-muted"><?= $spp['nis'];?></span>
+                                        <h6 class="mb-0 fw-bolder"><?= $spp['nama_siswa']; ?></h6>
+                                        <span class="text-muted"><?= $spp['nis']; ?></span>
                                     </div>
                                 </div>
                             </td>
-                            <td class="px-0">Rp. <?= number_format($spp['biaya_spp'],'0',',','.');?></td>
+                            <td class="px-0">Rp. <?= number_format($spp['biaya_spp'], '0', ',', '.'); ?></td>
                             </td>
-                            <td class="px-0"><?= $spp['jenis_kelamin'];?></td>
+                            <td class="px-0"><?= $spp['jenis_kelamin']; ?></td>
                             </td>
                             <td class="px-0">
-                                <span class="badge bg-danger">Belum DiBayar</span>
+                                <?php if ($spp['status_pembayaran'] === 'Lunas') {
+                                    echo '<span class="badge bg-success">Lunas</span>';
+                                } else {
+                                    echo '<span class="badge bg-danger">Belum Lunas</span>';
+                                } ?>
                             </td>
                             <td class="px-0 text-dark fw-medium text-center">
                                 <div class="dropdown">
@@ -67,7 +71,8 @@
                                                 <span class="mb-0 fs-3">Kembali</span></a>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item" href="<?= base_url('kas-masuk/spp-delete/' . $spp['id_pembayaran_spp']);?>">
+                                            <a class="dropdown-item"
+                                                href="<?= base_url('kas-masuk/spp-delete/' . $spp['id_pembayaran_spp']); ?>">
                                                 <i class="ti ti-trash fs-6 mb-0"></i>
                                                 <span class="mb-0 fs-3">Hapus</span></a></a>
                                         </li>

@@ -48,6 +48,10 @@ class SiswaModel extends Model
     {
         return $this->where('id_siswa', $id)->first();
     }
+    public function getInsertID()
+    {
+        return $this->db->insertID();
+    }
 
     public function getSiswaWithAllData()
     {

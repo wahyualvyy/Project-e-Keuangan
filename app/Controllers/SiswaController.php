@@ -3,9 +3,11 @@
 namespace App\Controllers;
 
 
+use App\Models\SppModel;
 use App\Models\KelasModel;
 use App\Models\SiswaModel;
 use App\Models\JurusanModel;
+use App\Models\PembayaranSPPModel;
 use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
 use PhpOffice\PhpSpreadsheet\Style\Fill;
@@ -19,12 +21,16 @@ class SiswaController extends BaseController
     protected $siswaModel;
     protected $jurusanModel;
     protected $kelasModel;
+    protected $sppModel;
+    protected $pembayaranSPPModel;
 
     public function __construct()
     {
         $this->siswaModel = new siswaModel();
         $this->jurusanModel = new JurusanModel();
         $this->kelasModel = new KelasModel();
+        $this->sppModel = new SppModel();
+        $this->pembayaranSPPModel = new PembayaranSPPModel();
     }
     public function index()
     {
@@ -158,6 +164,15 @@ class SiswaController extends BaseController
             'status' => $this->request->getPost('status'),
         ];
         $this->siswaModel->insert($data);
+
+        $id_siswa = $this->siswaModel->getInsertID();
+        $id_spp = $this->sppModel->getActiveSppId();
+
+        $this->pembayaranSPPModel->insert([
+            'id_siswa' => $id_siswa,
+            'id_spp' => $id_spp,
+            'status_pembayaran' => 'Belum Lunas'
+        ]);
         return redirect()->to('/siswa')->with('success', 'Data siswa berhasil ditambahkan.');
     }
 

@@ -53,6 +53,67 @@ class PembayaranSPPModel extends Model
         return $this->where('id_pembayaran_spp', $id)->first();
     }
 
+    public function getDataSort($sort, $bulan = null, $tahun = null)
+    {
+        $builder = $this->select('pembayaran_spp.*, siswa.nama_siswa, spp.biaya_spp, kelas.nama_kelas')
+            ->join('siswa', 'siswa.id_siswa = pembayaran_spp.id_siswa')
+            ->join('spp', 'spp.id_spp = pembayaran_spp.id_spp')
+            ->join('kelas', 'kelas.id_kelas = siswa.id_kelas');
+
+        // Filter status pembayaran
+        if ($sort === 'lunas') {
+            $builder->where('pembayaran_spp.status_pembayaran', 'Lunas');
+        } elseif ($sort === 'belum_lunas') {
+            $builder->where('pembayaran_spp.status_pembayaran', 'Belum Lunas');
+        }
+
+        // Filter bulan dan tahun
+        $hasDateFilter = ($bulan !== null && $bulan !== '') || ($tahun !== null && $tahun !== '');
+        if ($hasDateFilter) {
+            if ($sort === 'lunas') {
+                // Filter berdasarkan tanggal_bayar untuk yang Lunas
+                if ($bulan !== null && $bulan !== '') {
+                    $builder->where('MONTH(pembayaran_spp.tanggal_bayar)', intval($bulan));
+                }
+                if ($tahun !== null && $tahun !== '') {
+                    $builder->where('YEAR(pembayaran_spp.tanggal_bayar)', intval($tahun));
+                }
+            } elseif ($sort === 'belum_lunas') {
+                // Filter berdasarkan created_at untuk yang Belum Lunas
+                if ($bulan !== null && $bulan !== '') {
+                    $builder->where('MONTH(pembayaran_spp.created_at)', intval($bulan));
+                }
+                if ($tahun !== null && $tahun !== '') {
+                    $builder->where('YEAR(pembayaran_spp.created_at)', intval($tahun));
+                }
+            } else {
+                // Untuk "semua", tampilkan semua tapi filter yang punya tanggal_bayar atau created_at
+                $builder->groupStart();
+                if ($bulan !== null && $bulan !== '') {
+                    $builder->groupStart()
+                        ->where('MONTH(pembayaran_spp.tanggal_bayar)', intval($bulan))
+                        ->orWhere('MONTH(pembayaran_spp.created_at)', intval($bulan))
+                        ->groupEnd();
+                }
+                if ($tahun !== null && $tahun !== '') {
+                    $builder->groupStart()
+                        ->where('YEAR(pembayaran_spp.tanggal_bayar)', intval($tahun))
+                        ->orWhere('YEAR(pembayaran_spp.created_at)', intval($tahun))
+                        ->groupEnd();
+                }
+                $builder->groupEnd();
+            }
+        }
+
+        // Urutkan
+        $builder->orderBy('pembayaran_spp.status_pembayaran', 'DESC');
+        $builder->orderBy('pembayaran_spp.tanggal_bayar', 'DESC');
+        $builder->orderBy('pembayaran_spp.created_at', 'DESC');
+        $builder->orderBy('pembayaran_spp.id_pembayaran_spp', 'DESC');
+
+        return $builder->get()->getResultArray();
+    }
+
     public function getDataWithRelations()
     {
         return $this->select('pembayaran_spp.*, siswa.nama_siswa, spp.tahun_ajaran, spp.biaya_spp')

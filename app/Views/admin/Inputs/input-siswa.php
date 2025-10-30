@@ -11,17 +11,17 @@
                     <div>
                         <label for="nama_siswa" class="form-label">Nama Lengkap</label>
                         <input type="text" class="form-control" name="nama_siswa" id="nama_siswa"
-                            placeholder="Muhammad Alex" aria-describedby="defaultFormControlHelp" />
+                            placeholder="Muhammad Alex" aria-describedby="defaultFormControlHelp" value="<?= old('nama_siswa');?>" />
                     </div>
                     <div class="mt-3">
                         <label for="nisn" class="form-label">NISN</label>
                         <input type="number" class="form-control" name="nisn" id="nisn" placeholder="NISN"
-                            aria-describedby="defaultFormControlHelp" />
+                            aria-describedby="defaultFormControlHelp" value="<?= old('nisn');?>" />
                     </div>
                     <div class="mt-3">
                         <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
                         <select class="form-select" name="jenis_kelamin" id="jenis_kelamin"
-                            aria-label="Default select example">
+                            aria-label="Default select example" >
                             <option disabled selected>---Pilih Jenis Kelamin---</option>
                             <option value="Laki-laki">Laki-laki</option>
                             <option value="Perempuan">Perempuan</option>
@@ -30,19 +30,19 @@
                     <div class="mt-3">
                         <label for="tempat_lahir" class="form-label">Tempat Lahir</label>
                         <input type="text" class="form-control" name="tempat_lahir" id="tempat_lahir"
-                            placeholder="Tempat Lahir" aria-describedby="defaultFormControlHelp" />
+                            placeholder="Tempat Lahir" aria-describedby="defaultFormControlHelp" value="<?= old('tempat_lahir');?>" />
                     </div>
                     <div class="mt-3">
                         <label for="alamat" class="form-label">Alamat</label>
                         <input type="text" class="form-control" name="alamat" id="alamat" placeholder="Alamat"
-                            aria-describedby="defaultFormControlHelp" />
+                            aria-describedby="defaultFormControlHelp" value="<?= old('alamat');?>" />
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div>
                         <label for="nis" class="form-label">NIS</label>
                         <input type="number" class="form-control" name="nis" id="nis" placeholder="NIS"
-                            aria-describedby="defaultFormControlHelp" />
+                            aria-describedby="defaultFormControlHelp" value="<?= old('nis');?>" />
                     </div>
                     <div class="mt-3">
                         <label for="id_jurusan" class="form-label">Jurusan</label>
@@ -64,12 +64,12 @@
                     <div class="mt-3">
                         <label for="tanggal_lahir" class="form-label">Tanggal Lahir</label>
                         <input type="date" class="form-control" name="tanggal_lahir" id="tanggal_lahir"
-                            aria-describedby="defaultFormControlHelp" />
+                            aria-describedby="defaultFormControlHelp" value="<?= old('tanggal_lahir');?>" />
                     </div>
                     <div class="mt-3">
                         <label for="no_telp" class="form-label">Telepon</label>
                         <input type="number" class="form-control" name="no_telp" id="no_telp" placeholder="Telepon"
-                            aria-describedby="defaultFormControlHelp" />
+                            aria-describedby="defaultFormControlHelp" value="<?= old('no_telp');?>" />
                     </div>
                 </div>
                 <div class="col-lg-12">

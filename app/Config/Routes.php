@@ -112,6 +112,7 @@ $routes->group('', ['filter' => 'login'], function ($routes) {
         $routes->get('spp', 'SppController::SppMasuk');
         $routes->get('spp/detail/(:num)', 'SppController::SppDetail/$1');
         $routes->get('spp-delete/(:num)', 'SppController::deleteSPPMasuk/$1');
+        $routes->get('spp/bayar/(:num)', 'SppController::bayarSPP/$1');
         $routes->get('semester', 'AdminController::kasSemester');
         $routes->get('semester/detail', 'AdminController::kasSemesterDetail');
         $routes->get('pemasukan', 'AdminController::kasPemasukan');

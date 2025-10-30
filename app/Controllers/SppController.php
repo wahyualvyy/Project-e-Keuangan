@@ -175,10 +175,20 @@ class SppController extends BaseController
 
     public function SppMasuk()
     {
+        $sort = $this->request->getGet('sort') ?? 'semua';
+        $bulan = $this->request->getGet('bulan') ?? null;
+        $tahun = $this->request->getGet('tahun') ?? null;
+
+        $spp = $this->PembayaranSPPModel->getDataSort($sort, $bulan, $tahun);
+
         $data = [
             "title" => "Kas Masuk SPP",
-            "spp" => $this->PembayaranSPPModel->getDataWithRelations()
+            "spp" => $spp,
+            "sort" => $sort,
+            "bulan" => $bulan,
+            "tahun" => $tahun
         ];
+
         return view('admin/kas-masuk/kas-spp', $data);
     }
 
@@ -200,5 +210,16 @@ class SppController extends BaseController
 
         $this->PembayaranSPPModel->delete($id);
         return redirect()->to(base_url('kas-masuk/spp'))->with('success', 'Data Pembayaran SPP berhasil dihapus.');
+    }
+
+    public function bayarSPP($id)
+    {
+        $pembayaranSpp = $this->PembayaranSPPModel->find($id);
+        if (!$pembayaranSpp) {
+            return redirect()->to(base_url('kas-masuk/spp'))->with('error', 'Data Pembayaran SPP tidak ditemukan.');
+        }
+
+        $this->PembayaranSPPModel->update($id, ['status_pembayaran' => 'Lunas', 'tanggal_bayar' => date('Y-m-d H:i:s')]);
+        return redirect()->to(base_url('kas-masuk/spp'))->with('success', 'Pembayaran SPP berhasil diproses.');
     }
 }

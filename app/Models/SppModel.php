@@ -53,4 +53,10 @@ class SppModel extends Model
     {
         return $this->where('id_spp', $id)->first();
     }
+
+    public function getActiveSppId()
+    {
+        $activeSpp = $this->where('status', 'aktif')->first();
+        return $activeSpp ? $activeSpp['id_spp'] : null;
+    }
 }

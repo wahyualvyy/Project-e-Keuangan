@@ -11,13 +11,6 @@
                             Data</button>
                     </a>
                 </div>
-                <div class="ms-auto mt-3 mt-md-0">
-                    <select class="form-select theme-select border-0" aria-label="Default select example">
-                        <option value="1">March 2025</option>
-                        <option value="2">March 2025</option>
-                        <option value="3">March 2025</option>
-                    </select>
-                </div>
             </div>
             <div class="table-responsive mt-4">
                 <table class="table mb-0 text-nowrap varient-table align-middle fs-3">

@@ -82,7 +82,7 @@
                                     JK
                                 </th>
                                 <th scope="col" class="px-0 text-muted">
-                                    Telepon
+                                    Tempat & Tanggal Lahir
                                 </th>
                                 <th scope="col" class="px-0 text-muted">
                                     Kelas
