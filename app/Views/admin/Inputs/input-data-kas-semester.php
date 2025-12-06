@@ -11,12 +11,13 @@
                     <div>
                         <label for="tahun-ajaran1" class="form-label">Tahun Ajaran</label>
                         <select class="form-select" id="tahun-ajaran1" name="tahun-ajaran1" required>
-                            <option selected>Pilih tahun Ajaran</option>
+                            <option value="" disabled <?= old('tahun-ajaran1') ? '' : 'selected' ?>>---Pilih Tahun Ajaran---</option>
                             <?php
                             $tahunSekarang = date('Y');
                             $tahunDepan = $tahunSekarang + 5;
                             for ($tahun = $tahunDepan; $tahun >= 1950; $tahun--) {
-                                echo "<option value=\"$tahun\">$tahun</option>";
+                                $sel = (string) old('tahun-ajaran1') === (string) $tahun ? 'selected' : '';
+                                echo "<option value=\"$tahun\" $sel>$tahun</option>";
                             }
                             ?>
                         </select>
@@ -36,12 +37,13 @@
                     <div>
                         <label for="tahun-ajaran2" class="form-label">Sampai Tahun Ajaran</label>
                         <select class="form-select" id="tahun-ajaran2" name="tahun-ajaran2" required>
-                            <option disabled selected>Pilih tahun Ajaran</option>
+                            <option value="" disabled <?= old('tahun-ajaran2') ? '' : 'selected' ?>>---Pilih Tahun Ajaran---</option>
                             <?php
                             $tahunSekarang = date('Y');
                             $tahunDepan = $tahunSekarang + 5;
                             for ($tahun = $tahunDepan; $tahun >= 1950; $tahun--) {
-                                echo "<option value=\"$tahun\">$tahun</option>";
+                                $sel = (string) old('tahun-ajaran2') === (string) $tahun ? 'selected' : '';
+                                echo "<option value=\"$tahun\" $sel>$tahun</option>";
                             }
                             ?>
                         </select>
@@ -49,7 +51,7 @@
                     <div class="mt-3">
                         <label for="biaya_semester" class="form-label">Uang SPP Pendaftaran</label>
                         <input type="number" class="form-control" id="biaya_semester" name="biaya_semester"
-                            placeholder="Rp.200.000" aria-describedby="defaultFormControlHelp" />
+                            placeholder="Rp.200.000" value="<?= old('biaya_semester') ?>" aria-describedby="defaultFormControlHelp" />
                     </div>
                 </div>
                 <div class="col-lg-12">

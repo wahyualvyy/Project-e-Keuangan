@@ -12,7 +12,7 @@ class SemesterModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id_jurusan','tahun_ajaran','nominal','status', 'created_at', 'updated_at'];
+    protected $allowedFields    = ['id_jurusan','tahun_ajaran','biaya_semester','status', 'created_at', 'updated_at'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;

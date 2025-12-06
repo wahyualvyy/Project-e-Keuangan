@@ -1,0 +1,482 @@
+ERROR - 2025-12-06 10:46:41 --> mysqli_sql_exception: Unknown column 'nominal' in 'field list' in E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `se...', 0)
+#1 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `se...')
+#2 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `se...')
+#3 E:\laragon\www\Project-e-Keuangan\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `se...', Array, false)
+#4 E:\laragon\www\Project-e-Keuangan\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 E:\laragon\www\Project-e-Keuangan\system\BaseModel.php(843): CodeIgniter\Model->doInsert(Array)
+#6 E:\laragon\www\Project-e-Keuangan\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#7 E:\laragon\www\Project-e-Keuangan\app\Controllers\SemesterController.php(91): CodeIgniter\Model->insert(Array)
+#8 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(933): App\Controllers\SemesterController->createSemester()
+#9 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+#10 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\laragon\www\Project-e-Keuangan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 E:\laragon\www\Project-e-Keuangan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 E:\laragon\www\Project-e-Keuangan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 E:\laragon\www\Project-e-Keuangan\system\rewrite.php(44): require_once('E:\\laragon\\www\\...')
+#15 {main}
+CRITICAL - 2025-12-06 10:46:41 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'nominal' in 'field list'
+[Method: POST, Route: data-kas/create-semester]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `semester` (`tahun_ajaran`, `id_jurusan`, `nominal`, `status`, `created_at`, `updated_at`) VALUES (:tahun_ajaran:, :id_jurusan:, :nominal:, :status:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(843): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\SemesterController.php(91): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->createSemester()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-06 10:46:41 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'nominal' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `semester` (`tahun_ajaran`, `id_jurusan`, `nominal`, `status`, `created_at`, `updated_at`) VALUES (\'2025/2030\', \'5\', \'2000000\', \'Aktif\', \'2025-12-06 10:46:41\', \'2025-12-06 10:46:41\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `semester` (`tahun_ajaran`, `id_jurusan`, `nominal`, `status`, `created_at`, `updated_at`) VALUES (\'2025/2030\', \'5\', \'2000000\', \'Aktif\', \'2025-12-06 10:46:41\', \'2025-12-06 10:46:41\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `semester` (`tahun_ajaran`, `id_jurusan`, `nominal`, `status`, `created_at`, `updated_at`) VALUES (:tahun_ajaran:, :id_jurusan:, :nominal:, :status:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(843): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\SemesterController.php(91): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->createSemester()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-06 10:46:41 --> [Caused by] mysqli_sql_exception: Unknown column 'nominal' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `semester` (`tahun_ajaran`, `id_jurusan`, `nominal`, `status`, `created_at`, `updated_at`) VALUES (\'2025/2030\', \'5\', \'2000000\', \'Aktif\', \'2025-12-06 10:46:41\', \'2025-12-06 10:46:41\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `semester` (`tahun_ajaran`, `id_jurusan`, `nominal`, `status`, `created_at`, `updated_at`) VALUES (\'2025/2030\', \'5\', \'2000000\', \'Aktif\', \'2025-12-06 10:46:41\', \'2025-12-06 10:46:41\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `semester` (`tahun_ajaran`, `id_jurusan`, `nominal`, `status`, `created_at`, `updated_at`) VALUES (\'2025/2030\', \'5\', \'2000000\', \'Aktif\', \'2025-12-06 10:46:41\', \'2025-12-06 10:46:41\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `semester` (`tahun_ajaran`, `id_jurusan`, `nominal`, `status`, `created_at`, `updated_at`) VALUES (:tahun_ajaran:, :id_jurusan:, :nominal:, :status:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(843): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\SemesterController.php(91): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->createSemester()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-06 10:47:48 --> ErrorException: Undefined array key "nominal"
+[Method: GET, Route: data-kas/semester]
+in APPPATH\Views\admin\data-kas\data-kas-semester.php on line 52.
+ 1 APPPATH\Views\admin\data-kas\data-kas-semester.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nominal"', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-kas\\data-kas-semester.php', 52)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-kas\\data-kas-semester.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/data-kas/data-kas-semester', [], true)
+ 5 APPPATH\Controllers\SemesterController.php(27): view('admin/data-kas/data-kas-semester', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-06 10:49:48 --> ErrorException: Undefined array key "nominal"
+[Method: GET, Route: data-kas/semester]
+in APPPATH\Views\admin\data-kas\data-kas-semester.php on line 52.
+ 1 APPPATH\Views\admin\data-kas\data-kas-semester.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nominal"', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-kas\\data-kas-semester.php', 52)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-kas\\data-kas-semester.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/data-kas/data-kas-semester', [], true)
+ 5 APPPATH\Controllers\SemesterController.php(27): view('admin/data-kas/data-kas-semester', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-06 10:56:42 --> ErrorException: Undefined array key "nominal"
+[Method: GET, Route: data-kas/edit-semester/4]
+in APPPATH\Views\admin\Edits\edit-data-kas-semester.php on line 56.
+ 1 APPPATH\Views\admin\Edits\edit-data-kas-semester.php(56): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nominal"', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\Edits\\edit-data-kas-semester.php', 56)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\Edits\\edit-data-kas-semester.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/Edits/edit-data-kas-semester', [], true)
+ 5 APPPATH\Controllers\SemesterController.php(112): view('admin/Edits/edit-data-kas-semester', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->editSemester('4')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+ERROR - 2025-12-06 11:01:21 --> mysqli_sql_exception: Table 'ci_keuangan.pembayaransemesters' doesn't exist in E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\laragon\www\Project-e-Keuangan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\laragon\www\Project-e-Keuangan\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\laragon\www\Project-e-Keuangan\system\BaseModel.php(717): CodeIgniter\Model->doFirst()
+#6 E:\laragon\www\Project-e-Keuangan\app\Commands\GeneratePembayaranSemester.php(32): CodeIgniter\BaseModel->first()
+#7 E:\laragon\www\Project-e-Keuangan\system\CLI\Commands.php(74): App\Commands\GeneratePembayaranSemester->run(Array)
+#8 E:\laragon\www\Project-e-Keuangan\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('semester:genera...', Array)
+#9 E:\laragon\www\Project-e-Keuangan\system\Boot.php(360): CodeIgniter\CLI\Console->run()
+#10 E:\laragon\www\Project-e-Keuangan\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#11 E:\laragon\www\Project-e-Keuangan\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-12-06 11:01:21 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'ci_keuangan.pembayaransemesters' doesn't exist
+[Method: CLI, Route: semester:generate-pembayaran]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pembayaransemesters`
+WHERE `id_semester` = :id_semester:
+AND `id_siswa` = :id_siswa:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(717): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Commands\GeneratePembayaranSemester.php(32): CodeIgniter\BaseModel->first()
+ 5 SYSTEMPATH\CLI\Commands.php(74): App\Commands\GeneratePembayaranSemester->run([])
+ 6 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('semester:generate-pembayaran', [])
+ 7 SYSTEMPATH\Boot.php(360): CodeIgniter\CLI\Console->run()
+ 8 SYSTEMPATH\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 9 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+CRITICAL - 2025-12-06 11:01:21 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'ci_keuangan.pembayaransemesters' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `pembayaransemesters`
+WHERE `id_semester` = \'3\'
+AND `id_siswa` = \'2\'
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `pembayaransemesters`
+WHERE `id_semester` = \'3\'
+AND `id_siswa` = \'2\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pembayaransemesters`
+WHERE `id_semester` = :id_semester:
+AND `id_siswa` = :id_siswa:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(717): CodeIgniter\Model->doFirst()
+ 6 APPPATH\Commands\GeneratePembayaranSemester.php(32): CodeIgniter\BaseModel->first()
+ 7 SYSTEMPATH\CLI\Commands.php(74): App\Commands\GeneratePembayaranSemester->run([])
+ 8 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('semester:generate-pembayaran', [])
+ 9 SYSTEMPATH\Boot.php(360): CodeIgniter\CLI\Console->run()
+10 SYSTEMPATH\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+11 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+CRITICAL - 2025-12-06 11:01:21 --> [Caused by] mysqli_sql_exception: Table 'ci_keuangan.pembayaransemesters' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `pembayaransemesters`
+WHERE `id_semester` = \'3\'
+AND `id_siswa` = \'2\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `pembayaransemesters`
+WHERE `id_semester` = \'3\'
+AND `id_siswa` = \'2\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `pembayaransemesters`
+WHERE `id_semester` = \'3\'
+AND `id_siswa` = \'2\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pembayaransemesters`
+WHERE `id_semester` = :id_semester:
+AND `id_siswa` = :id_siswa:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(717): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Commands\GeneratePembayaranSemester.php(32): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH\CLI\Commands.php(74): App\Commands\GeneratePembayaranSemester->run([])
+ 9 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('semester:generate-pembayaran', [])
+10 SYSTEMPATH\Boot.php(360): CodeIgniter\CLI\Console->run()
+11 SYSTEMPATH\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+12 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2025-12-06 11:02:23 --> mysqli_sql_exception: Table 'ci_keuangan.pembayaransemesters' doesn't exist in E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\laragon\www\Project-e-Keuangan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\laragon\www\Project-e-Keuangan\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\laragon\www\Project-e-Keuangan\system\BaseModel.php(717): CodeIgniter\Model->doFirst()
+#6 E:\laragon\www\Project-e-Keuangan\app\Commands\GeneratePembayaranSemester.php(32): CodeIgniter\BaseModel->first()
+#7 E:\laragon\www\Project-e-Keuangan\system\CLI\Commands.php(74): App\Commands\GeneratePembayaranSemester->run(Array)
+#8 E:\laragon\www\Project-e-Keuangan\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('semester:genera...', Array)
+#9 E:\laragon\www\Project-e-Keuangan\system\Boot.php(360): CodeIgniter\CLI\Console->run()
+#10 E:\laragon\www\Project-e-Keuangan\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#11 E:\laragon\www\Project-e-Keuangan\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-12-06 11:02:23 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'ci_keuangan.pembayaransemesters' doesn't exist
+[Method: CLI, Route: semester:generate-pembayaran]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pembayaransemesters`
+WHERE `id_semester` = :id_semester:
+AND `id_siswa` = :id_siswa:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(717): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Commands\GeneratePembayaranSemester.php(32): CodeIgniter\BaseModel->first()
+ 5 SYSTEMPATH\CLI\Commands.php(74): App\Commands\GeneratePembayaranSemester->run([])
+ 6 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('semester:generate-pembayaran', [])
+ 7 SYSTEMPATH\Boot.php(360): CodeIgniter\CLI\Console->run()
+ 8 SYSTEMPATH\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 9 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+CRITICAL - 2025-12-06 11:02:23 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'ci_keuangan.pembayaransemesters' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `pembayaransemesters`
+WHERE `id_semester` = \'3\'
+AND `id_siswa` = \'2\'
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `pembayaransemesters`
+WHERE `id_semester` = \'3\'
+AND `id_siswa` = \'2\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pembayaransemesters`
+WHERE `id_semester` = :id_semester:
+AND `id_siswa` = :id_siswa:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(717): CodeIgniter\Model->doFirst()
+ 6 APPPATH\Commands\GeneratePembayaranSemester.php(32): CodeIgniter\BaseModel->first()
+ 7 SYSTEMPATH\CLI\Commands.php(74): App\Commands\GeneratePembayaranSemester->run([])
+ 8 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('semester:generate-pembayaran', [])
+ 9 SYSTEMPATH\Boot.php(360): CodeIgniter\CLI\Console->run()
+10 SYSTEMPATH\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+11 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+CRITICAL - 2025-12-06 11:02:23 --> [Caused by] mysqli_sql_exception: Table 'ci_keuangan.pembayaransemesters' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `pembayaransemesters`
+WHERE `id_semester` = \'3\'
+AND `id_siswa` = \'2\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `pembayaransemesters`
+WHERE `id_semester` = \'3\'
+AND `id_siswa` = \'2\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `pembayaransemesters`
+WHERE `id_semester` = \'3\'
+AND `id_siswa` = \'2\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pembayaransemesters`
+WHERE `id_semester` = :id_semester:
+AND `id_siswa` = :id_siswa:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(717): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Commands\GeneratePembayaranSemester.php(32): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH\CLI\Commands.php(74): App\Commands\GeneratePembayaranSemester->run([])
+ 9 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('semester:generate-pembayaran', [])
+10 SYSTEMPATH\Boot.php(360): CodeIgniter\CLI\Console->run()
+11 SYSTEMPATH\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+12 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2025-12-06 11:07:01 --> mysqli_sql_exception: Column 'biaya_semester' cannot be null in E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `se...', 0)
+#1 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `se...')
+#2 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `se...')
+#3 E:\laragon\www\Project-e-Keuangan\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `se...', Array, false)
+#4 E:\laragon\www\Project-e-Keuangan\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 E:\laragon\www\Project-e-Keuangan\system\BaseModel.php(843): CodeIgniter\Model->doInsert(Array)
+#6 E:\laragon\www\Project-e-Keuangan\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#7 E:\laragon\www\Project-e-Keuangan\app\Controllers\SemesterController.php(91): CodeIgniter\Model->insert(Array)
+#8 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(933): App\Controllers\SemesterController->createSemester()
+#9 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+#10 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\laragon\www\Project-e-Keuangan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 E:\laragon\www\Project-e-Keuangan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 E:\laragon\www\Project-e-Keuangan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 E:\laragon\www\Project-e-Keuangan\system\rewrite.php(44): require_once('E:\\laragon\\www\\...')
+#15 {main}
+CRITICAL - 2025-12-06 11:07:01 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'biaya_semester' cannot be null
+[Method: POST, Route: data-kas/create-semester]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `semester` (`tahun_ajaran`, `id_jurusan`, `biaya_semester`, `status`, `created_at`, `updated_at`) VALUES (:tahun_ajaran:, :id_jurusan:, :biaya_semester:, :status:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(843): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\SemesterController.php(91): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->createSemester()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-06 11:07:01 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'biaya_semester' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `semester` (`tahun_ajaran`, `id_jurusan`, `biaya_semester`, `status`, `created_at`, `updated_at`) VALUES (\'2025/2030\', \'6\', NULL, \'Aktif\', \'2025-12-06 11:07:01\', \'2025-12-06 11:07:01\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `semester` (`tahun_ajaran`, `id_jurusan`, `biaya_semester`, `status`, `created_at`, `updated_at`) VALUES (\'2025/2030\', \'6\', NULL, \'Aktif\', \'2025-12-06 11:07:01\', \'2025-12-06 11:07:01\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `semester` (`tahun_ajaran`, `id_jurusan`, `biaya_semester`, `status`, `created_at`, `updated_at`) VALUES (:tahun_ajaran:, :id_jurusan:, :biaya_semester:, :status:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(843): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\SemesterController.php(91): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->createSemester()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-06 11:07:01 --> [Caused by] mysqli_sql_exception: Column 'biaya_semester' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `semester` (`tahun_ajaran`, `id_jurusan`, `biaya_semester`, `status`, `created_at`, `updated_at`) VALUES (\'2025/2030\', \'6\', NULL, \'Aktif\', \'2025-12-06 11:07:01\', \'2025-12-06 11:07:01\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `semester` (`tahun_ajaran`, `id_jurusan`, `biaya_semester`, `status`, `created_at`, `updated_at`) VALUES (\'2025/2030\', \'6\', NULL, \'Aktif\', \'2025-12-06 11:07:01\', \'2025-12-06 11:07:01\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `semester` (`tahun_ajaran`, `id_jurusan`, `biaya_semester`, `status`, `created_at`, `updated_at`) VALUES (\'2025/2030\', \'6\', NULL, \'Aktif\', \'2025-12-06 11:07:01\', \'2025-12-06 11:07:01\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `semester` (`tahun_ajaran`, `id_jurusan`, `biaya_semester`, `status`, `created_at`, `updated_at`) VALUES (:tahun_ajaran:, :id_jurusan:, :biaya_semester:, :status:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(843): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\SemesterController.php(91): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->createSemester()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+ERROR - 2025-12-06 11:07:15 --> mysqli_sql_exception: Column 'biaya_semester' cannot be null in E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `se...', 0)
+#1 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `se...')
+#2 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `se...')
+#3 E:\laragon\www\Project-e-Keuangan\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `se...', Array, false)
+#4 E:\laragon\www\Project-e-Keuangan\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 E:\laragon\www\Project-e-Keuangan\system\BaseModel.php(843): CodeIgniter\Model->doInsert(Array)
+#6 E:\laragon\www\Project-e-Keuangan\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#7 E:\laragon\www\Project-e-Keuangan\app\Controllers\SemesterController.php(91): CodeIgniter\Model->insert(Array)
+#8 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(933): App\Controllers\SemesterController->createSemester()
+#9 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+#10 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\laragon\www\Project-e-Keuangan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 E:\laragon\www\Project-e-Keuangan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 E:\laragon\www\Project-e-Keuangan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 E:\laragon\www\Project-e-Keuangan\system\rewrite.php(44): require_once('E:\\laragon\\www\\...')
+#15 {main}
+CRITICAL - 2025-12-06 11:07:15 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'biaya_semester' cannot be null
+[Method: POST, Route: data-kas/create-semester]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `semester` (`tahun_ajaran`, `id_jurusan`, `biaya_semester`, `status`, `created_at`, `updated_at`) VALUES (:tahun_ajaran:, :id_jurusan:, :biaya_semester:, :status:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(843): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\SemesterController.php(91): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->createSemester()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-06 11:07:15 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'biaya_semester' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `semester` (`tahun_ajaran`, `id_jurusan`, `biaya_semester`, `status`, `created_at`, `updated_at`) VALUES (\'2025/2030\', \'6\', NULL, \'Aktif\', \'2025-12-06 11:07:15\', \'2025-12-06 11:07:15\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `semester` (`tahun_ajaran`, `id_jurusan`, `biaya_semester`, `status`, `created_at`, `updated_at`) VALUES (\'2025/2030\', \'6\', NULL, \'Aktif\', \'2025-12-06 11:07:15\', \'2025-12-06 11:07:15\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `semester` (`tahun_ajaran`, `id_jurusan`, `biaya_semester`, `status`, `created_at`, `updated_at`) VALUES (:tahun_ajaran:, :id_jurusan:, :biaya_semester:, :status:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(843): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\SemesterController.php(91): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->createSemester()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-06 11:07:15 --> [Caused by] mysqli_sql_exception: Column 'biaya_semester' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `semester` (`tahun_ajaran`, `id_jurusan`, `biaya_semester`, `status`, `created_at`, `updated_at`) VALUES (\'2025/2030\', \'6\', NULL, \'Aktif\', \'2025-12-06 11:07:15\', \'2025-12-06 11:07:15\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `semester` (`tahun_ajaran`, `id_jurusan`, `biaya_semester`, `status`, `created_at`, `updated_at`) VALUES (\'2025/2030\', \'6\', NULL, \'Aktif\', \'2025-12-06 11:07:15\', \'2025-12-06 11:07:15\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `semester` (`tahun_ajaran`, `id_jurusan`, `biaya_semester`, `status`, `created_at`, `updated_at`) VALUES (\'2025/2030\', \'6\', NULL, \'Aktif\', \'2025-12-06 11:07:15\', \'2025-12-06 11:07:15\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `semester` (`tahun_ajaran`, `id_jurusan`, `biaya_semester`, `status`, `created_at`, `updated_at`) VALUES (:tahun_ajaran:, :id_jurusan:, :biaya_semester:, :status:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(843): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\SemesterController.php(91): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->createSemester()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+ERROR - 2025-12-06 11:12:56 --> mysqli_sql_exception: Column 'biaya_semester' cannot be null in E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `se...', 0)
+#1 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `se...')
+#2 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `se...')
+#3 E:\laragon\www\Project-e-Keuangan\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `se...', Array, false)
+#4 E:\laragon\www\Project-e-Keuangan\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 E:\laragon\www\Project-e-Keuangan\system\BaseModel.php(843): CodeIgniter\Model->doInsert(Array)
+#6 E:\laragon\www\Project-e-Keuangan\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#7 E:\laragon\www\Project-e-Keuangan\app\Controllers\SemesterController.php(91): CodeIgniter\Model->insert(Array)
+#8 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(933): App\Controllers\SemesterController->createSemester()
+#9 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+#10 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\laragon\www\Project-e-Keuangan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 E:\laragon\www\Project-e-Keuangan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 E:\laragon\www\Project-e-Keuangan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 E:\laragon\www\Project-e-Keuangan\system\rewrite.php(44): require_once('E:\\laragon\\www\\...')
+#15 {main}
+CRITICAL - 2025-12-06 11:12:56 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'biaya_semester' cannot be null
+[Method: POST, Route: data-kas/create-semester]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `semester` (`tahun_ajaran`, `id_jurusan`, `biaya_semester`, `status`, `created_at`, `updated_at`) VALUES (:tahun_ajaran:, :id_jurusan:, :biaya_semester:, :status:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(843): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\SemesterController.php(91): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->createSemester()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-06 11:12:56 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'biaya_semester' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `semester` (`tahun_ajaran`, `id_jurusan`, `biaya_semester`, `status`, `created_at`, `updated_at`) VALUES (\'2025/2030\', \'6\', NULL, \'Aktif\', \'2025-12-06 11:12:56\', \'2025-12-06 11:12:56\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `semester` (`tahun_ajaran`, `id_jurusan`, `biaya_semester`, `status`, `created_at`, `updated_at`) VALUES (\'2025/2030\', \'6\', NULL, \'Aktif\', \'2025-12-06 11:12:56\', \'2025-12-06 11:12:56\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `semester` (`tahun_ajaran`, `id_jurusan`, `biaya_semester`, `status`, `created_at`, `updated_at`) VALUES (:tahun_ajaran:, :id_jurusan:, :biaya_semester:, :status:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(843): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\SemesterController.php(91): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->createSemester()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-06 11:12:56 --> [Caused by] mysqli_sql_exception: Column 'biaya_semester' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `semester` (`tahun_ajaran`, `id_jurusan`, `biaya_semester`, `status`, `created_at`, `updated_at`) VALUES (\'2025/2030\', \'6\', NULL, \'Aktif\', \'2025-12-06 11:12:56\', \'2025-12-06 11:12:56\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `semester` (`tahun_ajaran`, `id_jurusan`, `biaya_semester`, `status`, `created_at`, `updated_at`) VALUES (\'2025/2030\', \'6\', NULL, \'Aktif\', \'2025-12-06 11:12:56\', \'2025-12-06 11:12:56\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `semester` (`tahun_ajaran`, `id_jurusan`, `biaya_semester`, `status`, `created_at`, `updated_at`) VALUES (\'2025/2030\', \'6\', NULL, \'Aktif\', \'2025-12-06 11:12:56\', \'2025-12-06 11:12:56\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `semester` (`tahun_ajaran`, `id_jurusan`, `biaya_semester`, `status`, `created_at`, `updated_at`) VALUES (:tahun_ajaran:, :id_jurusan:, :biaya_semester:, :status:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(843): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\SemesterController.php(91): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->createSemester()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+ERROR - 2025-12-06 11:25:54 --> createSemester validation failed. POST: {"tahun-ajaran1":"2025","id_jurusan":"6","tahun-ajaran2":"2030","biaya_semester":"2000000","status":"Aktif"} ERRORS: {"tahun_ajaran1":"Tahun Ajaran Pertama wajib diisi.","tahun_ajaran2":"Tahun Ajaran Kedua wajib diisi."}

@@ -49,7 +49,7 @@
                                     </div>
                                 </td>
                                 <td class="px-0"><?= $data['nama_jurusan']; ?></td>
-                                <td class="px-0">Rp. <?= number_format($data['nominal'],'0',',','.'); ?></td>
+                                <td class="px-0">Rp. <?= number_format($data['biaya_semester'],'0',',','.'); ?></td>
                                 </td>
                                 <td class="px-0">
                                     <?php

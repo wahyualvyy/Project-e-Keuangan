@@ -5,18 +5,19 @@ namespace App\Controllers;
 use App\Models\JurusanModel;
 use App\Models\SemesterModel;
 use App\Controllers\BaseController;
-use App\Controllers\JurusanController;
 use CodeIgniter\HTTP\ResponseInterface;
 
 class SemesterController extends BaseController
 {
     protected $semesterModel;
     protected $jurusanModel;
+    
     public function __construct()
     {
         $this->semesterModel = new SemesterModel();
         $this->jurusanModel = new JurusanModel();
     }
+    
     public function index()
     {
         $data = [
@@ -39,6 +40,10 @@ class SemesterController extends BaseController
 
     public function createSemester()
     {
+        // Ambil nilai dari input
+        $tahun1 = (int) $this->request->getPost('tahun-ajaran1');
+        $tahun2 = (int) $this->request->getPost('tahun-ajaran2');
+
         $rules = [
             'tahun-ajaran1' => [
                 'label' => 'Tahun Ajaran Pertama',
@@ -47,47 +52,51 @@ class SemesterController extends BaseController
                     'required' => '{field} wajib diisi.',
                     'numeric' => '{field} harus berupa angka.',
                 ],
-                'tahun-ajaran2' => [
-                    'label' => 'Tahun Ajaran Kedua',
-                    'rules' => 'required|numeric|greater_than[tahun-ajaran1]',
-                    'errors' => [
-                        'required' => '{field} wajib diisi.',
-                        'numeric' => '{field} harus berupa angka.',
-                        'greater_than' => '{field} harus lebih besar dari Tahun Ajaran Pertama.',
-                    ],
+            ],
+            'tahun-ajaran2' => [
+                'label' => 'Tahun Ajaran Kedua',
+                'rules' => 'required|numeric',
+                'errors' => [
+                    'required' => '{field} wajib diisi.',
+                    'numeric' => '{field} harus berupa angka.',
                 ],
-                'biaya-semester' => [
-                    'label' => 'Biaya Semester',
-                    'rules' => 'required|numeric',
-                    'errors' => [
-                        'required' => '{field} wajib diisi.',
-                        'numeric' => '{field} harus berupa angka.',
-                    ],
+            ],
+            'biaya_semester' => [
+                'label' => 'Biaya Semester',
+                'rules' => 'required|numeric',
+                'errors' => [
+                    'required' => '{field} wajib diisi.',
+                    'numeric' => '{field} harus berupa angka.',
                 ],
-                'status' => [
-                    'label' => 'Status',
-                    'rules' => 'required|in_list[Aktif,Tidak Aktif]',
-                    'errors' => [
-                        'required' => '{field} wajib diisi.',
-                        'in_list' => '{field} harus bernilai Aktif atau Tidak Aktif.',
-                    ],
+            ],
+            'status' => [
+                'label' => 'Status',
+                'rules' => 'required|in_list[Aktif,Tidak Aktif]',
+                'errors' => [
+                    'required' => '{field} wajib diisi.',
+                    'in_list' => '{field} harus bernilai Aktif atau Tidak Aktif.',
                 ],
-            ]
+            ],
         ];
 
         if (!$this->validate($rules)) {
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
-        $tahunAjaran1 = $this->request->getPost('tahun-ajaran1');
-        $tahunAjaran2 = $this->request->getPost('tahun-ajaran2');
-        $tahunAjaran = $tahunAjaran1 . '/' . $tahunAjaran2;
+
+        // Validasi manual: tahun kedua harus lebih besar dari tahun pertama
+        if ($tahun2 <= $tahun1) {
+            return redirect()->back()->withInput()->with('error', 'Tahun Ajaran Kedua harus lebih besar dari Tahun Ajaran Pertama.');
+        }
+        
+        $tahunAjaran = $tahun1 . '/' . $tahun2;
 
         $data = [
             'tahun_ajaran' => $tahunAjaran,
             'id_jurusan' => $this->request->getPost('id_jurusan'),
-            'nominal' => $this->request->getPost('biaya_semester'),
+            'biaya_semester' => $this->request->getPost('biaya_semester'),
             'status' => $this->request->getPost('status'),
         ];
+        
         $this->semesterModel->insert($data);
         return redirect()->to('/data-kas/semester')->with('success', 'Data semester berhasil ditambahkan.');
     }
@@ -118,6 +127,11 @@ class SemesterController extends BaseController
         if (!$semester) {
             return redirect()->to('/data-kas/semester')->with('error', 'Data semester tidak ditemukan.');
         }
+
+        // Ambil nilai dari input
+        $tahun1 = (int) $this->request->getPost('tahun-ajaran1');
+        $tahun2 = (int) $this->request->getPost('tahun-ajaran2');
+        
         $rules = [
             'tahun-ajaran1' => [
                 'label' => 'Tahun Ajaran Pertama',
@@ -126,46 +140,49 @@ class SemesterController extends BaseController
                     'required' => '{field} wajib diisi.',
                     'numeric' => '{field} harus berupa angka.',
                 ],
-                'tahun-ajaran2' => [
-                    'label' => 'Tahun Ajaran Kedua',
-                    'rules' => 'required|numeric|greater_than[tahun-ajaran1]',
-                    'errors' => [
-                        'required' => '{field} wajib diisi.',
-                        'numeric' => '{field} harus berupa angka.',
-                        'greater_than' => '{field} harus lebih besar dari Tahun Ajaran Pertama.',
-                    ],
+            ],
+            'tahun-ajaran2' => [
+                'label' => 'Tahun Ajaran Kedua',
+                'rules' => 'required|numeric',
+                'errors' => [
+                    'required' => '{field} wajib diisi.',
+                    'numeric' => '{field} harus berupa angka.',
                 ],
-                'biaya-semester' => [
-                    'label' => 'Biaya Semester',
-                    'rules' => 'required|numeric',
-                    'errors' => [
-                        'required' => '{field} wajib diisi.',
-                        'numeric' => '{field} harus berupa angka.',
-                    ],
+            ],
+            'biaya_semester' => [
+                'label' => 'Biaya Semester',
+                'rules' => 'required|numeric',
+                'errors' => [
+                    'required' => '{field} wajib diisi.',
+                    'numeric' => '{field} harus berupa angka.',
                 ],
-                'status' => [
-                    'label' => 'Status',
-                    'rules' => 'required|in_list[Aktif,Tidak Aktif]',
-                    'errors' => [
-                        'required' => '{field} wajib diisi.',
-                        'in_list' => '{field} harus bernilai Aktif atau Tidak Aktif.',
-                    ],
+            ],
+            'status' => [
+                'label' => 'Status',
+                'rules' => 'required|in_list[Aktif,Tidak Aktif]',
+                'errors' => [
+                    'required' => '{field} wajib diisi.',
+                    'in_list' => '{field} harus bernilai Aktif atau Tidak Aktif.',
                 ],
-            ]
+            ],
         ];
 
         if (!$this->validate($rules)) {
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
 
-        $tahunAjaran1 = $this->request->getPost('tahun-ajaran1');
-        $tahunAjaran2 = $this->request->getPost('tahun-ajaran2');
-        $tahunAjaran = $tahunAjaran1 . '/' . $tahunAjaran2;
+        // Validasi manual: tahun kedua harus lebih besar dari tahun pertama
+        if ($tahun2 <= $tahun1) {
+            return redirect()->back()->withInput()->with('error', 'Tahun Ajaran Kedua harus lebih besar dari Tahun Ajaran Pertama.');
+        }
+
+        $tahunAjaran = $tahun1 . '/' . $tahun2;
 
         $data = [
             'tahun_ajaran' => $tahunAjaran,
             'id_jurusan' => $this->request->getPost('id_jurusan'),
-            'nominal' => $this->request->getPost('biaya_semester'),
+            'biaya_semester' => $this->request->getPost('biaya_semester'),
+            'status' => $this->request->getPost('status'),
         ];
 
         $this->semesterModel->update($id, $data);

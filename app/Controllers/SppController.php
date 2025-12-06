@@ -34,6 +34,9 @@ class SppController extends BaseController
 
     public function createSPP()
     {
+        $tahun1 = (int) $this->request->getPost('tahun-ajaran1');
+        $tahun2 = (int) $this->request->getPost('tahun-ajaran2');
+
         $rules = [
             'tahun-ajaran1' => [
                 'label' => 'Tahun Ajaran Pertama',
@@ -42,40 +45,43 @@ class SppController extends BaseController
                     'required' => '{field} wajib diisi.',
                     'numeric' => '{field} harus berupa angka.',
                 ],
-                'tahun-ajaran2' => [
-                    'label' => 'Tahun Ajaran Kedua',
-                    'rules' => 'required|numeric|greater_than[tahun-ajaran1]',
-                    'errors' => [
-                        'required' => '{field} wajib diisi.',
-                        'numeric' => '{field} harus berupa angka.',
-                        'greater_than' => '{field} harus lebih besar dari Tahun Ajaran Pertama.',
-                    ],
+            ],
+            'tahun-ajaran2' => [
+                'label' => 'Tahun Ajaran Kedua',
+                'rules' => 'required|numeric',
+                'errors' => [
+                    'required' => '{field} wajib diisi.',
+                    'numeric' => '{field} harus berupa angka.',
                 ],
-                'biaya-spp' => [
-                    'label' => 'Biaya SPP',
-                    'rules' => 'required|numeric',
-                    'errors' => [
-                        'required' => '{field} wajib diisi.',
-                        'numeric' => '{field} harus berupa angka.',
-                    ],
+            ],
+            'biaya-spp' => [
+                'label' => 'Biaya SPP',
+                'rules' => 'required|numeric',
+                'errors' => [
+                    'required' => '{field} wajib diisi.',
+                    'numeric' => '{field} harus berupa angka.',
                 ],
-                'status' => [
-                    'label' => 'Status',
-                    'rules' => 'required|in_list[Aktif,Tidak Aktif]',
-                    'errors' => [
-                        'required' => '{field} wajib diisi.',
-                        'in_list' => '{field} harus bernilai Aktif atau Tidak Aktif.',
-                    ],
+            ],
+            'status' => [
+                'label' => 'Status',
+                'rules' => 'required|in_list[Aktif,Tidak Aktif]',
+                'errors' => [
+                    'required' => '{field} wajib diisi.',
+                    'in_list' => '{field} harus bernilai Aktif atau Tidak Aktif.',
                 ],
-            ]
+            ],
         ];
 
         if (!$this->validate($rules)) {
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
-        $tahunAjaran1 = $this->request->getPost('tahun-ajaran1');
-        $tahunAjaran2 = $this->request->getPost('tahun-ajaran2');
-        $tahunAjaran = $tahunAjaran1 . '/' . $tahunAjaran2;
+
+        // Validasi manual: tahun kedua harus lebih besar dari tahun pertama
+        if ($tahun2 <= $tahun1) {
+            return redirect()->back()->withInput()->with('error', 'Tahun Ajaran Kedua harus lebih besar dari Tahun Ajaran Pertama.');
+        }
+
+        $tahunAjaran = $tahun1 . '/' . $tahun2;
 
         $data = [
             'tahun_ajaran' => $tahunAjaran,
@@ -108,6 +114,14 @@ class SppController extends BaseController
 
     public function updateSPP($id)
     {
+        $spp = $this->sppModel->find($id);
+        if (!$spp) {
+            return redirect()->to(base_url('data-kas/spp'))->with('error', 'Data SPP tidak ditemukan.');
+        }
+
+        $tahun1 = (int) $this->request->getPost('tahun-ajaran1');
+        $tahun2 = (int) $this->request->getPost('tahun-ajaran2');
+
         $rules = [
             'tahun-ajaran1' => [
                 'label' => 'Tahun Ajaran Pertama',
@@ -116,41 +130,43 @@ class SppController extends BaseController
                     'required' => '{field} wajib diisi.',
                     'numeric' => '{field} harus berupa angka.',
                 ],
-                'tahun-ajaran2' => [
-                    'label' => 'Tahun Ajaran Kedua',
-                    'rules' => 'required|numeric|greater_than[tahun-ajaran1]',
-                    'errors' => [
-                        'required' => '{field} wajib diisi.',
-                        'numeric' => '{field} harus berupa angka.',
-                        'greater_than' => '{field} harus lebih besar dari Tahun Ajaran Pertama.',
-                    ],
+            ],
+            'tahun-ajaran2' => [
+                'label' => 'Tahun Ajaran Kedua',
+                'rules' => 'required|numeric',
+                'errors' => [
+                    'required' => '{field} wajib diisi.',
+                    'numeric' => '{field} harus berupa angka.',
                 ],
-                'biaya-spp' => [
-                    'label' => 'Biaya SPP',
-                    'rules' => 'required|numeric',
-                    'errors' => [
-                        'required' => '{field} wajib diisi.',
-                        'numeric' => '{field} harus berupa angka.',
-                    ],
+            ],
+            'biaya-spp' => [
+                'label' => 'Biaya SPP',
+                'rules' => 'required|numeric',
+                'errors' => [
+                    'required' => '{field} wajib diisi.',
+                    'numeric' => '{field} harus berupa angka.',
                 ],
-                'status' => [
-                    'label' => 'Status',
-                    'rules' => 'required|in_list[Aktif,Tidak Aktif]',
-                    'errors' => [
-                        'required' => '{field} wajib diisi.',
-                        'in_list' => '{field} harus bernilai Aktif atau Tidak Aktif.',
-                    ],
+            ],
+            'status' => [
+                'label' => 'Status',
+                'rules' => 'required|in_list[Aktif,Tidak Aktif]',
+                'errors' => [
+                    'required' => '{field} wajib diisi.',
+                    'in_list' => '{field} harus bernilai Aktif atau Tidak Aktif.',
                 ],
-            ]
+            ],
         ];
 
         if (!$this->validate($rules)) {
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
 
-        $tahunAjaran1 = $this->request->getPost('tahun-ajaran1');
-        $tahunAjaran2 = $this->request->getPost('tahun-ajaran2');
-        $tahunAjaran = $tahunAjaran1 . '/' . $tahunAjaran2;
+        // Validasi manual: tahun kedua harus lebih besar dari tahun pertama
+        if ($tahun2 <= $tahun1) {
+            return redirect()->back()->withInput()->with('error', 'Tahun Ajaran Kedua harus lebih besar dari Tahun Ajaran Pertama.');
+        }
+
+        $tahunAjaran = $tahun1 . '/' . $tahun2;
 
         $data = [
             'tahun_ajaran' => $tahunAjaran,

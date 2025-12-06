@@ -24,7 +24,7 @@ class SemesterMigration extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => 9,
             ],
-            'nominal' => [
+            'biaya_semester' => [
                 'type' => 'decimal',
                 'constraint' => '12,2',
             ],
