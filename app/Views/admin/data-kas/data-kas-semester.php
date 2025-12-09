@@ -75,7 +75,7 @@
                                                     <span class="mb-0 fs-3">Edit</span></a>
                                             </li>
                                             <li>
-                                                <a class="dropdown-item" href="<?= base_url('data-kas/delete-semester/' . $data['id_semester']);?>">
+                                                <a class="dropdown-item btn-delete-single" href="<?= base_url('data-kas/delete-semester/' . $data['id_semester']);?>">
                                                     <i class="ti ti-eraser-off fs-6 mb-0"></i>
                                                     <span class="mb-0 fs-3">Delete</span></a></a>
                                             </li>

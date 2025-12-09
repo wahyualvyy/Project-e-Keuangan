@@ -95,17 +95,21 @@ $routes->group('', ['filter' => 'login'], function ($routes) {
         $routes->get('edit-spp/(:num)', 'SppController::editSPP/$1');
         $routes->post('update-spp/(:num)', 'SppController::updateSPP/$1');
         $routes->get('delete-spp/(:num)', 'SppController::deleteSPP/$1');
-        
+
         $routes->get('semester', 'SemesterController::index');
         $routes->get('input-semester', 'SemesterController::inputSemester');
         $routes->post('create-semester', 'SemesterController::createSemester');
         $routes->get('edit-semester/(:num)', 'SemesterController::editSemester/$1');
         $routes->post('update-semester/(:num)', 'SemesterController::updateSemester/$1');
         $routes->get('delete-semester/(:num)', 'SemesterController::deleteSemester/$1');
-
         $routes->get('input-semester', 'AdminController::inputKasSemester');
-        $routes->get('gaji', 'AdminController::dataKasGaji');
-        $routes->get('input-gaji', 'AdminController::inputKasGaji');
+
+        $routes->get('gaji', 'GajiController::index');
+        $routes->get('input-gaji', 'GajiController::inputGaji');
+        $routes->post('create', 'GajiController::createGaji');
+        $routes->get('edit-gaji/(:num)', 'GajiController::editGaji/$1');
+        $routes->post('update-gaji/(:num)', 'GajiController::updateGaji/$1');
+        $routes->get('delete-gaji/(:num)', 'GajiController::deleteGaji/$1');
     });
 
     $routes->group('kas-masuk', function ($routes) {
@@ -113,6 +117,7 @@ $routes->group('', ['filter' => 'login'], function ($routes) {
         $routes->get('spp/detail/(:num)', 'SppController::SppDetail/$1');
         $routes->get('spp-delete/(:num)', 'SppController::deleteSPPMasuk/$1');
         $routes->get('spp/bayar/(:num)', 'SppController::bayarSPP/$1');
+
         $routes->get('semester', 'AdminController::kasSemester');
         $routes->get('semester/detail', 'AdminController::kasSemesterDetail');
         $routes->get('pemasukan', 'AdminController::kasPemasukan');

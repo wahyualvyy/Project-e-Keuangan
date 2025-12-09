@@ -1,0 +1,52 @@
+CRITICAL - 2025-12-09 15:27:55 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/Inputs/input-kas-gaji.php"
+[Method: GET, Route: data-kas/input-gaji]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/Inputs/input-kas-gaji.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/Inputs/input-kas-gaji', [], true)
+ 3 APPPATH\Controllers\GajiController.php(25): view('admin/Inputs/input-kas-gaji', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GajiController->inputGaji()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GajiController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-09 15:28:16 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/inputs/input-kas-gaji.php"
+[Method: GET, Route: data-kas/input-gaji]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/inputs/input-kas-gaji.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/inputs/input-kas-gaji', [], true)
+ 3 APPPATH\Controllers\GajiController.php(25): view('admin/inputs/input-kas-gaji', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GajiController->inputGaji()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GajiController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-09 16:27:37 --> ErrorException: Undefined variable $data
+[Method: GET, Route: data-kas/edit-gaji/2]
+in APPPATH\Controllers\GajiController.php on line 89.
+ 1 APPPATH\Controllers\GajiController.php(89): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Controllers\\GajiController.php', 89)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GajiController->editGaji('2')
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GajiController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-09 16:29:52 --> ErrorException: Undefined variable $gajiFinal
+[Method: GET, Route: data-kas/edit-gaji/2]
+in APPPATH\Views\admin\Edits\edit-data-kas-gaji.php on line 26.
+ 1 APPPATH\Views\admin\Edits\edit-data-kas-gaji.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $gajiFinal', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\Edits\\edit-data-kas-gaji.php', 26)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\Edits\\edit-data-kas-gaji.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/Edits/edit-data-kas-gaji', [], true)
+ 5 APPPATH\Controllers\GajiController.php(100): view('admin/Edits/edit-data-kas-gaji', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GajiController->editGaji('2')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GajiController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')

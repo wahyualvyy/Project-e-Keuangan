@@ -71,7 +71,7 @@
                                                     <span class="mb-0 fs-3">Edit</span></a>
                                             </li>
                                             <li>
-                                                <a class="dropdown-item" href="<?= base_url('data-kas/delete/' . $data['id_spp']);?>">
+                                                <a class="dropdown-item btn-delete-single" href="<?= base_url('data-kas/delete-spp/' . $data['id_spp']);?>">
                                                     <i class="ti ti-eraser-off fs-6 mb-0"></i>
                                                     <span class="mb-0 fs-3">Delete</span></a></a>
                                             </li>
