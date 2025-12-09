@@ -71,7 +71,7 @@
                                                 <span class="mb-0 fs-3">Kembali</span></a>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item"
+                                            <a class="dropdown-item btn-delete-single"
                                                 href="<?= base_url('kas-masuk/spp-delete/' . $spp['id_pembayaran_spp']); ?>">
                                                 <i class="ti ti-trash fs-6 mb-0"></i>
                                                 <span class="mb-0 fs-3">Hapus</span></a></a>

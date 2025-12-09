@@ -22,6 +22,7 @@ class PembayaranGajiMigration extends Migration
             ],
             'tanggal_bayar' => [
                 'type' => 'DATE',
+                'null' => true,
             ],
             'status_pembayaran' => [
                 'type' => 'ENUM',
