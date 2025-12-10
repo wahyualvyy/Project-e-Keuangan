@@ -10,6 +10,9 @@
                         <button type="button" class="btn btn-secondary card-subtitle m-1 text-white">Tambah
                             Data</button>
                     </a>
+                    <a href="<?= base_url('generate-payment/spp'); ?>">
+                        <button type="button" class="btn btn-outline-primary m-1">Generate SPP</button>
+                    </a>
                 </div>
             </div>
             <div class="table-responsive mt-4">
@@ -45,7 +48,7 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td class="px-0">Rp. <?= number_format($data['biaya_spp'], 0,',','.'); ?></td>
+                                <td class="px-0">Rp. <?= number_format($data['biaya_spp'], 0, ',', '.'); ?></td>
                                 </td>
                                 <td class="px-0">
                                     <?php
@@ -66,12 +69,14 @@
                                         </a>
                                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="year1-dropdown">
                                             <li>
-                                                <a class="dropdown-item" href="<?= base_url('data-kas/edit-spp/' . $data['id_spp']); ?>">
+                                                <a class="dropdown-item"
+                                                    href="<?= base_url('data-kas/edit-spp/' . $data['id_spp']); ?>">
                                                     <i class="ti ti-edit fs-6 mb-0"></i>
                                                     <span class="mb-0 fs-3">Edit</span></a>
                                             </li>
                                             <li>
-                                                <a class="dropdown-item btn-delete-single" href="<?= base_url('data-kas/delete-spp/' . $data['id_spp']);?>">
+                                                <a class="dropdown-item btn-delete-single"
+                                                    href="<?= base_url('data-kas/delete-spp/' . $data['id_spp']); ?>">
                                                     <i class="ti ti-eraser-off fs-6 mb-0"></i>
                                                     <span class="mb-0 fs-3">Delete</span></a></a>
                                             </li>

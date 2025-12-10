@@ -10,6 +10,23 @@
                         <button type="button" class="btn btn-secondary card-subtitle m-1 text-white">Tambah
                             Data</button>
                     </a>
+                    <div class="dropdown d-inline">
+                        <button class="btn btn-outline-success m-1 dropdown-toggle" type="button" id="semesterDropdown"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Generate Semester
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="semesterDropdown">
+                            <li><a class="dropdown-item" href="<?= base_url('generate-payment/semester/1'); ?>">Generate
+                                    Semester 1</a></li>
+                            <li><a class="dropdown-item" href="<?= base_url('generate-payment/semester/2'); ?>">Generate
+                                    Semester 2</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="<?= base_url('generate-payment/semester'); ?>">Generate
+                                    Semua Semester</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="table-responsive mt-4">
@@ -27,6 +44,9 @@
                             </th>
                             <th scope="col" class="px-0 text-muted">
                                 Jumlah Uang Ganjil/Genap
+                            </th>
+                            <th scope="col" class="px-0 text-muted">
+                                Semester
                             </th>
                             <th scope="col" class="px-0 text-muted">
                                 Status
@@ -49,8 +69,9 @@
                                     </div>
                                 </td>
                                 <td class="px-0"><?= $data['nama_jurusan']; ?></td>
-                                <td class="px-0">Rp. <?= number_format($data['biaya_semester'],'0',',','.'); ?></td>
+                                <td class="px-0">Rp. <?= number_format($data['biaya_semester'], '0', ',', '.'); ?></td>
                                 </td>
+                                <td class="px-0"><?= $data['nomor_semester']; ?></td>
                                 <td class="px-0">
                                     <?php
                                     if ($data['status'] === 'Aktif') {
@@ -70,12 +91,14 @@
                                         </a>
                                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="year1-dropdown">
                                             <li>
-                                                <a class="dropdown-item" href="<?= base_url('data-kas/edit-semester/' . $data['id_semester']);?>">
+                                                <a class="dropdown-item"
+                                                    href="<?= base_url('data-kas/edit-semester/' . $data['id_semester']); ?>">
                                                     <i class="ti ti-edit fs-6 mb-0"></i>
                                                     <span class="mb-0 fs-3">Edit</span></a>
                                             </li>
                                             <li>
-                                                <a class="dropdown-item btn-delete-single" href="<?= base_url('data-kas/delete-semester/' . $data['id_semester']);?>">
+                                                <a class="dropdown-item btn-delete-single"
+                                                    href="<?= base_url('data-kas/delete-semester/' . $data['id_semester']); ?>">
                                                     <i class="ti ti-eraser-off fs-6 mb-0"></i>
                                                     <span class="mb-0 fs-3">Delete</span></a></a>
                                             </li>

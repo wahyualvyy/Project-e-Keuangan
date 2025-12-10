@@ -4,14 +4,16 @@
     <div class="card-body">
         <h5 class="card-title fw-semibold mb-4">Edit Data Kas Semester</h5>
         <hr>
-        <form id="form-edit" action="<?= base_url('data-kas/update-semester/' . $semester['id_semester']); ?>" method="POST">
+        <form id="form-edit" action="<?= base_url('data-kas/update-semester/' . $semester['id_semester']); ?>"
+            method="POST">
             <?php csrf_field(); ?>
             <div class="row">
                 <div class="col-lg-6">
                     <div>
                         <label for="tahun-ajaran1" class="form-label">Tahun Ajaran</label>
                         <select class="form-select" id="tahun-ajaran1" name="tahun-ajaran1" required>
-                            <option value="" disabled <?= old('tahun-ajaran1') ? '' : '' ?>>---Pilih Tahun Ajaran---</option>
+                            <option value="" disabled <?= old('tahun-ajaran1') ? '' : '' ?>>---Pilih Tahun Ajaran---
+                            </option>
                             <?php
                             $tahunSekarang = date('Y');
                             $tahunDepan = $tahunSekarang + 5;
@@ -29,7 +31,8 @@
                             aria-label="Default select example">
                             <option disabled>---Pilih Jurusan---</option>
                             <?php foreach ($jurusan as $data): ?>
-                                <option value="<?= $data['id_jurusan']; ?>" <?= ($semester['id_jurusan'] == $data['id_jurusan']) ? 'selected' : ''; ?>>
+                                <option value="<?= $data['id_jurusan']; ?>"
+                                    <?= ($semester['id_jurusan'] == $data['id_jurusan']) ? 'selected' : ''; ?>>
                                     <?= $data['nama_jurusan']; ?>
                                 </option>
                             <?php endforeach; ?>
@@ -40,7 +43,8 @@
                     <div>
                         <label for="tahun-ajaran2" class="form-label">Sampai Tahun Ajaran</label>
                         <select class="form-select" id="tahun-ajaran2" name="tahun-ajaran2" required>
-                            <option value="" disabled <?= old('tahun-ajaran2') ? '' : '' ?>>---Pilih Tahun Ajaran---</option>
+                            <option value="" disabled <?= old('tahun-ajaran2') ? '' : '' ?>>---Pilih Tahun Ajaran---
+                            </option>
                             <?php
                             $tahunSekarang = date('Y');
                             $tahunDepan = $tahunSekarang + 5;
@@ -58,14 +62,24 @@
                             placeholder="Rp.200.000" value="<?= old('biaya_semester', $semester['biaya_semester']); ?>"
                             aria-describedby="defaultFormControlHelp" />
                     </div>
+                    <div class="mt-3">
+                        <label for="nomor_semester" class="form-label">Nomor Semester</label>
+                        <select class="form-select" id="nomor_semester" name="nomor_semester" required>
+                            <option value="" disabled <?= old('nomor_semester') ? '' : '' ?>>---Pilih Semester---
+                            </option>
+                            <option value="1" <?= (old('nomor_semester', $semester['nomor_semester']) == '1') ? 'selected' : ''; ?>>Semester 1</option>
+                            <option value="2" <?= (old('nomor_semester', $semester['nomor_semester']) == '2') ? 'selected' : ''; ?>>Semester 2</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="col-lg-12">
                     <div class="mt-3">
                         <label for="status" class="form-label">Status</label>
                         <select class="form-select" name="status" id="status" aria-label="Default select example">
                             <option disabled selected>---Pilih Status---</option>
-                            <option <?=($semester['status']) == 'Aktif' ? 'selected' : '';?> value="Aktif">Aktif</option>
-                            <option <?=($semester['status']) == 'Tidak Aktif' ? 'selected' : '';?>  value="Tidak Aktif">Tidak Aktif</option>
+                            <option <?= ($semester['status']) == 'Aktif' ? 'selected' : ''; ?> value="Aktif">Aktif</option>
+                            <option <?= ($semester['status']) == 'Tidak Aktif' ? 'selected' : ''; ?> value="Tidak Aktif">
+                                Tidak Aktif</option>
                         </select>
                     </div>
                     <div class="mt-3 d-flex justify-content-center">

@@ -22,8 +22,12 @@ class Scheduler extends BaseConfig
      * '0 0 * * 0'           => setiap hari Minggu pukul 00:00
      */
     public array $tasks = [
-        // Generate pembayaran semester setiap awal bulan pukul 00:00
-        '0 0 1 * *' => 'semester:generate-pembayaran',
+        // Generate pembayaran semester 2x dalam setahun
+        // Semester 1: awal Juli (1 Juli jam 00:00)
+        '0 0 1 7 *' => 'semester:generate-pembayaran',
+
+        // Semester 2: awal Januari (1 Januari jam 00:00)
+        '0 0 1 1 *' => 'semester:generate-pembayaran',
 
         // Generate pembayaran SPP setiap awal bulan pukul 00:05
         '5 0 1 * *' => 'spp:generate-pembayaran',

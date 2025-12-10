@@ -1,0 +1,1323 @@
+ERROR - 2025-12-10 16:12:09 --> mysqli_sql_exception: Unknown column 'semester.nama_semester' in 'field list' in E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pembaya...', 0)
+#1 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembaya...')
+#2 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembaya...')
+#3 E:\laragon\www\Project-e-Keuangan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pembaya...', Array, false)
+#4 E:\laragon\www\Project-e-Keuangan\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\laragon\www\Project-e-Keuangan\system\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\laragon\www\Project-e-Keuangan\app\Models\PembayaranSemesterModel.php(52): CodeIgniter\BaseModel->findAll()
+#7 E:\laragon\www\Project-e-Keuangan\app\Controllers\SemesterController.php(210): App\Models\PembayaranSemesterModel->getWithRelation()
+#8 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(933): App\Controllers\SemesterController->SemesterMasuk()
+#9 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+#10 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\laragon\www\Project-e-Keuangan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 E:\laragon\www\Project-e-Keuangan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 E:\laragon\www\Project-e-Keuangan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 E:\laragon\www\Project-e-Keuangan\system\rewrite.php(44): require_once('E:\\laragon\\www\\...')
+#15 {main}
+CRITICAL - 2025-12-10 16:12:09 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'semester.nama_semester' in 'field list'
+[Method: GET, Route: kas-masuk/semester]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran_semester`.*, `semester`.`nama_semester`, `siswa`.`nama_siswa`
+FROM `pembayaran_semester`
+JOIN `semester` ON `pembayaran_semester`.`id_semester` = `semester`.`id_semester`
+JOIN `siswa` ON `pembayaran_semester`.`id_siswa` = `siswa`.`id_siswa`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\PembayaranSemesterModel.php(52): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\SemesterController.php(210): App\Models\PembayaranSemesterModel->getWithRelation()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->SemesterMasuk()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-10 16:12:09 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'semester.nama_semester' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembayaran_semester`.*, `semester`.`nama_semester`, `siswa`.`nama_siswa`
+FROM `pembayaran_semester`
+JOIN `semester` ON `pembayaran_semester`.`id_semester` = `semester`.`id_semester`
+JOIN `siswa` ON `pembayaran_semester`.`id_siswa` = `siswa`.`id_siswa`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembayaran_semester`.*, `semester`.`nama_semester`, `siswa`.`nama_siswa`
+FROM `pembayaran_semester`
+JOIN `semester` ON `pembayaran_semester`.`id_semester` = `semester`.`id_semester`
+JOIN `siswa` ON `pembayaran_semester`.`id_siswa` = `siswa`.`id_siswa`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran_semester`.*, `semester`.`nama_semester`, `siswa`.`nama_siswa`
+FROM `pembayaran_semester`
+JOIN `semester` ON `pembayaran_semester`.`id_semester` = `semester`.`id_semester`
+JOIN `siswa` ON `pembayaran_semester`.`id_siswa` = `siswa`.`id_siswa`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\PembayaranSemesterModel.php(52): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\SemesterController.php(210): App\Models\PembayaranSemesterModel->getWithRelation()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->SemesterMasuk()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-10 16:12:09 --> [Caused by] mysqli_sql_exception: Unknown column 'semester.nama_semester' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pembayaran_semester`.*, `semester`.`nama_semester`, `siswa`.`nama_siswa`
+FROM `pembayaran_semester`
+JOIN `semester` ON `pembayaran_semester`.`id_semester` = `semester`.`id_semester`
+JOIN `siswa` ON `pembayaran_semester`.`id_siswa` = `siswa`.`id_siswa`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembayaran_semester`.*, `semester`.`nama_semester`, `siswa`.`nama_siswa`
+FROM `pembayaran_semester`
+JOIN `semester` ON `pembayaran_semester`.`id_semester` = `semester`.`id_semester`
+JOIN `siswa` ON `pembayaran_semester`.`id_siswa` = `siswa`.`id_siswa`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembayaran_semester`.*, `semester`.`nama_semester`, `siswa`.`nama_siswa`
+FROM `pembayaran_semester`
+JOIN `semester` ON `pembayaran_semester`.`id_semester` = `semester`.`id_semester`
+JOIN `siswa` ON `pembayaran_semester`.`id_siswa` = `siswa`.`id_siswa`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran_semester`.*, `semester`.`nama_semester`, `siswa`.`nama_siswa`
+FROM `pembayaran_semester`
+JOIN `semester` ON `pembayaran_semester`.`id_semester` = `semester`.`id_semester`
+JOIN `siswa` ON `pembayaran_semester`.`id_siswa` = `siswa`.`id_siswa`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\PembayaranSemesterModel.php(52): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\SemesterController.php(210): App\Models\PembayaranSemesterModel->getWithRelation()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->SemesterMasuk()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-10 16:14:38 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/kas-masuk/kas-masuk-semester.php"
+[Method: GET, Route: kas-masuk/semester]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/kas-masuk/kas-masuk-semester.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/kas-masuk/kas-masuk-semester', [], true)
+ 3 APPPATH\Controllers\SemesterController.php(213): view('admin/kas-masuk/kas-masuk-semester', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->SemesterMasuk()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-10 16:20:15 --> ErrorException: Undefined array key "biya_semester"
+[Method: GET, Route: kas-masuk/semester]
+in APPPATH\Views\admin\kas-masuk\kas-semester.php on line 54.
+ 1 APPPATH\Views\admin\kas-masuk\kas-semester.php(54): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "biya_semester"', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\kas-masuk\\kas-semester.php', 54)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\kas-masuk\\kas-semester.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/kas-masuk/kas-semester', [], true)
+ 5 APPPATH\Controllers\SemesterController.php(213): view('admin/kas-masuk/kas-semester', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->SemesterMasuk()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-10 16:20:20 --> ErrorException: Undefined array key "biaya_semester"
+[Method: GET, Route: kas-masuk/semester]
+in APPPATH\Views\admin\kas-masuk\kas-semester.php on line 54.
+ 1 APPPATH\Views\admin\kas-masuk\kas-semester.php(54): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "biaya_semester"', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\kas-masuk\\kas-semester.php', 54)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\kas-masuk\\kas-semester.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/kas-masuk/kas-semester', [], true)
+ 5 APPPATH\Controllers\SemesterController.php(213): view('admin/kas-masuk/kas-semester', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->SemesterMasuk()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+ERROR - 2025-12-10 16:20:51 --> mysqli_sql_exception: Unknown column 'semester.biaya_' in 'field list' in E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pembaya...', 0)
+#1 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembaya...')
+#2 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembaya...')
+#3 E:\laragon\www\Project-e-Keuangan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pembaya...', Array, false)
+#4 E:\laragon\www\Project-e-Keuangan\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\laragon\www\Project-e-Keuangan\system\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\laragon\www\Project-e-Keuangan\app\Models\PembayaranSemesterModel.php(52): CodeIgniter\BaseModel->findAll()
+#7 E:\laragon\www\Project-e-Keuangan\app\Controllers\SemesterController.php(210): App\Models\PembayaranSemesterModel->getWithRelation()
+#8 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(933): App\Controllers\SemesterController->SemesterMasuk()
+#9 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+#10 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\laragon\www\Project-e-Keuangan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 E:\laragon\www\Project-e-Keuangan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 E:\laragon\www\Project-e-Keuangan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 E:\laragon\www\Project-e-Keuangan\system\rewrite.php(44): require_once('E:\\laragon\\www\\...')
+#15 {main}
+CRITICAL - 2025-12-10 16:20:51 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'semester.biaya_' in 'field list'
+[Method: GET, Route: kas-masuk/semester]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran_semester`.*, `semester`.`tahun_ajaran`, `semester`.`biaya_`, `siswa`.`nama_siswa`
+FROM `pembayaran_semester`
+JOIN `semester` ON `pembayaran_semester`.`id_semester` = `semester`.`id_semester`
+JOIN `siswa` ON `pembayaran_semester`.`id_siswa` = `siswa`.`id_siswa`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\PembayaranSemesterModel.php(52): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\SemesterController.php(210): App\Models\PembayaranSemesterModel->getWithRelation()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->SemesterMasuk()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-10 16:20:51 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'semester.biaya_' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembayaran_semester`.*, `semester`.`tahun_ajaran`, `semester`.`biaya_`, `siswa`.`nama_siswa`
+FROM `pembayaran_semester`
+JOIN `semester` ON `pembayaran_semester`.`id_semester` = `semester`.`id_semester`
+JOIN `siswa` ON `pembayaran_semester`.`id_siswa` = `siswa`.`id_siswa`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembayaran_semester`.*, `semester`.`tahun_ajaran`, `semester`.`biaya_`, `siswa`.`nama_siswa`
+FROM `pembayaran_semester`
+JOIN `semester` ON `pembayaran_semester`.`id_semester` = `semester`.`id_semester`
+JOIN `siswa` ON `pembayaran_semester`.`id_siswa` = `siswa`.`id_siswa`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran_semester`.*, `semester`.`tahun_ajaran`, `semester`.`biaya_`, `siswa`.`nama_siswa`
+FROM `pembayaran_semester`
+JOIN `semester` ON `pembayaran_semester`.`id_semester` = `semester`.`id_semester`
+JOIN `siswa` ON `pembayaran_semester`.`id_siswa` = `siswa`.`id_siswa`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\PembayaranSemesterModel.php(52): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\SemesterController.php(210): App\Models\PembayaranSemesterModel->getWithRelation()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->SemesterMasuk()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-10 16:20:51 --> [Caused by] mysqli_sql_exception: Unknown column 'semester.biaya_' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pembayaran_semester`.*, `semester`.`tahun_ajaran`, `semester`.`biaya_`, `siswa`.`nama_siswa`
+FROM `pembayaran_semester`
+JOIN `semester` ON `pembayaran_semester`.`id_semester` = `semester`.`id_semester`
+JOIN `siswa` ON `pembayaran_semester`.`id_siswa` = `siswa`.`id_siswa`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembayaran_semester`.*, `semester`.`tahun_ajaran`, `semester`.`biaya_`, `siswa`.`nama_siswa`
+FROM `pembayaran_semester`
+JOIN `semester` ON `pembayaran_semester`.`id_semester` = `semester`.`id_semester`
+JOIN `siswa` ON `pembayaran_semester`.`id_siswa` = `siswa`.`id_siswa`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembayaran_semester`.*, `semester`.`tahun_ajaran`, `semester`.`biaya_`, `siswa`.`nama_siswa`
+FROM `pembayaran_semester`
+JOIN `semester` ON `pembayaran_semester`.`id_semester` = `semester`.`id_semester`
+JOIN `siswa` ON `pembayaran_semester`.`id_siswa` = `siswa`.`id_siswa`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran_semester`.*, `semester`.`tahun_ajaran`, `semester`.`biaya_`, `siswa`.`nama_siswa`
+FROM `pembayaran_semester`
+JOIN `semester` ON `pembayaran_semester`.`id_semester` = `semester`.`id_semester`
+JOIN `siswa` ON `pembayaran_semester`.`id_siswa` = `siswa`.`id_siswa`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\PembayaranSemesterModel.php(52): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\SemesterController.php(210): App\Models\PembayaranSemesterModel->getWithRelation()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->SemesterMasuk()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-10 16:33:51 --> ErrorException: Undefined variable $data
+[Method: GET, Route: kas-masuk/semester/detail/1]
+in APPPATH\Views\admin\Details\kas-semester-detail.php on line 43.
+ 1 APPPATH\Views\admin\Details\kas-semester-detail.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\Details\\kas-semester-detail.php', 43)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\Details\\kas-semester-detail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/Details/kas-semester-detail', [], true)
+ 5 APPPATH\Controllers\SemesterController.php(226): view('admin/Details/kas-semester-detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->kasSemesterDetail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-10 16:34:05 --> ErrorException: Undefined variable $pembayaran_semester
+[Method: GET, Route: kas-masuk/semester/detail/1]
+in APPPATH\Views\admin\Details\kas-semester-detail.php on line 43.
+ 1 APPPATH\Views\admin\Details\kas-semester-detail.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pembayaran_semester', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\Details\\kas-semester-detail.php', 43)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\Details\\kas-semester-detail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/Details/kas-semester-detail', [], true)
+ 5 APPPATH\Controllers\SemesterController.php(226): view('admin/Details/kas-semester-detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->kasSemesterDetail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-10 16:34:33 --> ErrorException: Undefined variable $pembayaran_semester
+[Method: GET, Route: kas-masuk/semester/detail/1]
+in APPPATH\Views\admin\Details\kas-semester-detail.php on line 43.
+ 1 APPPATH\Views\admin\Details\kas-semester-detail.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pembayaran_semester', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\Details\\kas-semester-detail.php', 43)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\Details\\kas-semester-detail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/Details/kas-semester-detail', [], true)
+ 5 APPPATH\Controllers\SemesterController.php(226): view('admin/Details/kas-semester-detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->kasSemesterDetail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-10 16:34:35 --> ErrorException: Undefined array key "biaya_semester"
+[Method: GET, Route: kas-masuk/semester/detail/1]
+in APPPATH\Views\admin\Details\kas-semester-detail.php on line 43.
+ 1 APPPATH\Views\admin\Details\kas-semester-detail.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "biaya_semester"', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\Details\\kas-semester-detail.php', 43)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\Details\\kas-semester-detail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/Details/kas-semester-detail', [], true)
+ 5 APPPATH\Controllers\SemesterController.php(226): view('admin/Details/kas-semester-detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->kasSemesterDetail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-10 16:34:36 --> ErrorException: Undefined array key "biaya_semester"
+[Method: GET, Route: kas-masuk/semester/detail/1]
+in APPPATH\Views\admin\Details\kas-semester-detail.php on line 43.
+ 1 APPPATH\Views\admin\Details\kas-semester-detail.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "biaya_semester"', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\Details\\kas-semester-detail.php', 43)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\Details\\kas-semester-detail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/Details/kas-semester-detail', [], true)
+ 5 APPPATH\Controllers\SemesterController.php(226): view('admin/Details/kas-semester-detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->kasSemesterDetail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-10 16:35:34 --> Error: Cannot use object of type App\Models\PembayaranSemesterModel as array
+[Method: GET, Route: kas-masuk/semester/detail/1]
+in APPPATH\Views\admin\Details\kas-semester-detail.php on line 44.
+ 1 SYSTEMPATH\View\View.php(224): include()
+ 2 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/Details/kas-semester-detail', [], true)
+ 4 APPPATH\Controllers\SemesterController.php(227): view('admin/Details/kas-semester-detail', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->kasSemesterDetail('1')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-10 16:36:12 --> ErrorException: Undefined array key "biaya_semester"
+[Method: GET, Route: kas-masuk/semester/detail/1]
+in APPPATH\Views\admin\Details\kas-semester-detail.php on line 44.
+ 1 APPPATH\Views\admin\Details\kas-semester-detail.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "biaya_semester"', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\Details\\kas-semester-detail.php', 44)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\Details\\kas-semester-detail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/Details/kas-semester-detail', [], true)
+ 5 APPPATH\Controllers\SemesterController.php(227): view('admin/Details/kas-semester-detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->kasSemesterDetail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-10 16:36:14 --> ErrorException: Undefined array key "biaya_semester"
+[Method: GET, Route: kas-masuk/semester/detail/1]
+in APPPATH\Views\admin\Details\kas-semester-detail.php on line 44.
+ 1 APPPATH\Views\admin\Details\kas-semester-detail.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "biaya_semester"', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\Details\\kas-semester-detail.php', 44)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\Details\\kas-semester-detail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/Details/kas-semester-detail', [], true)
+ 5 APPPATH\Controllers\SemesterController.php(227): view('admin/Details/kas-semester-detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->kasSemesterDetail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-10 16:36:31 --> ErrorException: Undefined array key "biaya_semester"
+[Method: GET, Route: kas-masuk/semester/detail/1]
+in APPPATH\Views\admin\Details\kas-semester-detail.php on line 44.
+ 1 APPPATH\Views\admin\Details\kas-semester-detail.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "biaya_semester"', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\Details\\kas-semester-detail.php', 44)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\Details\\kas-semester-detail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/Details/kas-semester-detail', [], true)
+ 5 APPPATH\Controllers\SemesterController.php(227): view('admin/Details/kas-semester-detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->kasSemesterDetail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-10 16:37:07 --> ErrorException: Undefined array key "biaya_semester"
+[Method: GET, Route: kas-masuk/semester/detail/1]
+in APPPATH\Views\admin\Details\kas-semester-detail.php on line 44.
+ 1 APPPATH\Views\admin\Details\kas-semester-detail.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "biaya_semester"', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\Details\\kas-semester-detail.php', 44)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\Details\\kas-semester-detail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/Details/kas-semester-detail', [], true)
+ 5 APPPATH\Controllers\SemesterController.php(227): view('admin/Details/kas-semester-detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->kasSemesterDetail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+ERROR - 2025-12-10 17:21:34 --> mysqli_sql_exception: Unknown column 'semester.nomor_semester' in 'field list' in E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pembaya...', 0)
+#1 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembaya...')
+#2 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembaya...')
+#3 E:\laragon\www\Project-e-Keuangan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pembaya...', Array, false)
+#4 E:\laragon\www\Project-e-Keuangan\system\Model.php(928): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\laragon\www\Project-e-Keuangan\app\Models\PembayaranSemesterModel.php(125): CodeIgniter\Model->__call('get', Array)
+#6 E:\laragon\www\Project-e-Keuangan\app\Controllers\SemesterController.php(222): App\Models\PembayaranSemesterModel->getDataSort('semua', NULL, NULL, NULL)
+#7 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(933): App\Controllers\SemesterController->SemesterMasuk()
+#8 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+#9 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\laragon\www\Project-e-Keuangan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 E:\laragon\www\Project-e-Keuangan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 E:\laragon\www\Project-e-Keuangan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 E:\laragon\www\Project-e-Keuangan\system\rewrite.php(44): require_once('E:\\laragon\\www\\...')
+#14 {main}
+CRITICAL - 2025-12-10 17:21:34 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'semester.nomor_semester' in 'field list'
+[Method: GET, Route: kas-masuk/semester]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC', [], false)
+ 2 SYSTEMPATH\Model.php(928): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Models\PembayaranSemesterModel.php(125): CodeIgniter\Model->__call('get', [])
+ 4 APPPATH\Controllers\SemesterController.php(222): App\Models\PembayaranSemesterModel->getDataSort('semua', null, null, null)
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->SemesterMasuk()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-10 17:21:34 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'semester.nomor_semester' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC', [], false)
+ 4 SYSTEMPATH\Model.php(928): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Models\PembayaranSemesterModel.php(125): CodeIgniter\Model->__call('get', [])
+ 6 APPPATH\Controllers\SemesterController.php(222): App\Models\PembayaranSemesterModel->getDataSort('semua', null, null, null)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->SemesterMasuk()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-10 17:21:34 --> [Caused by] mysqli_sql_exception: Unknown column 'semester.nomor_semester' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC', [], false)
+ 5 SYSTEMPATH\Model.php(928): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Models\PembayaranSemesterModel.php(125): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\SemesterController.php(222): App\Models\PembayaranSemesterModel->getDataSort('semua', null, null, null)
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->SemesterMasuk()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+ERROR - 2025-12-10 17:21:50 --> mysqli_sql_exception: Unknown column 'semester.nomor_semester' in 'field list' in E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pembaya...', 0)
+#1 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembaya...')
+#2 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembaya...')
+#3 E:\laragon\www\Project-e-Keuangan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pembaya...', Array, false)
+#4 E:\laragon\www\Project-e-Keuangan\system\Model.php(928): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\laragon\www\Project-e-Keuangan\app\Models\PembayaranSemesterModel.php(125): CodeIgniter\Model->__call('get', Array)
+#6 E:\laragon\www\Project-e-Keuangan\app\Controllers\SemesterController.php(222): App\Models\PembayaranSemesterModel->getDataSort('semua', NULL, NULL, NULL)
+#7 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(933): App\Controllers\SemesterController->SemesterMasuk()
+#8 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+#9 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\laragon\www\Project-e-Keuangan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 E:\laragon\www\Project-e-Keuangan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 E:\laragon\www\Project-e-Keuangan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 E:\laragon\www\Project-e-Keuangan\system\rewrite.php(44): require_once('E:\\laragon\\www\\...')
+#14 {main}
+CRITICAL - 2025-12-10 17:21:50 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'semester.nomor_semester' in 'field list'
+[Method: GET, Route: kas-masuk/semester]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC', [], false)
+ 2 SYSTEMPATH\Model.php(928): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Models\PembayaranSemesterModel.php(125): CodeIgniter\Model->__call('get', [])
+ 4 APPPATH\Controllers\SemesterController.php(222): App\Models\PembayaranSemesterModel->getDataSort('semua', null, null, null)
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->SemesterMasuk()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-10 17:21:50 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'semester.nomor_semester' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC', [], false)
+ 4 SYSTEMPATH\Model.php(928): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Models\PembayaranSemesterModel.php(125): CodeIgniter\Model->__call('get', [])
+ 6 APPPATH\Controllers\SemesterController.php(222): App\Models\PembayaranSemesterModel->getDataSort('semua', null, null, null)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->SemesterMasuk()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-10 17:21:50 --> [Caused by] mysqli_sql_exception: Unknown column 'semester.nomor_semester' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC', [], false)
+ 5 SYSTEMPATH\Model.php(928): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Models\PembayaranSemesterModel.php(125): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\SemesterController.php(222): App\Models\PembayaranSemesterModel->getDataSort('semua', null, null, null)
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->SemesterMasuk()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+ERROR - 2025-12-10 17:22:08 --> mysqli_sql_exception: Unknown column 'semester.nomor_semester' in 'field list' in E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pembaya...', 0)
+#1 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembaya...')
+#2 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembaya...')
+#3 E:\laragon\www\Project-e-Keuangan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pembaya...', Array, false)
+#4 E:\laragon\www\Project-e-Keuangan\system\Model.php(928): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\laragon\www\Project-e-Keuangan\app\Models\PembayaranSemesterModel.php(125): CodeIgniter\Model->__call('get', Array)
+#6 E:\laragon\www\Project-e-Keuangan\app\Controllers\SemesterController.php(222): App\Models\PembayaranSemesterModel->getDataSort('semua', NULL, NULL, NULL)
+#7 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(933): App\Controllers\SemesterController->SemesterMasuk()
+#8 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+#9 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\laragon\www\Project-e-Keuangan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 E:\laragon\www\Project-e-Keuangan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 E:\laragon\www\Project-e-Keuangan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 E:\laragon\www\Project-e-Keuangan\system\rewrite.php(44): require_once('E:\\laragon\\www\\...')
+#14 {main}
+CRITICAL - 2025-12-10 17:22:08 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'semester.nomor_semester' in 'field list'
+[Method: GET, Route: kas-masuk/semester]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC', [], false)
+ 2 SYSTEMPATH\Model.php(928): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Models\PembayaranSemesterModel.php(125): CodeIgniter\Model->__call('get', [])
+ 4 APPPATH\Controllers\SemesterController.php(222): App\Models\PembayaranSemesterModel->getDataSort('semua', null, null, null)
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->SemesterMasuk()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-10 17:22:08 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'semester.nomor_semester' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC', [], false)
+ 4 SYSTEMPATH\Model.php(928): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Models\PembayaranSemesterModel.php(125): CodeIgniter\Model->__call('get', [])
+ 6 APPPATH\Controllers\SemesterController.php(222): App\Models\PembayaranSemesterModel->getDataSort('semua', null, null, null)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->SemesterMasuk()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-10 17:22:08 --> [Caused by] mysqli_sql_exception: Unknown column 'semester.nomor_semester' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC', [], false)
+ 5 SYSTEMPATH\Model.php(928): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Models\PembayaranSemesterModel.php(125): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\SemesterController.php(222): App\Models\PembayaranSemesterModel->getDataSort('semua', null, null, null)
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->SemesterMasuk()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+ERROR - 2025-12-10 17:22:36 --> mysqli_sql_exception: Unknown column 'semester.nomor_semester' in 'field list' in E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pembaya...', 0)
+#1 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembaya...')
+#2 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembaya...')
+#3 E:\laragon\www\Project-e-Keuangan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pembaya...', Array, false)
+#4 E:\laragon\www\Project-e-Keuangan\system\Model.php(928): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\laragon\www\Project-e-Keuangan\app\Models\PembayaranSemesterModel.php(125): CodeIgniter\Model->__call('get', Array)
+#6 E:\laragon\www\Project-e-Keuangan\app\Controllers\SemesterController.php(222): App\Models\PembayaranSemesterModel->getDataSort('semua', NULL, NULL, NULL)
+#7 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(933): App\Controllers\SemesterController->SemesterMasuk()
+#8 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+#9 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\laragon\www\Project-e-Keuangan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 E:\laragon\www\Project-e-Keuangan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 E:\laragon\www\Project-e-Keuangan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 E:\laragon\www\Project-e-Keuangan\system\rewrite.php(44): require_once('E:\\laragon\\www\\...')
+#14 {main}
+CRITICAL - 2025-12-10 17:22:36 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'semester.nomor_semester' in 'field list'
+[Method: GET, Route: kas-masuk/semester]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC', [], false)
+ 2 SYSTEMPATH\Model.php(928): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Models\PembayaranSemesterModel.php(125): CodeIgniter\Model->__call('get', [])
+ 4 APPPATH\Controllers\SemesterController.php(222): App\Models\PembayaranSemesterModel->getDataSort('semua', null, null, null)
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->SemesterMasuk()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-10 17:22:36 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'semester.nomor_semester' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC', [], false)
+ 4 SYSTEMPATH\Model.php(928): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Models\PembayaranSemesterModel.php(125): CodeIgniter\Model->__call('get', [])
+ 6 APPPATH\Controllers\SemesterController.php(222): App\Models\PembayaranSemesterModel->getDataSort('semua', null, null, null)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->SemesterMasuk()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-10 17:22:36 --> [Caused by] mysqli_sql_exception: Unknown column 'semester.nomor_semester' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC', [], false)
+ 5 SYSTEMPATH\Model.php(928): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Models\PembayaranSemesterModel.php(125): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\SemesterController.php(222): App\Models\PembayaranSemesterModel->getDataSort('semua', null, null, null)
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->SemesterMasuk()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+ERROR - 2025-12-10 17:23:23 --> mysqli_sql_exception: Unknown column 'semester.nomor_semester' in 'field list' in E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pembaya...', 0)
+#1 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembaya...')
+#2 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembaya...')
+#3 E:\laragon\www\Project-e-Keuangan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pembaya...', Array, false)
+#4 E:\laragon\www\Project-e-Keuangan\system\Model.php(928): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\laragon\www\Project-e-Keuangan\app\Models\PembayaranSemesterModel.php(125): CodeIgniter\Model->__call('get', Array)
+#6 E:\laragon\www\Project-e-Keuangan\app\Controllers\SemesterController.php(222): App\Models\PembayaranSemesterModel->getDataSort('semua', NULL, NULL, NULL)
+#7 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(933): App\Controllers\SemesterController->SemesterMasuk()
+#8 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+#9 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\laragon\www\Project-e-Keuangan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 E:\laragon\www\Project-e-Keuangan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 E:\laragon\www\Project-e-Keuangan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 E:\laragon\www\Project-e-Keuangan\system\rewrite.php(44): require_once('E:\\laragon\\www\\...')
+#14 {main}
+CRITICAL - 2025-12-10 17:23:23 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'semester.nomor_semester' in 'field list'
+[Method: GET, Route: kas-masuk/semester]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC', [], false)
+ 2 SYSTEMPATH\Model.php(928): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Models\PembayaranSemesterModel.php(125): CodeIgniter\Model->__call('get', [])
+ 4 APPPATH\Controllers\SemesterController.php(222): App\Models\PembayaranSemesterModel->getDataSort('semua', null, null, null)
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->SemesterMasuk()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-10 17:23:23 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'semester.nomor_semester' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC', [], false)
+ 4 SYSTEMPATH\Model.php(928): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Models\PembayaranSemesterModel.php(125): CodeIgniter\Model->__call('get', [])
+ 6 APPPATH\Controllers\SemesterController.php(222): App\Models\PembayaranSemesterModel->getDataSort('semua', null, null, null)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->SemesterMasuk()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-10 17:23:23 --> [Caused by] mysqli_sql_exception: Unknown column 'semester.nomor_semester' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC', [], false)
+ 5 SYSTEMPATH\Model.php(928): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Models\PembayaranSemesterModel.php(125): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\SemesterController.php(222): App\Models\PembayaranSemesterModel->getDataSort('semua', null, null, null)
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->SemesterMasuk()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+ERROR - 2025-12-10 17:23:51 --> mysqli_sql_exception: Unknown column 'semester.nomor_semester' in 'field list' in E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pembaya...', 0)
+#1 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembaya...')
+#2 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembaya...')
+#3 E:\laragon\www\Project-e-Keuangan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pembaya...', Array, false)
+#4 E:\laragon\www\Project-e-Keuangan\system\Model.php(928): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\laragon\www\Project-e-Keuangan\app\Models\PembayaranSemesterModel.php(125): CodeIgniter\Model->__call('get', Array)
+#6 E:\laragon\www\Project-e-Keuangan\app\Controllers\SemesterController.php(222): App\Models\PembayaranSemesterModel->getDataSort('semua', NULL, NULL, NULL)
+#7 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(933): App\Controllers\SemesterController->SemesterMasuk()
+#8 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+#9 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\laragon\www\Project-e-Keuangan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 E:\laragon\www\Project-e-Keuangan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 E:\laragon\www\Project-e-Keuangan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 E:\laragon\www\Project-e-Keuangan\system\rewrite.php(44): require_once('E:\\laragon\\www\\...')
+#14 {main}
+CRITICAL - 2025-12-10 17:23:51 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'semester.nomor_semester' in 'field list'
+[Method: GET, Route: kas-masuk/semester]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC', [], false)
+ 2 SYSTEMPATH\Model.php(928): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Models\PembayaranSemesterModel.php(125): CodeIgniter\Model->__call('get', [])
+ 4 APPPATH\Controllers\SemesterController.php(222): App\Models\PembayaranSemesterModel->getDataSort('semua', null, null, null)
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->SemesterMasuk()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-10 17:23:51 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'semester.nomor_semester' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC', [], false)
+ 4 SYSTEMPATH\Model.php(928): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Models\PembayaranSemesterModel.php(125): CodeIgniter\Model->__call('get', [])
+ 6 APPPATH\Controllers\SemesterController.php(222): App\Models\PembayaranSemesterModel->getDataSort('semua', null, null, null)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->SemesterMasuk()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-10 17:23:51 --> [Caused by] mysqli_sql_exception: Unknown column 'semester.nomor_semester' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC', [], false)
+ 5 SYSTEMPATH\Model.php(928): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Models\PembayaranSemesterModel.php(125): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\SemesterController.php(222): App\Models\PembayaranSemesterModel->getDataSort('semua', null, null, null)
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->SemesterMasuk()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+ERROR - 2025-12-10 17:28:42 --> mysqli_sql_exception: Unknown column 'semester.nomor_semester' in 'field list' in E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pembaya...', 0)
+#1 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembaya...')
+#2 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembaya...')
+#3 E:\laragon\www\Project-e-Keuangan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pembaya...', Array, false)
+#4 E:\laragon\www\Project-e-Keuangan\system\Model.php(928): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\laragon\www\Project-e-Keuangan\app\Models\PembayaranSemesterModel.php(125): CodeIgniter\Model->__call('get', Array)
+#6 E:\laragon\www\Project-e-Keuangan\app\Controllers\SemesterController.php(231): App\Models\PembayaranSemesterModel->getDataSort('semua', NULL, NULL, NULL)
+#7 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(933): App\Controllers\SemesterController->SemesterMasuk()
+#8 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+#9 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\laragon\www\Project-e-Keuangan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 E:\laragon\www\Project-e-Keuangan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 E:\laragon\www\Project-e-Keuangan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 E:\laragon\www\Project-e-Keuangan\system\rewrite.php(44): require_once('E:\\laragon\\www\\...')
+#14 {main}
+CRITICAL - 2025-12-10 17:28:42 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'semester.nomor_semester' in 'field list'
+[Method: GET, Route: kas-masuk/semester]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC', [], false)
+ 2 SYSTEMPATH\Model.php(928): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Models\PembayaranSemesterModel.php(125): CodeIgniter\Model->__call('get', [])
+ 4 APPPATH\Controllers\SemesterController.php(231): App\Models\PembayaranSemesterModel->getDataSort('semua', null, null, null)
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->SemesterMasuk()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-10 17:28:42 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'semester.nomor_semester' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC', [], false)
+ 4 SYSTEMPATH\Model.php(928): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Models\PembayaranSemesterModel.php(125): CodeIgniter\Model->__call('get', [])
+ 6 APPPATH\Controllers\SemesterController.php(231): App\Models\PembayaranSemesterModel->getDataSort('semua', null, null, null)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->SemesterMasuk()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-10 17:28:42 --> [Caused by] mysqli_sql_exception: Unknown column 'semester.nomor_semester' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran_semester`.*, `siswa`.`nama_siswa`, `semester`.`biaya_semester`, `semester`.`tahun_ajaran`, `semester`.`nomor_semester`, `kelas`.`nama_kelas`
+FROM `pembayaran_semester`
+JOIN `siswa` ON `siswa`.`id_siswa` = `pembayaran_semester`.`id_siswa`
+JOIN `semester` ON `semester`.`id_semester` = `pembayaran_semester`.`id_semester`
+JOIN `kelas` ON `kelas`.`id_kelas` = `siswa`.`id_kelas`
+ORDER BY `pembayaran_semester`.`status_pembayaran` DESC, `pembayaran_semester`.`tanggal_bayar` DESC, `pembayaran_semester`.`created_at` DESC, `pembayaran_semester`.`id_pembayaran_semester` DESC', [], false)
+ 5 SYSTEMPATH\Model.php(928): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Models\PembayaranSemesterModel.php(125): CodeIgniter\Model->__call('get', [])
+ 7 APPPATH\Controllers\SemesterController.php(231): App\Models\PembayaranSemesterModel->getDataSort('semua', null, null, null)
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->SemesterMasuk()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+ERROR - 2025-12-10 17:29:16 --> mysqli_sql_exception: Unknown column 'nomor_semester' in 'where clause' in E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\laragon\www\Project-e-Keuangan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\laragon\www\Project-e-Keuangan\app\Commands\SetDefaultNomorSemester.php(23): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\laragon\www\Project-e-Keuangan\system\CLI\Commands.php(74): App\Commands\SetDefaultNomorSemester->run(Array)
+#6 E:\laragon\www\Project-e-Keuangan\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('semester:set-de...', Array)
+#7 E:\laragon\www\Project-e-Keuangan\system\Boot.php(360): CodeIgniter\CLI\Console->run()
+#8 E:\laragon\www\Project-e-Keuangan\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#9 E:\laragon\www\Project-e-Keuangan\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#10 {main}
+CRITICAL - 2025-12-10 17:29:16 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'nomor_semester' in 'where clause'
+[Method: CLI, Route: semester:set-default-nomor]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `semester`
+WHERE nomor_semester IS NULL
+OR `nomor_semester` = :nomor_semester:', [...], false)
+ 2 APPPATH\Commands\SetDefaultNomorSemester.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CLI\Commands.php(74): App\Commands\SetDefaultNomorSemester->run([])
+ 4 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('semester:set-default-nomor', [])
+ 5 SYSTEMPATH\Boot.php(360): CodeIgniter\CLI\Console->run()
+ 6 SYSTEMPATH\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 7 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+CRITICAL - 2025-12-10 17:29:16 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'nomor_semester' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `semester`
+WHERE nomor_semester IS NULL
+OR `nomor_semester` = \'\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `semester`
+WHERE nomor_semester IS NULL
+OR `nomor_semester` = \'\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `semester`
+WHERE nomor_semester IS NULL
+OR `nomor_semester` = :nomor_semester:', [...], false)
+ 4 APPPATH\Commands\SetDefaultNomorSemester.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CLI\Commands.php(74): App\Commands\SetDefaultNomorSemester->run([])
+ 6 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('semester:set-default-nomor', [])
+ 7 SYSTEMPATH\Boot.php(360): CodeIgniter\CLI\Console->run()
+ 8 SYSTEMPATH\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 9 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+CRITICAL - 2025-12-10 17:29:16 --> [Caused by] mysqli_sql_exception: Unknown column 'nomor_semester' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `semester`
+WHERE nomor_semester IS NULL
+OR `nomor_semester` = \'\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `semester`
+WHERE nomor_semester IS NULL
+OR `nomor_semester` = \'\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `semester`
+WHERE nomor_semester IS NULL
+OR `nomor_semester` = \'\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `semester`
+WHERE nomor_semester IS NULL
+OR `nomor_semester` = :nomor_semester:', [...], false)
+ 5 APPPATH\Commands\SetDefaultNomorSemester.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CLI\Commands.php(74): App\Commands\SetDefaultNomorSemester->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('semester:set-default-nomor', [])
+ 8 SYSTEMPATH\Boot.php(360): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2025-12-10 17:29:23 --> mysqli_sql_exception: Unknown column 'nomor_semester' in 'where clause' in E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\laragon\www\Project-e-Keuangan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\laragon\www\Project-e-Keuangan\app\Commands\SetDefaultNomorSemester.php(23): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\laragon\www\Project-e-Keuangan\system\CLI\Commands.php(74): App\Commands\SetDefaultNomorSemester->run(Array)
+#6 E:\laragon\www\Project-e-Keuangan\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('semester:set-de...', Array)
+#7 E:\laragon\www\Project-e-Keuangan\system\Boot.php(360): CodeIgniter\CLI\Console->run()
+#8 E:\laragon\www\Project-e-Keuangan\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#9 E:\laragon\www\Project-e-Keuangan\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#10 {main}
+CRITICAL - 2025-12-10 17:29:23 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'nomor_semester' in 'where clause'
+[Method: CLI, Route: semester:set-default-nomor]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `semester`
+WHERE nomor_semester IS NULL
+OR `nomor_semester` = :nomor_semester:', [...], false)
+ 2 APPPATH\Commands\SetDefaultNomorSemester.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CLI\Commands.php(74): App\Commands\SetDefaultNomorSemester->run([])
+ 4 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('semester:set-default-nomor', [])
+ 5 SYSTEMPATH\Boot.php(360): CodeIgniter\CLI\Console->run()
+ 6 SYSTEMPATH\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 7 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+CRITICAL - 2025-12-10 17:29:23 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'nomor_semester' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `semester`
+WHERE nomor_semester IS NULL
+OR `nomor_semester` = \'\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `semester`
+WHERE nomor_semester IS NULL
+OR `nomor_semester` = \'\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `semester`
+WHERE nomor_semester IS NULL
+OR `nomor_semester` = :nomor_semester:', [...], false)
+ 4 APPPATH\Commands\SetDefaultNomorSemester.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CLI\Commands.php(74): App\Commands\SetDefaultNomorSemester->run([])
+ 6 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('semester:set-default-nomor', [])
+ 7 SYSTEMPATH\Boot.php(360): CodeIgniter\CLI\Console->run()
+ 8 SYSTEMPATH\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 9 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+CRITICAL - 2025-12-10 17:29:23 --> [Caused by] mysqli_sql_exception: Unknown column 'nomor_semester' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `semester`
+WHERE nomor_semester IS NULL
+OR `nomor_semester` = \'\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `semester`
+WHERE nomor_semester IS NULL
+OR `nomor_semester` = \'\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `semester`
+WHERE nomor_semester IS NULL
+OR `nomor_semester` = \'\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `semester`
+WHERE nomor_semester IS NULL
+OR `nomor_semester` = :nomor_semester:', [...], false)
+ 5 APPPATH\Commands\SetDefaultNomorSemester.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CLI\Commands.php(74): App\Commands\SetDefaultNomorSemester->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('semester:set-default-nomor', [])
+ 8 SYSTEMPATH\Boot.php(360): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2025-12-10 17:29:50 --> mysqli_sql_exception: Unknown column 'nomor_semester' in 'where clause' in E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\laragon\www\Project-e-Keuangan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\laragon\www\Project-e-Keuangan\app\Commands\SetDefaultNomorSemester.php(23): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\laragon\www\Project-e-Keuangan\system\CLI\Commands.php(74): App\Commands\SetDefaultNomorSemester->run(Array)
+#6 E:\laragon\www\Project-e-Keuangan\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('semester:set-de...', Array)
+#7 E:\laragon\www\Project-e-Keuangan\system\Boot.php(360): CodeIgniter\CLI\Console->run()
+#8 E:\laragon\www\Project-e-Keuangan\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#9 E:\laragon\www\Project-e-Keuangan\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#10 {main}
+CRITICAL - 2025-12-10 17:29:50 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'nomor_semester' in 'where clause'
+[Method: CLI, Route: semester:set-default-nomor]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `semester`
+WHERE nomor_semester IS NULL
+OR `nomor_semester` = :nomor_semester:', [...], false)
+ 2 APPPATH\Commands\SetDefaultNomorSemester.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CLI\Commands.php(74): App\Commands\SetDefaultNomorSemester->run([])
+ 4 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('semester:set-default-nomor', [])
+ 5 SYSTEMPATH\Boot.php(360): CodeIgniter\CLI\Console->run()
+ 6 SYSTEMPATH\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 7 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+CRITICAL - 2025-12-10 17:29:50 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'nomor_semester' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `semester`
+WHERE nomor_semester IS NULL
+OR `nomor_semester` = \'\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `semester`
+WHERE nomor_semester IS NULL
+OR `nomor_semester` = \'\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `semester`
+WHERE nomor_semester IS NULL
+OR `nomor_semester` = :nomor_semester:', [...], false)
+ 4 APPPATH\Commands\SetDefaultNomorSemester.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CLI\Commands.php(74): App\Commands\SetDefaultNomorSemester->run([])
+ 6 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('semester:set-default-nomor', [])
+ 7 SYSTEMPATH\Boot.php(360): CodeIgniter\CLI\Console->run()
+ 8 SYSTEMPATH\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 9 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+CRITICAL - 2025-12-10 17:29:50 --> [Caused by] mysqli_sql_exception: Unknown column 'nomor_semester' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `semester`
+WHERE nomor_semester IS NULL
+OR `nomor_semester` = \'\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `semester`
+WHERE nomor_semester IS NULL
+OR `nomor_semester` = \'\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `semester`
+WHERE nomor_semester IS NULL
+OR `nomor_semester` = \'\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `semester`
+WHERE nomor_semester IS NULL
+OR `nomor_semester` = :nomor_semester:', [...], false)
+ 5 APPPATH\Commands\SetDefaultNomorSemester.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CLI\Commands.php(74): App\Commands\SetDefaultNomorSemester->run([])
+ 7 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('semester:set-default-nomor', [])
+ 8 SYSTEMPATH\Boot.php(360): CodeIgniter\CLI\Console->run()
+ 9 SYSTEMPATH\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+10 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2025-12-10 17:31:35 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'IF NOT EXISTS `nomor_semester` TINYINT(1) DEFAULT 1 COMMENT '1 untuk Semester 1,' at line 1 in E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php(327): mysqli->query('ALTER TABLE `se...', 0)
+#1 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('ALTER TABLE `se...')
+#2 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('ALTER TABLE `se...')
+#3 E:\laragon\www\Project-e-Keuangan\app\Commands\SetDefaultNomorSemester.php(24): CodeIgniter\Database\BaseConnection->query('ALTER TABLE `se...')
+#4 E:\laragon\www\Project-e-Keuangan\system\CLI\Commands.php(74): App\Commands\SetDefaultNomorSemester->run(Array)
+#5 E:\laragon\www\Project-e-Keuangan\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('semester:set-de...', Array)
+#6 E:\laragon\www\Project-e-Keuangan\system\Boot.php(360): CodeIgniter\CLI\Console->run()
+#7 E:\laragon\www\Project-e-Keuangan\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#8 E:\laragon\www\Project-e-Keuangan\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#9 {main}
+CRITICAL - 2025-12-10 17:37:36 --> ErrorException: Undefined array key "semester"
+[Method: GET, Route: data-kas/semester]
+in APPPATH\Views\admin\data-kas\data-kas-semester.php on line 57.
+ 1 APPPATH\Views\admin\data-kas\data-kas-semester.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "semester"', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-kas\\data-kas-semester.php', 57)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\data-kas\\data-kas-semester.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/data-kas/data-kas-semester', [], true)
+ 5 APPPATH\Controllers\SemesterController.php(31): view('admin/data-kas/data-kas-semester', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SemesterController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SemesterController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')

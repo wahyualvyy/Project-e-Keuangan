@@ -11,7 +11,8 @@
                     <div>
                         <label for="tahun-ajaran1" class="form-label">Tahun Ajaran</label>
                         <select class="form-select" id="tahun-ajaran1" name="tahun-ajaran1" required>
-                            <option value="" disabled <?= old('tahun-ajaran1') ? '' : 'selected' ?>>---Pilih Tahun Ajaran---</option>
+                            <option value="" disabled <?= old('tahun-ajaran1') ? '' : 'selected' ?>>---Pilih Tahun
+                                Ajaran---</option>
                             <?php
                             $tahunSekarang = date('Y');
                             $tahunDepan = $tahunSekarang + 5;
@@ -37,7 +38,8 @@
                     <div>
                         <label for="tahun-ajaran2" class="form-label">Sampai Tahun Ajaran</label>
                         <select class="form-select" id="tahun-ajaran2" name="tahun-ajaran2" required>
-                            <option value="" disabled <?= old('tahun-ajaran2') ? '' : 'selected' ?>>---Pilih Tahun Ajaran---</option>
+                            <option value="" disabled <?= old('tahun-ajaran2') ? '' : 'selected' ?>>---Pilih Tahun
+                                Ajaran---</option>
                             <?php
                             $tahunSekarang = date('Y');
                             $tahunDepan = $tahunSekarang + 5;
@@ -49,12 +51,22 @@
                         </select>
                     </div>
                     <div class="mt-3">
-                        <label for="biaya_semester" class="form-label">Uang SPP Pendaftaran</label>
-                        <input type="number" class="form-control" id="biaya_semester" name="biaya_semester"
-                            placeholder="Rp.200.000" value="<?= old('biaya_semester') ?>" aria-describedby="defaultFormControlHelp" />
+                        <label for="nomor_semester" class="form-label">Nomor Semester</label>
+                        <select class="form-select" id="nomor_semester" name="nomor_semester" required>
+                            <option value="" disabled <?= old('nomor_semester') ? '' : 'selected' ?>>---Pilih Semester---
+                            </option>
+                            <option value="1" <?= old('nomor_semester') == '1' ? 'selected' : '' ?>>Semester 1</option>
+                            <option value="2" <?= old('nomor_semester') == '2' ? 'selected' : '' ?>>Semester 2</option>
+                        </select>
                     </div>
                 </div>
                 <div class="col-lg-12">
+                    <div class="mt-3">
+                        <label for="biaya_semester" class="form-label">Biaya Semester</label>
+                        <input type="number" class="form-control" id="biaya_semester" name="biaya_semester"
+                            placeholder="Rp.200.000" value="<?= old('biaya_semester') ?>"
+                            aria-describedby="defaultFormControlHelp" />
+                    </div>
                     <div class="mt-3">
                         <label for="status" class="form-label">Status</label>
                         <select class="form-select" name="status" id="status" aria-label="Default select example">

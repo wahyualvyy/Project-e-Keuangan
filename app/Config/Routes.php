@@ -112,16 +112,25 @@ $routes->group('', ['filter' => 'login'], function ($routes) {
         $routes->get('delete-gaji/(:num)', 'GajiController::deleteGaji/$1');
     });
 
+    // Generate payment endpoints (admin-triggered)
+    $routes->get('generate-payment/spp', 'GeneratePaymentController::spp');
+    $routes->get('generate-payment/semester/(:num)', 'GeneratePaymentController::semester/$1');
+    $routes->get('generate-payment/semester', 'GeneratePaymentController::semester');
+    $routes->get('generate-payment/gaji', 'GeneratePaymentController::gaji');
+
     $routes->group('kas-masuk', function ($routes) {
         $routes->get('spp', 'SppController::SppMasuk');
         $routes->get('spp/detail/(:num)', 'SppController::SppDetail/$1');
         $routes->get('spp-delete/(:num)', 'SppController::deleteSPPMasuk/$1');
         $routes->get('spp/bayar/(:num)', 'SppController::bayarSPP/$1');
 
-        $routes->get('semester', 'AdminController::kasSemester');
-        $routes->get('semester/detail', 'AdminController::kasSemesterDetail');
-        $routes->get('pemasukan', 'AdminController::kasPemasukan');
-        $routes->get('input-pemasukan', 'AdminController::inputKasPemasukan');
+        $routes->get('semester', 'SemesterController::SemesterMasuk');
+        $routes->get('semester/detail/(:num)', 'SemesterController::kasSemesterDetail/$1');
+        $routes->get('semester-delete/(:num)', 'SemesterController::deleteSemesterMasuk/$1');
+        $routes->get('semester/bayar/(:num)', 'SemesterController::bayarSemester/$1');
+
+        $routes->get('pemasukan', 'SemesterController::kasPemasukan');
+        $routes->get('input-pemasukan', 'SemesterController::inputKasPemasukan');
     });
 
     $routes->group('kas-keluar', function ($routes) {
