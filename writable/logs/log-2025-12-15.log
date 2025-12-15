@@ -1,0 +1,371 @@
+ERROR - 2025-12-15 12:41:43 --> mysqli_sql_exception: Unknown column 'pembayaran_gaji' in 'field list' in E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pembaya...', 0)
+#1 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembaya...')
+#2 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembaya...')
+#3 E:\laragon\www\Project-e-Keuangan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pembaya...', Array, false)
+#4 E:\laragon\www\Project-e-Keuangan\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\laragon\www\Project-e-Keuangan\system\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\laragon\www\Project-e-Keuangan\app\Models\PembayaranGajiModel.php(52): CodeIgniter\BaseModel->findAll()
+#7 E:\laragon\www\Project-e-Keuangan\app\Controllers\GajiController.php(168): App\Models\PembayaranGajiModel->getRelationshipData()
+#8 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(933): App\Controllers\GajiController->kasGaji()
+#9 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GajiController))
+#10 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\laragon\www\Project-e-Keuangan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 E:\laragon\www\Project-e-Keuangan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 E:\laragon\www\Project-e-Keuangan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 E:\laragon\www\Project-e-Keuangan\system\rewrite.php(44): require_once('E:\\laragon\\www\\...')
+#15 {main}
+CRITICAL - 2025-12-15 12:41:43 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pembayaran_gaji' in 'field list'
+[Method: GET, Route: kas-keluar/gaji]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran_gaji`, `gaji`.`id_gaji`, `gaji`.`biaya_gaji`, `guru`.`nama_guru`, `guru`.`id_guru`, `guru`.`bidang_studi`
+FROM `pembayaran_gaji`
+JOIN `gaji` ON `pembayaran_gaji`.`id_gaji` = `gaji`.`id_gaji`
+JOIN `guru` ON `gaji`.`id_guru` = `guru`.`id_guru`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\PembayaranGajiModel.php(52): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\GajiController.php(168): App\Models\PembayaranGajiModel->getRelationshipData()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GajiController->kasGaji()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GajiController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-15 12:41:43 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pembayaran_gaji' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembayaran_gaji`, `gaji`.`id_gaji`, `gaji`.`biaya_gaji`, `guru`.`nama_guru`, `guru`.`id_guru`, `guru`.`bidang_studi`
+FROM `pembayaran_gaji`
+JOIN `gaji` ON `pembayaran_gaji`.`id_gaji` = `gaji`.`id_gaji`
+JOIN `guru` ON `gaji`.`id_guru` = `guru`.`id_guru`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembayaran_gaji`, `gaji`.`id_gaji`, `gaji`.`biaya_gaji`, `guru`.`nama_guru`, `guru`.`id_guru`, `guru`.`bidang_studi`
+FROM `pembayaran_gaji`
+JOIN `gaji` ON `pembayaran_gaji`.`id_gaji` = `gaji`.`id_gaji`
+JOIN `guru` ON `gaji`.`id_guru` = `guru`.`id_guru`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran_gaji`, `gaji`.`id_gaji`, `gaji`.`biaya_gaji`, `guru`.`nama_guru`, `guru`.`id_guru`, `guru`.`bidang_studi`
+FROM `pembayaran_gaji`
+JOIN `gaji` ON `pembayaran_gaji`.`id_gaji` = `gaji`.`id_gaji`
+JOIN `guru` ON `gaji`.`id_guru` = `guru`.`id_guru`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\PembayaranGajiModel.php(52): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\GajiController.php(168): App\Models\PembayaranGajiModel->getRelationshipData()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GajiController->kasGaji()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GajiController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-15 12:41:43 --> [Caused by] mysqli_sql_exception: Unknown column 'pembayaran_gaji' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pembayaran_gaji`, `gaji`.`id_gaji`, `gaji`.`biaya_gaji`, `guru`.`nama_guru`, `guru`.`id_guru`, `guru`.`bidang_studi`
+FROM `pembayaran_gaji`
+JOIN `gaji` ON `pembayaran_gaji`.`id_gaji` = `gaji`.`id_gaji`
+JOIN `guru` ON `gaji`.`id_guru` = `guru`.`id_guru`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pembayaran_gaji`, `gaji`.`id_gaji`, `gaji`.`biaya_gaji`, `guru`.`nama_guru`, `guru`.`id_guru`, `guru`.`bidang_studi`
+FROM `pembayaran_gaji`
+JOIN `gaji` ON `pembayaran_gaji`.`id_gaji` = `gaji`.`id_gaji`
+JOIN `guru` ON `gaji`.`id_guru` = `guru`.`id_guru`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pembayaran_gaji`, `gaji`.`id_gaji`, `gaji`.`biaya_gaji`, `guru`.`nama_guru`, `guru`.`id_guru`, `guru`.`bidang_studi`
+FROM `pembayaran_gaji`
+JOIN `gaji` ON `pembayaran_gaji`.`id_gaji` = `gaji`.`id_gaji`
+JOIN `guru` ON `gaji`.`id_guru` = `guru`.`id_guru`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pembayaran_gaji`, `gaji`.`id_gaji`, `gaji`.`biaya_gaji`, `guru`.`nama_guru`, `guru`.`id_guru`, `guru`.`bidang_studi`
+FROM `pembayaran_gaji`
+JOIN `gaji` ON `pembayaran_gaji`.`id_gaji` = `gaji`.`id_gaji`
+JOIN `guru` ON `gaji`.`id_guru` = `guru`.`id_guru`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\PembayaranGajiModel.php(52): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\GajiController.php(168): App\Models\PembayaranGajiModel->getRelationshipData()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GajiController->kasGaji()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GajiController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-15 12:44:35 --> ErrorException: Undefined array key "status_pembayaran"
+[Method: GET, Route: kas-keluar/gaji]
+in APPPATH\Views\admin\kas-keluar\kas-gaji.php on line 60.
+ 1 APPPATH\Views\admin\kas-keluar\kas-gaji.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "status_pembayaran"', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\kas-keluar\\kas-gaji.php', 60)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\kas-keluar\\kas-gaji.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/kas-keluar/kas-gaji', [], true)
+ 5 APPPATH\Controllers\GajiController.php(171): view('admin/kas-keluar/kas-gaji', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GajiController->kasGaji()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GajiController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+ERROR - 2025-12-15 12:45:17 --> mysqli_sql_exception: Unknown column 'gaji.status_pembayaran' in 'field list' in E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `id_pemb...', 0)
+#1 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id_pemb...')
+#2 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id_pemb...')
+#3 E:\laragon\www\Project-e-Keuangan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id_pemb...', Array, false)
+#4 E:\laragon\www\Project-e-Keuangan\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\laragon\www\Project-e-Keuangan\system\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\laragon\www\Project-e-Keuangan\app\Models\PembayaranGajiModel.php(52): CodeIgniter\BaseModel->findAll()
+#7 E:\laragon\www\Project-e-Keuangan\app\Controllers\GajiController.php(168): App\Models\PembayaranGajiModel->getRelationshipData()
+#8 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(933): App\Controllers\GajiController->kasGaji()
+#9 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GajiController))
+#10 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\laragon\www\Project-e-Keuangan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 E:\laragon\www\Project-e-Keuangan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 E:\laragon\www\Project-e-Keuangan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 E:\laragon\www\Project-e-Keuangan\system\rewrite.php(44): require_once('E:\\laragon\\www\\...')
+#15 {main}
+CRITICAL - 2025-12-15 12:45:17 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'gaji.status_pembayaran' in 'field list'
+[Method: GET, Route: kas-keluar/gaji]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id_pembayaran_gaji`, `gaji`.`id_gaji`, `gaji`.`biaya_gaji`, `guru`.`nama_guru`, `guru`.`id_guru`, `guru`.`bidang_studi`, `gaji`.`status_pembayaran`
+FROM `pembayaran_gaji`
+JOIN `gaji` ON `pembayaran_gaji`.`id_gaji` = `gaji`.`id_gaji`
+JOIN `guru` ON `gaji`.`id_guru` = `guru`.`id_guru`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\PembayaranGajiModel.php(52): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\GajiController.php(168): App\Models\PembayaranGajiModel->getRelationshipData()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GajiController->kasGaji()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GajiController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-15 12:45:17 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'gaji.status_pembayaran' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id_pembayaran_gaji`, `gaji`.`id_gaji`, `gaji`.`biaya_gaji`, `guru`.`nama_guru`, `guru`.`id_guru`, `guru`.`bidang_studi`, `gaji`.`status_pembayaran`
+FROM `pembayaran_gaji`
+JOIN `gaji` ON `pembayaran_gaji`.`id_gaji` = `gaji`.`id_gaji`
+JOIN `guru` ON `gaji`.`id_guru` = `guru`.`id_guru`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id_pembayaran_gaji`, `gaji`.`id_gaji`, `gaji`.`biaya_gaji`, `guru`.`nama_guru`, `guru`.`id_guru`, `guru`.`bidang_studi`, `gaji`.`status_pembayaran`
+FROM `pembayaran_gaji`
+JOIN `gaji` ON `pembayaran_gaji`.`id_gaji` = `gaji`.`id_gaji`
+JOIN `guru` ON `gaji`.`id_guru` = `guru`.`id_guru`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id_pembayaran_gaji`, `gaji`.`id_gaji`, `gaji`.`biaya_gaji`, `guru`.`nama_guru`, `guru`.`id_guru`, `guru`.`bidang_studi`, `gaji`.`status_pembayaran`
+FROM `pembayaran_gaji`
+JOIN `gaji` ON `pembayaran_gaji`.`id_gaji` = `gaji`.`id_gaji`
+JOIN `guru` ON `gaji`.`id_guru` = `guru`.`id_guru`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\PembayaranGajiModel.php(52): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\GajiController.php(168): App\Models\PembayaranGajiModel->getRelationshipData()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GajiController->kasGaji()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GajiController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-15 12:45:17 --> [Caused by] mysqli_sql_exception: Unknown column 'gaji.status_pembayaran' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `id_pembayaran_gaji`, `gaji`.`id_gaji`, `gaji`.`biaya_gaji`, `guru`.`nama_guru`, `guru`.`id_guru`, `guru`.`bidang_studi`, `gaji`.`status_pembayaran`
+FROM `pembayaran_gaji`
+JOIN `gaji` ON `pembayaran_gaji`.`id_gaji` = `gaji`.`id_gaji`
+JOIN `guru` ON `gaji`.`id_guru` = `guru`.`id_guru`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id_pembayaran_gaji`, `gaji`.`id_gaji`, `gaji`.`biaya_gaji`, `guru`.`nama_guru`, `guru`.`id_guru`, `guru`.`bidang_studi`, `gaji`.`status_pembayaran`
+FROM `pembayaran_gaji`
+JOIN `gaji` ON `pembayaran_gaji`.`id_gaji` = `gaji`.`id_gaji`
+JOIN `guru` ON `gaji`.`id_guru` = `guru`.`id_guru`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id_pembayaran_gaji`, `gaji`.`id_gaji`, `gaji`.`biaya_gaji`, `guru`.`nama_guru`, `guru`.`id_guru`, `guru`.`bidang_studi`, `gaji`.`status_pembayaran`
+FROM `pembayaran_gaji`
+JOIN `gaji` ON `pembayaran_gaji`.`id_gaji` = `gaji`.`id_gaji`
+JOIN `guru` ON `gaji`.`id_guru` = `guru`.`id_guru`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id_pembayaran_gaji`, `gaji`.`id_gaji`, `gaji`.`biaya_gaji`, `guru`.`nama_guru`, `guru`.`id_guru`, `guru`.`bidang_studi`, `gaji`.`status_pembayaran`
+FROM `pembayaran_gaji`
+JOIN `gaji` ON `pembayaran_gaji`.`id_gaji` = `gaji`.`id_gaji`
+JOIN `guru` ON `gaji`.`id_guru` = `guru`.`id_guru`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\PembayaranGajiModel.php(52): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\GajiController.php(168): App\Models\PembayaranGajiModel->getRelationshipData()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GajiController->kasGaji()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GajiController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-15 12:45:35 --> ErrorException: Undefined array key "status_pembayaran"
+[Method: GET, Route: kas-keluar/gaji]
+in APPPATH\Views\admin\kas-keluar\kas-gaji.php on line 60.
+ 1 APPPATH\Views\admin\kas-keluar\kas-gaji.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "status_pembayaran"', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\kas-keluar\\kas-gaji.php', 60)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\kas-keluar\\kas-gaji.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/kas-keluar/kas-gaji', [], true)
+ 5 APPPATH\Controllers\GajiController.php(171): view('admin/kas-keluar/kas-gaji', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GajiController->kasGaji()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GajiController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-15 12:46:50 --> ErrorException: Undefined array key "status_pembayaran"
+[Method: GET, Route: kas-keluar/gaji]
+in APPPATH\Views\admin\kas-keluar\kas-gaji.php on line 60.
+ 1 APPPATH\Views\admin\kas-keluar\kas-gaji.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "status_pembayaran"', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\kas-keluar\\kas-gaji.php', 60)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\kas-keluar\\kas-gaji.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/kas-keluar/kas-gaji', [], true)
+ 5 APPPATH\Controllers\GajiController.php(171): view('admin/kas-keluar/kas-gaji', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GajiController->kasGaji()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GajiController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-15 12:47:03 --> ErrorException: Undefined array key "status_pembayaran"
+[Method: GET, Route: kas-keluar/gaji]
+in APPPATH\Views\admin\kas-keluar\kas-gaji.php on line 60.
+ 1 APPPATH\Views\admin\kas-keluar\kas-gaji.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "status_pembayaran"', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\kas-keluar\\kas-gaji.php', 60)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\kas-keluar\\kas-gaji.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/kas-keluar/kas-gaji', [], true)
+ 5 APPPATH\Controllers\GajiController.php(171): view('admin/kas-keluar/kas-gaji', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GajiController->kasGaji()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GajiController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-15 12:47:28 --> ErrorException: Undefined array key "status_pembayaran"
+[Method: GET, Route: kas-keluar/gaji]
+in APPPATH\Views\admin\kas-keluar\kas-gaji.php on line 60.
+ 1 APPPATH\Views\admin\kas-keluar\kas-gaji.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "status_pembayaran"', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\kas-keluar\\kas-gaji.php', 60)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\kas-keluar\\kas-gaji.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/kas-keluar/kas-gaji', [], true)
+ 5 APPPATH\Controllers\GajiController.php(171): view('admin/kas-keluar/kas-gaji', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GajiController->kasGaji()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GajiController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-15 12:49:04 --> ErrorException: Undefined array key "status_pembayaran"
+[Method: GET, Route: kas-keluar/gaji]
+in APPPATH\Views\admin\kas-keluar\kas-gaji.php on line 60.
+ 1 APPPATH\Views\admin\kas-keluar\kas-gaji.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "status_pembayaran"', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\kas-keluar\\kas-gaji.php', 60)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\kas-keluar\\kas-gaji.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/kas-keluar/kas-gaji', [], true)
+ 5 APPPATH\Controllers\GajiController.php(171): view('admin/kas-keluar/kas-gaji', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GajiController->kasGaji()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GajiController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-15 12:49:06 --> ErrorException: Undefined array key "status_pembayaran"
+[Method: GET, Route: kas-keluar/gaji]
+in APPPATH\Views\admin\kas-keluar\kas-gaji.php on line 60.
+ 1 APPPATH\Views\admin\kas-keluar\kas-gaji.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "status_pembayaran"', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\kas-keluar\\kas-gaji.php', 60)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\kas-keluar\\kas-gaji.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/kas-keluar/kas-gaji', [], true)
+ 5 APPPATH\Controllers\GajiController.php(171): view('admin/kas-keluar/kas-gaji', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GajiController->kasGaji()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GajiController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-15 12:49:06 --> ErrorException: Undefined array key "status_pembayaran"
+[Method: GET, Route: kas-keluar/gaji]
+in APPPATH\Views\admin\kas-keluar\kas-gaji.php on line 60.
+ 1 APPPATH\Views\admin\kas-keluar\kas-gaji.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "status_pembayaran"', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\kas-keluar\\kas-gaji.php', 60)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\kas-keluar\\kas-gaji.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/kas-keluar/kas-gaji', [], true)
+ 5 APPPATH\Controllers\GajiController.php(171): view('admin/kas-keluar/kas-gaji', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GajiController->kasGaji()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GajiController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-15 12:56:36 --> ErrorException: Undefined array key "nama_guru"
+[Method: GET, Route: kas-keluar/gaji/detail/1]
+in APPPATH\Views\admin\Details\kas-gaji-detail.php on line 46.
+ 1 APPPATH\Views\admin\Details\kas-gaji-detail.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_guru"', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\Details\\kas-gaji-detail.php', 46)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\Details\\kas-gaji-detail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/Details/kas-gaji-detail', [], true)
+ 5 APPPATH\Controllers\GajiController.php(184): view('admin/Details/kas-gaji-detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GajiController->kasGajiDetail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GajiController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-15 12:56:56 --> ErrorException: Undefined array key "nama_guru"
+[Method: GET, Route: kas-keluar/gaji/detail/1]
+in APPPATH\Views\admin\Details\kas-gaji-detail.php on line 46.
+ 1 APPPATH\Views\admin\Details\kas-gaji-detail.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_guru"', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\Details\\kas-gaji-detail.php', 46)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\Details\\kas-gaji-detail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/Details/kas-gaji-detail', [], true)
+ 5 APPPATH\Controllers\GajiController.php(184): view('admin/Details/kas-gaji-detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GajiController->kasGajiDetail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GajiController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-15 12:58:26 --> ErrorException: Undefined array key "nama_guru"
+[Method: GET, Route: kas-keluar/gaji/detail/1]
+in APPPATH\Views\admin\Details\kas-gaji-detail.php on line 46.
+ 1 APPPATH\Views\admin\Details\kas-gaji-detail.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_guru"', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\Details\\kas-gaji-detail.php', 46)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\Details\\kas-gaji-detail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/Details/kas-gaji-detail', [], true)
+ 5 APPPATH\Controllers\GajiController.php(184): view('admin/Details/kas-gaji-detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GajiController->kasGajiDetail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GajiController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-15 13:00:16 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\PembayaranGajiModel::getRelationshipDataId
+[Method: GET, Route: kas-keluar/gaji/detail/1]
+in SYSTEMPATH\Model.php on line 930.
+ 1 APPPATH\Controllers\GajiController.php(181): CodeIgniter\Model->__call('getRelationshipDataId', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GajiController->kasGajiDetail('1')
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GajiController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-15 13:01:04 --> ErrorException: Undefined array key "nama_guru"
+[Method: GET, Route: kas-keluar/gaji/detail/1]
+in APPPATH\Views\admin\Details\kas-gaji-detail.php on line 46.
+ 1 APPPATH\Views\admin\Details\kas-gaji-detail.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama_guru"', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\Details\\kas-gaji-detail.php', 46)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\Details\\kas-gaji-detail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/Details/kas-gaji-detail', [], true)
+ 5 APPPATH\Controllers\GajiController.php(184): view('admin/Details/kas-gaji-detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GajiController->kasGajiDetail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GajiController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')

@@ -16,9 +16,6 @@
                     <thead>
                         <tr>
                             <th scope="col" class="px-0 text-muted">
-                                No
-                            </th>
-                            <th scope="col" class="px-0 text-muted">
                                 Nama Guru
                             </th>
                             <th scope="col" class="px-0 text-muted">
@@ -37,18 +34,17 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="px-0 align-middle" style="padding: 0 0 120px 0;"></td>
                             <td class="px-0">
                                 <div class="d-flex align-items-center">
                                     <img src="<?= base_url('assets/img/photo-profile.jpg'); ?>" class="rounded-circle"
                                         width="40" alt="flexy" />
                                     <div class="ms-3">
-                                        <h6 class="mb-0 fw-bolder">Sunil Joshi</h6>
-                                        <span class="text-muted">Web Designer</span>
+                                        <h6 class="mb-0 fw-bolder"><?= $gaji['nama_guru'];?></h6>
+                                        <span class="text-muted"><?= $gaji['bidang_studi'];?></span>
                                     </div>
                                 </div>
                             </td>
-                            <td class="px-0">Elite Admin</td>
+                            <td class="px-0">Rp. <?= number_format($gaji['biaya_gaji'],'0',',','.');?></td>
                             </td>
                             <td class="px-0">Elite Admin</td>
                             </td>
@@ -63,12 +59,12 @@
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="year1-dropdown">
                                         <li>
-                                            <a class="dropdown-item" href="<?= base_url('admin/kas-gaji');?>">
+                                            <a class="dropdown-item" href="<?= base_url('/kas-keluar/gaji');?>">
                                                 <i class="ti ti-arrow-back-up fs-6 mb-0"></i>
                                                 <span class="mb-0 fs-3">Kembali</span></a>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item" href="javascript:void(0)">
+                                            <a class="dropdown-item" href="<?= base_url('/kas-keluar/delete/' . $gaji['id_pembayaran_gaji']); ?>">
                                                 <i class="ti ti-trash fs-6 mb-0"></i>
                                                 <span class="mb-0 fs-3">Hapus</span></a></a>
                                         </li>

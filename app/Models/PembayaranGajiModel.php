@@ -43,4 +43,20 @@ class PembayaranGajiModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function getRelationshipData()
+    {
+        return $this->select('id_pembayaran_gaji, gaji.id_gaji, gaji.biaya_gaji, guru.nama_guru, guru.id_guru, guru.bidang_studi, pembayaran_gaji.status_pembayaran, pembayaran_gaji.tanggal_bayar')
+                    ->join('gaji', 'pembayaran_gaji.id_gaji = gaji.id_gaji')
+                    ->join('guru', 'gaji.id_guru = guru.id_guru')
+                    ->findAll();
+    }
+    public function getRelationshipDataId($id)
+    {
+        return $this->select('id_pembayaran_gaji, gaji.id_gaji, gaji.biaya_gaji, guru.nama_guru, guru.id_guru, guru.bidang_studi, pembayaran_gaji.status_pembayaran, pembayaran_gaji.tanggal_bayar')
+                    ->join('gaji', 'pembayaran_gaji.id_gaji = gaji.id_gaji')
+                    ->join('guru', 'gaji.id_guru = guru.id_guru')
+                    ->where('pembayaran_gaji.id_pembayaran_gaji', $id)
+                    ->first();
+    }
 }

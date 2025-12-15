@@ -5,16 +5,19 @@ namespace App\Controllers;
 use App\Models\GajiModel;
 use App\Models\GuruModel;
 use App\Controllers\BaseController;
+use App\Models\PembayaranGajiModel;
 use CodeIgniter\HTTP\ResponseInterface;
 
 class GajiController extends BaseController
 {
     protected $guruModel;
     protected $gajiModel;
+    protected $pembayaranGajiModel;
     public function __construct()
     {
         $this->guruModel = new GuruModel();
         $this->gajiModel = new GajiModel();
+        $this->pembayaranGajiModel = new PembayaranGajiModel();
     }
     public function index()
     {
@@ -156,5 +159,42 @@ class GajiController extends BaseController
 
         $this->gajiModel->delete($id);
         return redirect()->to(base_url('data-kas/gaji'))->with('success', 'Data gaji guru berhasil dihapus.');
+    }
+
+    public function kasGaji()
+    {
+        $data = [
+            "title" => "Kas Keluar Gaji Guru",
+            "gaji" => $this->pembayaranGajiModel->getRelationshipData()
+        ];
+
+        return view("admin/kas-keluar/kas-gaji", $data);
+    }
+
+    public function kasGajiDetail($id)
+    {
+        if (!$id) {
+            return redirect()->to(base_url('kas-keluar/gaji'))->with('error', 'ID pembayaran gaji tidak ditemukan.');
+        }
+        $data = [
+            "title" => "Detail Kas Keluar Gaji Guru",
+            "gaji" => $this->pembayaranGajiModel->getRelationshipDataId($id)
+        ];
+
+        return view("admin/Details/kas-gaji-detail", $data);
+    }
+
+    public function deleteKasGaji($id)
+    {
+        if(!$id){
+            return redirect()->to(base_url('kas-keluar/gaji'))->with('error','ID pembayaran gaji tidak ditemukan.');
+        }
+
+        $pembayaranGaji = $this->pembayaranGajiModel->find($id);
+        if(!$pembayaranGaji){
+            return redirect()->to(base_url('kas-keluar/gaji'))->with('error','Data pembayaran gaji tidak ditemukan.');
+        }
+        $this->pembayaranGajiModel->delete($id);
+        return redirect()->to(base_url('kas-keluar/gaji'))->with('success','Data pembayaran gaji berhasil dihapus.');
     }
 }
