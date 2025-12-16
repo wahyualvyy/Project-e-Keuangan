@@ -50,4 +50,5 @@ class GajiModel extends Model
                     ->join('guru', 'gaji.id_guru = guru.id_guru')
                     ->findAll();
     }
+    
 }

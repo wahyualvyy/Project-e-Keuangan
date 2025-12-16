@@ -7,12 +7,40 @@
                 <div>
                     <h4 class="card-title">Data Pembayaran Uang Gaji</h4>
                 </div>
-                <div class="ms-auto mt-3 mt-md-0">
-                    <select class="form-select theme-select border-0" aria-label="Default select example">
-                        <option selected>Pilih Kelas</option>
-                        <option value="1">Kelas 7</option>
-                        <option value="2">Kelas 8</option>
-                        <option value="3">Kelas 9</option>
+                <div class="ms-auto mt-3 mt-md-0 d-flex gap-2">
+                    <select class="form-select" name="bulan" id="filterBulan" style="width: auto;">
+                        <option value="">Semua Bulan</option>
+                        <option value="1" <?= (isset($bulan) && $bulan == 1) ? 'selected' : ''; ?>>Januari</option>
+                        <option value="2" <?= (isset($bulan) && $bulan == 2) ? 'selected' : ''; ?>>Februari</option>
+                        <option value="3" <?= (isset($bulan) && $bulan == 3) ? 'selected' : ''; ?>>Maret</option>
+                        <option value="4" <?= (isset($bulan) && $bulan == 4) ? 'selected' : ''; ?>>April</option>
+                        <option value="5" <?= (isset($bulan) && $bulan == 5) ? 'selected' : ''; ?>>Mei</option>
+                        <option value="6" <?= (isset($bulan) && $bulan == 6) ? 'selected' : ''; ?>>Juni</option>
+                        <option value="7" <?= (isset($bulan) && $bulan == 7) ? 'selected' : ''; ?>>Juli</option>
+                        <option value="8" <?= (isset($bulan) && $bulan == 8) ? 'selected' : ''; ?>>Agustus</option>
+                        <option value="9" <?= (isset($bulan) && $bulan == 9) ? 'selected' : ''; ?>>September</option>
+                        <option value="10" <?= (isset($bulan) && $bulan == 10) ? 'selected' : ''; ?>>Oktober</option>
+                        <option value="11" <?= (isset($bulan) && $bulan == 11) ? 'selected' : ''; ?>>November</option>
+                        <option value="12" <?= (isset($bulan) && $bulan == 12) ? 'selected' : ''; ?>>Desember</option>
+                    </select>
+
+                    <select class="form-select" name="tahun" id="filterTahun" style="width: auto;">
+                        <option value="">Semua Tahun</option>
+                        <?php
+                        $currentYear = date('Y');
+                        for ($y = $currentYear; $y >= ($currentYear - 5); $y--):
+                            ?>
+                            <option value="<?= $y; ?>" <?= (isset($tahun) && $tahun == $y) ? 'selected' : ''; ?>>
+                                <?= $y; ?>
+                            </option>
+                        <?php endfor; ?>
+                    </select>
+
+                    <select class="form-select theme-select border-0" name="sort" id="filterSort" style="width: auto;">
+                        <option value="semua" <?= ($sort === 'semua') ? 'selected' : ''; ?>>Semua</option>
+                        <option value="lunas" <?= ($sort === 'lunas') ? 'selected' : ''; ?>>Lunas</option>
+                        <option value="belum_lunas" <?= ($sort === 'belum_lunas') ? 'selected' : ''; ?>>Belum Lunas
+                        </option>
                     </select>
                 </div>
             </div>
@@ -77,7 +105,8 @@
                                                     <span class="mb-0 fs-3">Detail</span></a>
                                             </li>
                                             <li>
-                                                <a class="dropdown-item" href="javascript:void(0)">
+                                                <a class="dropdown-item"
+                                                    href="<?= base_url('/kas-keluar/gaji/bayar/' . $data['id_pembayaran_gaji']); ?>">
                                                     <i class="ti ti-cash-banknote fs-6 mb-0"></i>
                                                     <span class="mb-0 fs-3">Bayar</span></a></a>
                                             </li>
@@ -92,4 +121,29 @@
         </div>
     </div>
 </div>
+
+<script>
+    function filterData() {
+        const bulan = document.getElementById('filterBulan').value;
+        const tahun = document.getElementById('filterTahun').value;
+        const sort = document.getElementById('filterSort').value;
+
+        let url = '<?= base_url('kas-keluar/gaji/') ?>?';
+        let params = [];
+
+        if (sort) params.push('sort=' + sort);
+        if (bulan) params.push('bulan=' + bulan);
+        if (tahun) params.push('tahun=' + tahun);
+
+        window.location.href = url + params.join('&');
+    }
+
+    // Attach event listeners
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('filterBulan').addEventListener('change', filterData);
+        document.getElementById('filterTahun').addEventListener('change', filterData);
+        document.getElementById('filterSort').addEventListener('change', filterData);
+    });
+</script>
+
 <?= $this->endSection(); ?>

@@ -49,6 +49,11 @@ class GuruModel extends Model
         return $this->findAll();
     }
 
+    public function findAktif()
+    {
+        return $this->where('status', 'Aktif')->findAll();
+    }
+
     public function getAllGuruById($id)
     {
         return $this->where('id_guru', $id)->first();

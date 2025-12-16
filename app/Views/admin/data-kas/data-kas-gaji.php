@@ -29,7 +29,7 @@
                                 Jumlah Jam Mengajar
                             </th>
                             <th scope="col" class="px-0 text-muted">
-                                Jumlah Gaji 1 Bulan
+                                Jumlah Gaji
                             </th>
                             <th scope="col" class="px-0 text-muted text-center">
                                 Aksi
@@ -53,7 +53,7 @@
                                     </div>
                                 </td>
                                 <td class="px-0"><?= $data['jumlah_jam']; ?> Jam</td>
-                                <td class="px-0">Rp. <?= number_format($data['biaya_gaji'], 0, ',', '.'); ?></td>
+                                <td class="px-0">Rp. <?= number_format($data['biaya_gaji'], 0, ',', '.'); ?> / 1 Bulan</td>
                                 </td>
                                 <td class="px-0 text-dark fw-medium text-center">
                                     <div class="dropdown">

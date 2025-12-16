@@ -137,6 +137,8 @@ $routes->group('', ['filter' => 'login'], function ($routes) {
         $routes->get('gaji', 'GajiController::kasGaji');
         $routes->get('gaji/detail/(:num)', 'GajiController::kasGajiDetail/$1');
         $routes->get('delete/(:num)', 'GajiController::deleteKasGaji/$1');
+        $routes->get('gaji/bayar/(:num)', 'GajiController::bayarKasGaji/$1');
+        
         $routes->get('pengeluaran', 'AdminController::kasPengeluaran');
         $routes->get('input-pengeluaran', 'AdminController::inputKasPengeluaran');
     });

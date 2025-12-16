@@ -33,7 +33,7 @@ class GajiController extends BaseController
     {
         $data = [
             'title' => 'Input Data Gaji Guru',
-            'guru' => $this->guruModel->findAll()
+            'guru' => $this->guruModel->findAktif()
 
         ];
         return view('admin/Inputs/input-data-kas-gaji', $data);
@@ -42,14 +42,6 @@ class GajiController extends BaseController
     public function createGaji()
     {
         $rules = [
-            'id_guru' => [
-                'label' => 'Guru',
-                'rules' => 'required|numeric',
-                'errors' => [
-                    'required' => '{field} wajib diisi.',
-                    'numeric' => '{field} harus berupa angka.',
-                ],
-            ],
             'biaya_gaji' => [
                 'label' => 'Biaya Gaji',
                 'rules' => 'required|numeric',
@@ -77,7 +69,6 @@ class GajiController extends BaseController
 
         $data =
             [
-                "id_guru" => $this->request->getPost('id_guru'),
                 "biaya_gaji" => $gajiFinal,
                 "jumlah_jam" => $jamFinal,
             ];
@@ -163,9 +154,16 @@ class GajiController extends BaseController
 
     public function kasGaji()
     {
+        $sort = $this->request->getGet('sort') ?? 'semua';
+        $bulan = $this->request->getGet('bulan') ?? '';
+        $tahun = $this->request->getGet('tahun') ?? '';
+
         $data = [
             "title" => "Kas Keluar Gaji Guru",
-            "gaji" => $this->pembayaranGajiModel->getRelationshipData()
+            "gaji" => $this->pembayaranGajiModel->getSortedData($sort, $bulan, $tahun),
+            "sort" => $sort,
+            "bulan" => $bulan,
+            "tahun" => $tahun
         ];
 
         return view("admin/kas-keluar/kas-gaji", $data);
@@ -196,5 +194,22 @@ class GajiController extends BaseController
         }
         $this->pembayaranGajiModel->delete($id);
         return redirect()->to(base_url('kas-keluar/gaji'))->with('success','Data pembayaran gaji berhasil dihapus.');
+    }
+
+    public function bayarKasGaji($id)
+    {
+        if(!$id){
+            return redirect()->to(base_url('kas-keluar/gaji'))->with('error','ID pembayaran gaji tidak ditemukan.');
+        }
+        $pembayaranGaji = $this->pembayaranGajiModel->find($id);
+        if(!$pembayaranGaji){
+            return redirect()->to(base_url('kas-keluar/gaji'))->with('error','Data pembayaran gaji tidak ditemukan.');
+        }
+        $data = [
+            "status_pembayaran" => "Lunas",
+            "tanggal_bayar" => date('Y-m-d H:i:s')
+        ];
+        $this->pembayaranGajiModel->update($id,$data);
+        return redirect()->to(base_url('kas-keluar/gaji'))->with('success','Data pembayaran gaji berhasil diupdate menjadi Lunas.');
     }
 }
