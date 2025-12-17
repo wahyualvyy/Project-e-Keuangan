@@ -30,7 +30,6 @@ $routes->group('', ['namespace' => 'Myth\Auth\Controllers'], function ($routes) 
 $routes->group('', ['filter' => 'login'], function ($routes) {
     // Dashboard
     $routes->get('/', 'AdminController::index');
-    $routes->get('dashboard', 'AdminController::index');
 
     // Profile Management
     $routes->get('profile', 'AdminController::profile');
@@ -102,7 +101,7 @@ $routes->group('', ['filter' => 'login'], function ($routes) {
         $routes->get('edit-semester/(:num)', 'SemesterController::editSemester/$1');
         $routes->post('update-semester/(:num)', 'SemesterController::updateSemester/$1');
         $routes->get('delete-semester/(:num)', 'SemesterController::deleteSemester/$1');
-        $routes->get('input-semester', 'AdminController::inputKasSemester');
+
 
         $routes->get('gaji', 'GajiController::index');
         $routes->get('input-gaji', 'GajiController::inputGaji');
@@ -110,6 +109,12 @@ $routes->group('', ['filter' => 'login'], function ($routes) {
         $routes->get('edit-gaji/(:num)', 'GajiController::editGaji/$1');
         $routes->post('update-gaji/(:num)', 'GajiController::updateGaji/$1');
         $routes->get('delete-gaji/(:num)', 'GajiController::deleteGaji/$1');
+
+        $routes->group('laporan', function ($routes) {
+            $routes->get('transaksi', 'TransaksiController::index');
+            $routes->get('transaksi/detail/(:num)', 'TransaksiController::detail/$1');
+            $routes->get('transaksi/export', 'TransaksiController::export');
+        });
     });
 
     // Generate payment endpoints (admin-triggered)
@@ -138,7 +143,7 @@ $routes->group('', ['filter' => 'login'], function ($routes) {
         $routes->get('gaji/detail/(:num)', 'GajiController::kasGajiDetail/$1');
         $routes->get('delete/(:num)', 'GajiController::deleteKasGaji/$1');
         $routes->get('gaji/bayar/(:num)', 'GajiController::bayarKasGaji/$1');
-        
+
         $routes->get('pengeluaran', 'AdminController::kasPengeluaran');
         $routes->get('input-pengeluaran', 'AdminController::inputKasPengeluaran');
     });

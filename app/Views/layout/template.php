@@ -154,27 +154,15 @@
 											<span class="hide-menu">Data Kas Semester</span>
 										</div>
 									</a>
-								</li>
-								<!-- <li class="sidebar-item">
-									<a class="sidebar-link" href="<?= base_url('data-siswa'); ?>">
+									<a class="sidebar-link" href="<?= base_url('/data-kas/laporan/transaksi'); ?>">
 										<div class="d-flex align-items-center gap-3">
 											<div class="round-16 d-flex align-items-center justify-content-center">
 												<i class="ti ti-circle"></i>
 											</div>
-											<span class="hide-menu">Data Siswa</span>
+											<span class="hide-menu">Data Kas Transaksi</span>
 										</div>
 									</a>
 								</li>
-								<li class="sidebar-item">
-									<a class="sidebar-link" href="<?= base_url('data-kelas'); ?>">
-										<div class="d-flex align-items-center gap-3">
-											<div class="round-16 d-flex align-items-center justify-content-center">
-												<i class="ti ti-circle"></i>
-											</div>
-											<span class="hide-menu">Data Kelas</span>
-										</div>
-									</a>
-								</li> -->
 							</ul>
 						</li>
 						<li class="sidebar-item">
@@ -341,7 +329,7 @@
 				theme: 'bootstrap-5',
 			});
 		});
-		
+
 		// 1. Tunggu seluruh halaman HTML selesai dimuat sebelum menjalankan script
 		document.addEventListener('DOMContentLoaded', function () {
 			// BAGIAN NOTIFIKASI (Aman karena tidak bergantung pada elemen spesifik)

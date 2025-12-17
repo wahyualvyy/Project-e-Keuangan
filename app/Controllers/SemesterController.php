@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\JurusanModel;
 use App\Models\SemesterModel;
+use App\Models\TransaksiModel;
 use App\Controllers\BaseController;
 use App\Models\PembayaranSemesterModel;
 use CodeIgniter\HTTP\ResponseInterface;
@@ -13,12 +14,14 @@ class SemesterController extends BaseController
     protected $semesterModel;
     protected $jurusanModel;
     protected $pembayaranSemesterModel;
+    protected $TransaksiModel;
 
     public function __construct()
     {
         $this->semesterModel = new SemesterModel();
         $this->jurusanModel = new JurusanModel();
         $this->pembayaranSemesterModel = new PembayaranSemesterModel();
+        $this->TransaksiModel = new TransaksiModel();
     }
 
     public function index()
@@ -263,18 +266,43 @@ class SemesterController extends BaseController
             return redirect()->to('/kas-masuk/semester')->with('error', 'Data pembayaran semester tidak ditemukan.');
         }
 
+        // Hapus pembayaran (transaksi terkait akan terhapus otomatis karena CASCADE)
         $this->pembayaranSemesterModel->delete($id);
-        return redirect()->to('/kas-masuk/semester')->with('success', 'Data pembayaran semester berhasil dihapus.');
+        return redirect()->to('/kas-masuk/semester')->with('success', 'Data pembayaran semester dan transaksi terkait berhasil dihapus.');
     }
 
     public function bayarSemester($id)
     {
-        $pembayaran = $this->pembayaranSemesterModel->find($id);
+        $pembayaran = $this->pembayaranSemesterModel->getDetailById($id);
         if (!$pembayaran) {
             return redirect()->to('/kas-masuk/semester')->with('error', 'Data pembayaran semester tidak ditemukan.');
         }
 
-        $this->pembayaranSemesterModel->update($id, ['status_pembayaran' => 'Lunas']);
-        return redirect()->to('/kas-masuk/semester')->with('success', 'Pembayaran semester berhasil diproses.');
+        // Mulai database transaction
+        $db = \Config\Database::connect();
+        $db->transStart();
+
+        try {
+            // Update status pembayaran
+            $this->pembayaranSemesterModel->update($id, ['status_pembayaran' => 'Lunas']);
+
+            // Catat ke tabel transaksi
+            $this->TransaksiModel->catatPemasukanSemester(
+                $id,
+                $pembayaran['biaya_semester'],
+                'Pembayaran Semester ' . ($pembayaran['semester'] ?? '')
+            );
+
+            $db->transComplete();
+
+            if ($db->transStatus() === false) {
+                return redirect()->to('/kas-masuk/semester')->with('error', 'Gagal memproses pembayaran semester.');
+            }
+
+            return redirect()->to('/kas-masuk/semester')->with('success', 'Pembayaran semester berhasil diproses dan tercatat di transaksi.');
+        } catch (\Exception $e) {
+            $db->transRollback();
+            return redirect()->to('/kas-masuk/semester')->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
+        }
     }
 }

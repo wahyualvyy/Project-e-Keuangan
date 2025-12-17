@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\GajiModel;
 use App\Models\GuruModel;
+use App\Models\TransaksiModel;
 use App\Controllers\BaseController;
 use App\Models\PembayaranGajiModel;
 use CodeIgniter\HTTP\ResponseInterface;
@@ -13,11 +14,13 @@ class GajiController extends BaseController
     protected $guruModel;
     protected $gajiModel;
     protected $pembayaranGajiModel;
+    protected $TransaksiModel;
     public function __construct()
     {
         $this->guruModel = new GuruModel();
         $this->gajiModel = new GajiModel();
         $this->pembayaranGajiModel = new PembayaranGajiModel();
+        $this->TransaksiModel = new TransaksiModel();
     }
     public function index()
     {
@@ -184,32 +187,60 @@ class GajiController extends BaseController
 
     public function deleteKasGaji($id)
     {
-        if(!$id){
-            return redirect()->to(base_url('kas-keluar/gaji'))->with('error','ID pembayaran gaji tidak ditemukan.');
+        if (!$id) {
+            return redirect()->to(base_url('kas-keluar/gaji'))->with('error', 'ID pembayaran gaji tidak ditemukan.');
         }
 
         $pembayaranGaji = $this->pembayaranGajiModel->find($id);
-        if(!$pembayaranGaji){
-            return redirect()->to(base_url('kas-keluar/gaji'))->with('error','Data pembayaran gaji tidak ditemukan.');
+        if (!$pembayaranGaji) {
+            return redirect()->to(base_url('kas-keluar/gaji'))->with('error', 'Data pembayaran gaji tidak ditemukan.');
         }
+
+        // Hapus pembayaran (transaksi terkait akan terhapus otomatis karena CASCADE)
         $this->pembayaranGajiModel->delete($id);
-        return redirect()->to(base_url('kas-keluar/gaji'))->with('success','Data pembayaran gaji berhasil dihapus.');
+        return redirect()->to(base_url('kas-keluar/gaji'))->with('success', 'Data pembayaran gaji dan transaksi terkait berhasil dihapus.');
     }
 
     public function bayarKasGaji($id)
     {
-        if(!$id){
-            return redirect()->to(base_url('kas-keluar/gaji'))->with('error','ID pembayaran gaji tidak ditemukan.');
+        if (!$id) {
+            return redirect()->to(base_url('kas-keluar/gaji'))->with('error', 'ID pembayaran gaji tidak ditemukan.');
         }
-        $pembayaranGaji = $this->pembayaranGajiModel->find($id);
-        if(!$pembayaranGaji){
-            return redirect()->to(base_url('kas-keluar/gaji'))->with('error','Data pembayaran gaji tidak ditemukan.');
+
+        $pembayaranGaji = $this->pembayaranGajiModel->getRelationshipDataId($id);
+        if (!$pembayaranGaji) {
+            return redirect()->to(base_url('kas-keluar/gaji'))->with('error', 'Data pembayaran gaji tidak ditemukan.');
         }
-        $data = [
-            "status_pembayaran" => "Lunas",
-            "tanggal_bayar" => date('Y-m-d H:i:s')
-        ];
-        $this->pembayaranGajiModel->update($id,$data);
-        return redirect()->to(base_url('kas-keluar/gaji'))->with('success','Data pembayaran gaji berhasil diupdate menjadi Lunas.');
+
+        // Mulai database transaction
+        $db = \Config\Database::connect();
+        $db->transStart();
+
+        try {
+            // Update status pembayaran
+            $data = [
+                "status_pembayaran" => "Lunas",
+                "tanggal_bayar" => date('Y-m-d H:i:s')
+            ];
+            $this->pembayaranGajiModel->update($id, $data);
+
+            // Catat ke tabel transaksi
+            $this->TransaksiModel->catatPengeluaranGaji(
+                $id,
+                $pembayaranGaji['biaya_gaji'], 
+                'Pembayaran Gaji Guru - ' . ($pembayaranGaji['bulan'] ?? '') . ' ' . ($pembayaranGaji['tahun'] ?? '')
+            );
+
+            $db->transComplete();
+
+            if ($db->transStatus() === false) {
+                return redirect()->to(base_url('kas-keluar/gaji'))->with('error', 'Gagal memproses pembayaran gaji.');
+            }
+
+            return redirect()->to(base_url('kas-keluar/gaji'))->with('success', 'Pembayaran gaji berhasil diproses dan tercatat di transaksi.');
+        } catch (\Exception $e) {
+            $db->transRollback();
+            return redirect()->to(base_url('kas-keluar/gaji'))->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
+        }
     }
 }

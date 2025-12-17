@@ -9,7 +9,7 @@ class TranksaksiMigration extends Migration
     public function up()
     {
         $this->forge->addField([
-            'id_tranksaksi' => [
+            'id_transaksi' => [
                 'type' => 'INT',
                 'constraint' => 11,
                 'unsigned' => true,
@@ -36,7 +36,7 @@ class TranksaksiMigration extends Migration
             'tanggal' => [
                 'type' => 'DATE',
             ],
-            'jenis_tranksaksi' => [
+            'jenis_transaksi' => [
                 'type' => 'ENUM',
                 'constraint' => ['pemasukan', 'pengeluaran'],
             ],
@@ -66,15 +66,15 @@ class TranksaksiMigration extends Migration
                 'null' => true,
             ],
         ]);
-        $this->forge->addKey('id_tranksaksi', true);
+        $this->forge->addKey('id_transaksi', true);
         $this->forge->addForeignKey('id_pembayaran_spp', 'pembayaran_spp', 'id_pembayaran_spp', 'CASCADE', 'CASCADE');
         $this->forge->addForeignKey('id_pembayaran_semester', 'pembayaran_semester', 'id_pembayaran_semester', 'CASCADE', 'CASCADE');
         $this->forge->addForeignKey('id_pembayaran_gaji', 'pembayaran_gaji', 'id_pembayaran_gaji', 'CASCADE', 'CASCADE');
-        $this->forge->createTable('tranksaksi');
+        $this->forge->createTable('transaksi');
     }
 
     public function down()
     {
-        $this->forge->dropTable('tranksaksi');
+        $this->forge->dropTable('transaksi');
     }
 }

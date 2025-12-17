@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\SppModel;
+use App\Models\TransaksiModel;
 use App\Models\PembayaranSPPModel;
 use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
@@ -11,10 +12,12 @@ class SppController extends BaseController
 {
     protected $sppModel;
     protected $PembayaranSPPModel;
+    protected $transaksiModel;
     public function __construct()
     {
         $this->sppModel = new SppModel();
         $this->PembayaranSPPModel = new PembayaranSPPModel();
+        $this->transaksiModel = new TransaksiModel();
     }
     public function index()
     {
@@ -224,18 +227,46 @@ class SppController extends BaseController
             return redirect()->to(base_url('kas-masuk/spp'))->with('error', 'Data Pembayaran SPP tidak ditemukan.');
         }
 
+        // Hapus pembayaran (transaksi terkait akan terhapus otomatis karena CASCADE)
         $this->PembayaranSPPModel->delete($id);
-        return redirect()->to(base_url('kas-masuk/spp'))->with('success', 'Data Pembayaran SPP berhasil dihapus.');
+        return redirect()->to(base_url('kas-masuk/spp'))->with('success', 'Data Pembayaran SPP dan transaksi terkait berhasil dihapus.');
     }
 
     public function bayarSPP($id)
     {
-        $pembayaranSpp = $this->PembayaranSPPModel->find($id);
+        $pembayaranSpp = $this->PembayaranSPPModel->getDataWithRelationsById($id);
         if (!$pembayaranSpp) {
             return redirect()->to(base_url('kas-masuk/spp'))->with('error', 'Data Pembayaran SPP tidak ditemukan.');
         }
 
-        $this->PembayaranSPPModel->update($id, ['status_pembayaran' => 'Lunas', 'tanggal_bayar' => date('Y-m-d H:i:s')]);
-        return redirect()->to(base_url('kas-masuk/spp'))->with('success', 'Pembayaran SPP berhasil diproses.');
+        // Mulai database transaction
+        $db = \Config\Database::connect();
+        $db->transStart();
+
+        try {
+            // Update status pembayaran
+            $this->PembayaranSPPModel->update($id, [
+                'status_pembayaran' => 'Lunas',
+                'tanggal_bayar' => date('Y-m-d H:i:s')
+            ]);
+
+            // Catat ke tabel transaksi
+            $this->transaksiModel->catatPemasukanSPP(
+                $id,
+                $pembayaranSpp['biaya_spp'],
+                'Pembayaran SPP - ' . ($pembayaranSpp['bulan'] ?? '') . ' ' . ($pembayaranSpp['tahun'] ?? '')
+            );
+
+            $db->transComplete();
+
+            if ($db->transStatus() === false) {
+                return redirect()->to(base_url('kas-masuk/spp'))->with('error', 'Gagal memproses pembayaran SPP.');
+            }
+
+            return redirect()->to(base_url('kas-masuk/spp'))->with('success', 'Pembayaran SPP berhasil diproses dan tercatat di transaksi.');
+        } catch (\Exception $e) {
+            $db->transRollback();
+            return redirect()->to(base_url('kas-masuk/spp'))->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
+        }
     }
 }
