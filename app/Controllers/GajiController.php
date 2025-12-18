@@ -72,6 +72,7 @@ class GajiController extends BaseController
 
         $data =
             [
+                "id_guru" => $this->request->getPost('id_guru'),
                 "biaya_gaji" => $gajiFinal,
                 "jumlah_jam" => $jamFinal,
             ];
@@ -227,7 +228,7 @@ class GajiController extends BaseController
             // Catat ke tabel transaksi
             $this->TransaksiModel->catatPengeluaranGaji(
                 $id,
-                $pembayaranGaji['biaya_gaji'], 
+                $pembayaranGaji['biaya_gaji'],
                 'Pembayaran Gaji Guru - ' . ($pembayaranGaji['bulan'] ?? '') . ' ' . ($pembayaranGaji['tahun'] ?? '')
             );
 

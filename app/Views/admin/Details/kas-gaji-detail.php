@@ -39,17 +39,23 @@
                                     <img src="<?= base_url('assets/img/photo-profile.jpg'); ?>" class="rounded-circle"
                                         width="40" alt="flexy" />
                                     <div class="ms-3">
-                                        <h6 class="mb-0 fw-bolder"><?= $gaji['nama_guru'];?></h6>
-                                        <span class="text-muted"><?= $gaji['bidang_studi'];?></span>
+                                        <h6 class="mb-0 fw-bolder"><?= $gaji['nama_guru']; ?></h6>
+                                        <span class="text-muted"><?= $gaji['bidang_studi']; ?></span>
                                     </div>
                                 </div>
                             </td>
-                            <td class="px-0">Rp. <?= number_format($gaji['biaya_gaji'],'0',',','.');?></td>
+                            <td class="px-0">Rp. <?= number_format($gaji['biaya_gaji'], '0', ',', '.'); ?></td>
                             </td>
-                            <td class="px-0">Elite Admin</td>
+                            <td class="px-0"><?= $gaji['jumlah_jam']; ?> jam / 1 bulan</td>
                             </td>
                             <td class="px-0">
-                                <span class="badge bg-danger">Belum DiBayar</span>
+                                <?php
+                                if ($gaji['status_pembayaran'] == 'Lunas') {
+                                    echo '<span class="badge bg-success">Lunas</span>';
+                                } else {
+                                    echo '<span class="badge bg-danger">Belum Lunas</span>';
+                                }
+                                ; ?>
                             </td>
                             <td class="px-0 text-dark fw-medium text-center">
                                 <div class="dropdown">
@@ -59,12 +65,13 @@
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="year1-dropdown">
                                         <li>
-                                            <a class="dropdown-item" href="<?= base_url('/kas-keluar/gaji');?>">
+                                            <a class="dropdown-item" href="<?= base_url('/kas-keluar/gaji'); ?>">
                                                 <i class="ti ti-arrow-back-up fs-6 mb-0"></i>
                                                 <span class="mb-0 fs-3">Kembali</span></a>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item" href="<?= base_url('/kas-keluar/delete/' . $gaji['id_pembayaran_gaji']); ?>">
+                                            <a class="dropdown-item"
+                                                href="<?= base_url('/kas-keluar/delete/' . $gaji['id_pembayaran_gaji']); ?>">
                                                 <i class="ti ti-trash fs-6 mb-0"></i>
                                                 <span class="mb-0 fs-3">Hapus</span></a></a>
                                         </li>

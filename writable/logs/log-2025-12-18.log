@@ -41,3 +41,326 @@ in APPPATH\Controllers\TransaksiController.php on line 15.
  5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
  6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
  7 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+ERROR - 2025-12-18 14:18:06 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`ci_keuangan`.`gaji`, CONSTRAINT `gaji_id_guru_foreign` FOREIGN KEY (`id_guru`) REFERENCES `guru` (`id_guru`) ON DELETE CASCADE ON UPDATE CASCADE) in E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `ga...', 0)
+#1 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ga...')
+#2 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ga...')
+#3 E:\laragon\www\Project-e-Keuangan\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ga...', Array, false)
+#4 E:\laragon\www\Project-e-Keuangan\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 E:\laragon\www\Project-e-Keuangan\system\BaseModel.php(843): CodeIgniter\Model->doInsert(Array)
+#6 E:\laragon\www\Project-e-Keuangan\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#7 E:\laragon\www\Project-e-Keuangan\app\Controllers\GajiController.php(79): CodeIgniter\Model->insert(Array)
+#8 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(933): App\Controllers\GajiController->createGaji()
+#9 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GajiController))
+#10 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\laragon\www\Project-e-Keuangan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 E:\laragon\www\Project-e-Keuangan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 E:\laragon\www\Project-e-Keuangan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 E:\laragon\www\Project-e-Keuangan\system\rewrite.php(44): require_once('E:\\laragon\\www\\...')
+#15 {main}
+CRITICAL - 2025-12-18 14:18:06 --> CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`ci_keuangan`.`gaji`, CONSTRAINT `gaji_id_guru_foreign` FOREIGN KEY (`id_guru`) REFERENCES `guru` (`id_guru`) ON DELETE CASCADE ON UPDATE CASCADE)
+[Method: POST, Route: data-kas/create]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `gaji` (`biaya_gaji`, `jumlah_jam`, `created_at`, `updated_at`) VALUES (:biaya_gaji:, :jumlah_jam:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(843): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\GajiController.php(79): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GajiController->createGaji()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GajiController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-18 14:18:06 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`ci_keuangan`.`gaji`, CONSTRAINT `gaji_id_guru_foreign` FOREIGN KEY (`id_guru`) REFERENCES `guru` (`id_guru`) ON DELETE CASCADE ON UPDATE CASCADE)
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `gaji` (`biaya_gaji`, `jumlah_jam`, `created_at`, `updated_at`) VALUES (800000, 40, \'2025-12-18 14:18:06\', \'2025-12-18 14:18:06\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `gaji` (`biaya_gaji`, `jumlah_jam`, `created_at`, `updated_at`) VALUES (800000, 40, \'2025-12-18 14:18:06\', \'2025-12-18 14:18:06\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `gaji` (`biaya_gaji`, `jumlah_jam`, `created_at`, `updated_at`) VALUES (:biaya_gaji:, :jumlah_jam:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(843): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\GajiController.php(79): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GajiController->createGaji()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GajiController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-18 14:18:06 --> [Caused by] mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`ci_keuangan`.`gaji`, CONSTRAINT `gaji_id_guru_foreign` FOREIGN KEY (`id_guru`) REFERENCES `guru` (`id_guru`) ON DELETE CASCADE ON UPDATE CASCADE)
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `gaji` (`biaya_gaji`, `jumlah_jam`, `created_at`, `updated_at`) VALUES (800000, 40, \'2025-12-18 14:18:06\', \'2025-12-18 14:18:06\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `gaji` (`biaya_gaji`, `jumlah_jam`, `created_at`, `updated_at`) VALUES (800000, 40, \'2025-12-18 14:18:06\', \'2025-12-18 14:18:06\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `gaji` (`biaya_gaji`, `jumlah_jam`, `created_at`, `updated_at`) VALUES (800000, 40, \'2025-12-18 14:18:06\', \'2025-12-18 14:18:06\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `gaji` (`biaya_gaji`, `jumlah_jam`, `created_at`, `updated_at`) VALUES (:biaya_gaji:, :jumlah_jam:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(843): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\GajiController.php(79): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GajiController->createGaji()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GajiController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-18 14:28:43 --> ErrorException: Undefined array key "jumlah_jam"
+[Method: GET, Route: kas-keluar/gaji/detail/4]
+in APPPATH\Views\admin\Details\kas-gaji-detail.php on line 49.
+ 1 APPPATH\Views\admin\Details\kas-gaji-detail.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "jumlah_jam"', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\Details\\kas-gaji-detail.php', 49)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\Details\\kas-gaji-detail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/Details/kas-gaji-detail', [], true)
+ 5 APPPATH\Controllers\GajiController.php(186): view('admin/Details/kas-gaji-detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GajiController->kasGajiDetail('4')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GajiController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+ERROR - 2025-12-18 14:29:43 --> mysqli_sql_exception: Unknown column 'id_pembayaran_gaji*' in 'field list' in E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `id_pemb...', 0)
+#1 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id_pemb...')
+#2 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id_pemb...')
+#3 E:\laragon\www\Project-e-Keuangan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id_pemb...', Array, false)
+#4 E:\laragon\www\Project-e-Keuangan\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\laragon\www\Project-e-Keuangan\system\BaseModel.php(717): CodeIgniter\Model->doFirst()
+#6 E:\laragon\www\Project-e-Keuangan\app\Models\PembayaranGajiModel.php(60): CodeIgniter\BaseModel->first()
+#7 E:\laragon\www\Project-e-Keuangan\app\Controllers\GajiController.php(183): App\Models\PembayaranGajiModel->getRelationshipDataId('4')
+#8 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(933): App\Controllers\GajiController->kasGajiDetail('4')
+#9 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GajiController))
+#10 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\laragon\www\Project-e-Keuangan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 E:\laragon\www\Project-e-Keuangan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 E:\laragon\www\Project-e-Keuangan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 E:\laragon\www\Project-e-Keuangan\system\rewrite.php(44): require_once('E:\\laragon\\www\\...')
+#15 {main}
+CRITICAL - 2025-12-18 14:29:43 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'id_pembayaran_gaji*' in 'field list'
+[Method: GET, Route: kas-keluar/gaji/detail/4]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id_pembayaran_gaji*`, `gaji`.`id_gaji`, `gaji`.`biaya_gaji`, `guru`.`nama_guru`, `guru`.`id_guru`, `guru`.`bidang_studi`, `pembayaran_gaji`.`status_pembayaran`, `pembayaran_gaji`.`tanggal_bayar`
+FROM `pembayaran_gaji`
+JOIN `gaji` ON `pembayaran_gaji`.`id_gaji` = `gaji`.`id_gaji`
+JOIN `guru` ON `gaji`.`id_guru` = `guru`.`id_guru`
+WHERE `pembayaran_gaji`.`id_pembayaran_gaji` = :pembayaran_gaji.id_pembayaran_gaji:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(717): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Models\PembayaranGajiModel.php(60): CodeIgniter\BaseModel->first()
+ 5 APPPATH\Controllers\GajiController.php(183): App\Models\PembayaranGajiModel->getRelationshipDataId('4')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GajiController->kasGajiDetail('4')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GajiController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-18 14:29:43 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'id_pembayaran_gaji*' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id_pembayaran_gaji*`, `gaji`.`id_gaji`, `gaji`.`biaya_gaji`, `guru`.`nama_guru`, `guru`.`id_guru`, `guru`.`bidang_studi`, `pembayaran_gaji`.`status_pembayaran`, `pembayaran_gaji`.`tanggal_bayar`
+FROM `pembayaran_gaji`
+JOIN `gaji` ON `pembayaran_gaji`.`id_gaji` = `gaji`.`id_gaji`
+JOIN `guru` ON `gaji`.`id_guru` = `guru`.`id_guru`
+WHERE `pembayaran_gaji`.`id_pembayaran_gaji` = \'4\'
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id_pembayaran_gaji*`, `gaji`.`id_gaji`, `gaji`.`biaya_gaji`, `guru`.`nama_guru`, `guru`.`id_guru`, `guru`.`bidang_studi`, `pembayaran_gaji`.`status_pembayaran`, `pembayaran_gaji`.`tanggal_bayar`
+FROM `pembayaran_gaji`
+JOIN `gaji` ON `pembayaran_gaji`.`id_gaji` = `gaji`.`id_gaji`
+JOIN `guru` ON `gaji`.`id_guru` = `guru`.`id_guru`
+WHERE `pembayaran_gaji`.`id_pembayaran_gaji` = \'4\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id_pembayaran_gaji*`, `gaji`.`id_gaji`, `gaji`.`biaya_gaji`, `guru`.`nama_guru`, `guru`.`id_guru`, `guru`.`bidang_studi`, `pembayaran_gaji`.`status_pembayaran`, `pembayaran_gaji`.`tanggal_bayar`
+FROM `pembayaran_gaji`
+JOIN `gaji` ON `pembayaran_gaji`.`id_gaji` = `gaji`.`id_gaji`
+JOIN `guru` ON `gaji`.`id_guru` = `guru`.`id_guru`
+WHERE `pembayaran_gaji`.`id_pembayaran_gaji` = :pembayaran_gaji.id_pembayaran_gaji:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(717): CodeIgniter\Model->doFirst()
+ 6 APPPATH\Models\PembayaranGajiModel.php(60): CodeIgniter\BaseModel->first()
+ 7 APPPATH\Controllers\GajiController.php(183): App\Models\PembayaranGajiModel->getRelationshipDataId('4')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GajiController->kasGajiDetail('4')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GajiController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-18 14:29:43 --> [Caused by] mysqli_sql_exception: Unknown column 'id_pembayaran_gaji*' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `id_pembayaran_gaji*`, `gaji`.`id_gaji`, `gaji`.`biaya_gaji`, `guru`.`nama_guru`, `guru`.`id_guru`, `guru`.`bidang_studi`, `pembayaran_gaji`.`status_pembayaran`, `pembayaran_gaji`.`tanggal_bayar`
+FROM `pembayaran_gaji`
+JOIN `gaji` ON `pembayaran_gaji`.`id_gaji` = `gaji`.`id_gaji`
+JOIN `guru` ON `gaji`.`id_guru` = `guru`.`id_guru`
+WHERE `pembayaran_gaji`.`id_pembayaran_gaji` = \'4\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id_pembayaran_gaji*`, `gaji`.`id_gaji`, `gaji`.`biaya_gaji`, `guru`.`nama_guru`, `guru`.`id_guru`, `guru`.`bidang_studi`, `pembayaran_gaji`.`status_pembayaran`, `pembayaran_gaji`.`tanggal_bayar`
+FROM `pembayaran_gaji`
+JOIN `gaji` ON `pembayaran_gaji`.`id_gaji` = `gaji`.`id_gaji`
+JOIN `guru` ON `gaji`.`id_guru` = `guru`.`id_guru`
+WHERE `pembayaran_gaji`.`id_pembayaran_gaji` = \'4\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id_pembayaran_gaji*`, `gaji`.`id_gaji`, `gaji`.`biaya_gaji`, `guru`.`nama_guru`, `guru`.`id_guru`, `guru`.`bidang_studi`, `pembayaran_gaji`.`status_pembayaran`, `pembayaran_gaji`.`tanggal_bayar`
+FROM `pembayaran_gaji`
+JOIN `gaji` ON `pembayaran_gaji`.`id_gaji` = `gaji`.`id_gaji`
+JOIN `guru` ON `gaji`.`id_guru` = `guru`.`id_guru`
+WHERE `pembayaran_gaji`.`id_pembayaran_gaji` = \'4\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id_pembayaran_gaji*`, `gaji`.`id_gaji`, `gaji`.`biaya_gaji`, `guru`.`nama_guru`, `guru`.`id_guru`, `guru`.`bidang_studi`, `pembayaran_gaji`.`status_pembayaran`, `pembayaran_gaji`.`tanggal_bayar`
+FROM `pembayaran_gaji`
+JOIN `gaji` ON `pembayaran_gaji`.`id_gaji` = `gaji`.`id_gaji`
+JOIN `guru` ON `gaji`.`id_guru` = `guru`.`id_guru`
+WHERE `pembayaran_gaji`.`id_pembayaran_gaji` = :pembayaran_gaji.id_pembayaran_gaji:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(717): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Models\PembayaranGajiModel.php(60): CodeIgniter\BaseModel->first()
+ 8 APPPATH\Controllers\GajiController.php(183): App\Models\PembayaranGajiModel->getRelationshipDataId('4')
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GajiController->kasGajiDetail('4')
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GajiController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+ERROR - 2025-12-18 14:29:48 --> mysqli_sql_exception: Unknown table 'id_pembayaran_gaji' in E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 E:\laragon\www\Project-e-Keuangan\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `id_pemb...', 0)
+#1 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id_pemb...')
+#2 E:\laragon\www\Project-e-Keuangan\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id_pemb...')
+#3 E:\laragon\www\Project-e-Keuangan\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id_pemb...', Array, false)
+#4 E:\laragon\www\Project-e-Keuangan\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\laragon\www\Project-e-Keuangan\system\BaseModel.php(717): CodeIgniter\Model->doFirst()
+#6 E:\laragon\www\Project-e-Keuangan\app\Models\PembayaranGajiModel.php(60): CodeIgniter\BaseModel->first()
+#7 E:\laragon\www\Project-e-Keuangan\app\Controllers\GajiController.php(183): App\Models\PembayaranGajiModel->getRelationshipDataId('4')
+#8 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(933): App\Controllers\GajiController->kasGajiDetail('4')
+#9 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GajiController))
+#10 E:\laragon\www\Project-e-Keuangan\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 E:\laragon\www\Project-e-Keuangan\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 E:\laragon\www\Project-e-Keuangan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 E:\laragon\www\Project-e-Keuangan\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 E:\laragon\www\Project-e-Keuangan\system\rewrite.php(44): require_once('E:\\laragon\\www\\...')
+#15 {main}
+CRITICAL - 2025-12-18 14:29:48 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown table 'id_pembayaran_gaji'
+[Method: GET, Route: kas-keluar/gaji/detail/4]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id_pembayaran_gaji`.*, `gaji`.`id_gaji`, `gaji`.`biaya_gaji`, `guru`.`nama_guru`, `guru`.`id_guru`, `guru`.`bidang_studi`, `pembayaran_gaji`.`status_pembayaran`, `pembayaran_gaji`.`tanggal_bayar`
+FROM `pembayaran_gaji`
+JOIN `gaji` ON `pembayaran_gaji`.`id_gaji` = `gaji`.`id_gaji`
+JOIN `guru` ON `gaji`.`id_guru` = `guru`.`id_guru`
+WHERE `pembayaran_gaji`.`id_pembayaran_gaji` = :pembayaran_gaji.id_pembayaran_gaji:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(717): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Models\PembayaranGajiModel.php(60): CodeIgniter\BaseModel->first()
+ 5 APPPATH\Controllers\GajiController.php(183): App\Models\PembayaranGajiModel->getRelationshipDataId('4')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GajiController->kasGajiDetail('4')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GajiController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-18 14:29:48 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown table 'id_pembayaran_gaji'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id_pembayaran_gaji`.*, `gaji`.`id_gaji`, `gaji`.`biaya_gaji`, `guru`.`nama_guru`, `guru`.`id_guru`, `guru`.`bidang_studi`, `pembayaran_gaji`.`status_pembayaran`, `pembayaran_gaji`.`tanggal_bayar`
+FROM `pembayaran_gaji`
+JOIN `gaji` ON `pembayaran_gaji`.`id_gaji` = `gaji`.`id_gaji`
+JOIN `guru` ON `gaji`.`id_guru` = `guru`.`id_guru`
+WHERE `pembayaran_gaji`.`id_pembayaran_gaji` = \'4\'
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id_pembayaran_gaji`.*, `gaji`.`id_gaji`, `gaji`.`biaya_gaji`, `guru`.`nama_guru`, `guru`.`id_guru`, `guru`.`bidang_studi`, `pembayaran_gaji`.`status_pembayaran`, `pembayaran_gaji`.`tanggal_bayar`
+FROM `pembayaran_gaji`
+JOIN `gaji` ON `pembayaran_gaji`.`id_gaji` = `gaji`.`id_gaji`
+JOIN `guru` ON `gaji`.`id_guru` = `guru`.`id_guru`
+WHERE `pembayaran_gaji`.`id_pembayaran_gaji` = \'4\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id_pembayaran_gaji`.*, `gaji`.`id_gaji`, `gaji`.`biaya_gaji`, `guru`.`nama_guru`, `guru`.`id_guru`, `guru`.`bidang_studi`, `pembayaran_gaji`.`status_pembayaran`, `pembayaran_gaji`.`tanggal_bayar`
+FROM `pembayaran_gaji`
+JOIN `gaji` ON `pembayaran_gaji`.`id_gaji` = `gaji`.`id_gaji`
+JOIN `guru` ON `gaji`.`id_guru` = `guru`.`id_guru`
+WHERE `pembayaran_gaji`.`id_pembayaran_gaji` = :pembayaran_gaji.id_pembayaran_gaji:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(717): CodeIgniter\Model->doFirst()
+ 6 APPPATH\Models\PembayaranGajiModel.php(60): CodeIgniter\BaseModel->first()
+ 7 APPPATH\Controllers\GajiController.php(183): App\Models\PembayaranGajiModel->getRelationshipDataId('4')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GajiController->kasGajiDetail('4')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GajiController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-18 14:29:48 --> [Caused by] mysqli_sql_exception: Unknown table 'id_pembayaran_gaji'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `id_pembayaran_gaji`.*, `gaji`.`id_gaji`, `gaji`.`biaya_gaji`, `guru`.`nama_guru`, `guru`.`id_guru`, `guru`.`bidang_studi`, `pembayaran_gaji`.`status_pembayaran`, `pembayaran_gaji`.`tanggal_bayar`
+FROM `pembayaran_gaji`
+JOIN `gaji` ON `pembayaran_gaji`.`id_gaji` = `gaji`.`id_gaji`
+JOIN `guru` ON `gaji`.`id_guru` = `guru`.`id_guru`
+WHERE `pembayaran_gaji`.`id_pembayaran_gaji` = \'4\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id_pembayaran_gaji`.*, `gaji`.`id_gaji`, `gaji`.`biaya_gaji`, `guru`.`nama_guru`, `guru`.`id_guru`, `guru`.`bidang_studi`, `pembayaran_gaji`.`status_pembayaran`, `pembayaran_gaji`.`tanggal_bayar`
+FROM `pembayaran_gaji`
+JOIN `gaji` ON `pembayaran_gaji`.`id_gaji` = `gaji`.`id_gaji`
+JOIN `guru` ON `gaji`.`id_guru` = `guru`.`id_guru`
+WHERE `pembayaran_gaji`.`id_pembayaran_gaji` = \'4\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id_pembayaran_gaji`.*, `gaji`.`id_gaji`, `gaji`.`biaya_gaji`, `guru`.`nama_guru`, `guru`.`id_guru`, `guru`.`bidang_studi`, `pembayaran_gaji`.`status_pembayaran`, `pembayaran_gaji`.`tanggal_bayar`
+FROM `pembayaran_gaji`
+JOIN `gaji` ON `pembayaran_gaji`.`id_gaji` = `gaji`.`id_gaji`
+JOIN `guru` ON `gaji`.`id_guru` = `guru`.`id_guru`
+WHERE `pembayaran_gaji`.`id_pembayaran_gaji` = \'4\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id_pembayaran_gaji`.*, `gaji`.`id_gaji`, `gaji`.`biaya_gaji`, `guru`.`nama_guru`, `guru`.`id_guru`, `guru`.`bidang_studi`, `pembayaran_gaji`.`status_pembayaran`, `pembayaran_gaji`.`tanggal_bayar`
+FROM `pembayaran_gaji`
+JOIN `gaji` ON `pembayaran_gaji`.`id_gaji` = `gaji`.`id_gaji`
+JOIN `guru` ON `gaji`.`id_guru` = `guru`.`id_guru`
+WHERE `pembayaran_gaji`.`id_pembayaran_gaji` = :pembayaran_gaji.id_pembayaran_gaji:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(717): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Models\PembayaranGajiModel.php(60): CodeIgniter\BaseModel->first()
+ 8 APPPATH\Controllers\GajiController.php(183): App\Models\PembayaranGajiModel->getRelationshipDataId('4')
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GajiController->kasGajiDetail('4')
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GajiController))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-18 14:30:00 --> ErrorException: Undefined array key "jumlah_jam"
+[Method: GET, Route: kas-keluar/gaji/detail/4]
+in APPPATH\Views\admin\Details\kas-gaji-detail.php on line 49.
+ 1 APPPATH\Views\admin\Details\kas-gaji-detail.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "jumlah_jam"', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\Details\\kas-gaji-detail.php', 49)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\Details\\kas-gaji-detail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/Details/kas-gaji-detail', [], true)
+ 5 APPPATH\Controllers\GajiController.php(186): view('admin/Details/kas-gaji-detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GajiController->kasGajiDetail('4')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GajiController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-18 14:30:29 --> ErrorException: Undefined array key "jumlah_jam"
+[Method: GET, Route: kas-keluar/gaji/detail/4]
+in APPPATH\Views\admin\Details\kas-gaji-detail.php on line 49.
+ 1 APPPATH\Views\admin\Details\kas-gaji-detail.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "jumlah_jam"', 'E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\Details\\kas-gaji-detail.php', 49)
+ 2 SYSTEMPATH\View\View.php(224): include('E:\\laragon\\www\\Project-e-Keuangan\\app\\Views\\admin\\Details\\kas-gaji-detail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/Details/kas-gaji-detail', [], true)
+ 5 APPPATH\Controllers\GajiController.php(186): view('admin/Details/kas-gaji-detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GajiController->kasGajiDetail('4')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GajiController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')

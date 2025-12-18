@@ -321,9 +321,9 @@ class SemesterController extends BaseController
                     $skipCount++;
                     continue;
                 }
-
+                $tanggalBayar = date('Y-m-d', time());
                 // Update status pembayaran
-                $this->pembayaranSemesterModel->update($id, ['status_pembayaran' => 'Lunas']);
+                $this->pembayaranSemesterModel->update($id, ['status_pembayaran' => 'Lunas', 'tanggal_bayar' => $tanggalBayar]);
 
                 // Catat ke tabel transaksi
                 $this->TransaksiModel->catatPemasukanSemester(
@@ -643,9 +643,10 @@ class SemesterController extends BaseController
         $db = \Config\Database::connect();
         $db->transStart();
 
+        $tanggalBayar = date('Y-m-d', time());
         try {
             // Update status pembayaran
-            $this->pembayaranSemesterModel->update($id, ['status_pembayaran' => 'Lunas']);
+            $this->pembayaranSemesterModel->update($id, ['status_pembayaran' => 'Lunas', 'tanggal_bayar' => $tanggalBayar]);
 
             // Catat ke tabel transaksi
             $this->TransaksiModel->catatPemasukanSemester(
