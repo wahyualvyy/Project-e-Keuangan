@@ -23,8 +23,10 @@ class TransaksiController extends BaseController
         $bulan = $this->request->getGet('bulan') ?? null;
         $tahun = $this->request->getGet('tahun') ?? null;
         $jenis = $this->request->getGet('jenis') ?? null;
+        $sortBy = $this->request->getGet('sort_by') ?? 'tanggal';
+        $sortOrder = $this->request->getGet('sort_order') ?? 'DESC';
 
-        $transaksi = $this->transaksiModel->getLaporanTransaksi($bulan, $tahun, $jenis);
+        $transaksi = $this->transaksiModel->getLaporanTransaksi($bulan, $tahun, $jenis, $sortBy, $sortOrder);
 
         $data = [
             'title' => 'Laporan Transaksi (Buku Kas)',
@@ -32,6 +34,8 @@ class TransaksiController extends BaseController
             'bulan' => $bulan,
             'tahun' => $tahun,
             'jenis' => $jenis,
+            'sort_by' => $sortBy,
+            'sort_order' => $sortOrder,
             'total_pemasukan' => $this->transaksiModel->getTotalPemasukan($bulan, $tahun),
             'total_pengeluaran' => $this->transaksiModel->getTotalPengeluaran($bulan, $tahun),
             'saldo' => $this->transaksiModel->getSaldo($bulan, $tahun),
@@ -41,47 +45,7 @@ class TransaksiController extends BaseController
     }
 
     /**
-     * Detail transaksi
-     */
-    // public function detail($id)
-    // {
-    //     $transaksi = $this->transaksiModel->find($id);
-    //     if (!$transaksi) {
-    //         return redirect()->to('/data-kas/laporan/transaksi')->with('error', 'Data transaksi tidak ditemukan.');
-    //     }
-
-    //     $data = [
-    //         'title' => 'Detail Transaksi',
-    //         'transaksi' => $transaksi,
-    //     ];
-
-    //     return view('admin/Details/transaksi-detail', $data);
-    // }
-
-    // /**
-    //  * Dashboard summary
-    //  */
-    // public function dashboard()
-    // {
-    //     $bulanIni = date('m');
-    //     $tahunIni = date('Y');
-
-    //     $data = [
-    //         'title' => 'Dashboard Keuangan',
-    //         'pemasukan_bulan_ini' => $this->transaksiModel->getTotalPemasukan($bulanIni, $tahunIni),
-    //         'pengeluaran_bulan_ini' => $this->transaksiModel->getTotalPengeluaran($bulanIni, $tahunIni),
-    //         'saldo_bulan_ini' => $this->transaksiModel->getSaldo($bulanIni, $tahunIni),
-    //         'pemasukan_total' => $this->transaksiModel->getTotalPemasukan(),
-    //         'pengeluaran_total' => $this->transaksiModel->getTotalPengeluaran(),
-    //         'saldo_total' => $this->transaksiModel->getSaldo(),
-    //         'transaksi_terbaru' => $this->transaksiModel->orderBy('tanggal', 'DESC')->limit(10)->find(),
-    //     ];
-
-    //     return view('admin/dashboard/dashboard-keuangan', $data);
-    // }
-
-    /**
-     * Export laporan ke Excel/PDF
+     * Export laporan ke Excel
      */
     public function export()
     {
@@ -100,48 +64,296 @@ class TransaksiController extends BaseController
     }
 
     /**
-     * Export ke Excel (CSV sederhana)
+     * Export ke Excel (PhpSpreadsheet)
      */
     private function exportExcel($transaksi, $bulan, $tahun)
     {
-        $filename = 'Laporan_Transaksi_' . date('YmdHis') . '.csv';
+        try {
+            // Load PhpSpreadsheet
+            $spreadsheet = new \PhpOffice\PhpSpreadsheet\Spreadsheet();
+            $sheet = $spreadsheet->getActiveSheet();
+            $sheet->setTitle('Laporan Transaksi');
 
-        header('Content-Type: text/csv; charset=utf-8');
-        header('Content-Disposition: attachment; filename=' . $filename);
-
-        $output = fopen('php://output', 'w');
-
-        // Header CSV
-        fputcsv($output, ['LAPORAN TRANSAKSI KEUANGAN']);
-        fputcsv($output, ['Periode: ' . ($bulan ? 'Bulan ' . $bulan : 'Semua Bulan') . ' ' . ($tahun ?? 'Semua Tahun')]);
-        fputcsv($output, ['']);
-        fputcsv($output, ['No', 'Tanggal', 'Kategori', 'Jenis', 'Nama', 'Nominal', 'Keterangan']);
-
-        // Data
-        $no = 1;
-        foreach ($transaksi as $row) {
-            fputcsv($output, [
-                $no++,
-                date('d/m/Y', strtotime($row['tanggal'])),
-                $row['kategori'],
-                $row['jenis_transaksi'],
-                $row['nama_siswa'] ?? $row['nama_guru'] ?? '-',
-                $row['nominal'],
-                $row['keterangan'] ?? '-'
+            // === JUDUL LAPORAN ===
+            $sheet->mergeCells('A1:H1');
+            $sheet->setCellValue('A1', 'LAPORAN TRANSAKSI KEUANGAN');
+            $sheet->getStyle('A1')->applyFromArray([
+                'font' => [
+                    'bold' => true,
+                    'size' => 16,
+                    'color' => ['rgb' => '1F4788']
+                ],
+                'alignment' => [
+                    'horizontal' => \PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER,
+                    'vertical' => \PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER
+                ]
             ]);
-        }
+            $sheet->getRowDimension(1)->setRowHeight(30);
 
-        fclose($output);
-        exit;
+            // === INFO SEKOLAH & PERIODE ===
+            $sheet->mergeCells('A2:H2');
+            $sheet->setCellValue('A2', 'SMK HASYIM ASY\'ARI');
+            $sheet->getStyle('A2')->applyFromArray([
+                'font' => ['bold' => true, 'size' => 12],
+                'alignment' => ['horizontal' => \PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER]
+            ]);
+
+            $periode = ($bulan ? $this->getNamaBulan($bulan) : 'Semua Bulan') . ' ' . ($tahun ?? 'Semua Tahun');
+            $sheet->mergeCells('A3:H3');
+            $sheet->setCellValue('A3', 'Periode: ' . $periode);
+            $sheet->getStyle('A3')->applyFromArray([
+                'font' => ['italic' => true],
+                'alignment' => ['horizontal' => \PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER]
+            ]);
+
+            $sheet->mergeCells('A4:H4');
+            $sheet->setCellValue('A4', 'Tanggal Export: ' . date('d/m/Y H:i:s'));
+            $sheet->getStyle('A4')->applyFromArray([
+                'font' => ['size' => 9, 'italic' => true],
+                'alignment' => ['horizontal' => \PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER]
+            ]);
+
+            // === HEADER TABEL ===
+            $headers = ['No', 'Tanggal', 'Kategori', 'Jenis', 'Nama', 'NIS/NIP', 'Nominal', 'Keterangan'];
+            $col = 'A';
+            foreach ($headers as $header) {
+                $sheet->setCellValue($col . '6', $header);
+                $col++;
+            }
+
+            // Style Header
+            $headerStyle = [
+                'font' => [
+                    'bold' => true,
+                    'color' => ['rgb' => 'FFFFFF'],
+                    'size' => 11
+                ],
+                'fill' => [
+                    'fillType' => \PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID,
+                    'startColor' => ['rgb' => '4472C4']
+                ],
+                'alignment' => [
+                    'horizontal' => \PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER,
+                    'vertical' => \PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER
+                ],
+                'borders' => [
+                    'allBorders' => [
+                        'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+                        'color' => ['rgb' => '000000']
+                    ]
+                ]
+            ];
+            $sheet->getStyle('A6:H6')->applyFromArray($headerStyle);
+            $sheet->getRowDimension(6)->setRowHeight(25);
+
+            // === ISI DATA ===
+            $row = 7;
+            $no = 1;
+            $totalPemasukan = 0;
+            $totalPengeluaran = 0;
+
+            foreach ($transaksi as $data) {
+                $nama = $data['nama_siswa'] ?? $data['nama_guru'] ?? '-';
+                $nomor = $data['nis'] ?? $data['nip'] ?? '-';
+                $nominal = (float)$data['nominal'];
+
+                if ($data['jenis_transaksi'] === 'pemasukan') {
+                    $totalPemasukan += $nominal;
+                } else {
+                    $totalPengeluaran += $nominal;
+                }
+
+                $sheet->setCellValue('A' . $row, $no++);
+                $sheet->setCellValue('B' . $row, date('d/m/Y', strtotime($data['tanggal'])));
+                $sheet->setCellValue('C' . $row, $data['kategori']);
+                $sheet->setCellValue('D' . $row, ucfirst($data['jenis_transaksi']));
+                $sheet->setCellValue('E' . $row, $nama);
+                $sheet->setCellValue('F' . $row, $nomor);
+                $sheet->setCellValue('G' . $row, $nominal);
+                $sheet->setCellValue('H' . $row, $data['keterangan'] ?? '-');
+
+                // Warna berdasarkan jenis transaksi
+                if ($data['jenis_transaksi'] === 'pemasukan') {
+                    $sheet->getStyle("D{$row}")->applyFromArray([
+                        'font' => ['color' => ['rgb' => '28A745'], 'bold' => true]
+                    ]);
+                } else {
+                    $sheet->getStyle("D{$row}")->applyFromArray([
+                        'font' => ['color' => ['rgb' => 'DC3545'], 'bold' => true]
+                    ]);
+                }
+
+                // Zebra striping
+                if ($row % 2 == 0) {
+                    $sheet->getStyle("A{$row}:H{$row}")
+                        ->getFill()->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
+                        ->getStartColor()->setRGB('F8F9FA');
+                }
+
+                $row++;
+            }
+
+            // Style isi data
+            $lastRow = $row - 1;
+            $sheet->getStyle('A7:H' . $lastRow)->applyFromArray([
+                'borders' => [
+                    'allBorders' => [
+                        'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+                        'color' => ['rgb' => 'CCCCCC']
+                    ]
+                ],
+                'alignment' => ['vertical' => \PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER]
+            ]);
+
+            // Format currency untuk kolom nominal
+            $sheet->getStyle('G7:G' . $lastRow)->getNumberFormat()
+                ->setFormatCode('#,##0');
+
+            // Center alignment
+            $sheet->getStyle('A7:A' . $lastRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+            $sheet->getStyle('B7:B' . $lastRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+            $sheet->getStyle('C7:C' . $lastRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+            $sheet->getStyle('D7:D' . $lastRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+            $sheet->getStyle('F7:F' . $lastRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+            $sheet->getStyle('G7:G' . $lastRow)->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_RIGHT);
+
+            // === RINGKASAN ===
+            $summaryRow = $row + 1;
+            $saldo = $totalPemasukan - $totalPengeluaran;
+
+            // Judul Ringkasan
+            $sheet->mergeCells("A{$summaryRow}:H{$summaryRow}");
+            $sheet->setCellValue("A{$summaryRow}", 'RINGKASAN');
+            $sheet->getStyle("A{$summaryRow}")->applyFromArray([
+                'font' => ['bold' => true, 'size' => 12],
+                'alignment' => ['horizontal' => \PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER],
+                'fill' => [
+                    'fillType' => \PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID,
+                    'startColor' => ['rgb' => 'E7E6E6']
+                ]
+            ]);
+            $sheet->getRowDimension($summaryRow)->setRowHeight(25);
+
+            // Total Pemasukan
+            $summaryRow++;
+            $sheet->mergeCells("A{$summaryRow}:F{$summaryRow}");
+            $sheet->setCellValue("A{$summaryRow}", 'Total Pemasukan:');
+            $sheet->setCellValue("G{$summaryRow}", $totalPemasukan);
+            $sheet->getStyle("A{$summaryRow}:G{$summaryRow}")->applyFromArray([
+                'font' => ['bold' => true],
+                'fill' => [
+                    'fillType' => \PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID,
+                    'startColor' => ['rgb' => 'D4EDDA']
+                ],
+                'borders' => [
+                    'allBorders' => [
+                        'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN
+                    ]
+                ]
+            ]);
+            $sheet->getStyle("A{$summaryRow}")->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_RIGHT);
+            $sheet->getStyle("G{$summaryRow}")->applyFromArray([
+                'font' => ['color' => ['rgb' => '28A745']],
+                'alignment' => ['horizontal' => \PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_RIGHT],
+                'numberFormat' => ['formatCode' => '#,##0']
+            ]);
+
+            // Total Pengeluaran
+            $summaryRow++;
+            $sheet->mergeCells("A{$summaryRow}:F{$summaryRow}");
+            $sheet->setCellValue("A{$summaryRow}", 'Total Pengeluaran:');
+            $sheet->setCellValue("G{$summaryRow}", $totalPengeluaran);
+            $sheet->getStyle("A{$summaryRow}:G{$summaryRow}")->applyFromArray([
+                'font' => ['bold' => true],
+                'fill' => [
+                    'fillType' => \PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID,
+                    'startColor' => ['rgb' => 'F8D7DA']
+                ],
+                'borders' => [
+                    'allBorders' => [
+                        'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN
+                    ]
+                ]
+            ]);
+            $sheet->getStyle("A{$summaryRow}")->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_RIGHT);
+            $sheet->getStyle("G{$summaryRow}")->applyFromArray([
+                'font' => ['color' => ['rgb' => 'DC3545']],
+                'alignment' => ['horizontal' => \PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_RIGHT],
+                'numberFormat' => ['formatCode' => '#,##0']
+            ]);
+
+            // Saldo Akhir
+            $summaryRow++;
+            $sheet->mergeCells("A{$summaryRow}:F{$summaryRow}");
+            $sheet->setCellValue("A{$summaryRow}", 'SALDO:');
+            $sheet->setCellValue("G{$summaryRow}", $saldo);
+            $sheet->getStyle("A{$summaryRow}:G{$summaryRow}")->applyFromArray([
+                'font' => ['bold' => true, 'size' => 12],
+                'fill' => [
+                    'fillType' => \PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID,
+                    'startColor' => ['rgb' => $saldo >= 0 ? 'CCE5FF' : 'FFE5E5']
+                ],
+                'borders' => [
+                    'allBorders' => [
+                        'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_MEDIUM,
+                        'color' => ['rgb' => '000000']
+                    ]
+                ]
+            ]);
+            $sheet->getStyle("A{$summaryRow}")->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_RIGHT);
+            $sheet->getStyle("G{$summaryRow}")->applyFromArray([
+                'font' => ['color' => ['rgb' => $saldo >= 0 ? '0066CC' : 'CC0000']],
+                'alignment' => ['horizontal' => \PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_RIGHT],
+                'numberFormat' => ['formatCode' => '#,##0']
+            ]);
+            $sheet->getRowDimension($summaryRow)->setRowHeight(25);
+
+            // === AUTO SIZE KOLOM ===
+            foreach (range('A', 'H') as $col) {
+                $sheet->getColumnDimension($col)->setAutoSize(true);
+            }
+
+            // Set minimum width untuk kolom tertentu
+            $sheet->getColumnDimension('E')->setWidth(25); // Nama
+            $sheet->getColumnDimension('H')->setWidth(30); // Keterangan
+
+            // === OUTPUT ===
+            $filename = 'Laporan_Transaksi_' . date('Y-m-d_H-i-s') . '.xlsx';
+            header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+            header('Content-Disposition: attachment;filename="' . $filename . '"');
+            header('Cache-Control: max-age=0');
+
+            $writer = new \PhpOffice\PhpSpreadsheet\Writer\Xlsx($spreadsheet);
+            $writer->save('php://output');
+
+            $spreadsheet->disconnectWorksheets();
+            unset($spreadsheet);
+            exit();
+
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Gagal export Excel: ' . $e->getMessage());
+        }
     }
 
     /**
-     * Export ke PDF (perlu library tambahan)
+     * Export ke PDF
      */
     private function exportPDF($transaksi, $bulan, $tahun)
     {
-        // Implementasi export PDF jika diperlukan
-        // Bisa menggunakan TCPDF, Dompdf, dll
-        return redirect()->back()->with('info', 'Fitur export PDF dalam pengembangan.');
+        return redirect()->back()->with('info', 'Fitur export PDF dalam pengembangan. Silakan gunakan export Excel.');
+    }
+
+    /**
+     * Helper - Get nama bulan
+     */
+    private function getNamaBulan($bulan)
+    {
+        $namaBulan = [
+            1 => 'Januari', 2 => 'Februari', 3 => 'Maret', 4 => 'April',
+            5 => 'Mei', 6 => 'Juni', 7 => 'Juli', 8 => 'Agustus',
+            9 => 'September', 10 => 'Oktober', 11 => 'November', 12 => 'Desember'
+        ];
+        
+        return $namaBulan[$bulan] ?? '';
     }
 }

@@ -37,11 +37,16 @@
                         <?php endfor; ?>
                     </select>
 
-                    <select class="form-select theme-select border-0" name="jenis" id="filterJenis" style="width: auto;">
+                    <select class="form-select" name="jenis" id="filterJenis" style="width: auto;">
                         <option value="">Semua Jenis</option>
                         <option value="pemasukan" <?= (isset($jenis) && $jenis === 'pemasukan') ? 'selected' : ''; ?>>Pemasukan</option>
                         <option value="pengeluaran" <?= (isset($jenis) && $jenis === 'pengeluaran') ? 'selected' : ''; ?>>Pengeluaran</option>
                     </select>
+
+                    <a href="<?= base_url('data-kas/laporan/transaksi/export?format=excel' . (isset($bulan) ? '&bulan=' . $bulan : '') . (isset($tahun) ? '&tahun=' . $tahun : '') . (isset($jenis) ? '&jenis=' . $jenis : '')); ?>" 
+                       class="btn btn-success">
+                        <i class="ti ti-file-export"></i> Export Excel
+                    </a>
                 </div>
             </div>
 
@@ -100,22 +105,49 @@
                 </div>
             </div>
 
+            <!-- Search Box -->
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="ti ti-search"></i></span>
+                        <input type="text" class="form-control" id="searchInput" placeholder="Cari transaksi...">
+                    </div>
+                </div>
+                <div class="col-md-6 text-end">
+                    <span class="text-muted">Menampilkan <span id="rowCount">0</span> data</span>
+                </div>
+            </div>
+
             <div class="table-responsive mt-4">
-                <table class="table mb-0 text-nowrap varient-table align-middle fs-3">
+                <table class="table mb-0 text-nowrap align-middle" id="transaksiTable">
                     <thead>
                         <tr>
-                            <th scope="col" class="px-0 text-muted">No</th>
-                            <th scope="col" class="px-0 text-muted">Tanggal</th>
-                            <th scope="col" class="px-0 text-muted">Kategori</th>
-                            <th scope="col" class="px-0 text-muted">Jenis</th>
-                            <th scope="col" class="px-0 text-muted">Nama</th>
-                            <th scope="col" class="px-0 text-muted">Nominal</th>
-                            <th scope="col" class="px-0 text-muted">Keterangan</th>
+                            <th scope="col" class="sortable" data-column="0">
+                                No <i class="ti ti-chevron-up-down"></i>
+                            </th>
+                            <th scope="col" class="sortable" data-column="1">
+                                Tanggal <i class="ti ti-chevron-up-down"></i>
+                            </th>
+                            <th scope="col" class="sortable" data-column="2">
+                                Kategori <i class="ti ti-chevron-up-down"></i>
+                            </th>
+                            <th scope="col" class="sortable" data-column="3">
+                                Jenis <i class="ti ti-chevron-up-down"></i>
+                            </th>
+                            <th scope="col" class="sortable" data-column="4">
+                                Nama <i class="ti ti-chevron-up-down"></i>
+                            </th>
+                            <th scope="col" class="sortable" data-column="5">
+                                Nominal <i class="ti ti-chevron-up-down"></i>
+                            </th>
+                            <th scope="col" class="sortable" data-column="6">
+                                Keterangan <i class="ti ti-chevron-up-down"></i>
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php if (empty($transaksi)): ?>
-                            <tr>
+                            <tr class="no-data">
                                 <td colspan="7" class="text-center py-4">
                                     <p class="text-muted mb-0">Tidak ada data transaksi</p>
                                 </td>
@@ -124,11 +156,11 @@
                             <?php $no = 1;
                             foreach ($transaksi as $data): ?>
                                 <tr>
-                                    <td class="px-0"><?= $no++; ?></td>
-                                    <td class="px-0">
+                                    <td><?= $no++; ?></td>
+                                    <td data-date="<?= $data['tanggal']; ?>">
                                         <?= date('d/m/Y', strtotime($data['tanggal'])); ?>
                                     </td>
-                                    <td class="px-0">
+                                    <td>
                                         <?php
                                         $badgeClass = 'bg-secondary';
                                         switch ($data['kategori']) {
@@ -147,7 +179,7 @@
                                         ?>
                                         <span class="badge <?= $badgeClass; ?>"><?= $data['kategori']; ?></span>
                                     </td>
-                                    <td class="px-0">
+                                    <td>
                                         <?php if ($data['jenis_transaksi'] === 'pemasukan'): ?>
                                             <span class="badge bg-success">
                                                 <i class="ti ti-arrow-up"></i> Pemasukan
@@ -158,9 +190,8 @@
                                             </span>
                                         <?php endif; ?>
                                     </td>
-                                    <td class="px-0">
+                                    <td>
                                         <?php
-                                        // Tampilkan nama berdasarkan kategori
                                         if ($data['kategori'] == 'GAJI') {
                                             echo $data['nama_guru'] ?? '-';
                                             echo '<br><small class="text-muted">' . ($data['nip'] ?? '') . '</small>';
@@ -170,7 +201,7 @@
                                         }
                                         ?>
                                     </td>
-                                    <td class="px-0">
+                                    <td data-nominal="<?= $data['nominal']; ?>">
                                         <?php if ($data['jenis_transaksi'] === 'pemasukan'): ?>
                                             <span class="text-success fw-bold">
                                                 + Rp. <?= number_format($data['nominal'], 0, ',', '.'); ?>
@@ -181,7 +212,7 @@
                                             </span>
                                         <?php endif; ?>
                                     </td>
-                                    <td class="px-0">
+                                    <td>
                                         <small class="text-muted">
                                             <?= $data['keterangan'] ?? '-'; ?>
                                         </small>
@@ -192,13 +223,13 @@
                     </tbody>
                     <tfoot>
                         <tr class="border-top border-2">
-                            <td colspan="5" class="text-end fw-bold px-0">TOTAL:</td>
-                            <td class="px-0">
+                            <td colspan="5" class="text-end fw-bold">TOTAL:</td>
+                            <td>
                                 <span class="fw-bold <?= ($saldo >= 0) ? 'text-success' : 'text-danger'; ?>">
                                     Rp. <?= number_format($saldo ?? 0, 0, ',', '.'); ?>
                                 </span>
                             </td>
-                            <td class="px-0"></td>
+                            <td></td>
                         </tr>
                     </tfoot>
                 </table>
@@ -207,13 +238,63 @@
     </div>
 </div>
 
+<style>
+.sortable {
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    transition: background-color 0.2s;
+}
+
+.sortable:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.sortable i {
+    font-size: 14px;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+}
+
+.sortable:hover i {
+    opacity: 1;
+}
+
+.sortable.asc i::before {
+    content: "\eb79" !important; /* ti-chevron-up */
+}
+
+.sortable.desc i::before {
+    content: "\eb7a" !important; /* ti-chevron-down */
+}
+</style>
+
 <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const table = document.getElementById('transaksiTable');
+    const tbody = table.querySelector('tbody');
+    const searchInput = document.getElementById('searchInput');
+    const rowCount = document.getElementById('rowCount');
+    
+    let sortColumn = -1;
+    let sortDirection = 'asc';
+
+    // Update row count
+    function updateRowCount() {
+        const visibleRows = tbody.querySelectorAll('tr:not(.no-data):not([style*="display: none"])').length;
+        rowCount.textContent = visibleRows;
+    }
+
+    // Initial count
+    updateRowCount();
+
+    // Filter functionality
     function filterData() {
         const bulan = document.getElementById('filterBulan').value;
         const tahun = document.getElementById('filterTahun').value;
         const jenis = document.getElementById('filterJenis').value;
 
-        let url = '<?= base_url('laporan/transaksi') ?>?';
+        let url = '<?= base_url('data-kas/laporan/transaksi') ?>?';
         let params = [];
 
         if (bulan) params.push('bulan=' + bulan);
@@ -223,12 +304,92 @@
         window.location.href = url + params.join('&');
     }
 
-    // Attach event listeners
-    document.addEventListener('DOMContentLoaded', function() {
-        document.getElementById('filterBulan').addEventListener('change', filterData);
-        document.getElementById('filterTahun').addEventListener('change', filterData);
-        document.getElementById('filterJenis').addEventListener('change', filterData);
+    // Attach filter event listeners
+    document.getElementById('filterBulan').addEventListener('change', filterData);
+    document.getElementById('filterTahun').addEventListener('change', filterData);
+    document.getElementById('filterJenis').addEventListener('change', filterData);
+
+    // Search functionality
+    searchInput.addEventListener('keyup', function() {
+        const searchTerm = this.value.toLowerCase();
+        const rows = tbody.querySelectorAll('tr:not(.no-data)');
+
+        rows.forEach(row => {
+            const text = row.textContent.toLowerCase();
+            if (text.includes(searchTerm)) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+
+        updateRowCount();
     });
+
+    // Sorting functionality
+    const sortableHeaders = document.querySelectorAll('.sortable');
+    
+    sortableHeaders.forEach(header => {
+        header.addEventListener('click', function() {
+            const column = parseInt(this.dataset.column);
+            
+            // Remove sort classes from all headers
+            sortableHeaders.forEach(h => {
+                h.classList.remove('asc', 'desc');
+            });
+            
+            // Determine sort direction
+            if (sortColumn === column) {
+                sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
+            } else {
+                sortDirection = 'asc';
+            }
+            
+            sortColumn = column;
+            this.classList.add(sortDirection);
+            
+            sortTable(column, sortDirection);
+        });
+    });
+
+    function sortTable(column, direction) {
+        const rows = Array.from(tbody.querySelectorAll('tr:not(.no-data)'));
+        
+        rows.sort((a, b) => {
+            let aValue = a.cells[column].textContent.trim();
+            let bValue = b.cells[column].textContent.trim();
+            
+            // Special handling for different columns
+            if (column === 1) { // Tanggal
+                aValue = a.cells[column].dataset.date;
+                bValue = b.cells[column].dataset.date;
+            } else if (column === 5) { // Nominal
+                aValue = parseFloat(a.cells[column].dataset.nominal) || 0;
+                bValue = parseFloat(b.cells[column].dataset.nominal) || 0;
+            } else if (column === 0) { // No
+                aValue = parseInt(aValue) || 0;
+                bValue = parseInt(bValue) || 0;
+            }
+            
+            // Compare values
+            if (typeof aValue === 'number' && typeof bValue === 'number') {
+                return direction === 'asc' ? aValue - bValue : bValue - aValue;
+            } else {
+                if (direction === 'asc') {
+                    return aValue > bValue ? 1 : -1;
+                } else {
+                    return aValue < bValue ? 1 : -1;
+                }
+            }
+        });
+        
+        // Re-append sorted rows
+        rows.forEach((row, index) => {
+            row.cells[0].textContent = index + 1; // Update row number
+            tbody.appendChild(row);
+        });
+    }
+});
 </script>
 
 <?= $this->endSection(); ?>

@@ -130,6 +130,34 @@ class TransaksiModel extends Model
     }
 
     /**
+     * Get total pemasukan berdasarkan range tanggal (untuk data mingguan)
+     */
+    public function getTotalPemasukanByDateRange($startDate, $endDate)
+    {
+        $builder = $this->builder();
+        $builder->selectSum('nominal');
+        $builder->where('jenis_transaksi', 'pemasukan');
+        $builder->where('tanggal >=', $startDate);
+        $builder->where('tanggal <=', $endDate);
+        $result = $builder->get()->getRowArray();
+        return $result['nominal'] ?? 0;
+    }
+
+    /**
+     * Get total pengeluaran berdasarkan range tanggal (untuk data mingguan)
+     */
+    public function getTotalPengeluaranByDateRange($startDate, $endDate)
+    {
+        $builder = $this->builder();
+        $builder->selectSum('nominal');
+        $builder->where('jenis_transaksi', 'pengeluaran');
+        $builder->where('tanggal >=', $startDate);
+        $builder->where('tanggal <=', $endDate);
+        $result = $builder->get()->getRowArray();
+        return $result['nominal'] ?? 0;
+    }
+
+    /**
      * Get saldo
      */
     public function getSaldo($bulan = null, $tahun = null)
@@ -142,27 +170,22 @@ class TransaksiModel extends Model
     /**
      * Get laporan transaksi dengan relasi
      */
-    public function getLaporanTransaksi($bulan = null, $tahun = null, $jenis = null)
+    public function getLaporanTransaksi($bulan = null, $tahun = null, $jenis = null, $sortBy = 'tanggal', $sortOrder = 'DESC')
     {
         $builder = $this->builder();
 
         $builder->select('transaksi.*, 
-                     COALESCE(siswa.nama_siswa, siswa2.nama_siswa) AS nama_siswa,
-                     COALESCE(siswa.nis, siswa2.nis) AS nis,
-                     guru.nama_guru,
-                     guru.nip')
+                 COALESCE(siswa.nama_siswa, siswa2.nama_siswa) AS nama_siswa,
+                 COALESCE(siswa.nis, siswa2.nis) AS nis,
+                 guru.nama_guru,
+                 guru.nip')
             ->join('pembayaran_spp', 'transaksi.id_pembayaran_spp = pembayaran_spp.id_pembayaran_spp', 'left')
             ->join('siswa', 'pembayaran_spp.id_siswa = siswa.id_siswa', 'left')
             ->join('pembayaran_semester', 'transaksi.id_pembayaran_semester = pembayaran_semester.id_pembayaran_semester', 'left')
             ->join('siswa AS siswa2', 'pembayaran_semester.id_siswa = siswa2.id_siswa', 'left')
-
-            // 🔑 OPSI 1: JOIN lewat tabel gaji
             ->join('pembayaran_gaji', 'transaksi.id_pembayaran_gaji = pembayaran_gaji.id_pembayaran_gaji', 'left')
             ->join('gaji', 'pembayaran_gaji.id_gaji = gaji.id_gaji', 'left')
-            ->join('guru', 'gaji.id_guru = guru.id_guru', 'left')
-
-            ->orderBy('transaksi.tanggal', 'DESC')
-            ->orderBy('transaksi.created_at', 'DESC');
+            ->join('guru', 'gaji.id_guru = guru.id_guru', 'left');
 
         if ($bulan) {
             $builder->where('MONTH(transaksi.tanggal)', $bulan);
@@ -176,7 +199,21 @@ class TransaksiModel extends Model
             $builder->where('transaksi.jenis_transaksi', $jenis);
         }
 
+        // Validasi sort column
+        $allowedSortColumns = [
+            'tanggal' => 'transaksi.tanggal',
+            'kategori' => 'transaksi.kategori',
+            'jenis_transaksi' => 'transaksi.jenis_transaksi',
+            'nominal' => 'transaksi.nominal',
+            'nama' => 'COALESCE(siswa.nama_siswa, siswa2.nama_siswa, guru.nama_guru)'
+        ];
+
+        $sortColumn = $allowedSortColumns[$sortBy] ?? 'transaksi.tanggal';
+        $sortOrder = strtoupper($sortOrder) === 'ASC' ? 'ASC' : 'DESC';
+
+        $builder->orderBy($sortColumn, $sortOrder);
+        $builder->orderBy('transaksi.created_at', 'DESC');
+
         return $builder->get()->getResultArray();
     }
-
 }

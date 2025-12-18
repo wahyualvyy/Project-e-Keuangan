@@ -133,6 +133,7 @@ $routes->group('', ['filter' => 'login'], function ($routes) {
         $routes->get('semester/detail/(:num)', 'SemesterController::kasSemesterDetail/$1');
         $routes->get('semester-delete/(:num)', 'SemesterController::deleteSemesterMasuk/$1');
         $routes->get('semester/bayar/(:num)', 'SemesterController::bayarSemester/$1');
+        $routes->post('semester/bulk-action', 'SemesterController::bulkActionSemester');
 
         $routes->get('pemasukan', 'SemesterController::kasPemasukan');
         $routes->get('input-pemasukan', 'SemesterController::inputKasPemasukan');
