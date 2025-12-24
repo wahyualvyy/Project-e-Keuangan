@@ -1,0 +1,39 @@
+CRITICAL - 2025-12-24 15:04:30 --> ParseError: Unclosed '{' on line 8
+[Method: GET, Route: kas-masuk/input-pemasukan]
+in APPPATH\Models\TransaksiModel.php on line 224.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('E:\\laragon\\www\\Project-e-Keuangan\\app\\Models\\TransaksiModel.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\TransaksiModel')
+ 3 APPPATH\Controllers\TransaksiController.php(15): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\TransaksiModel')
+ 4 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\TransaksiController->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-24 15:04:54 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/kas-masuk/input-kas-pemasukan.php"
+[Method: GET, Route: kas-masuk/input-pemasukan]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/kas-masuk/input-kas-pemasukan.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/kas-masuk/input-kas-pemasukan', [], true)
+ 3 APPPATH\Controllers\TransaksiController.php(60): view('admin/kas-masuk/input-kas-pemasukan', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\TransaksiController->InputKasPemasukan()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')
+CRITICAL - 2025-12-24 15:18:47 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/Inputs/input-kas-pemasukan.php"
+[Method: GET, Route: data-kas/input-kas]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/Inputs/input-kas-pemasukan.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('admin/Inputs/input-kas-pemasukan', [], true)
+ 3 APPPATH\Controllers\TransaksiController.php(52): view('admin/Inputs/input-kas-pemasukan', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\TransaksiController->InputKas()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TransaksiController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('E:\\laragon\\www\\Project-e-Keuangan\\public\\index.php')

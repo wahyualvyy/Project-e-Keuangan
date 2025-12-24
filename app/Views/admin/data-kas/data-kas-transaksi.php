@@ -8,7 +8,9 @@
                     <h4 class="card-title">Laporan Transaksi (Buku Kas)</h4>
                     <p class="card-subtitle mb-0">History Pemasukan dan Pengeluaran</p>
                 </div>
+                
                 <div class="ms-auto mt-3 mt-md-0 d-flex gap-2">
+                    <a class="btn btn-secondary" href="<?= base_url('data-kas/input-kas'); ?>">Input Kas</a>
                     <select class="form-select" name="bulan" id="filterBulan" style="width: auto;">
                         <option value="">Semua Bulan</option>
                         <option value="1" <?= (isset($bulan) && $bulan == 1) ? 'selected' : ''; ?>>Januari</option>

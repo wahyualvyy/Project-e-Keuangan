@@ -216,4 +216,6 @@ class TransaksiModel extends Model
 
         return $builder->get()->getResultArray();
     }
+
+    
 }

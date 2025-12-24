@@ -115,6 +115,8 @@ $routes->group('', ['filter' => 'login'], function ($routes) {
             $routes->get('transaksi/detail/(:num)', 'TransaksiController::detail/$1');
             $routes->get('transaksi/export', 'TransaksiController::export');
         });
+        $routes->get('input-kas', 'TransaksiController::inputKas');
+        $routes->post('create-kas', 'TransaksiController::createKas');
     });
 
     // Generate payment endpoints (admin-triggered)
@@ -135,8 +137,6 @@ $routes->group('', ['filter' => 'login'], function ($routes) {
         $routes->get('semester/bayar/(:num)', 'SemesterController::bayarSemester/$1');
         $routes->post('semester/bulk-action', 'SemesterController::bulkActionSemester');
 
-        $routes->get('pemasukan', 'SemesterController::kasPemasukan');
-        $routes->get('input-pemasukan', 'SemesterController::inputKasPemasukan');
     });
 
     $routes->group('kas-keluar', function ($routes) {
@@ -144,9 +144,6 @@ $routes->group('', ['filter' => 'login'], function ($routes) {
         $routes->get('gaji/detail/(:num)', 'GajiController::kasGajiDetail/$1');
         $routes->get('delete/(:num)', 'GajiController::deleteKasGaji/$1');
         $routes->get('gaji/bayar/(:num)', 'GajiController::bayarKasGaji/$1');
-
-        $routes->get('pengeluaran', 'AdminController::kasPengeluaran');
-        $routes->get('input-pengeluaran', 'AdminController::inputKasPengeluaran');
     });
 });
 

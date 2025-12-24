@@ -65,7 +65,7 @@
 						<li class="sidebar-item <?= ($title === 'Dashboard Admin') ? 'active' : ''; ?>">
 							<a class="sidebar-link" href="<?= base_url('/'); ?>" aria-expanded="false">
 								<i class="ti ti-home"></i>
-								<span class="hide-menu">Laporan Keuangan</span>
+								<span class="hide-menu">Dashboard</span>
 							</a>
 						</li>
 						<!-- ---------------------------------- -->
@@ -199,17 +199,6 @@
 										</div>
 									</a>
 								</li>
-								<li class="sidebar-item">
-									<a class="sidebar-link justify-content-between"
-										href="<?= base_url('kas-masuk/pemasukan'); ?>">
-										<div class="d-flex align-items-center gap-3">
-											<div class="round-16 d-flex align-items-center justify-content-center">
-												<i class="ti ti-circle"></i>
-											</div>
-											<span class="hide-menu">Pemasukan Lainnya</span>
-										</div>
-									</a>
-								</li>
 							</ul>
 						</li>
 						<li class="sidebar-item">
@@ -232,17 +221,6 @@
 												<i class="ti ti-circle"></i>
 											</div>
 											<span class="hide-menu">Pembayaran Gaji</span>
-										</div>
-									</a>
-								</li>
-								<li class="sidebar-item">
-									<a class="sidebar-link justify-content-between"
-										href="<?= base_url('kas-keluar/pengeluaran'); ?>">
-										<div class="d-flex align-items-center gap-3">
-											<div class="round-16 d-flex align-items-center justify-content-center">
-												<i class="ti ti-circle"></i>
-											</div>
-											<span class="hide-menu">Pengeluaran Lainnya</span>
 										</div>
 									</a>
 								</li>

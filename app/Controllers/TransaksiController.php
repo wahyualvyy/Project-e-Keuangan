@@ -44,6 +44,35 @@ class TransaksiController extends BaseController
         return view('admin/data-kas/data-kas-transaksi', $data);
     }
 
+    public function InputKas()
+    {
+        $data = [
+            "title" => "Input Data Kas Pemasukan"
+        ];
+        return view('admin/Inputs/input-kas', $data);
+    }
+
+    public function createKas()
+    {
+        $rules = [
+            'kategori' => 'required|in_list[pemasukan,pengeluaran]',
+            'jumlah' => 'required|numeric|min_length[1]',
+            'keterangan' => 'permit_empty|string|max_length[255]',
+        ];
+        if (!$this->validate($rules)) {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        }
+        $data = [
+            'kategori' => $this->request->getPost('kategori'),
+            'jenis_transaksi' => $this->request->getPost('kategori'),
+            'nominal' => $this->request->getPost('jumlah'),
+            'keterangan' => $this->request->getPost('keterangan'),
+            'tanggal' => date('Y-m-d H:i:s'),
+        ];
+
+        $this->transaksiModel->insert($data);
+        return redirect()->to('/data-kas/laporan/transaksi')->with('success', 'Data kas berhasil ditambahkan.');
+    }
     /**
      * Export laporan ke Excel
      */
@@ -155,7 +184,7 @@ class TransaksiController extends BaseController
             foreach ($transaksi as $data) {
                 $nama = $data['nama_siswa'] ?? $data['nama_guru'] ?? '-';
                 $nomor = $data['nis'] ?? $data['nip'] ?? '-';
-                $nominal = (float)$data['nominal'];
+                $nominal = (float) $data['nominal'];
 
                 if ($data['jenis_transaksi'] === 'pemasukan') {
                     $totalPemasukan += $nominal;
@@ -349,11 +378,20 @@ class TransaksiController extends BaseController
     private function getNamaBulan($bulan)
     {
         $namaBulan = [
-            1 => 'Januari', 2 => 'Februari', 3 => 'Maret', 4 => 'April',
-            5 => 'Mei', 6 => 'Juni', 7 => 'Juli', 8 => 'Agustus',
-            9 => 'September', 10 => 'Oktober', 11 => 'November', 12 => 'Desember'
+            1 => 'Januari',
+            2 => 'Februari',
+            3 => 'Maret',
+            4 => 'April',
+            5 => 'Mei',
+            6 => 'Juni',
+            7 => 'Juli',
+            8 => 'Agustus',
+            9 => 'September',
+            10 => 'Oktober',
+            11 => 'November',
+            12 => 'Desember'
         ];
-        
+
         return $namaBulan[$bulan] ?? '';
     }
 }

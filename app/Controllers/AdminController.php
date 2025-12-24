@@ -92,22 +92,6 @@ class AdminController extends BaseController
         return view('admin/profile', $data);
     }
     
-    public function KasPemasukan()
-    {
-        $data = [
-            "title" => "Data Kas Pemasukan"
-        ];
-        return view('admin/kas-masuk/kas-pemasukan', $data);
-    }
-    
-    public function InputKasPemasukan()
-    {
-        $data = [
-            "title" => "Input Data Kas Pemasukan"
-        ];
-        return view('admin/kas-masuk/input-kas-pemasukan', $data);
-    }
-    
     public function KasPengeluaran()
     {
         $data = [
